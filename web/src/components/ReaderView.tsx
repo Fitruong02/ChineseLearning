@@ -49,6 +49,10 @@ export const ReaderView = ({
   const [isShadowing, setIsShadowing] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [cardSearchQuery, setCardSearchQuery] = useState('')
+  const [showContextImages, setShowContextImages] = useState<boolean>(() => {
+    const saved = window.localStorage.getItem('reader-show-context-images')
+    return saved === 'true'
+  })
   const [shadowingWaitSeconds, setShadowingWaitSeconds] = useState<number>(() => {
     const raw = window.localStorage.getItem('reader-shadowing-wait-seconds')
     const parsed = raw ? Number(raw) : 1.8
@@ -275,6 +279,9 @@ export const ReaderView = ({
   useEffect(() => {
     window.localStorage.setItem('reader-auto-follow', autoFollowReading ? 'true' : 'false')
   }, [autoFollowReading])
+  useEffect(() => {
+    window.localStorage.setItem('reader-show-context-images', showContextImages ? 'true' : 'false')
+  }, [showContextImages])
 
   useEffect(() => {
     if (!autoFollowReading || !activeReadingSectionId) {
@@ -558,6 +565,13 @@ export const ReaderView = ({
                 >
                   Nghe từ này
                 </button>
+                <button
+                  type="button"
+                  className={`ghost-button compact-button ${showContextImages ? 'is-active' : ''}`}
+                  onClick={() => setShowContextImages((value) => !value)}
+                >
+                  {showContextImages ? 'Ảnh: Bật' : 'Ảnh: Tắt'}
+                </button>
               </div>
             )}
           </div>
@@ -603,7 +617,7 @@ export const ReaderView = ({
               </div>
               <p className="answer-example">{selectedCard.exampleZh}</p>
               <p className="answer-translation">{selectedCard.exampleVi}</p>
-              {selectedCard.imageUrl && (
+              {showContextImages && selectedCard.imageUrl && (
                 <div className="answer-image-block">
                   <img src={selectedCard.imageUrl} alt={selectedCard.hanzi} loading="lazy" />
                   {selectedCard.imageAttribution && (

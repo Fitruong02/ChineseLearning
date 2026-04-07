@@ -321,6 +321,10 @@ export const ReviewView = ({
     const saved = window.localStorage.getItem('review-focus-drill')
     return saved === 'true'
   })
+  const [showCardImages, setShowCardImages] = useState<boolean>(() => {
+    const saved = window.localStorage.getItem('review-show-card-images')
+    return saved === 'true'
+  })
   const [stageFeedback, setStageFeedback] = useState<ReviewEase | null>(null)
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null)
   const [activeReset, setActiveReset] = useState<ResetAction>(null)
@@ -337,6 +341,7 @@ export const ReviewView = ({
   useEffect(() => { window.localStorage.setItem('review-mix-mode', mixMode) }, [mixMode])
   useEffect(() => { window.localStorage.setItem('review-phonetic-mode', phoneticMode) }, [phoneticMode])
   useEffect(() => { window.localStorage.setItem('review-focus-drill', focusDrillEnabled ? 'true' : 'false') }, [focusDrillEnabled])
+  useEffect(() => { window.localStorage.setItem('review-show-card-images', showCardImages ? 'true' : 'false') }, [showCardImages])
 
   useEffect(() => {
     if (!studyReady) {
@@ -793,7 +798,7 @@ export const ReviewView = ({
                           {currentCard.exampleVi && <span className="vi">{currentCard.exampleVi}</span>}
                         </span>
                       )}
-                      {currentCard.imageUrl && (
+                      {showCardImages && currentCard.imageUrl && (
                         <span className="answer-image-block">
                           <img src={currentCard.imageUrl} alt={currentCard.hanzi} loading="lazy" />
                           {currentCard.imageAttribution && (
@@ -949,6 +954,13 @@ export const ReviewView = ({
                 onClick={onToggleImmersive}
               >
                 {immersiveMode ? '▣ Focus: Bật' : '▣ Focus: Tắt'}
+              </button>
+              <button
+                type="button"
+                className={`sound-toggle ${showCardImages ? 'is-enabled' : ''}`}
+                onClick={() => setShowCardImages((value) => !value)}
+              >
+                {showCardImages ? '🖼 Ảnh: Bật' : '🖼 Ảnh: Tắt'}
               </button>
             </div>
             <label className="filter-field">
