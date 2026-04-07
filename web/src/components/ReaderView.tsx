@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
 import { isImageLikelyHelpful } from '../lib/imageFilter'
 import type { MaterialSource, PublishedCard, StudyRecordMap } from '../types'
 
@@ -22,8 +23,14 @@ interface ReaderViewProps {
   selectedMaterialId: string
   highlightedCardId: string | null
   records: StudyRecordMap
+  hasChineseVoice: boolean
+  voiceMode: VoiceGenderMode
+  selectedVoiceUri: string
+  voiceOptions: ChineseVoiceOption[]
   onSelectMaterial: (materialId: string) => void
   onHighlightCard: (cardId: string | null) => void
+  onChangeVoiceMode: (mode: VoiceGenderMode) => void
+  onChangeSelectedVoiceUri: (voiceUri: string) => void
   onOpenReview: (deckId?: string) => void
   onSpeak: (text: string) => void
 }
@@ -34,8 +41,14 @@ export const ReaderView = ({
   selectedMaterialId,
   highlightedCardId,
   records,
+  hasChineseVoice,
+  voiceMode,
+  selectedVoiceUri,
+  voiceOptions,
   onSelectMaterial,
   onHighlightCard,
+  onChangeVoiceMode,
+  onChangeSelectedVoiceUri,
   onOpenReview,
   onSpeak,
 }: ReaderViewProps) => {
@@ -341,6 +354,35 @@ export const ReaderView = ({
             Chọn tài liệu ở trái, đọc phần giữa và xem card ngữ cảnh ở phải để
             tránh học tách rời khỏi bài gốc.
           </p>
+        </div>
+        <div className="review-header-controls">
+          <label className="filter-field" style={{ minWidth: '10rem' }}>
+            <span>Giọng đọc tiếng Trung</span>
+            <select
+              value={voiceMode}
+              onChange={(event) => onChangeVoiceMode(event.target.value as VoiceGenderMode)}
+              disabled={!hasChineseVoice}
+            >
+              <option value="auto">Tự động</option>
+              <option value="male">Nam (ưu tiên)</option>
+              <option value="female">Nữ (ưu tiên)</option>
+            </select>
+          </label>
+          <label className="filter-field" style={{ minWidth: '14rem' }}>
+            <span>Giọng cụ thể</span>
+            <select
+              value={selectedVoiceUri}
+              onChange={(event) => onChangeSelectedVoiceUri(event.target.value)}
+              disabled={!hasChineseVoice}
+            >
+              <option value="">Mặc định theo chế độ</option>
+              {voiceOptions.map((voice) => (
+                <option key={voice.uri} value={voice.uri}>
+                  {voice.label}
+                </option>
+              ))}
+            </select>
+          </label>
         </div>
       </div>
 

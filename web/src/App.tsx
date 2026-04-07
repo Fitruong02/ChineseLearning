@@ -195,8 +195,14 @@ function App() {
         selectedMaterialId={selectedMaterialId || (library.materials[0]?.id ?? '')}
         highlightedCardId={highlightedCardId}
         records={records}
+        hasChineseVoice={hasChineseVoice}
+        voiceMode={voiceMode}
+        selectedVoiceUri={selectedVoiceUri}
+        voiceOptions={voiceOptions}
         onSelectMaterial={setSelectedMaterialId}
         onHighlightCard={setHighlightedCardId}
+        onChangeVoiceMode={setVoiceMode}
+        onChangeSelectedVoiceUri={setSelectedVoiceUri}
         onOpenReview={openReview}
         onSpeak={speak}
       />
