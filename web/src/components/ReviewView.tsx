@@ -639,6 +639,15 @@ export const ReviewView = ({
 
   return (
     <section className={`view ${immersiveMode ? 'review-focus-mode' : ''}`}>
+      {immersiveMode && (
+        <button
+          type="button"
+          className="focus-exit-button"
+          onClick={onToggleImmersive}
+        >
+          Thoát focus
+        </button>
+      )}
       {/* Header */}
       <div className={`review-header ${immersiveMode ? 'panel' : 'panel'}`}>
         <div className="review-header__lead">
