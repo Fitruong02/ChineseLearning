@@ -25,6 +25,8 @@ interface ReviewViewProps {
   sessionResetVersion: number
   immersiveMode: boolean
   hasChineseVoice: boolean
+  hasMaleChineseVoice: boolean
+  hasFemaleChineseVoice: boolean
   voiceMode: VoiceGenderMode
   selectedVoiceUri: string
   voiceOptions: ChineseVoiceOption[]
@@ -271,6 +273,8 @@ export const ReviewView = ({
   sessionResetVersion,
   immersiveMode,
   hasChineseVoice,
+  hasMaleChineseVoice,
+  hasFemaleChineseVoice,
   voiceMode,
   selectedVoiceUri,
   voiceOptions,
@@ -985,6 +989,12 @@ export const ReviewView = ({
                 <option value="female">Nữ (ưu tiên)</option>
               </select>
             </label>
+            {voiceMode === 'male' && !hasMaleChineseVoice && (
+              <p className="review-shortcut-tip">Thiết bị chưa có giọng nam tiếng Trung, đang fallback sang giọng khả dụng.</p>
+            )}
+            {voiceMode === 'female' && !hasFemaleChineseVoice && (
+              <p className="review-shortcut-tip">Thiết bị chưa có giọng nữ tiếng Trung, đang fallback sang giọng khả dụng.</p>
+            )}
             <label className="filter-field">
               <span>Giọng cụ thể</span>
               <select

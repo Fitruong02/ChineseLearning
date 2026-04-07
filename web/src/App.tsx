@@ -50,6 +50,8 @@ function App() {
   } = useStudyRecords()
   const {
     hasChineseVoice,
+    hasMaleChineseVoice,
+    hasFemaleChineseVoice,
     speak,
     voiceMode,
     setVoiceMode,
@@ -104,6 +106,10 @@ function App() {
 
   const toggleTheme = () => setThemeMode((v) => v === 'light' ? 'dark' : 'light')
   const openReview = (deckId?: string) => { setSelectedDeckId(deckId ?? 'all'); navigate('review') }
+  const changeVoiceMode = (mode: 'auto' | 'male' | 'female') => {
+    setVoiceMode(mode)
+    setSelectedVoiceUri('')
+  }
 
   const resolveMaterialForCard = (cardId?: string, fallbackMaterialId?: string) => {
     if (!library) {
@@ -172,8 +178,10 @@ function App() {
         sessionResetVersion={sessionResetVersion}
         immersiveMode={isImmersiveReview}
         hasChineseVoice={hasChineseVoice}
+        hasMaleChineseVoice={hasMaleChineseVoice}
+        hasFemaleChineseVoice={hasFemaleChineseVoice}
         voiceMode={voiceMode}
-        onChangeVoiceMode={setVoiceMode}
+        onChangeVoiceMode={changeVoiceMode}
         selectedVoiceUri={selectedVoiceUri}
         voiceOptions={voiceOptions}
         onChangeSelectedVoiceUri={setSelectedVoiceUri}
@@ -196,12 +204,14 @@ function App() {
         highlightedCardId={highlightedCardId}
         records={records}
         hasChineseVoice={hasChineseVoice}
+        hasMaleChineseVoice={hasMaleChineseVoice}
+        hasFemaleChineseVoice={hasFemaleChineseVoice}
         voiceMode={voiceMode}
         selectedVoiceUri={selectedVoiceUri}
         voiceOptions={voiceOptions}
         onSelectMaterial={setSelectedMaterialId}
         onHighlightCard={setHighlightedCardId}
-        onChangeVoiceMode={setVoiceMode}
+        onChangeVoiceMode={changeVoiceMode}
         onChangeSelectedVoiceUri={setSelectedVoiceUri}
         onOpenReview={openReview}
         onSpeak={speak}

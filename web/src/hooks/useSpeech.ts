@@ -73,6 +73,8 @@ export const useSpeech = () => {
     uri: voice.voiceURI,
     label: `${voice.name} (${voice.lang})`,
   }))
+  const hasMaleChineseVoice = voices.some(isMaleVoice)
+  const hasFemaleChineseVoice = voices.some(isFemaleVoice)
 
   const speak = (text: string) => {
     if (!text || !('speechSynthesis' in window)) {
@@ -113,6 +115,8 @@ export const useSpeech = () => {
 
   return {
     hasChineseVoice: voices.length > 0,
+    hasMaleChineseVoice,
+    hasFemaleChineseVoice,
     voiceMode,
     setVoiceMode,
     selectedVoiceUri,

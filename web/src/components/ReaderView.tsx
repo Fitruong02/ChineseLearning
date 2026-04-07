@@ -24,6 +24,8 @@ interface ReaderViewProps {
   highlightedCardId: string | null
   records: StudyRecordMap
   hasChineseVoice: boolean
+  hasMaleChineseVoice: boolean
+  hasFemaleChineseVoice: boolean
   voiceMode: VoiceGenderMode
   selectedVoiceUri: string
   voiceOptions: ChineseVoiceOption[]
@@ -42,6 +44,8 @@ export const ReaderView = ({
   highlightedCardId,
   records,
   hasChineseVoice,
+  hasMaleChineseVoice,
+  hasFemaleChineseVoice,
   voiceMode,
   selectedVoiceUri,
   voiceOptions,
@@ -383,6 +387,12 @@ export const ReaderView = ({
               ))}
             </select>
           </label>
+          {voiceMode === 'male' && !hasMaleChineseVoice && (
+            <p className="review-shortcut-tip">Thiết bị chưa có giọng nam tiếng Trung, đang fallback sang giọng khả dụng.</p>
+          )}
+          {voiceMode === 'female' && !hasFemaleChineseVoice && (
+            <p className="review-shortcut-tip">Thiết bị chưa có giọng nữ tiếng Trung, đang fallback sang giọng khả dụng.</p>
+          )}
         </div>
       </div>
 
