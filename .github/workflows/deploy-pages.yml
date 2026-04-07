@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ENABLE_PAGES_DEPLOY: ${{ vars.ENABLE_PAGES_DEPLOY || 'false' }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,6 +32,7 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
+        if: env.ENABLE_PAGES_DEPLOY == 'true'
         with:
           enablement: true
 
@@ -43,10 +46,12 @@ jobs:
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
+        if: env.ENABLE_PAGES_DEPLOY == 'true'
         with:
           path: web/dist
 
   deploy:
+    if: ${{ vars.ENABLE_PAGES_DEPLOY == 'true' }}
     needs: build
     runs-on: ubuntu-latest
     environment:
