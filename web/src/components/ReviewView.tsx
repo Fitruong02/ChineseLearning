@@ -4,6 +4,7 @@ import {
   isTroubleRecord,
   reviewTone,
 } from '../lib/srs'
+import { isImageLikelyHelpful } from '../lib/imageFilter'
 import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
 import type {
   MotionPreference,
@@ -798,7 +799,7 @@ export const ReviewView = ({
                           {currentCard.exampleVi && <span className="vi">{currentCard.exampleVi}</span>}
                         </span>
                       )}
-                      {showCardImages && currentCard.imageUrl && (
+                      {showCardImages && isImageLikelyHelpful(currentCard) && (
                         <span className="answer-image-block">
                           <img src={currentCard.imageUrl} alt={currentCard.hanzi} loading="lazy" />
                           {currentCard.imageAttribution && (

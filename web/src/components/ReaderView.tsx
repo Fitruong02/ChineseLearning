@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { isImageLikelyHelpful } from '../lib/imageFilter'
 import type { MaterialSource, PublishedCard, StudyRecordMap } from '../types'
 
 interface ReaderViewProps {
@@ -617,7 +618,7 @@ export const ReaderView = ({
               </div>
               <p className="answer-example">{selectedCard.exampleZh}</p>
               <p className="answer-translation">{selectedCard.exampleVi}</p>
-              {showContextImages && selectedCard.imageUrl && (
+              {showContextImages && isImageLikelyHelpful(selectedCard) && (
                 <div className="answer-image-block">
                   <img src={selectedCard.imageUrl} alt={selectedCard.hanzi} loading="lazy" />
                   {selectedCard.imageAttribution && (
