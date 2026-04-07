@@ -1292,7 +1292,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 
 .review-grid {
   display: grid;
-  grid-template-columns: 1fr 22rem;
+  grid-template-columns: 1fr 19rem;
   gap: 0.85rem;
   align-items: start;
 }
@@ -1386,8 +1386,8 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 /* Review stage panel */
 .review-stage {
   display: grid;
-  gap: 1.1rem;
-  padding: 1.4rem;
+  gap: 0.95rem;
+  padding: 1.15rem;
 }
 
 /* Stage feedback */
@@ -1435,8 +1435,8 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 .flashcard-surface {
   position: relative;
   width: 100%;
-  min-height: 26rem;
-  padding: 1.2rem;
+  min-height: 21.5rem;
+  padding: 0.95rem;
   border-radius: var(--r-xl);
   background: var(--surface);
   border: 1px solid var(--border-strong);
@@ -1453,7 +1453,12 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 }
 
 .flashcard-surface:hover {
+  transform: none;
   box-shadow: var(--shadow-lg);
+}
+
+.flashcard-surface:active {
+  transform: none;
 }
 
 .flashcard-surface.is-revealed {
@@ -1496,7 +1501,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 .flashcard-scene {
   display: grid;
   width: 100%;
-  min-height: 23rem;
+  min-height: 18.8rem;
   transform-style: preserve-3d;
   transition: transform 460ms cubic-bezier(0.3, 0.8, 0.3, 1);
 }
@@ -1515,8 +1520,8 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.85rem;
-  padding: 2.5rem 1.5rem 1.5rem;
+  gap: 0.65rem;
+  padding: 1.95rem 1.2rem 1.1rem;
   border-radius: var(--r-lg);
   backface-visibility: hidden;
   border: 1px solid var(--border);
@@ -1524,7 +1529,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 
 .flashcard-face h3 {
   font-family: 'Noto Serif SC', serif;
-  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
   font-weight: 700;
   text-align: center;
   letter-spacing: -0.02em;
@@ -1540,7 +1545,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   background: var(--surface);
   transform: rotateY(180deg);
   justify-content: flex-start;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
 }
 
 .flashcard-status-line {
@@ -1562,13 +1567,13 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 .answer-sheet {
   width: 100%;
   display: grid;
-  gap: 0.7rem;
+  gap: 0.52rem;
 }
 
 .answer-sheet h3 {
   text-align: center;
-  font-size: 2.4rem !important;
-  margin-bottom: 0.25rem;
+  font-size: 1.95rem !important;
+  margin-bottom: 0.12rem;
 }
 
 .answer-pinyin-row {
@@ -1576,31 +1581,31 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0.6rem 1rem;
+  padding: 0.48rem 0.8rem;
   background: var(--surface-inset);
   border-radius: var(--r-md);
   border: 1px solid var(--border);
 }
 
 .answer-pinyin-row strong {
-  font-size: 1.15rem;
+  font-size: 1.03rem;
   font-weight: 600;
   color: var(--jade);
   letter-spacing: 0.02em;
 }
 
 .answer-meaning {
-  padding: 0.65rem 1rem;
+  padding: 0.48rem 0.8rem;
   background: var(--surface-inset);
   border-radius: var(--r-md);
   border: 1px solid var(--border);
-  font-size: 1.05rem;
+  font-size: 0.96rem;
   font-weight: 700;
   text-align: center;
 }
 
 .answer-example-block {
-  padding: 0.85rem 1rem;
+  padding: 0.62rem 0.78rem;
   background: var(--surface-inset);
   border-radius: var(--r-md);
   border: 1px solid var(--border);
@@ -1610,13 +1615,13 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 
 .answer-example-block .zh {
   font-family: 'Noto Serif SC', serif;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 0.98rem;
+  line-height: 1.62;
   color: var(--text);
 }
 
 .answer-example-block .vi {
-  font-size: 0.82rem;
+  font-size: 0.79rem;
   color: var(--text-2);
   line-height: 1.55;
   padding-top: 0.35rem;
@@ -1636,12 +1641,12 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   gap: 0.2rem;
   align-content: center;
   justify-items: start;
-  padding: 1rem 1.1rem;
+  padding: 0.9rem 0.95rem;
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
   background: var(--surface-raised);
   color: var(--text);
-  min-height: 5rem;
+  min-height: 4.35rem;
   position: relative;
   overflow: hidden;
   transition:
@@ -1662,22 +1667,22 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 }
 
 .score-button.tone-danger {
-  border-color: var(--red-border);
-  background: var(--red-soft);
+  border-color: color-mix(in srgb, var(--red) 36%, transparent);
+  background: color-mix(in srgb, var(--red) 10%, var(--surface));
 }
-.score-button.tone-danger:hover { background: rgba(163, 52, 38, 0.1); }
+.score-button.tone-danger:hover { background: color-mix(in srgb, var(--red) 16%, var(--surface)); }
 
 .score-button.tone-warn {
-  border-color: var(--amber-border);
-  background: var(--warn-soft);
+  border-color: color-mix(in srgb, var(--amber) 34%, transparent);
+  background: color-mix(in srgb, var(--amber) 11%, var(--surface));
 }
-.score-button.tone-warn:hover { background: rgba(184, 92, 14, 0.1); }
+.score-button.tone-warn:hover { background: color-mix(in srgb, var(--amber) 16%, var(--surface)); }
 
 .score-button.tone-good {
-  border-color: var(--jade-border);
-  background: var(--jade-soft);
+  border-color: color-mix(in srgb, var(--jade) 35%, transparent);
+  background: color-mix(in srgb, var(--jade) 11%, var(--surface));
 }
-.score-button.tone-good:hover { background: rgba(20, 106, 88, 0.1); }
+.score-button.tone-good:hover { background: color-mix(in srgb, var(--jade) 16%, var(--surface)); }
 
 .score-button.tone-strong {
   border-color: rgba(30, 120, 140, 0.18);
@@ -1705,8 +1710,8 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   border-radius: var(--r-full);
   font-size: 0.72rem;
   font-weight: 800;
-  background: rgba(0,0,0,0.06);
-  color: var(--text-3);
+  background: color-mix(in srgb, var(--text) 12%, transparent);
+  color: var(--text-2);
 }
 
 /* Tone colors for score label */
@@ -1835,6 +1840,14 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
 /* ─── Review Controls ───────────────────────────────────── */
 
 .review-controls { display: grid; gap: 0.9rem; }
+
+.review-controls .session-summary__stats {
+  grid-template-columns: 1fr;
+}
+
+.review-controls .filter-field {
+  gap: 0.3rem;
+}
 
 .review-controls__toggles {
   display: flex;
@@ -2057,7 +2070,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   .review-side { grid-row: 1; }
   .review-grid .review-side { order: -1; }
   /* Actually keep side visible but stack */
-  .review-grid { grid-template-columns: 1fr 20rem; }
+  .review-grid { grid-template-columns: 1fr 18rem; }
 }
 
 @media (max-width: 1100px) {
@@ -2123,7 +2136,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   .session-summary__stats { grid-template-columns: repeat(2, 1fr); }
   .review-header { flex-direction: column; align-items: stretch; }
   .review-header-controls { justify-content: flex-start; }
-  .flashcard-scene { min-height: 20rem; }
+  .flashcard-scene { min-height: 16.8rem; }
   .answer-grid { grid-template-columns: 1fr; }
   .hero-panel { padding: 1.25rem; }
 }

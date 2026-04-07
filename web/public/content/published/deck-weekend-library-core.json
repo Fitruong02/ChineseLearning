@@ -5,7 +5,11 @@
   "level": "HSK 2",
   "materialId": "material-weekend-library",
   "createdAt": "2026-04-05T12:30:00.000Z",
-  "tags": ["thư viện", "cuối tuần", "đọc hiểu"],
+  "tags": [
+    "thư viện",
+    "cuối tuần",
+    "đọc hiểu"
+  ],
   "cards": [
     {
       "id": "card-tushuguan",
@@ -16,7 +20,10 @@
       "exampleZh": "周末上午，我去图书馆还书。",
       "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách.",
       "audioText": "图书馆",
-      "tags": ["địa điểm", "học tập"]
+      "tags": [
+        "địa điểm",
+        "học tập"
+      ]
     },
     {
       "id": "card-huanshu",
@@ -27,7 +34,10 @@
       "exampleZh": "我去图书馆还书。",
       "exampleVi": "Tôi đến thư viện trả sách.",
       "audioText": "还书",
-      "tags": ["động từ", "thư viện"]
+      "tags": [
+        "động từ",
+        "thư viện"
+      ]
     },
     {
       "id": "card-jie",
@@ -38,7 +48,10 @@
       "exampleZh": "我想借一本新的小说。",
       "exampleVi": "Tôi muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "借",
-      "tags": ["động từ", "thư viện"]
+      "tags": [
+        "động từ",
+        "thư viện"
+      ]
     },
     {
       "id": "card-xiaoshuo",
@@ -49,7 +62,10 @@
       "exampleZh": "我想借一本新的小说。",
       "exampleVi": "Tôi muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "小说",
-      "tags": ["danh từ", "đọc sách"]
+      "tags": [
+        "danh từ",
+        "đọc sách"
+      ]
     },
     {
       "id": "card-zuowei",
@@ -60,7 +76,10 @@
       "exampleZh": "你可以先上去找座位。",
       "exampleVi": "Bạn có thể lên đó tìm chỗ ngồi trước.",
       "audioText": "座位",
-      "tags": ["thư viện", "địa điểm"]
+      "tags": [
+        "thư viện",
+        "địa điểm"
+      ]
     },
     {
       "id": "card-fuxi",
@@ -71,7 +90,10 @@
       "exampleZh": "我先复习昨天的生词。",
       "exampleVi": "Tôi ôn lại các từ mới của hôm qua trước.",
       "audioText": "复习",
-      "tags": ["học tập", "động từ"]
+      "tags": [
+        "học tập",
+        "động từ"
+      ]
     }
   ]
 }

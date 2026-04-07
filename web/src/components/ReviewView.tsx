@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
-  formatRelativeDue,
   isCardDue,
   isTroubleRecord,
   reviewTone,
 } from '../lib/srs'
+import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
 import type {
   MotionPreference,
   PhoneticMode,
@@ -23,17 +23,20 @@ interface ReviewViewProps {
   selectedDeckId: string
   sessionResetVersion: number
   immersiveMode: boolean
-  themeMode: 'light' | 'dark'
   hasChineseVoice: boolean
+  voiceMode: VoiceGenderMode
+  selectedVoiceUri: string
+  voiceOptions: ChineseVoiceOption[]
   onSelectDeck: (deckId: string) => void
   onReview: (cardId: string, ease: ReviewEase, sessionContext?: { occurredAt?: string }) => void
   onSpeak: (text: string) => void
+  onChangeVoiceMode: (mode: VoiceGenderMode) => void
+  onChangeSelectedVoiceUri: (voiceUri: string) => void
   onOpenReader: (options?: { materialId?: string; cardId?: string }) => void
   onResetSession: () => void
   onResetDeckProgress: (cardIds: string[]) => Promise<void>
   onResetAllProgress: () => Promise<void>
   onToggleImmersive: () => void
-  onToggleTheme: () => void
 }
 
 const reviewActions: Array<{
@@ -127,23 +130,38 @@ const normalizePinyin = (value: string) =>
     .toLowerCase()
     .trim()
 
-const pinyinVowels = ['a', 'e', 'i', 'o', 'u', 'v']
+const PINYIN_INITIALS = [
+  'zh', 'ch', 'sh',
+  'b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h',
+  'j', 'q', 'x', 'r', 'z', 'c', 's', 'y', 'w',
+]
+
+const splitPinyinSyllables = (rawPinyin: string) =>
+  normalizePinyin(rawPinyin)
+    .replace(/[^a-z\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+
+const splitInitialFinal = (syllable: string) => {
+  const matchedInitial = PINYIN_INITIALS.find((initial) => syllable.startsWith(initial))
+  if (matchedInitial) {
+    const final = syllable.slice(matchedInitial.length) || 'empty'
+    return { initial: matchedInitial, final }
+  }
+  return { initial: 'zero', final: syllable || 'other' }
+}
 
 const getPinyinInitialFinal = (rawPinyin: string) => {
-  const token = normalizePinyin(rawPinyin).split(/\s+/)[0] ?? ''
-  if (!token) {
-    return { initial: 'other', final: 'other' }
+  const syllables = splitPinyinSyllables(rawPinyin)
+  if (syllables.length === 0) {
+    return { initial: 'other', final: 'other', initialPattern: 'other', finalPattern: 'other' }
   }
-  const firstVowelIndex = [...token].findIndex((char) => pinyinVowels.includes(char))
-  if (firstVowelIndex <= 0) {
-    return {
-      initial: firstVowelIndex === 0 ? 'zero-initial' : token,
-      final: firstVowelIndex === 0 ? token : 'other',
-    }
-  }
+  const parts = syllables.map(splitInitialFinal)
   return {
-    initial: token.slice(0, firstVowelIndex),
-    final: token.slice(firstVowelIndex),
+    initial: parts[0].initial,
+    final: parts[0].final,
+    initialPattern: parts.map((part) => part.initial).join('-'),
+    finalPattern: parts.map((part) => part.final).join('-'),
   }
 }
 
@@ -173,19 +191,31 @@ const buildInitialQueue = (
       current.push(card)
       groups.set(key, current)
     })
-    const groupedQueue = [...groups.values()].flatMap((group) => group.map((card) => card.id))
+    const groupedQueue = [...groups.keys()]
+      .sort((left, right) => left.localeCompare(right))
+      .flatMap((key) =>
+        (groups.get(key) ?? [])
+          .sort((left, right) => left.hanzi.localeCompare(right.hanzi))
+          .map((card) => card.id),
+      )
     return groupedQueue
   }
   if (mixMode === 'by_phonetic') {
     const groups = new Map<string, PublishedCard[]>()
     dueCards.forEach((card) => {
-      const { initial, final } = getPinyinInitialFinal(card.pinyin)
-      const key = phoneticMode === 'initial' ? initial : final
+      const { initialPattern, finalPattern } = getPinyinInitialFinal(card.pinyin)
+      const key = phoneticMode === 'initial' ? initialPattern : finalPattern
       const current = groups.get(key) ?? []
       current.push(card)
       groups.set(key, current)
     })
-    return [...groups.values()].flatMap((group) => group.map((card) => card.id))
+    return [...groups.keys()]
+      .sort((left, right) => left.localeCompare(right))
+      .flatMap((key) =>
+        (groups.get(key) ?? [])
+          .sort((left, right) => left.hanzi.localeCompare(right.hanzi))
+          .map((card) => card.id),
+      )
   }
   if (!interleaveDecks) return dueCards.map((card) => card.id)
   const grouped = new Map<string, PublishedCard[]>()
@@ -239,17 +269,20 @@ export const ReviewView = ({
   selectedDeckId,
   sessionResetVersion,
   immersiveMode,
-  themeMode,
   hasChineseVoice,
+  voiceMode,
+  selectedVoiceUri,
+  voiceOptions,
   onSelectDeck,
   onReview,
   onSpeak,
+  onChangeVoiceMode,
+  onChangeSelectedVoiceUri,
   onOpenReader,
   onResetSession,
   onResetDeckProgress,
   onResetAllProgress,
   onToggleImmersive,
-  onToggleTheme,
 }: ReviewViewProps) => {
   const deckOptions = useMemo(
     () => [
@@ -401,6 +434,7 @@ export const ReviewView = ({
   const currentDeck = currentCard ? deckById.get(currentCard.deckId) : selectedDeck
   const initialTotal = sessionState.initialCardIds.length
   const completedCount = sessionState.completedCardIds.length
+  const remainingCount = queueCards.length
   const progressPercent = initialTotal > 0 ? Math.round((completedCount / initialTotal) * 100) : 0
 
   const sessionComplete =
@@ -421,10 +455,9 @@ export const ReviewView = ({
 
   const queueMeta = useMemo(() => ({
     pendingAgain: new Set(sessionState.pendingAgainCardIds),
-    checkpoint: new Set(sessionState.checkpointCardIds),
     trouble: new Set(sessionState.troubleCardIds),
     drill: new Set(sessionState.drillQueue),
-  }), [sessionState.checkpointCardIds, sessionState.drillQueue, sessionState.pendingAgainCardIds, sessionState.troubleCardIds])
+  }), [sessionState.drillQueue, sessionState.pendingAgainCardIds, sessionState.troubleCardIds])
 
   const troubleCards = useMemo(
     () => sessionState.troubleCardIds.map((id) => cardsById.get(id)).filter((c): c is PublishedCard => Boolean(c)),
@@ -553,14 +586,6 @@ export const ReviewView = ({
     onResetSession()
   }, [onResetSession])
 
-  const focusCard = useCallback((cardId: string) => {
-    setSessionState((cur) => {
-      if (!cur.sessionQueue.includes(cardId)) return cur
-      return { ...cur, sessionQueue: [cardId, ...cur.sessionQueue.filter((id) => id !== cardId)] }
-    })
-    setRevealed(false)
-  }, [])
-
   const handleResetDeck = useCallback(async () => {
     if (!selectedDeck || activeReset) return
     if (!window.confirm(`Reset tiến độ local của deck "${selectedDeck.title}"?`)) return
@@ -594,10 +619,9 @@ export const ReviewView = ({
       if (!currentCard || isEditableTarget(e.target)) return
       if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); return }
       if (e.shiftKey && (e.key === 'R' || e.key === 'r')) { e.preventDefault(); handleRestartSession(); return }
-      if (revealed && (e.key === 'a' || e.key === 'A') && currentCard.audioText) {
+      if ((e.key === 'a' || e.key === 'A') && currentCard.audioText) {
         e.preventDefault(); onSpeak(currentCard.audioText); return
       }
-      if (!revealed) return
       if (e.key === '1') { e.preventDefault(); reviewInSession('again') }
       else if (e.key === '2') { e.preventDefault(); reviewInSession('hard') }
       else if (e.key === '3') { e.preventDefault(); reviewInSession('good') }
@@ -605,7 +629,7 @@ export const ReviewView = ({
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentCard, flipCard, handleRestartSession, onSpeak, revealed, reviewInSession])
+  }, [currentCard, flipCard, handleRestartSession, onSpeak, reviewInSession])
 
   return (
     <section className={`view ${immersiveMode ? 'review-focus-mode' : ''}`}>
@@ -616,12 +640,6 @@ export const ReviewView = ({
           <h2>Lật thẻ, chấm điểm, đẩy nhịp.</h2>
         </div>
         <div className="review-header-controls">
-          <button type="button" className="ghost-button compact-button" onClick={onToggleImmersive}>
-            {immersiveMode ? 'Thoát focus' : 'Focus mode'}
-          </button>
-          <button type="button" className="ghost-button compact-button" onClick={onToggleTheme}>
-            {themeMode === 'dark' ? 'Light' : 'Dark'}
-          </button>
           <label className="filter-field" style={{ minWidth: '13rem' }}>
             <span>Deck đang ôn</span>
             <select value={selectedDeckId} onChange={(e) => { setRevealed(false); onSelectDeck(e.target.value) }}>
@@ -656,13 +674,6 @@ export const ReviewView = ({
               </select>
             </label>
           )}
-          <button
-            type="button"
-            className={`ghost-button compact-button ${focusDrillEnabled ? 'is-active' : ''}`}
-            onClick={() => setFocusDrillEnabled((value) => !value)}
-          >
-            {focusDrillEnabled ? 'Focus Drill: Bật' : 'Focus Drill: Tắt'}
-          </button>
         </div>
       </div>
 
@@ -681,7 +692,12 @@ export const ReviewView = ({
               <div className="progress-fill" style={{ width: `${progressPercent}%` }} />
             </div>
             <div className="session-chips">
-              <span className="tag-pill subdued">{initialTotal} thẻ tổng</span>
+              <span className="tag-pill subdued">
+                Còn {remainingCount}/{initialTotal} thẻ
+              </span>
+              <span className="tag-pill subdued">
+                Đã hoàn thành {completedCount}
+              </span>
               {sessionState.pendingAgainCardIds.length > 0 && (
                 <span className="tag-pill warn">
                   {sessionState.pendingAgainCardIds.length} cần hỏi lại
@@ -717,7 +733,6 @@ export const ReviewView = ({
           {studyReady && currentCard && (
             <>
               <div className="review-status">
-                <span className="tag-pill subdued">{queueCards.length} thẻ còn lại</span>
                 <span className="tag-pill subdued">{currentDeck?.title ?? 'Deck tổng'}</span>
                 {queueMeta.trouble.has(currentCard.id) && (
                   <span className="tag-pill danger">Trouble card</span>
@@ -792,49 +807,45 @@ export const ReviewView = ({
               </button>
 
               {/* Score buttons & actions */}
-              {revealed ? (
-                <>
-                  <div className="review-actions-grid">
-                    {reviewActions.map((action) => (
-                      <button
-                        key={action.ease}
-                        type="button"
-                        className={`score-button ${reviewTone(action.ease)}`}
-                        onClick={() => reviewInSession(action.ease)}
-                        aria-label={`${action.label}: ${action.note}`}
-                      >
-                        <span className="score-label">{action.label}</span>
-                        <span className="score-note">{action.note}</span>
-                        <span className="score-key">{action.hint}</span>
-                      </button>
-                    ))}
-                  </div>
+              <div className="review-actions-grid">
+                {reviewActions.map((action) => (
+                  <button
+                    key={action.ease}
+                    type="button"
+                    className={`score-button ${reviewTone(action.ease)}`}
+                    onClick={() => reviewInSession(action.ease)}
+                    aria-label={`${action.label}: ${action.note}`}
+                  >
+                    <span className="score-label">{action.label}</span>
+                    <span className="score-note">{action.note}</span>
+                    <span className="score-key">{action.hint}</span>
+                  </button>
+                ))}
+              </div>
 
-                  <div className="answer-actions">
-                    <button
-                      type="button"
-                      className="ghost-button utility-button compact-button"
-                      onClick={() => onSpeak(currentCard.audioText)}
-                    >
-                      {hasChineseVoice ? 'Phát âm (A)' : 'Không có zh voice'}
-                    </button>
-                    {currentDeck && (
-                      <button
-                        type="button"
-                        className="ghost-button utility-button compact-button"
-                        onClick={() => onOpenReader({ materialId: currentDeck.materialId, cardId: currentCard.id })}
-                      >
-                        Xem ngữ cảnh
-                      </button>
-                    )}
-                    <span className="review-shortcut-tip">
-                      Space lật · A phát âm · 1–3 chấm · Shift+R restart
-                    </span>
-                  </div>
-                </>
-              ) : (
-                <p className="review-shortcut-tip">Space để lật thẻ. Tự nhớ trước khi kiểm tra.</p>
-              )}
+              <div className="answer-actions">
+                <button
+                  type="button"
+                  className="ghost-button utility-button compact-button"
+                  onClick={() => onSpeak(currentCard.audioText)}
+                >
+                  {hasChineseVoice ? 'Phát âm (A)' : 'Không có zh voice'}
+                </button>
+                {currentDeck && (
+                  <button
+                    type="button"
+                    className="ghost-button utility-button compact-button"
+                    onClick={() => onOpenReader({ materialId: currentDeck.materialId, cardId: currentCard.id })}
+                  >
+                    Xem ngữ cảnh
+                  </button>
+                )}
+                <span className="review-shortcut-tip">
+                  {revealed
+                    ? 'Đã lật: 1–3 chấm trực tiếp hoặc Space úp lại.'
+                    : 'Mặt trước: vẫn có thể chấm 1–3 trực tiếp hoặc Space để lật.'}
+                </span>
+              </div>
             </>
           )}
 
@@ -901,44 +912,6 @@ export const ReviewView = ({
 
         {/* Sidebar */}
         <div className="review-side">
-          {/* Queue preview */}
-          <article className="panel">
-            <div className="section-heading">
-              <div>
-                <p className="eyebrow">Up next</p>
-                <h3>Queue — chỉ mặt trước</h3>
-              </div>
-            </div>
-            <p className="queue-privacy-note">
-              Không hiện nghĩa hay pinyin để tránh nhận mặt thay vì thực sự nhớ.
-            </p>
-            <div className="stack-list" style={{ marginTop: '0.5rem' }}>
-              {queueCards.slice(0, 8).map((card, index) => (
-                <button
-                  key={card.id}
-                  type="button"
-                  className={`list-row queue-row ${card.id === currentCard?.id ? 'is-selected' : ''}`}
-                  onClick={() => focusCard(card.id)}
-                >
-                  <div>
-                    <strong>{index + 1}. {card.hanzi}</strong>
-                    <p>{deckById.get(card.deckId)?.title ?? 'Deck'}</p>
-                    <div className="queue-tags">
-                      {queueMeta.pendingAgain.has(card.id) && <span className="tag-pill warn" style={{ fontSize: '0.7rem', padding: '0.18rem 0.45rem' }}>Lặp lại</span>}
-                      {queueMeta.checkpoint.has(card.id) && <span className="tag-pill subdued" style={{ fontSize: '0.7rem', padding: '0.18rem 0.45rem' }}>Checkpoint</span>}
-                      {queueMeta.trouble.has(card.id) && <span className="tag-pill danger" style={{ fontSize: '0.7rem', padding: '0.18rem 0.45rem' }}>Trouble</span>}
-                      {queueMeta.drill.has(card.id) && <span className="tag-pill danger" style={{ fontSize: '0.7rem', padding: '0.18rem 0.45rem' }}>Drill</span>}
-                    </div>
-                  </div>
-                  <span className="queue-row__meta">{formatRelativeDue(records[card.id])}</span>
-                </button>
-              ))}
-              {queueCards.length === 0 && (
-                <div className="empty-state subtle">Queue phiên hiện tại sạch.</div>
-              )}
-            </div>
-          </article>
-
           {/* Study controls */}
           <article className="panel review-controls">
             <div className="section-heading">
@@ -963,7 +936,48 @@ export const ReviewView = ({
               >
                 {motionPreference === 'full' ? '↻ Motion: Đầy đủ' : '↻ Motion: Giảm'}
               </button>
+              <button
+                type="button"
+                className={`sound-toggle ${focusDrillEnabled ? 'is-enabled' : ''}`}
+                onClick={() => setFocusDrillEnabled((value) => !value)}
+              >
+                {focusDrillEnabled ? '◉ Drill: Bật' : '◉ Drill: Tắt'}
+              </button>
+              <button
+                type="button"
+                className={`sound-toggle ${immersiveMode ? 'is-enabled' : ''}`}
+                onClick={onToggleImmersive}
+              >
+                {immersiveMode ? '▣ Focus: Bật' : '▣ Focus: Tắt'}
+              </button>
             </div>
+            <label className="filter-field">
+              <span>Giọng đọc tiếng Trung</span>
+              <select
+                value={voiceMode}
+                onChange={(event) => onChangeVoiceMode(event.target.value as VoiceGenderMode)}
+                disabled={!hasChineseVoice}
+              >
+                <option value="auto">Tự động</option>
+                <option value="male">Nam (ưu tiên)</option>
+                <option value="female">Nữ (ưu tiên)</option>
+              </select>
+            </label>
+            <label className="filter-field">
+              <span>Giọng cụ thể</span>
+              <select
+                value={selectedVoiceUri}
+                onChange={(event) => onChangeSelectedVoiceUri(event.target.value)}
+                disabled={!hasChineseVoice}
+              >
+                <option value="">Mặc định theo chế độ</option>
+                {voiceOptions.map((voice) => (
+                  <option key={voice.uri} value={voice.uri}>
+                    {voice.label}
+                  </option>
+                ))}
+              </select>
+            </label>
 
             <div className="review-controls__actions">
               <button type="button" className="ghost-button" onClick={handleRestartSession} disabled={!studyReady}>

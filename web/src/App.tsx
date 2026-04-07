@@ -48,7 +48,15 @@ function App() {
     records, isReady: studyReady, error: studyError,
     reviewCard, resetCurrentSession, resetDeckProgress, resetAllProgress, sessionResetVersion,
   } = useStudyRecords()
-  const { hasChineseVoice, speak } = useSpeech()
+  const {
+    hasChineseVoice,
+    speak,
+    voiceMode,
+    setVoiceMode,
+    selectedVoiceUri,
+    setSelectedVoiceUri,
+    voiceOptions,
+  } = useSpeech()
 
   const [activeTab, setActiveTab] = useState<TabId>(() => parseHashTab(window.location.hash))
   const [selectedDeckId, setSelectedDeckId] = useState('all')
@@ -163,8 +171,12 @@ function App() {
         selectedDeckId={selectedDeckId}
         sessionResetVersion={sessionResetVersion}
         immersiveMode={isImmersiveReview}
-        themeMode={themeMode}
         hasChineseVoice={hasChineseVoice}
+        voiceMode={voiceMode}
+        onChangeVoiceMode={setVoiceMode}
+        selectedVoiceUri={selectedVoiceUri}
+        voiceOptions={voiceOptions}
+        onChangeSelectedVoiceUri={setSelectedVoiceUri}
         onSelectDeck={setSelectedDeckId}
         onReview={reviewCard}
         onSpeak={speak}
@@ -173,7 +185,6 @@ function App() {
         onResetDeckProgress={resetDeckProgress}
         onResetAllProgress={resetAllProgress}
         onToggleImmersive={() => setImmersiveReviewMode((v) => !v)}
-        onToggleTheme={toggleTheme}
       />
     )
 
@@ -187,6 +198,7 @@ function App() {
         onSelectMaterial={setSelectedMaterialId}
         onHighlightCard={setHighlightedCardId}
         onOpenReview={openReview}
+        onSpeak={speak}
       />
     )
 

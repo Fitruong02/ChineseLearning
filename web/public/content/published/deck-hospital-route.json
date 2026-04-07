@@ -5,7 +5,11 @@
   "level": "HSK 1-2",
   "materialId": "material-hospital-route",
   "createdAt": "2026-04-06T12:00:00.000Z",
-  "tags": ["bệnh viện", "hỏi đường", "hội thoại"],
+  "tags": [
+    "bệnh viện",
+    "hỏi đường",
+    "hội thoại"
+  ],
   "cards": [
     {
       "id": "card-yiyuan",
@@ -16,7 +20,10 @@
       "exampleZh": "今天早上，林雨去医院挂号。",
       "exampleVi": "Sáng nay Lâm Vũ đến bệnh viện đăng ký khám.",
       "audioText": "医院",
-      "tags": ["địa điểm", "y tế"]
+      "tags": [
+        "địa điểm",
+        "y tế"
+      ]
     },
     {
       "id": "card-guahao",
@@ -27,7 +34,10 @@
       "exampleZh": "她先去医院挂号。",
       "exampleVi": "Cô ấy trước tiên đi đăng ký khám ở bệnh viện.",
       "audioText": "挂号",
-      "tags": ["y tế", "thủ tục"]
+      "tags": [
+        "y tế",
+        "thủ tục"
+      ]
     },
     {
       "id": "card-fuwutai",
@@ -38,7 +48,10 @@
       "exampleZh": "她先在服务台问路。",
       "exampleVi": "Cô ấy hỏi đường ở quầy dịch vụ trước.",
       "audioText": "服务台",
-      "tags": ["địa điểm", "toà nhà"]
+      "tags": [
+        "địa điểm",
+        "toà nhà"
+      ]
     },
     {
       "id": "card-neike",
@@ -49,7 +62,10 @@
       "exampleZh": "请问内科在哪里？",
       "exampleVi": "Cho hỏi khoa nội ở đâu ạ?",
       "audioText": "内科",
-      "tags": ["y tế", "khoa phòng"]
+      "tags": [
+        "y tế",
+        "khoa phòng"
+      ]
     },
     {
       "id": "card-hushi",
@@ -60,7 +76,10 @@
       "exampleZh": "护士说：“一直往前走。”",
       "exampleVi": "Y tá nói: “Cứ đi thẳng về phía trước.”",
       "audioText": "护士",
-      "tags": ["nghề nghiệp", "y tế"]
+      "tags": [
+        "nghề nghiệp",
+        "y tế"
+      ]
     },
     {
       "id": "card-yizhiwangqianzou",
@@ -71,7 +90,10 @@
       "exampleZh": "一直往前走，在二楼左边。",
       "exampleVi": "Cứ đi thẳng về phía trước, ở bên trái tầng hai.",
       "audioText": "一直往前走",
-      "tags": ["chỉ đường", "động từ"]
+      "tags": [
+        "chỉ đường",
+        "động từ"
+      ]
     },
     {
       "id": "card-erlou",
@@ -82,7 +104,10 @@
       "exampleZh": "内科在二楼左边。",
       "exampleVi": "Khoa nội ở bên trái tầng hai.",
       "audioText": "二楼",
-      "tags": ["toà nhà", "chỉ đường"]
+      "tags": [
+        "toà nhà",
+        "chỉ đường"
+      ]
     },
     {
       "id": "card-zuobian",
@@ -93,7 +118,9 @@
       "exampleZh": "在二楼左边。",
       "exampleVi": "Ở bên trái tầng hai.",
       "audioText": "左边",
-      "tags": ["chỉ đường"]
+      "tags": [
+        "chỉ đường"
+      ]
     },
     {
       "id": "card-kesou",
@@ -104,7 +131,10 @@
       "exampleZh": "你咳嗽多久了？",
       "exampleVi": "Bạn ho bao lâu rồi?",
       "audioText": "咳嗽",
-      "tags": ["triệu chứng", "y tế"]
+      "tags": [
+        "triệu chứng",
+        "y tế"
+      ]
     },
     {
       "id": "card-fashao",
@@ -115,7 +145,10 @@
       "exampleZh": "她还有一点发烧。",
       "exampleVi": "Cô ấy còn hơi sốt.",
       "audioText": "发烧",
-      "tags": ["triệu chứng", "y tế"]
+      "tags": [
+        "triệu chứng",
+        "y tế"
+      ]
     },
     {
       "id": "card-duoheshui",
@@ -126,7 +159,10 @@
       "exampleZh": "医生建议她多喝水。",
       "exampleVi": "Bác sĩ khuyên cô ấy uống nhiều nước.",
       "audioText": "多喝水",
-      "tags": ["lời khuyên", "y tế"]
+      "tags": [
+        "lời khuyên",
+        "y tế"
+      ]
     },
     {
       "id": "card-anshichiyao",
@@ -137,7 +173,10 @@
       "exampleZh": "医生建议她按时吃药。",
       "exampleVi": "Bác sĩ khuyên cô ấy uống thuốc đúng giờ.",
       "audioText": "按时吃药",
-      "tags": ["lời khuyên", "y tế"]
+      "tags": [
+        "lời khuyên",
+        "y tế"
+      ]
     }
   ]
 }

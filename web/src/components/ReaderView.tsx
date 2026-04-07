@@ -24,6 +24,7 @@ interface ReaderViewProps {
   onSelectMaterial: (materialId: string) => void
   onHighlightCard: (cardId: string | null) => void
   onOpenReview: (deckId?: string) => void
+  onSpeak: (text: string) => void
 }
 
 export const ReaderView = ({
@@ -35,6 +36,7 @@ export const ReaderView = ({
   onSelectMaterial,
   onHighlightCard,
   onOpenReview,
+  onSpeak,
 }: ReaderViewProps) => {
   const cardContextRef = useRef<HTMLElement | null>(null)
   const sectionRefMap = useRef<Record<string, HTMLElement | null>>({})
@@ -45,6 +47,8 @@ export const ReaderView = ({
   const [activeSentenceIndex, setActiveSentenceIndex] = useState<number | null>(null)
   const [isReading, setIsReading] = useState(false)
   const [isShadowing, setIsShadowing] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [cardSearchQuery, setCardSearchQuery] = useState('')
   const [shadowingWaitSeconds, setShadowingWaitSeconds] = useState<number>(() => {
     const raw = window.localStorage.getItem('reader-shadowing-wait-seconds')
     const parsed = raw ? Number(raw) : 1.8
@@ -70,6 +74,37 @@ export const ReaderView = ({
     : undefined
   const fallbackCard = focusCardIds[0] ? cardsById.get(focusCardIds[0]) : undefined
   const selectedCard = highlightedCard ?? fallbackCard
+  const normalizedCardQuery = cardSearchQuery.trim().toLowerCase()
+  const contextCards = useMemo(
+    () =>
+      focusCardIds
+        .map((cardId) => cardsById.get(cardId))
+        .filter((card): card is PublishedCard => Boolean(card)),
+    [cardsById, focusCardIds],
+  )
+  const filteredContextCards = useMemo(() => {
+    if (!normalizedCardQuery) {
+      return contextCards
+    }
+    return contextCards.filter((card) =>
+      [card.hanzi, card.pinyin, card.meaningVi, card.tags.join(' ')]
+        .join(' ')
+        .toLowerCase()
+        .includes(normalizedCardQuery),
+    )
+  }, [contextCards, normalizedCardQuery])
+  const normalizedQuery = searchQuery.trim().toLowerCase()
+  const filteredMaterials = useMemo(() => {
+    if (!normalizedQuery) {
+      return materials
+    }
+    return materials.filter((material) =>
+      [material.title, material.summary, material.tags.join(' ')]
+        .join(' ')
+        .toLowerCase()
+        .includes(normalizedQuery),
+    )
+  }, [materials, normalizedQuery])
 
   const getSectionSentences = (text: string) => {
     const compact = text.replace(/\n+/g, '')
@@ -310,8 +345,18 @@ export const ReaderView = ({
             </div>
           </div>
 
+          <label className="search-field">
+            <span>Tìm tài liệu / chủ đề</span>
+            <input
+              type="search"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="ví dụ: y tế, du lịch, blog"
+            />
+          </label>
+
           <div className="stack-list">
-            {materials.map((material) => (
+            {filteredMaterials.map((material) => (
               <button
                 key={material.id}
                 type="button"
@@ -498,15 +543,51 @@ export const ReaderView = ({
               <h3>{selectedCard?.hanzi ?? 'Chọn một từ trong bài'}</h3>
             </div>
             {selectedCard && (
-              <button
-                type="button"
-                className="secondary-button"
-                onClick={() => onOpenReview(selectedCard.deckId)}
-              >
-                Review deck
-              </button>
+              <div className="reading-controls">
+                <button
+                  type="button"
+                  className="secondary-button compact-button"
+                  onClick={() => onOpenReview(selectedCard.deckId)}
+                >
+                  Review deck
+                </button>
+                <button
+                  type="button"
+                  className="ghost-button compact-button"
+                  onClick={() => onSpeak(selectedCard.audioText)}
+                >
+                  Nghe từ này
+                </button>
+              </div>
             )}
           </div>
+          <label className="search-field" style={{ marginBottom: '0.7rem' }}>
+            <span>Tìm nhanh từ trong bài</span>
+            <input
+              type="search"
+              value={cardSearchQuery}
+              onChange={(event) => setCardSearchQuery(event.target.value)}
+              placeholder="Hanzi / pinyin / nghĩa"
+            />
+          </label>
+          {filteredContextCards.length > 0 && (
+            <div className="stack-list" style={{ marginBottom: '0.9rem', maxHeight: '13.5rem', overflowY: 'auto' }}>
+              {filteredContextCards.slice(0, 12).map((card) => (
+                <button
+                  key={card.id}
+                  type="button"
+                  className={`list-row ${selectedCard?.id === card.id ? 'is-selected' : ''}`}
+                  onClick={() => onHighlightCard(card.id)}
+                  style={{ padding: '0.55rem 0.75rem' }}
+                >
+                  <div>
+                    <strong>{card.hanzi}</strong>
+                    <p style={{ marginTop: '0.05rem' }}>{card.pinyin}</p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
 
           {selectedCard ? (
             <div className="card-context">
