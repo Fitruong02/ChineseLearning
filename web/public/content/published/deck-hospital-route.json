@@ -1,0 +1,143 @@
+{
+  "id": "deck-hospital-route",
+  "title": "医院与问路",
+  "description": "Bộ thẻ cốt lõi từ một bài đọc về đến bệnh viện, hỏi quầy và nghe chỉ dẫn trong toà nhà.",
+  "level": "HSK 1-2",
+  "materialId": "material-hospital-route",
+  "createdAt": "2026-04-06T12:00:00.000Z",
+  "tags": ["bệnh viện", "hỏi đường", "hội thoại"],
+  "cards": [
+    {
+      "id": "card-yiyuan",
+      "deckId": "deck-hospital-route",
+      "hanzi": "医院",
+      "pinyin": "yīyuàn",
+      "meaningVi": "bệnh viện",
+      "exampleZh": "今天早上，林雨去医院挂号。",
+      "exampleVi": "Sáng nay Lâm Vũ đến bệnh viện đăng ký khám.",
+      "audioText": "医院",
+      "tags": ["địa điểm", "y tế"]
+    },
+    {
+      "id": "card-guahao",
+      "deckId": "deck-hospital-route",
+      "hanzi": "挂号",
+      "pinyin": "guàhào",
+      "meaningVi": "đăng ký khám",
+      "exampleZh": "她先去医院挂号。",
+      "exampleVi": "Cô ấy trước tiên đi đăng ký khám ở bệnh viện.",
+      "audioText": "挂号",
+      "tags": ["y tế", "thủ tục"]
+    },
+    {
+      "id": "card-fuwutai",
+      "deckId": "deck-hospital-route",
+      "hanzi": "服务台",
+      "pinyin": "fúwùtái",
+      "meaningVi": "quầy dịch vụ",
+      "exampleZh": "她先在服务台问路。",
+      "exampleVi": "Cô ấy hỏi đường ở quầy dịch vụ trước.",
+      "audioText": "服务台",
+      "tags": ["địa điểm", "toà nhà"]
+    },
+    {
+      "id": "card-neike",
+      "deckId": "deck-hospital-route",
+      "hanzi": "内科",
+      "pinyin": "nèikē",
+      "meaningVi": "khoa nội",
+      "exampleZh": "请问内科在哪里？",
+      "exampleVi": "Cho hỏi khoa nội ở đâu ạ?",
+      "audioText": "内科",
+      "tags": ["y tế", "khoa phòng"]
+    },
+    {
+      "id": "card-hushi",
+      "deckId": "deck-hospital-route",
+      "hanzi": "护士",
+      "pinyin": "hùshi",
+      "meaningVi": "y tá",
+      "exampleZh": "护士说：“一直往前走。”",
+      "exampleVi": "Y tá nói: “Cứ đi thẳng về phía trước.”",
+      "audioText": "护士",
+      "tags": ["nghề nghiệp", "y tế"]
+    },
+    {
+      "id": "card-yizhiwangqianzou",
+      "deckId": "deck-hospital-route",
+      "hanzi": "一直往前走",
+      "pinyin": "yìzhí wǎng qián zǒu",
+      "meaningVi": "cứ đi thẳng về phía trước",
+      "exampleZh": "一直往前走，在二楼左边。",
+      "exampleVi": "Cứ đi thẳng về phía trước, ở bên trái tầng hai.",
+      "audioText": "一直往前走",
+      "tags": ["chỉ đường", "động từ"]
+    },
+    {
+      "id": "card-erlou",
+      "deckId": "deck-hospital-route",
+      "hanzi": "二楼",
+      "pinyin": "èrlóu",
+      "meaningVi": "tầng hai",
+      "exampleZh": "内科在二楼左边。",
+      "exampleVi": "Khoa nội ở bên trái tầng hai.",
+      "audioText": "二楼",
+      "tags": ["toà nhà", "chỉ đường"]
+    },
+    {
+      "id": "card-zuobian",
+      "deckId": "deck-hospital-route",
+      "hanzi": "左边",
+      "pinyin": "zuǒbiān",
+      "meaningVi": "bên trái",
+      "exampleZh": "在二楼左边。",
+      "exampleVi": "Ở bên trái tầng hai.",
+      "audioText": "左边",
+      "tags": ["chỉ đường"]
+    },
+    {
+      "id": "card-kesou",
+      "deckId": "deck-hospital-route",
+      "hanzi": "咳嗽",
+      "pinyin": "késou",
+      "meaningVi": "ho",
+      "exampleZh": "你咳嗽多久了？",
+      "exampleVi": "Bạn ho bao lâu rồi?",
+      "audioText": "咳嗽",
+      "tags": ["triệu chứng", "y tế"]
+    },
+    {
+      "id": "card-fashao",
+      "deckId": "deck-hospital-route",
+      "hanzi": "发烧",
+      "pinyin": "fāshāo",
+      "meaningVi": "sốt",
+      "exampleZh": "她还有一点发烧。",
+      "exampleVi": "Cô ấy còn hơi sốt.",
+      "audioText": "发烧",
+      "tags": ["triệu chứng", "y tế"]
+    },
+    {
+      "id": "card-duoheshui",
+      "deckId": "deck-hospital-route",
+      "hanzi": "多喝水",
+      "pinyin": "duō hē shuǐ",
+      "meaningVi": "uống nhiều nước",
+      "exampleZh": "医生建议她多喝水。",
+      "exampleVi": "Bác sĩ khuyên cô ấy uống nhiều nước.",
+      "audioText": "多喝水",
+      "tags": ["lời khuyên", "y tế"]
+    },
+    {
+      "id": "card-anshichiyao",
+      "deckId": "deck-hospital-route",
+      "hanzi": "按时吃药",
+      "pinyin": "ànshí chī yào",
+      "meaningVi": "uống thuốc đúng giờ",
+      "exampleZh": "医生建议她按时吃药。",
+      "exampleVi": "Bác sĩ khuyên cô ấy uống thuốc đúng giờ.",
+      "audioText": "按时吃药",
+      "tags": ["lời khuyên", "y tế"]
+    }
+  ]
+}

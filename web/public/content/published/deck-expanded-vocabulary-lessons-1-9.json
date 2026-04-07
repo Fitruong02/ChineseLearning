@@ -1,0 +1,3166 @@
+{
+  "id": "deck-expanded-vocabulary-lessons-1-9",
+  "title": "Expanded Vocabulary Lessons 1-9",
+  "description": "Extended deck extracted from PDF, preserving lesson and item order for flashcard review.",
+  "level": "HSK 2-4",
+  "materialId": "material-expanded-vocabulary-lessons-1-9",
+  "createdAt": "2026-04-07T10:00:00.000Z",
+  "tags": [
+    "expanded",
+    "lessons-1-9",
+    "flashcard",
+    "pdf"
+  ],
+  "cards": [
+    {
+      "id": "card-expanded-vocab-001",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "博客",
+      "pinyin": "bókè",
+      "meaningVi": "Blog",
+      "exampleZh": "课文常见词：博客。",
+      "exampleVi": "Tu '博客' nghia la: Blog.",
+      "audioText": "博客",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-002",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "逐渐",
+      "pinyin": "zhújiàn",
+      "meaningVi": "Dần dần",
+      "exampleZh": "课文常见词：逐渐。",
+      "exampleVi": "Tu '逐渐' nghia la: Dần dần.",
+      "audioText": "逐渐",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-003",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "流行",
+      "pinyin": "liúxíng",
+      "meaningVi": "Phổ biến; thịnh hành",
+      "exampleZh": "课文常见词：流行。",
+      "exampleVi": "Tu '流行' nghia la: Phổ biến; thịnh hành.",
+      "audioText": "流行",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-004",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "译音",
+      "pinyin": "yìyīn",
+      "meaningVi": "Phiên âm",
+      "exampleZh": "课文常见词：译音。",
+      "exampleVi": "Tu '译音' nghia la: Phiên âm.",
+      "audioText": "译音",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-005",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "简称",
+      "pinyin": "jiǎnchēng",
+      "meaningVi": "Viết tắt; gọi tắt",
+      "exampleZh": "课文常见词：简称。",
+      "exampleVi": "Tu '简称' nghia la: Viết tắt; gọi tắt.",
+      "audioText": "简称",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-006",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "日志",
+      "pinyin": "rìzhì",
+      "meaningVi": "Nhật ký",
+      "exampleZh": "课文常见词：日志。",
+      "exampleVi": "Tu '日志' nghia la: Nhật ký.",
+      "audioText": "日志",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-007",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "发布",
+      "pinyin": "fābù",
+      "meaningVi": "Phát hành; công bố",
+      "exampleZh": "课文常见词：发布。",
+      "exampleVi": "Tu '发布' nghia la: Phát hành; công bố.",
+      "audioText": "发布",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-008",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "网页",
+      "pinyin": "wǎngyè",
+      "meaningVi": "Trang web",
+      "exampleZh": "课文常见词：网页。",
+      "exampleVi": "Tu '网页' nghia la: Trang web.",
+      "audioText": "网页",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-009",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "简短",
+      "pinyin": "jiǎnduǎn",
+      "meaningVi": "Ngắn gọn",
+      "exampleZh": "课文常见词：简短。",
+      "exampleVi": "Tu '简短' nghia la: Ngắn gọn.",
+      "audioText": "简短",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-010",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "帖子",
+      "pinyin": "tiězi",
+      "meaningVi": "Bài đăng; bài viết (trên mạng)",
+      "exampleZh": "课文常见词：帖子。",
+      "exampleVi": "Tu '帖子' nghia la: Bài đăng; bài viết (trên mạng).",
+      "audioText": "帖子",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-011",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "交流",
+      "pinyin": "jiāoliú",
+      "meaningVi": "Giao lưu; trao đổi",
+      "exampleZh": "课文常见词：交流。",
+      "exampleVi": "Tu '交流' nghia la: Giao lưu; trao đổi.",
+      "audioText": "交流",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-012",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "平台",
+      "pinyin": "píngtái",
+      "meaningVi": "Nền tảng",
+      "exampleZh": "课文常见词：平台。",
+      "exampleVi": "Tu '平台' nghia la: Nền tảng.",
+      "audioText": "平台",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-013",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "拥有",
+      "pinyin": "yǒngyǒu",
+      "meaningVi": "Sở hữu",
+      "exampleZh": "课文常见词：拥有。",
+      "exampleVi": "Tu '拥有' nghia la: Sở hữu.",
+      "audioText": "拥有",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-014",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "建立",
+      "pinyin": "jiànlì",
+      "meaningVi": "Xây dựng; thành lập",
+      "exampleZh": "课文常见词：建立。",
+      "exampleVi": "Tu '建立' nghia la: Xây dựng; thành lập.",
+      "audioText": "建立",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-015",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "注册",
+      "pinyin": "zhùcè",
+      "meaningVi": "Đăng ký",
+      "exampleZh": "课文常见词：注册。",
+      "exampleVi": "Tu '注册' nghia la: Đăng ký.",
+      "audioText": "注册",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-016",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "设计",
+      "pinyin": "shèjì",
+      "meaningVi": "Thiết kế",
+      "exampleZh": "课文常见词：设计。",
+      "exampleVi": "Tu '设计' nghia la: Thiết kế.",
+      "audioText": "设计",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-017",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "风格",
+      "pinyin": "fēnggé",
+      "meaningVi": "Phong cách",
+      "exampleZh": "课文常见词：风格。",
+      "exampleVi": "Tu '风格' nghia la: Phong cách.",
+      "audioText": "风格",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-018",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "页面",
+      "pinyin": "yèmiàn",
+      "meaningVi": "Giao diện; trang",
+      "exampleZh": "课文常见词：页面。",
+      "exampleVi": "Tu '页面' nghia la: Giao diện; trang.",
+      "audioText": "页面",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-019",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "发表",
+      "pinyin": "fābiǎo",
+      "meaningVi": "Phát biểu; đăng tải",
+      "exampleZh": "课文常见词：发表。",
+      "exampleVi": "Tu '发表' nghia la: Phát biểu; đăng tải.",
+      "audioText": "发表",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-020",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "分享",
+      "pinyin": "fēnxiǎng",
+      "meaningVi": "Chia sẻ",
+      "exampleZh": "课文常见词：分享。",
+      "exampleVi": "Tu '分享' nghia la: Chia sẻ.",
+      "audioText": "分享",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-021",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "网址",
+      "pinyin": "wǎngzhǐ",
+      "meaningVi": "trang web",
+      "exampleZh": "课文常见词：网址。",
+      "exampleVi": "Tu '网址' nghia la: trang web.",
+      "audioText": "网址",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-022",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "印",
+      "pinyin": "yìn",
+      "meaningVi": "In ấn",
+      "exampleZh": "课文常见词：印。",
+      "exampleVi": "Tu '印' nghia la: In ấn.",
+      "audioText": "印",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-023",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "吸引",
+      "pinyin": "xīyǐn",
+      "meaningVi": "Thu hút; hấp dẫn",
+      "exampleZh": "课文常见词：吸引。",
+      "exampleVi": "Tu '吸引' nghia la: Thu hút; hấp dẫn.",
+      "audioText": "吸引",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-024",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "话题",
+      "pinyin": "huàtí",
+      "meaningVi": "Chủ đề",
+      "exampleZh": "课文常见词：话题。",
+      "exampleVi": "Tu '话题' nghia la: Chủ đề.",
+      "audioText": "话题",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-025",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "违反",
+      "pinyin": "wéifǎn",
+      "meaningVi": "Vi phạm",
+      "exampleZh": "课文常见词：违反。",
+      "exampleVi": "Tu '违反' nghia la: Vi phạm.",
+      "audioText": "违反",
+      "tags": [
+        "expanded",
+        "第一课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-026",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "人际",
+      "pinyin": "rénjì",
+      "meaningVi": "Quan hệ giữa người với người",
+      "exampleZh": "课文常见词：人际。",
+      "exampleVi": "Tu '人际' nghia la: Quan hệ giữa người với người.",
+      "audioText": "人际",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-027",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "相互",
+      "pinyin": "xiānghù",
+      "meaningVi": "Lẫn nhau",
+      "exampleZh": "课文常见词：相互。",
+      "exampleVi": "Tu '相互' nghia la: Lẫn nhau.",
+      "audioText": "相互",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-028",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "事物",
+      "pinyin": "shìwù",
+      "meaningVi": "Sự vật, sự việc",
+      "exampleZh": "课文常见词：事物。",
+      "exampleVi": "Tu '事物' nghia la: Sự vật, sự việc.",
+      "audioText": "事物",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-029",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "谦称",
+      "pinyin": "qiānchēng",
+      "meaningVi": "Tự khiêm nhường",
+      "exampleZh": "课文常见词：谦称。",
+      "exampleVi": "Tu '谦称' nghia la: Tự khiêm nhường.",
+      "audioText": "谦称",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-030",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "免",
+      "pinyin": "miǎn",
+      "meaningVi": "Miễn, bỏ qua",
+      "exampleZh": "课文常见词：免。",
+      "exampleVi": "Tu '免' nghia la: Miễn, bỏ qua.",
+      "audioText": "免",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-031",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "对方",
+      "pinyin": "duìfāng",
+      "meaningVi": "Đối phương, bên kia",
+      "exampleZh": "课文常见词：对方。",
+      "exampleVi": "Tu '对方' nghia la: Đối phương, bên kia.",
+      "audioText": "对方",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-032",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "尊重",
+      "pinyin": "zūnzhòng",
+      "meaningVi": "Tôn trọng",
+      "exampleZh": "课文常见词：尊重。",
+      "exampleVi": "Tu '尊重' nghia la: Tôn trọng.",
+      "audioText": "尊重",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-033",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "承受",
+      "pinyin": "chéngshòu",
+      "meaningVi": "Chịu đựng, tiếp nhận",
+      "exampleZh": "课文常见词：承受。",
+      "exampleVi": "Tu '承受' nghia la: Chịu đựng, tiếp nhận.",
+      "audioText": "承受",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-034",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "尊",
+      "pinyin": "zūn",
+      "meaningVi": "(Từ tôn kính) Ngài, của ngài",
+      "exampleZh": "课文常见词：尊。",
+      "exampleVi": "Tu '尊' nghia la: (Từ tôn kính) Ngài, của ngài.",
+      "audioText": "尊",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-035",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "称",
+      "pinyin": "chēng",
+      "meaningVi": "Gọi, xưng hô",
+      "exampleZh": "课文常见词：称。",
+      "exampleVi": "Tu '称' nghia la: Gọi, xưng hô.",
+      "audioText": "称",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-036",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "以及",
+      "pinyin": "yǐjí",
+      "meaningVi": "Và, cũng như",
+      "exampleZh": "课文常见词：以及。",
+      "exampleVi": "Tu '以及' nghia la: Và, cũng như.",
+      "audioText": "以及",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-037",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "询问",
+      "pinyin": "xúnwèn",
+      "meaningVi": "Hỏi thăm, thăm hỏi",
+      "exampleZh": "课文常见词：询问。",
+      "exampleVi": "Tu '询问' nghia la: Hỏi thăm, thăm hỏi.",
+      "audioText": "询问",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-038",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "令",
+      "pinyin": "lìng",
+      "meaningVi": "(Từ tôn kính) Của ngài",
+      "exampleZh": "课文常见词：令。",
+      "exampleVi": "Tu '令' nghia la: (Từ tôn kính) Của ngài.",
+      "audioText": "令",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-039",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "专",
+      "pinyin": "zhuān",
+      "meaningVi": "Chuyên, chuyên biệt",
+      "exampleZh": "课文常见词：专。",
+      "exampleVi": "Tu '专' nghia la: Chuyên, chuyên biệt.",
+      "audioText": "专",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-040",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "亲属",
+      "pinyin": "qīnshǔ",
+      "meaningVi": "Người thân, họ hàng",
+      "exampleZh": "课文常见词：亲属。",
+      "exampleVi": "Tu '亲属' nghia la: Người thân, họ hàng.",
+      "audioText": "亲属",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-041",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "则",
+      "pinyin": "zé",
+      "meaningVi": "Thì, bèn (biểu thị quan hệ nhân quả)",
+      "exampleZh": "课文常见词：则。",
+      "exampleVi": "Tu '则' nghia la: Thì, bèn (biểu thị quan hệ nhân quả).",
+      "audioText": "则",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-042",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "愚",
+      "pinyin": "yú",
+      "meaningVi": "(Tự xưng khiêm tốn) Ngu, kém cỏi",
+      "exampleZh": "课文常见词：愚。",
+      "exampleVi": "Tu '愚' nghia la: (Tự xưng khiêm tốn) Ngu, kém cỏi.",
+      "audioText": "愚",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-043",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "拙",
+      "pinyin": "zhuō",
+      "meaningVi": "(Tự xưng khiêm tốn) Kém cỏi, vụng về",
+      "exampleZh": "课文常见词：拙。",
+      "exampleVi": "Tu '拙' nghia la: (Tự xưng khiêm tốn) Kém cỏi, vụng về.",
+      "audioText": "拙",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-044",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "见解",
+      "pinyin": "jiànjiě",
+      "meaningVi": "Quan điểm, cách nhìn nhận",
+      "exampleZh": "课文常见词：见解。",
+      "exampleVi": "Tu '见解' nghia la: Quan điểm, cách nhìn nhận.",
+      "audioText": "见解",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-045",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "辈分",
+      "pinyin": "bèifen",
+      "meaningVi": "Bậc, vai vế trong gia đình hoặc họ hàng",
+      "exampleZh": "课文常见词：辈分。",
+      "exampleVi": "Tu '辈分' nghia la: Bậc, vai vế trong gia đình hoặc họ hàng.",
+      "audioText": "辈分",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-046",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "话语",
+      "pinyin": "huàyǔ",
+      "meaningVi": "Lời nói, ngôn từ",
+      "exampleZh": "课文常见词：话语。",
+      "exampleVi": "Tu '话语' nghia la: Lời nói, ngôn từ.",
+      "audioText": "话语",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-047",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "包含",
+      "pinyin": "bāohán",
+      "meaningVi": "Bao hàm, bao gồm",
+      "exampleZh": "课文常见词：包含。",
+      "exampleVi": "Tu '包含' nghia la: Bao hàm, bao gồm.",
+      "audioText": "包含",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-048",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "在内",
+      "pinyin": "zàinèi",
+      "meaningVi": "Bao gồm trong đó",
+      "exampleZh": "课文常见词：在内。",
+      "exampleVi": "Tu '在内' nghia la: Bao gồm trong đó.",
+      "audioText": "在内",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-049",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "多余",
+      "pinyin": "duōyú",
+      "meaningVi": "Dư thừa, không cần thiết",
+      "exampleZh": "课文常见词：多余。",
+      "exampleVi": "Tu '多余' nghia la: Dư thừa, không cần thiết.",
+      "audioText": "多余",
+      "tags": [
+        "expanded",
+        "第二课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-050",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "回想",
+      "pinyin": "huíxiǎng",
+      "meaningVi": "Hồi tưởng; nhớ lại",
+      "exampleZh": "课文常见词：回想。",
+      "exampleVi": "Tu '回想' nghia la: Hồi tưởng; nhớ lại.",
+      "audioText": "回想",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-051",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "当年",
+      "pinyin": "dāngnián",
+      "meaningVi": "Những năm đó",
+      "exampleZh": "课文常见词：当年。",
+      "exampleVi": "Tu '当年' nghia la: Những năm đó.",
+      "audioText": "当年",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-052",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "产品",
+      "pinyin": "chǎnpǐn",
+      "meaningVi": "Sản phẩm",
+      "exampleZh": "课文常见词：产品。",
+      "exampleVi": "Tu '产品' nghia la: Sản phẩm.",
+      "audioText": "产品",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-053",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "开办",
+      "pinyin": "kāibàn",
+      "meaningVi": "Thành lập; mở (công ty, doanh nghiệp)",
+      "exampleZh": "课文常见词：开办。",
+      "exampleVi": "Tu '开办' nghia la: Thành lập; mở (công ty, doanh nghiệp).",
+      "audioText": "开办",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-054",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "运送",
+      "pinyin": "yùnsòng",
+      "meaningVi": "Vận chuyển",
+      "exampleZh": "课文常见词：运送。",
+      "exampleVi": "Tu '运送' nghia la: Vận chuyển.",
+      "audioText": "运送",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-055",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "遍布",
+      "pinyin": "biànbù",
+      "meaningVi": "Phân bố rộng khắp",
+      "exampleZh": "课文常见词：遍布。",
+      "exampleVi": "Tu '遍布' nghia la: Phân bố rộng khắp.",
+      "audioText": "遍布",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-056",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "网点",
+      "pinyin": "wǎngdiǎn",
+      "meaningVi": "Mạng lưới; điểm mạng",
+      "exampleZh": "课文常见词：网点。",
+      "exampleVi": "Tu '网点' nghia la: Mạng lưới; điểm mạng.",
+      "audioText": "网点",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-057",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "创业",
+      "pinyin": "chuàngyè",
+      "meaningVi": "Khởi nghiệp",
+      "exampleZh": "课文常见词：创业。",
+      "exampleVi": "Tu '创业' nghia la: Khởi nghiệp.",
+      "audioText": "创业",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-058",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "资金",
+      "pinyin": "zījīn",
+      "meaningVi": "Quỹ; vốn",
+      "exampleZh": "课文常见词：资金。",
+      "exampleVi": "Tu '资金' nghia la: Quỹ; vốn.",
+      "audioText": "资金",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-059",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "生存",
+      "pinyin": "shēngcún",
+      "meaningVi": "Sinh tồn; tồn tại",
+      "exampleZh": "课文常见词：生存。",
+      "exampleVi": "Tu '生存' nghia la: Sinh tồn; tồn tại.",
+      "audioText": "生存",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-060",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "违禁品",
+      "pinyin": "wéijìnpǐn",
+      "meaningVi": "Hàng cấm",
+      "exampleZh": "课文常见词：违禁品。",
+      "exampleVi": "Tu '违禁品' nghia la: Hàng cấm.",
+      "audioText": "违禁品",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-061",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "包括",
+      "pinyin": "bāokuò",
+      "meaningVi": "Bao gồm",
+      "exampleZh": "课文常见词：包括。",
+      "exampleVi": "Tu '包括' nghia la: Bao gồm.",
+      "audioText": "包括",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-062",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "趁",
+      "pinyin": "chèn",
+      "meaningVi": "Nhân lúc; tận dụng",
+      "exampleZh": "课文常见词：趁。",
+      "exampleVi": "Tu '趁' nghia la: Nhân lúc; tận dụng.",
+      "audioText": "趁",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-063",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "烤鸭",
+      "pinyin": "kǎoyā",
+      "meaningVi": "Vịt quay",
+      "exampleZh": "课文常见词：烤鸭。",
+      "exampleVi": "Tu '烤鸭' nghia la: Vịt quay.",
+      "audioText": "烤鸭",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-064",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "职工",
+      "pinyin": "zhígōng",
+      "meaningVi": "Công nhân; nhân viên",
+      "exampleZh": "课文常见词：职工。",
+      "exampleVi": "Tu '职工' nghia la: Công nhân; nhân viên.",
+      "audioText": "职工",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-065",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "覆盖",
+      "pinyin": "fùgài",
+      "meaningVi": "Phủ; che phủ",
+      "exampleZh": "课文常见词：覆盖。",
+      "exampleVi": "Tu '覆盖' nghia la: Phủ; che phủ.",
+      "audioText": "覆盖",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-066",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "地区",
+      "pinyin": "dìqū",
+      "meaningVi": "Khu vực; vùng",
+      "exampleZh": "课文常见词：地区。",
+      "exampleVi": "Tu '地区' nghia la: Khu vực; vùng.",
+      "audioText": "地区",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-067",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "城镇",
+      "pinyin": "chéngzhèn",
+      "meaningVi": "Thành phố và thị trấn",
+      "exampleZh": "课文常见词：城镇。",
+      "exampleVi": "Tu '城镇' nghia la: Thành phố và thị trấn.",
+      "audioText": "城镇",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-068",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "民营",
+      "pinyin": "mínyíng",
+      "meaningVi": "Kinh doanh tư nhân",
+      "exampleZh": "课文常见词：民营。",
+      "exampleVi": "Tu '民营' nghia la: Kinh doanh tư nhân.",
+      "audioText": "民营",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-069",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "业",
+      "pinyin": "yè",
+      "meaningVi": "Ngành; lĩnh vực",
+      "exampleZh": "课文常见词：业。",
+      "exampleVi": "Tu '业' nghia la: Ngành; lĩnh vực.",
+      "audioText": "业",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-070",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "成本",
+      "pinyin": "chéngběn",
+      "meaningVi": "Chi phí",
+      "exampleZh": "课文常见词：成本。",
+      "exampleVi": "Tu '成本' nghia la: Chi phí.",
+      "audioText": "成本",
+      "tags": [
+        "expanded",
+        "第三课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-071",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "对象",
+      "pinyin": "duìxiàng",
+      "meaningVi": "Đối tượng; mục tiêu",
+      "exampleZh": "课文常见词：对象。",
+      "exampleVi": "Tu '对象' nghia la: Đối tượng; mục tiêu.",
+      "audioText": "对象",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-072",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "俱乐部",
+      "pinyin": "jùlèbù",
+      "meaningVi": "Câu lạc bộ",
+      "exampleZh": "课文常见词：俱乐部。",
+      "exampleVi": "Tu '俱乐部' nghia la: Câu lạc bộ.",
+      "audioText": "俱乐部",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-073",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "美容",
+      "pinyin": "měiróng",
+      "meaningVi": "Làm đẹp",
+      "exampleZh": "课文常见词：美容。",
+      "exampleVi": "Tu '美容' nghia la: Làm đẹp.",
+      "audioText": "美容",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-074",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "休闲",
+      "pinyin": "xiūxián",
+      "meaningVi": "Nghỉ ngơi, giải trí",
+      "exampleZh": "课文常见词：休闲。",
+      "exampleVi": "Tu '休闲' nghia la: Nghỉ ngơi, giải trí.",
+      "audioText": "休闲",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-075",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "教练",
+      "pinyin": "jiàoliàn",
+      "meaningVi": "Huấn luyện viên",
+      "exampleZh": "课文常见词：教练。",
+      "exampleVi": "Tu '教练' nghia la: Huấn luyện viên.",
+      "audioText": "教练",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-076",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "器械",
+      "pinyin": "qìxiè",
+      "meaningVi": "Thiết bị, dụng cụ",
+      "exampleZh": "课文常见词：器械。",
+      "exampleVi": "Tu '器械' nghia la: Thiết bị, dụng cụ.",
+      "audioText": "器械",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-077",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "操",
+      "pinyin": "cāo",
+      "meaningVi": "Bài tập thể chất",
+      "exampleZh": "课文常见词：操。",
+      "exampleVi": "Tu '操' nghia la: Bài tập thể chất.",
+      "audioText": "操",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-078",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "训练",
+      "pinyin": "xùnliàn",
+      "meaningVi": "Huấn luyện",
+      "exampleZh": "课文常见词：训练。",
+      "exampleVi": "Tu '训练' nghia la: Huấn luyện.",
+      "audioText": "训练",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-079",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "体魄",
+      "pinyin": "tǐpò",
+      "meaningVi": "Thể chất",
+      "exampleZh": "课文常见词：体魄。",
+      "exampleVi": "Tu '体魄' nghia la: Thể chất.",
+      "audioText": "体魄",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-080",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "丽人",
+      "pinyin": "lìrén",
+      "meaningVi": "Mỹ nhân",
+      "exampleZh": "课文常见词：丽人。",
+      "exampleVi": "Tu '丽人' nghia la: Mỹ nhân.",
+      "audioText": "丽人",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-081",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "减肥",
+      "pinyin": "jiǎn féi",
+      "meaningVi": "Giảm cân",
+      "exampleZh": "课文常见词：减肥。",
+      "exampleVi": "Tu '减肥' nghia la: Giảm cân.",
+      "audioText": "减肥",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-082",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "场所",
+      "pinyin": "chǎngsuǒ",
+      "meaningVi": "Địa điểm",
+      "exampleZh": "课文常见词：场所。",
+      "exampleVi": "Tu '场所' nghia la: Địa điểm.",
+      "audioText": "场所",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-083",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "塑造",
+      "pinyin": "sùzào",
+      "meaningVi": "Tạo hình",
+      "exampleZh": "课文常见词：塑造。",
+      "exampleVi": "Tu '塑造' nghia la: Tạo hình.",
+      "audioText": "塑造",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-084",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "身材",
+      "pinyin": "shēncái",
+      "meaningVi": "Dáng vóc",
+      "exampleZh": "课文常见词：身材。",
+      "exampleVi": "Tu '身材' nghia la: Dáng vóc.",
+      "audioText": "身材",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-085",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "活力",
+      "pinyin": "huólì",
+      "meaningVi": "Năng lượng",
+      "exampleZh": "课文常见词：活力。",
+      "exampleVi": "Tu '活力' nghia la: Năng lượng.",
+      "audioText": "活力",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-086",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "充实",
+      "pinyin": "chōngshí",
+      "meaningVi": "Phong phú; đầy đủ",
+      "exampleZh": "课文常见词：充实。",
+      "exampleVi": "Tu '充实' nghia la: Phong phú; đầy đủ.",
+      "audioText": "充实",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-087",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "解除",
+      "pinyin": "jiěchú",
+      "meaningVi": "Giải tỏa",
+      "exampleZh": "课文常见词：解除。",
+      "exampleVi": "Tu '解除' nghia la: Giải tỏa.",
+      "audioText": "解除",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-088",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "压力",
+      "pinyin": "yālì",
+      "meaningVi": "Áp lực",
+      "exampleZh": "课文常见词：压力。",
+      "exampleVi": "Tu '压力' nghia la: Áp lực.",
+      "audioText": "压力",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-089",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "打破",
+      "pinyin": "dǎpò",
+      "meaningVi": "Phá vỡ",
+      "exampleZh": "课文常见词：打破。",
+      "exampleVi": "Tu '打破' nghia la: Phá vỡ.",
+      "audioText": "打破",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-090",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "单纯",
+      "pinyin": "dānchún",
+      "meaningVi": "Đơn thuần",
+      "exampleZh": "课文常见词：单纯。",
+      "exampleVi": "Tu '单纯' nghia la: Đơn thuần.",
+      "audioText": "单纯",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-091",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "模式",
+      "pinyin": "móshì",
+      "meaningVi": "Mô hình; kiểu mẫu",
+      "exampleZh": "课文常见词：模式。",
+      "exampleVi": "Tu '模式' nghia la: Mô hình; kiểu mẫu.",
+      "audioText": "模式",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-092",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "推出",
+      "pinyin": "tuīchū",
+      "meaningVi": "Giới thiệu, ra mắt",
+      "exampleZh": "课文常见词：推出。",
+      "exampleVi": "Tu '推出' nghia la: Giới thiệu, ra mắt.",
+      "audioText": "推出",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-093",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "消费",
+      "pinyin": "xiāofèi",
+      "meaningVi": "Tiêu dùng",
+      "exampleZh": "课文常见词：消费。",
+      "exampleVi": "Tu '消费' nghia la: Tiêu dùng.",
+      "audioText": "消费",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-094",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "理念",
+      "pinyin": "lǐniàn",
+      "meaningVi": "Quan niệm",
+      "exampleZh": "课文常见词：理念。",
+      "exampleVi": "Tu '理念' nghia la: Quan niệm.",
+      "audioText": "理念",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-095",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "产业",
+      "pinyin": "chǎnyè",
+      "meaningVi": "Ngành công nghiệp",
+      "exampleZh": "课文常见词：产业。",
+      "exampleVi": "Tu '产业' nghia la: Ngành công nghiệp.",
+      "audioText": "产业",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-096",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "气象",
+      "pinyin": "qìxiàng",
+      "meaningVi": "Hiện tượng (ở đây)",
+      "exampleZh": "课文常见词：气象。",
+      "exampleVi": "Tu '气象' nghia la: Hiện tượng (ở đây).",
+      "audioText": "气象",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-097",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "追求",
+      "pinyin": "zhuīqiú",
+      "meaningVi": "Theo đuổi",
+      "exampleZh": "课文常见词：追求。",
+      "exampleVi": "Tu '追求' nghia la: Theo đuổi.",
+      "audioText": "追求",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-098",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "时尚",
+      "pinyin": "shíshàng",
+      "meaningVi": "Thời trang",
+      "exampleZh": "课文常见词：时尚。",
+      "exampleVi": "Tu '时尚' nghia la: Thời trang.",
+      "audioText": "时尚",
+      "tags": [
+        "expanded",
+        "第四课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-099",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "须知",
+      "pinyin": "xūzhī",
+      "meaningVi": "Những điểm cần chú ý; Lưu ý",
+      "exampleZh": "课文常见词：须知。",
+      "exampleVi": "Tu '须知' nghia la: Những điểm cần chú ý; Lưu ý.",
+      "audioText": "须知",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-100",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "天然气",
+      "pinyin": "tiānránqì",
+      "meaningVi": "Khí tự nhiên",
+      "exampleZh": "课文常见词：天然气。",
+      "exampleVi": "Tu '天然气' nghia la: Khí tự nhiên.",
+      "audioText": "天然气",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-101",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "管理",
+      "pinyin": "guǎnlǐ",
+      "meaningVi": "Quản lý",
+      "exampleZh": "课文常见词：管理。",
+      "exampleVi": "Tu '管理' nghia la: Quản lý.",
+      "audioText": "管理",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-102",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "不当",
+      "pinyin": "bùdàng",
+      "meaningVi": "Không thích hợp",
+      "exampleZh": "课文常见词：不当。",
+      "exampleVi": "Tu '不当' nghia la: Không thích hợp.",
+      "audioText": "不当",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-103",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "因此",
+      "pinyin": "yīncǐ",
+      "meaningVi": "Vì vậy",
+      "exampleZh": "课文常见词：因此。",
+      "exampleVi": "Tu '因此' nghia la: Vì vậy.",
+      "audioText": "因此",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-104",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "住户",
+      "pinyin": "zhùhù",
+      "meaningVi": "Hộ gia đình",
+      "exampleZh": "课文常见词：住户。",
+      "exampleVi": "Tu '住户' nghia la: Hộ gia đình.",
+      "audioText": "住户",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-105",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "以下",
+      "pinyin": "yǐxià",
+      "meaningVi": "Dưới đây",
+      "exampleZh": "课文常见词：以下。",
+      "exampleVi": "Tu '以下' nghia la: Dưới đây.",
+      "audioText": "以下",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-106",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "设备",
+      "pinyin": "shèbèi",
+      "meaningVi": "Thiết bị",
+      "exampleZh": "课文常见词：设备。",
+      "exampleVi": "Tu '设备' nghia la: Thiết bị.",
+      "audioText": "设备",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-107",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "通风",
+      "pinyin": "tōngfēng",
+      "meaningVi": "Thông gió",
+      "exampleZh": "课文常见词：通风。",
+      "exampleVi": "Tu '通风' nghia la: Thông gió.",
+      "audioText": "通风",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-108",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "热水器",
+      "pinyin": "rèshuǐqì",
+      "meaningVi": "Máy nước nóng",
+      "exampleZh": "课文常见词：热水器。",
+      "exampleVi": "Tu '热水器' nghia la: Máy nước nóng.",
+      "audioText": "热水器",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-109",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "雇请",
+      "pinyin": "gùqǐng",
+      "meaningVi": "Thuê; Tuyển dụng",
+      "exampleZh": "课文常见词：雇请。",
+      "exampleVi": "Tu '雇请' nghia la: Thuê; Tuyển dụng.",
+      "audioText": "雇请",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-110",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "专业",
+      "pinyin": "zhuānyè",
+      "meaningVi": "Chuyên nghiệp; Chuyên ngành",
+      "exampleZh": "课文常见词：专业。",
+      "exampleVi": "Tu '专业' nghia la: Chuyên nghiệp; Chuyên ngành.",
+      "audioText": "专业",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-111",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "人员",
+      "pinyin": "rényuán",
+      "meaningVi": "Nhân viên",
+      "exampleZh": "课文常见词：人员。",
+      "exampleVi": "Tu '人员' nghia la: Nhân viên.",
+      "audioText": "人员",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-112",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "随意",
+      "pinyin": "suíyì",
+      "meaningVi": "Tùy ý",
+      "exampleZh": "课文常见词：随意。",
+      "exampleVi": "Tu '随意' nghia la: Tùy ý.",
+      "audioText": "随意",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-113",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "管线",
+      "pinyin": "guǎnxiàn",
+      "meaningVi": "Đường ống và dây điện",
+      "exampleZh": "课文常见词：管线。",
+      "exampleVi": "Tu '管线' nghia la: Đường ống và dây điện.",
+      "audioText": "管线",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-114",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "更改",
+      "pinyin": "gēnggǎi",
+      "meaningVi": "Thay đổi",
+      "exampleZh": "课文常见词：更改。",
+      "exampleVi": "Tu '更改' nghia la: Thay đổi.",
+      "audioText": "更改",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-115",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "报告",
+      "pinyin": "bàogào",
+      "meaningVi": "Báo cáo",
+      "exampleZh": "课文常见词：报告。",
+      "exampleVi": "Tu '报告' nghia la: Báo cáo.",
+      "audioText": "报告",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-116",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "外出",
+      "pinyin": "wàichū",
+      "meaningVi": "Đi ra ngoài",
+      "exampleZh": "课文常见词：外出。",
+      "exampleVi": "Tu '外出' nghia la: Đi ra ngoài.",
+      "audioText": "外出",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-117",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "电源",
+      "pinyin": "diànyuán",
+      "meaningVi": "Nguồn điện",
+      "exampleZh": "课文常见词：电源。",
+      "exampleVi": "Tu '电源' nghia la: Nguồn điện.",
+      "audioText": "电源",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-118",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "电流",
+      "pinyin": "diànliú",
+      "meaningVi": "Dòng điện",
+      "exampleZh": "课文常见词：电流。",
+      "exampleVi": "Tu '电流' nghia la: Dòng điện.",
+      "audioText": "电流",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-119",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "烧",
+      "pinyin": "shāo",
+      "meaningVi": "Đốt cháy",
+      "exampleZh": "课文常见词：烧。",
+      "exampleVi": "Tu '烧' nghia la: Đốt cháy.",
+      "audioText": "烧",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-120",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "开关",
+      "pinyin": "kāiguān",
+      "meaningVi": "Công tắc",
+      "exampleZh": "课文常见词：开关。",
+      "exampleVi": "Tu '开关' nghia la: Công tắc.",
+      "audioText": "开关",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-121",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "其他",
+      "pinyin": "qítā",
+      "meaningVi": "Khác",
+      "exampleZh": "课文常见词：其他。",
+      "exampleVi": "Tu '其他' nghia la: Khác.",
+      "audioText": "其他",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-122",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "突发",
+      "pinyin": "tūfā",
+      "meaningVi": "Bùng phát; Xảy ra đột ngột",
+      "exampleZh": "课文常见词：突发。",
+      "exampleVi": "Tu '突发' nghia la: Bùng phát; Xảy ra đột ngột.",
+      "audioText": "突发",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-123",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "紧急",
+      "pinyin": "jǐnjí",
+      "meaningVi": "Khẩn cấp",
+      "exampleZh": "课文常见词：紧急。",
+      "exampleVi": "Tu '紧急' nghia la: Khẩn cấp.",
+      "audioText": "紧急",
+      "tags": [
+        "expanded",
+        "第五课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-124",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "人类",
+      "pinyin": "rénlèi",
+      "meaningVi": "Nhân loại",
+      "exampleZh": "课文常见词：人类。",
+      "exampleVi": "Tu '人类' nghia la: Nhân loại.",
+      "audioText": "人类",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-125",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "饮料",
+      "pinyin": "yǐnliào",
+      "meaningVi": "Đồ uống",
+      "exampleZh": "课文常见词：饮料。",
+      "exampleVi": "Tu '饮料' nghia la: Đồ uống.",
+      "audioText": "饮料",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-126",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "酿造",
+      "pinyin": "niàngzào",
+      "meaningVi": "Chưng cất (rượu)",
+      "exampleZh": "课文常见词：酿造。",
+      "exampleVi": "Tu '酿造' nghia la: Chưng cất (rượu).",
+      "audioText": "酿造",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-127",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "饮食",
+      "pinyin": "yǐnshí",
+      "meaningVi": "Ăn uống",
+      "exampleZh": "课文常见词：饮食。",
+      "exampleVi": "Tu '饮食' nghia la: Ăn uống.",
+      "audioText": "饮食",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-128",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "产物",
+      "pinyin": "chǎnwù",
+      "meaningVi": "Sản phẩm",
+      "exampleZh": "课文常见词：产物。",
+      "exampleVi": "Tu '产物' nghia la: Sản phẩm.",
+      "audioText": "产物",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-129",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "仅仅",
+      "pinyin": "jǐnjǐn",
+      "meaningVi": "Chỉ; chỉ là",
+      "exampleZh": "课文常见词：仅仅。",
+      "exampleVi": "Tu '仅仅' nghia la: Chỉ; chỉ là.",
+      "audioText": "仅仅",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-130",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "增添",
+      "pinyin": "zēngtiān",
+      "meaningVi": "Thêm vào",
+      "exampleZh": "课文常见词：增添。",
+      "exampleVi": "Tu '增添' nghia la: Thêm vào.",
+      "audioText": "增添",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-131",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "治",
+      "pinyin": "zhì",
+      "meaningVi": "Trị; chữa trị",
+      "exampleZh": "课文常见词：治。",
+      "exampleVi": "Tu '治' nghia la: Trị; chữa trị.",
+      "audioText": "治",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-132",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "养生",
+      "pinyin": "yǎngshēng",
+      "meaningVi": "Dưỡng sinh; bảo vệ sức khỏe",
+      "exampleZh": "课文常见词：养生。",
+      "exampleVi": "Tu '养生' nghia la: Dưỡng sinh; bảo vệ sức khỏe.",
+      "audioText": "养生",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-133",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "忧",
+      "pinyin": "yōu",
+      "meaningVi": "Lo lắng; ưu tư",
+      "exampleZh": "课文常见词：忧。",
+      "exampleVi": "Tu '忧' nghia la: Lo lắng; ưu tư.",
+      "audioText": "忧",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-134",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "壮胆",
+      "pinyin": "zhuàng dǎn",
+      "meaningVi": "Làm cho can đảm hơn",
+      "exampleZh": "课文常见词：壮胆。",
+      "exampleVi": "Tu '壮胆' nghia la: Làm cho can đảm hơn.",
+      "audioText": "壮胆",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-135",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "愉悦",
+      "pinyin": "yúyuè",
+      "meaningVi": "Vui vẻ; hạnh phúc",
+      "exampleZh": "课文常见词：愉悦。",
+      "exampleVi": "Tu '愉悦' nghia la: Vui vẻ; hạnh phúc.",
+      "audioText": "愉悦",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-136",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "至",
+      "pinyin": "zhì",
+      "meaningVi": "Đến; cho đến khi",
+      "exampleZh": "课文常见词：至。",
+      "exampleVi": "Tu '至' nghia la: Đến; cho đến khi.",
+      "audioText": "至",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-137",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "文人",
+      "pinyin": "wénrén",
+      "meaningVi": "Người có học thức",
+      "exampleZh": "课文常见词：文人。",
+      "exampleVi": "Tu '文人' nghia la: Người có học thức.",
+      "audioText": "文人",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-138",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "墨客",
+      "pinyin": "mòkè",
+      "meaningVi": "Văn nhân; người viết văn",
+      "exampleZh": "课文常见词：墨客。",
+      "exampleVi": "Tu '墨客' nghia la: Văn nhân; người viết văn.",
+      "audioText": "墨客",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-139",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "不解之缘",
+      "pinyin": "bù jiě zhī yuán",
+      "meaningVi": "Mối duyên không thể tách rời",
+      "exampleZh": "课文常见词：不解之缘。",
+      "exampleVi": "Tu '不解之缘' nghia la: Mối duyên không thể tách rời.",
+      "audioText": "不解之缘",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-140",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "作品",
+      "pinyin": "zuòpǐn",
+      "meaningVi": "Tác phẩm",
+      "exampleZh": "课文常见词：作品。",
+      "exampleVi": "Tu '作品' nghia la: Tác phẩm.",
+      "audioText": "作品",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-141",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "创作",
+      "pinyin": "chuàngzuò",
+      "meaningVi": "Sáng tác",
+      "exampleZh": "课文常见词：创作。",
+      "exampleVi": "Tu '创作' nghia la: Sáng tác.",
+      "audioText": "创作",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-142",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "饮",
+      "pinyin": "yǐn",
+      "meaningVi": "Uống",
+      "exampleZh": "课文常见词：饮。",
+      "exampleVi": "Tu '饮' nghia la: Uống.",
+      "audioText": "饮",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-143",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "本身",
+      "pinyin": "běnshēn",
+      "meaningVi": "Bản thân",
+      "exampleZh": "课文常见词：本身。",
+      "exampleVi": "Tu '本身' nghia la: Bản thân.",
+      "audioText": "本身",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-144",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "题材",
+      "pinyin": "tícái",
+      "meaningVi": "Đề tài",
+      "exampleZh": "课文常见词：题材。",
+      "exampleVi": "Tu '题材' nghia la: Đề tài.",
+      "audioText": "题材",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-145",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "丰富多彩",
+      "pinyin": "fēngfù duōcǎi",
+      "meaningVi": "Phong phú đa dạng",
+      "exampleZh": "课文常见词：丰富多彩。",
+      "exampleVi": "Tu '丰富多彩' nghia la: Phong phú đa dạng.",
+      "audioText": "丰富多彩",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-146",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "文明",
+      "pinyin": "wénmíng",
+      "meaningVi": "Văn minh",
+      "exampleZh": "课文常见词：文明。",
+      "exampleVi": "Tu '文明' nghia la: Văn minh.",
+      "audioText": "文明",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-147",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "烹饪",
+      "pinyin": "pēngrèn",
+      "meaningVi": "Nấu ăn",
+      "exampleZh": "课文常见词：烹饪。",
+      "exampleVi": "Tu '烹饪' nghia la: Nấu ăn.",
+      "audioText": "烹饪",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-148",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "保健",
+      "pinyin": "bǎojiàn",
+      "meaningVi": "Bảo vệ sức khỏe",
+      "exampleZh": "课文常见词：保健。",
+      "exampleVi": "Tu '保健' nghia la: Bảo vệ sức khỏe.",
+      "audioText": "保健",
+      "tags": [
+        "expanded",
+        "第六课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-149",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "流程",
+      "pinyin": "liúchéng",
+      "meaningVi": "Quy trình",
+      "exampleZh": "课文常见词：流程。",
+      "exampleVi": "Tu '流程' nghia la: Quy trình.",
+      "audioText": "流程",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-150",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "挂号",
+      "pinyin": "guàhào",
+      "meaningVi": "Đăng ký (khám bệnh,",
+      "exampleZh": "课文常见词：挂号。",
+      "exampleVi": "Tu '挂号' nghia la: Đăng ký (khám bệnh,.",
+      "audioText": "挂号",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-151",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "专家",
+      "pinyin": "zhuānjiā",
+      "meaningVi": "Chuyên gia",
+      "exampleZh": "课文常见词：专家。",
+      "exampleVi": "Tu '专家' nghia la: Chuyên gia.",
+      "audioText": "专家",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-152",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "高级",
+      "pinyin": "gāojí",
+      "meaningVi": "Cao cấp",
+      "exampleZh": "课文常见词：高级。",
+      "exampleVi": "Tu '高级' nghia la: Cao cấp.",
+      "audioText": "高级",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-153",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "职称",
+      "pinyin": "zhíchēng",
+      "meaningVi": "Chức danh nghề nghiệp",
+      "exampleZh": "课文常见词：职称。",
+      "exampleVi": "Tu '职称' nghia la: Chức danh nghề nghiệp.",
+      "audioText": "职称",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-154",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "费用",
+      "pinyin": "fèiyòng",
+      "meaningVi": "Chi phí",
+      "exampleZh": "课文常见词：费用。",
+      "exampleVi": "Tu '费用' nghia la: Chi phí.",
+      "audioText": "费用",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-155",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "排队",
+      "pinyin": "páiduì",
+      "meaningVi": "Xếp hàng",
+      "exampleZh": "课文常见词：排队。",
+      "exampleVi": "Tu '排队' nghia la: Xếp hàng.",
+      "audioText": "排队",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-156",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "趟",
+      "pinyin": "tàng",
+      "meaningVi": "Lượng từ (chuyến, lượt)",
+      "exampleZh": "课文常见词：趟。",
+      "exampleVi": "Tu '趟' nghia la: Lượng từ (chuyến, lượt).",
+      "audioText": "趟",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-157",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "病历",
+      "pinyin": "bìnglì",
+      "meaningVi": "Bệnh án",
+      "exampleZh": "课文常见词：病历。",
+      "exampleVi": "Tu '病历' nghia la: Bệnh án.",
+      "audioText": "病历",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-158",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "填写",
+      "pinyin": "tiánxiě",
+      "meaningVi": "Điền vào",
+      "exampleZh": "课文常见词：填写。",
+      "exampleVi": "Tu '填写' nghia la: Điền vào.",
+      "audioText": "填写",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-159",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "诊室",
+      "pinyin": "zhěnshì",
+      "meaningVi": "Phòng khám",
+      "exampleZh": "课文常见词：诊室。",
+      "exampleVi": "Tu '诊室' nghia la: Phòng khám.",
+      "audioText": "诊室",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-160",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "诊断",
+      "pinyin": "zhěnduàn",
+      "meaningVi": "Chẩn đoán",
+      "exampleZh": "课文常见词：诊断。",
+      "exampleVi": "Tu '诊断' nghia la: Chẩn đoán.",
+      "audioText": "诊断",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-161",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "药方",
+      "pinyin": "yàofāng",
+      "meaningVi": "Đơn thuốc",
+      "exampleZh": "课文常见词：药方。",
+      "exampleVi": "Tu '药方' nghia la: Đơn thuốc.",
+      "audioText": "药方",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-162",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "治疗",
+      "pinyin": "zhìliáo",
+      "meaningVi": "Điều trị",
+      "exampleZh": "课文常见词：治疗。",
+      "exampleVi": "Tu '治疗' nghia la: Điều trị.",
+      "audioText": "治疗",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-163",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "作用",
+      "pinyin": "zuòyòng",
+      "meaningVi": "Tác dụng",
+      "exampleZh": "课文常见词：作用。",
+      "exampleVi": "Tu '作用' nghia la: Tác dụng.",
+      "audioText": "作用",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-164",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "划价",
+      "pinyin": "huàjià",
+      "meaningVi": "Tính giá thuốc",
+      "exampleZh": "课文常见词：划价。",
+      "exampleVi": "Tu '划价' nghia la: Tính giá thuốc.",
+      "audioText": "划价",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-165",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "并且",
+      "pinyin": "bìngqiě",
+      "meaningVi": "Đồng thời; hơn nữa",
+      "exampleZh": "课文常见词：并且。",
+      "exampleVi": "Tu '并且' nghia la: Đồng thời; hơn nữa.",
+      "audioText": "并且",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-166",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "明细单",
+      "pinyin": "míngxìdān",
+      "meaningVi": "Danh sách chi tiết",
+      "exampleZh": "课文常见词：明细单。",
+      "exampleVi": "Tu '明细单' nghia la: Danh sách chi tiết.",
+      "audioText": "明细单",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-167",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "记载",
+      "pinyin": "jìzǎi",
+      "meaningVi": "Ghi chép",
+      "exampleZh": "课文常见词：记载。",
+      "exampleVi": "Tu '记载' nghia la: Ghi chép.",
+      "audioText": "记载",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-168",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "及",
+      "pinyin": "jí",
+      "meaningVi": "Và",
+      "exampleZh": "课文常见词：及。",
+      "exampleVi": "Tu '及' nghia la: Và.",
+      "audioText": "及",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-169",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "仔细",
+      "pinyin": "zǐxì",
+      "meaningVi": "Cẩn thận",
+      "exampleZh": "课文常见词：仔细。",
+      "exampleVi": "Tu '仔细' nghia la: Cẩn thận.",
+      "audioText": "仔细",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-170",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "核对",
+      "pinyin": "héduì",
+      "meaningVi": "Kiểm tra đối chiếu",
+      "exampleZh": "课文常见词：核对。",
+      "exampleVi": "Tu '核对' nghia la: Kiểm tra đối chiếu.",
+      "audioText": "核对",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-171",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "名称",
+      "pinyin": "míngchēng",
+      "meaningVi": "Tên gọi",
+      "exampleZh": "课文常见词：名称。",
+      "exampleVi": "Tu '名称' nghia la: Tên gọi.",
+      "audioText": "名称",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-172",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "小心",
+      "pinyin": "xiǎoxīn",
+      "meaningVi": "Cẩn thận",
+      "exampleZh": "课文常见词：小心。",
+      "exampleVi": "Tu '小心' nghia la: Cẩn thận.",
+      "audioText": "小心",
+      "tags": [
+        "expanded",
+        "第七课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-173",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "后顾之忧",
+      "pinyin": "hòu gù zhī yōu",
+      "meaningVi": "Nỗi lo về sau",
+      "exampleZh": "课文常见词：后顾之忧。",
+      "exampleVi": "Tu '后顾之忧' nghia la: Nỗi lo về sau.",
+      "audioText": "后顾之忧",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-174",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "人士",
+      "pinyin": "rénshì",
+      "meaningVi": "Nhân vật công chúng, người có tiếng tăm",
+      "exampleZh": "课文常见词：人士。",
+      "exampleVi": "Tu '人士' nghia la: Nhân vật công chúng, người có tiếng tăm.",
+      "audioText": "人士",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-175",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "针对",
+      "pinyin": "zhēnduì",
+      "meaningVi": "Nhắm vào, nhằm vào",
+      "exampleZh": "课文常见词：针对。",
+      "exampleVi": "Tu '针对' nghia la: Nhắm vào, nhằm vào.",
+      "audioText": "针对",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-176",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "此前",
+      "pinyin": "cǐqián",
+      "meaningVi": "Trước đây",
+      "exampleZh": "课文常见词：此前。",
+      "exampleVi": "Tu '此前' nghia la: Trước đây.",
+      "audioText": "此前",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-177",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "内地",
+      "pinyin": "nèidì",
+      "meaningVi": "Nội địa, đất liền",
+      "exampleZh": "课文常见词：内地。",
+      "exampleVi": "Tu '内地' nghia la: Nội địa, đất liền.",
+      "audioText": "内地",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-178",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "支出",
+      "pinyin": "zhīchū",
+      "meaningVi": "Chi tiêu, chi trả",
+      "exampleZh": "课文常见词：支出。",
+      "exampleVi": "Tu '支出' nghia la: Chi tiêu, chi trả.",
+      "audioText": "支出",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-179",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "保障",
+      "pinyin": "bǎozhàng",
+      "meaningVi": "Đảm bảo",
+      "exampleZh": "课文常见词：保障。",
+      "exampleVi": "Tu '保障' nghia la: Đảm bảo.",
+      "audioText": "保障",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-180",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "需求",
+      "pinyin": "xūqiú",
+      "meaningVi": "Nhu cầu",
+      "exampleZh": "课文常见词：需求。",
+      "exampleVi": "Tu '需求' nghia la: Nhu cầu.",
+      "audioText": "需求",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-181",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "近期",
+      "pinyin": "jìnqī",
+      "meaningVi": "Gần đây, thời gian gần đây",
+      "exampleZh": "课文常见词：近期。",
+      "exampleVi": "Tu '近期' nghia la: Gần đây, thời gian gần đây.",
+      "audioText": "近期",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-182",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "驻",
+      "pinyin": "zhù",
+      "meaningVi": "Đóng tại, trú tại",
+      "exampleZh": "课文常见词：驻。",
+      "exampleVi": "Tu '驻' nghia la: Đóng tại, trú tại.",
+      "audioText": "驻",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-183",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "借助",
+      "pinyin": "jièzhù",
+      "meaningVi": "Nhờ sự giúp đỡ, mượn sức",
+      "exampleZh": "课文常见词：借助。",
+      "exampleVi": "Tu '借助' nghia la: Nhờ sự giúp đỡ, mượn sức.",
+      "audioText": "借助",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-184",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "雇员",
+      "pinyin": "gùyuán",
+      "meaningVi": "Nhân viên, người làm thuê",
+      "exampleZh": "课文常见词：雇员。",
+      "exampleVi": "Tu '雇员' nghia la: Nhân viên, người làm thuê.",
+      "audioText": "雇员",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-185",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "福利",
+      "pinyin": "fúlì",
+      "meaningVi": "Phúc lợi",
+      "exampleZh": "课文常见词：福利。",
+      "exampleVi": "Tu '福利' nghia la: Phúc lợi.",
+      "audioText": "福利",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-186",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "跨国公司",
+      "pinyin": "kuàguó gōngsī",
+      "meaningVi": "Công ty đa quốc gia",
+      "exampleZh": "课文常见词：跨国公司。",
+      "exampleVi": "Tu '跨国公司' nghia la: Công ty đa quốc gia.",
+      "audioText": "跨国公司",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-187",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "本土",
+      "pinyin": "běntǔ",
+      "meaningVi": "Trong nước, nội địa",
+      "exampleZh": "课文常见词：本土。",
+      "exampleVi": "Tu '本土' nghia la: Trong nước, nội địa.",
+      "audioText": "本土",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-188",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "企业",
+      "pinyin": "qǐyè",
+      "meaningVi": "Doanh nghiệp",
+      "exampleZh": "课文常见词：企业。",
+      "exampleVi": "Tu '企业' nghia la: Doanh nghiệp.",
+      "audioText": "企业",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-189",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "度身",
+      "pinyin": "duó shēn",
+      "meaningVi": "tùy chỉnh theo nhu cầu",
+      "exampleZh": "课文常见词：度身。",
+      "exampleVi": "Tu '度身' nghia la: tùy chỉnh theo nhu cầu.",
+      "audioText": "度身",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-190",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "境外",
+      "pinyin": "jìngwài",
+      "meaningVi": "nước ngoài",
+      "exampleZh": "课文常见词：境外。",
+      "exampleVi": "Tu '境外' nghia la: nước ngoài.",
+      "audioText": "境外",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-191",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "金额",
+      "pinyin": "jīn'é",
+      "meaningVi": "Số tiền",
+      "exampleZh": "课文常见词：金额。",
+      "exampleVi": "Tu '金额' nghia la: Số tiền.",
+      "audioText": "金额",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-192",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "提供",
+      "pinyin": "tígōng",
+      "meaningVi": "Cung cấp",
+      "exampleZh": "课文常见词：提供。",
+      "exampleVi": "Tu '提供' nghia la: Cung cấp.",
+      "audioText": "提供",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-193",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "援助",
+      "pinyin": "yuánzhù",
+      "meaningVi": "Viện trợ, giúp đỡ",
+      "exampleZh": "课文常见词：援助。",
+      "exampleVi": "Tu '援助' nghia la: Viện trợ, giúp đỡ.",
+      "audioText": "援助",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-194",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "救援",
+      "pinyin": "jiùyuán",
+      "meaningVi": "Cứu trợ, cứu viện",
+      "exampleZh": "课文常见词：救援。",
+      "exampleVi": "Tu '救援' nghia la: Cứu trợ, cứu viện.",
+      "audioText": "救援",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-195",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "达成",
+      "pinyin": "dáchéng",
+      "meaningVi": "Đạt được",
+      "exampleZh": "课文常见词：达成。",
+      "exampleVi": "Tu '达成' nghia la: Đạt được.",
+      "audioText": "达成",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-196",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "认可",
+      "pinyin": "rènkě",
+      "meaningVi": "Công nhận, thừa nhận",
+      "exampleZh": "课文常见词：认可。",
+      "exampleVi": "Tu '认可' nghia la: Công nhận, thừa nhận.",
+      "audioText": "认可",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-197",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "协议",
+      "pinyin": "xiéyì",
+      "meaningVi": "Hiệp định, thỏa thuận",
+      "exampleZh": "课文常见词：协议。",
+      "exampleVi": "Tu '协议' nghia la: Hiệp định, thỏa thuận.",
+      "audioText": "协议",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-198",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "就医",
+      "pinyin": "jiù yī",
+      "meaningVi": "Khám chữa bệnh, điều trị",
+      "exampleZh": "课文常见词：就医。",
+      "exampleVi": "Tu '就医' nghia la: Khám chữa bệnh, điều trị.",
+      "audioText": "就医",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-199",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "相关",
+      "pinyin": "xiāngguān",
+      "meaningVi": "Liên quan",
+      "exampleZh": "课文常见词：相关。",
+      "exampleVi": "Tu '相关' nghia la: Liên quan.",
+      "audioText": "相关",
+      "tags": [
+        "expanded",
+        "第八课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-200",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "必备",
+      "pinyin": "bìbèi",
+      "meaningVi": "Cần thiết, không thể thiếu",
+      "exampleZh": "课文常见词：必备。",
+      "exampleVi": "Tu '必备' nghia la: Cần thiết, không thể thiếu.",
+      "audioText": "必备",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-201",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "护照",
+      "pinyin": "hùzhào",
+      "meaningVi": "Hộ chiếu",
+      "exampleZh": "课文常见词：护照。",
+      "exampleVi": "Tu '护照' nghia la: Hộ chiếu.",
+      "audioText": "护照",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-202",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "旅途",
+      "pinyin": "lǚtú",
+      "meaningVi": "Hành trình, chuyến đi",
+      "exampleZh": "课文常见词：旅途。",
+      "exampleVi": "Tu '旅途' nghia la: Hành trình, chuyến đi.",
+      "audioText": "旅途",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-203",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "替换",
+      "pinyin": "tìhuàn",
+      "meaningVi": "Thay thế",
+      "exampleZh": "课文常见词：替换。",
+      "exampleVi": "Tu '替换' nghia la: Thay thế.",
+      "audioText": "替换",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-204",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "衣物",
+      "pinyin": "yīwù",
+      "meaningVi": "Quần áo",
+      "exampleZh": "课文常见词：衣物。",
+      "exampleVi": "Tu '衣物' nghia la: Quần áo.",
+      "audioText": "衣物",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-205",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "居住",
+      "pinyin": "jūzhù",
+      "meaningVi": "Cư trú, sinh sống",
+      "exampleZh": "课文常见词：居住。",
+      "exampleVi": "Tu '居住' nghia la: Cư trú, sinh sống.",
+      "audioText": "居住",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-206",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "温差",
+      "pinyin": "wēnchā",
+      "meaningVi": "Chênh lệch nhiệt độ",
+      "exampleZh": "课文常见词：温差。",
+      "exampleVi": "Tu '温差' nghia la: Chênh lệch nhiệt độ.",
+      "audioText": "温差",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-207",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "薄",
+      "pinyin": "báo",
+      "meaningVi": "Mỏng",
+      "exampleZh": "课文常见词：薄。",
+      "exampleVi": "Tu '薄' nghia la: Mỏng.",
+      "audioText": "薄",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-208",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "拉肚子",
+      "pinyin": "lā dùzi",
+      "meaningVi": "Tiêu chảy",
+      "exampleZh": "课文常见词：拉肚子。",
+      "exampleVi": "Tu '拉肚子' nghia la: Tiêu chảy.",
+      "audioText": "拉肚子",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-209",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "伤",
+      "pinyin": "shāng",
+      "meaningVi": "Bị thương, vết thương",
+      "exampleZh": "课文常见词：伤。",
+      "exampleVi": "Tu '伤' nghia la: Bị thương, vết thương.",
+      "audioText": "伤",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-210",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "蚊虫",
+      "pinyin": "wénchóng",
+      "meaningVi": "Muỗi, côn trùng",
+      "exampleZh": "课文常见词：蚊虫。",
+      "exampleVi": "Tu '蚊虫' nghia la: Muỗi, côn trùng.",
+      "audioText": "蚊虫",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-211",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "叮咬",
+      "pinyin": "dīngyǎo",
+      "meaningVi": "Cắn, đốt (côn trùng)",
+      "exampleZh": "课文常见词：叮咬。",
+      "exampleVi": "Tu '叮咬' nghia la: Cắn, đốt (côn trùng).",
+      "audioText": "叮咬",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-212",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "对症下药",
+      "pinyin": "duì zhèng xià yào",
+      "meaningVi": "Bốc thuốc đúng bệnh, chữa đúng cách",
+      "exampleZh": "课文常见词：对症下药。",
+      "exampleVi": "Tu '对症下药' nghia la: Bốc thuốc đúng bệnh, chữa đúng cách.",
+      "audioText": "对症下药",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-213",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "长期",
+      "pinyin": "chángqī",
+      "meaningVi": "Dài hạn, lâu dài",
+      "exampleZh": "课文常见词：长期。",
+      "exampleVi": "Tu '长期' nghia la: Dài hạn, lâu dài.",
+      "audioText": "长期",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-214",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "服",
+      "pinyin": "fú",
+      "meaningVi": "Uống (thuốc)",
+      "exampleZh": "课文常见词：服。",
+      "exampleVi": "Tu '服' nghia la: Uống (thuốc).",
+      "audioText": "服",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-215",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "摄像机",
+      "pinyin": "shèxiàngjī",
+      "meaningVi": "Máy quay phim",
+      "exampleZh": "课文常见词：摄像机。",
+      "exampleVi": "Tu '摄像机' nghia la: Máy quay phim.",
+      "audioText": "摄像机",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-216",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "漱",
+      "pinyin": "shù",
+      "meaningVi": "Súc miệng, rửa",
+      "exampleZh": "课文常见词：漱。",
+      "exampleVi": "Tu '漱' nghia la: Súc miệng, rửa.",
+      "audioText": "漱",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-217",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "餐巾纸",
+      "pinyin": "cānjīnzhǐ",
+      "meaningVi": "Khăn giấy",
+      "exampleZh": "课文常见词：餐巾纸。",
+      "exampleVi": "Tu '餐巾纸' nghia la: Khăn giấy.",
+      "audioText": "餐巾纸",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-218",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "卫生纸",
+      "pinyin": "wèishēngzhǐ",
+      "meaningVi": "Giấy vệ sinh",
+      "exampleZh": "课文常见词：卫生纸。",
+      "exampleVi": "Tu '卫生纸' nghia la: Giấy vệ sinh.",
+      "audioText": "卫生纸",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-219",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "打发",
+      "pinyin": "dǎfā",
+      "meaningVi": "Giết thời gian",
+      "exampleZh": "课文常见词：打发。",
+      "exampleVi": "Tu '打发' nghia la: Giết thời gian.",
+      "audioText": "打发",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-220",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "棋",
+      "pinyin": "qí",
+      "meaningVi": "Cờ (như cờ vua, cờ tướng)",
+      "exampleZh": "课文常见词：棋。",
+      "exampleVi": "Tu '棋' nghia la: Cờ (như cờ vua, cờ tướng).",
+      "audioText": "棋",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-221",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "牌",
+      "pinyin": "pái",
+      "meaningVi": "Bài (như bài tú lơ khơ)",
+      "exampleZh": "课文常见词：牌。",
+      "exampleVi": "Tu '牌' nghia la: Bài (như bài tú lơ khơ).",
+      "audioText": "牌",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-222",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "娱乐",
+      "pinyin": "yúlè",
+      "meaningVi": "Giải trí",
+      "exampleZh": "课文常见词：娱乐。",
+      "exampleVi": "Tu '娱乐' nghia la: Giải trí.",
+      "audioText": "娱乐",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-223",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "有备无患",
+      "pinyin": "yǒu bèi wú huàn",
+      "meaningVi": "Chuẩn bị trước không lo hậu họa",
+      "exampleZh": "课文常见词：有备无患。",
+      "exampleVi": "Tu '有备无患' nghia la: Chuẩn bị trước không lo hậu họa.",
+      "audioText": "有备无患",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-224",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "俗话",
+      "pinyin": "súhuà",
+      "meaningVi": "Tục ngữ, câu nói thông dụng",
+      "exampleZh": "课文常见词：俗话。",
+      "exampleVi": "Tu '俗话' nghia la: Tục ngữ, câu nói thông dụng.",
+      "audioText": "俗话",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    },
+    {
+      "id": "card-expanded-vocab-225",
+      "deckId": "deck-expanded-vocabulary-lessons-1-9",
+      "hanzi": "穷家富路",
+      "pinyin": "qióng jiā fù lù",
+      "meaningVi": "Ở nhà tiết kiệm, đi đường thì tiêu xài thoải mái",
+      "exampleZh": "课文常见词：穷家富路。",
+      "exampleVi": "Tu '穷家富路' nghia la: Ở nhà tiết kiệm, đi đường thì tiêu xài thoải mái.",
+      "audioText": "穷家富路",
+      "tags": [
+        "expanded",
+        "第九课"
+      ]
+    }
+  ]
+}

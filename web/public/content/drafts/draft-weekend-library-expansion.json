@@ -1,0 +1,108 @@
+{
+  "id": "draft-weekend-library-expansion",
+  "title": "Nháp: 图书馆周末扩展",
+  "description": "Phần mở rộng do OCR + mô hình local đề xuất từ cùng bài thư viện, còn cần duyệt trước khi publish.",
+  "level": "HSK 2",
+  "materialId": "material-weekend-library",
+  "createdAt": "2026-04-06T09:45:00.000Z",
+  "sourcePath": "materials/weekend-library-scan.pdf",
+  "model": "ollama/qwen2.5:7b",
+  "tags": ["thư viện", "ocr", "expansion"],
+  "notes": [
+    "Nguồn có vài dòng OCR chưa sạch, nên cần duyệt lại ví dụ.",
+    "Hai thẻ 图书馆 và 座位 đang bị lặp để test luồng merge."
+  ],
+  "cards": [
+    {
+      "id": "draft-guanliyuan",
+      "materialId": "material-weekend-library",
+      "hanzi": "管理员",
+      "pinyin": "guǎnlǐyuán",
+      "meaningVi": "người quản lý",
+      "exampleZh": "门口的管理员告诉我：“三楼还有空位。”",
+      "exampleVi": "Người quản lý ở cửa nói với tôi: “Tầng ba vẫn còn chỗ trống.”",
+      "sourceSnippet": "门口的管理员告诉我",
+      "tags": ["người", "thư viện"],
+      "confidence": 0.89,
+      "status": "approved"
+    },
+    {
+      "id": "draft-kongwei",
+      "materialId": "material-weekend-library",
+      "hanzi": "空位",
+      "pinyin": "kòngwèi",
+      "meaningVi": "chỗ trống",
+      "exampleZh": "三楼还有空位。",
+      "exampleVi": "Tầng ba vẫn còn chỗ trống.",
+      "sourceSnippet": "三楼还有空位",
+      "tags": ["thư viện", "không gian"],
+      "confidence": 0.84,
+      "status": "draft"
+    },
+    {
+      "id": "draft-xuexijihua",
+      "materialId": "material-weekend-library",
+      "hanzi": "学习计划",
+      "pinyin": "xuéxí jìhuà",
+      "meaningVi": "kế hoạch học tập",
+      "exampleZh": "我再写今天的学习计划。",
+      "exampleVi": "Sau đó tôi viết kế hoạch học tập hôm nay.",
+      "sourceSnippet": "再写今天的学习计划",
+      "tags": ["học tập", "kế hoạch"],
+      "confidence": 0.91,
+      "status": "approved"
+    },
+    {
+      "id": "draft-shengci",
+      "materialId": "material-weekend-library",
+      "hanzi": "生词",
+      "pinyin": "shēngcí",
+      "meaningVi": "từ mới",
+      "exampleZh": "我先复习昨天的生词。",
+      "exampleVi": "Tôi ôn lại các từ mới của hôm qua trước.",
+      "sourceSnippet": "先复习昨天的生词",
+      "tags": ["học tập", "từ vựng"],
+      "confidence": 0.93,
+      "status": "approved"
+    },
+    {
+      "id": "draft-tushuguan-a",
+      "materialId": "material-weekend-library",
+      "hanzi": "图书馆",
+      "pinyin": "túshūguǎn",
+      "meaningVi": "thư viện",
+      "exampleZh": "周末上午，我去图书馆还书。",
+      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách.",
+      "sourceSnippet": "我去图书馆还书",
+      "tags": ["địa điểm", "thư viện"],
+      "confidence": 0.96,
+      "status": "approved"
+    },
+    {
+      "id": "draft-tushuguan-b",
+      "materialId": "material-weekend-library",
+      "hanzi": "图书馆",
+      "pinyin": "túshūguǎn",
+      "meaningVi": "toà nhà thư viện",
+      "exampleZh": "图书馆里很安静。",
+      "exampleVi": "Bên trong thư viện rất yên tĩnh.",
+      "sourceSnippet": "图书馆里很安静",
+      "tags": ["địa điểm", "ocr-noisy"],
+      "confidence": 0.61,
+      "status": "draft"
+    },
+    {
+      "id": "draft-zuowei-b",
+      "materialId": "material-weekend-library",
+      "hanzi": "座位",
+      "pinyin": "zuòwèi",
+      "meaningVi": "ghế ngồi",
+      "exampleZh": "找到座位以后，我打开笔记本。",
+      "exampleVi": "Sau khi tìm được chỗ ngồi, tôi mở máy tính xách tay.",
+      "sourceSnippet": "找到座位以后",
+      "tags": ["địa điểm", "ocr-noisy"],
+      "confidence": 0.67,
+      "status": "draft"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+web/node_modules/
+web/dist/
+web/.vite/
+pipeline/.venv/
+pipeline/**/__pycache__/
+pipeline/**/*.pyc
+*.log

@@ -1,0 +1,68 @@
+{
+  "id": "material-hospital-route",
+  "title": "Đi bệnh viện và hỏi đường trong toà nhà",
+  "type": "pdf",
+  "originPath": "../Dịch nói bài đọc thêm.pdf",
+  "language": "zh-CN",
+  "importedAt": "2026-04-06T10:00:00.000Z",
+  "ocrMode": "ocr",
+  "summary": "Mẫu hội thoại đi bệnh viện, hỏi quầy, nghe chỉ dẫn và làm theo lời dặn của bác sĩ.",
+  "tags": ["bệnh viện", "hỏi đường", "HSK1-2"],
+  "linkedDeckIds": ["deck-hospital-route"],
+  "sections": [
+    {
+      "id": "hospital-section-1",
+      "heading": "Đến quầy và hỏi đường",
+      "textZh": "今天早上，林雨去医院挂号。她先在服务台问：“请问内科在哪里？”护士说：“一直往前走，在二楼左边。”",
+      "textVi": "Sáng nay Lâm Vũ đến bệnh viện đăng ký khám. Cô hỏi ở quầy dịch vụ: “Cho hỏi khoa nội ở đâu ạ?” Y tá trả lời: “Cứ đi thẳng về phía trước, ở bên trái tầng hai.”",
+      "focusCardIds": [
+        "card-yiyuan",
+        "card-guahao",
+        "card-fuwutai",
+        "card-neike",
+        "card-yizhiwangqianzou",
+        "card-erlou"
+      ],
+      "segments": [
+        { "text": "今天早上，林雨去" },
+        { "text": "医院", "cardId": "card-yiyuan" },
+        { "text": "挂号", "cardId": "card-guahao" },
+        { "text": "。她先在" },
+        { "text": "服务台", "cardId": "card-fuwutai" },
+        { "text": "问：“请问" },
+        { "text": "内科", "cardId": "card-neike" },
+        { "text": "在哪里？”" },
+        { "text": "护士", "cardId": "card-hushi" },
+        { "text": "说：“" },
+        { "text": "一直往前走", "cardId": "card-yizhiwangqianzou" },
+        { "text": "，在" },
+        { "text": "二楼", "cardId": "card-erlou" },
+        { "text": "左边", "cardId": "card-zuobian" },
+        { "text": "。”" }
+      ]
+    },
+    {
+      "id": "hospital-section-2",
+      "heading": "Gặp bác sĩ",
+      "textZh": "医生问她：“你咳嗽多久了？”林雨说：“两天了，还有一点发烧。”医生建议她多喝水，按时吃药。",
+      "textVi": "Bác sĩ hỏi cô ấy: “Bạn ho bao lâu rồi?” Lâm Vũ nói: “Hai ngày rồi, còn hơi sốt nữa.” Bác sĩ khuyên cô uống nhiều nước và uống thuốc đúng giờ.",
+      "focusCardIds": [
+        "card-kesou",
+        "card-fashao",
+        "card-duoheshui",
+        "card-anshichiyao"
+      ],
+      "segments": [
+        { "text": "医生问她：“你" },
+        { "text": "咳嗽", "cardId": "card-kesou" },
+        { "text": "多久了？”林雨说：“两天了，还有一点" },
+        { "text": "发烧", "cardId": "card-fashao" },
+        { "text": "。”医生建议她" },
+        { "text": "多喝水", "cardId": "card-duoheshui" },
+        { "text": "，" },
+        { "text": "按时吃药", "cardId": "card-anshichiyao" },
+        { "text": "。" }
+      ]
+    }
+  ]
+}

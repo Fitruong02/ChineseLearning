@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "generatedAt": "2026-04-07T19:20:00.000Z",
+  "materials": [
+    "content/materials/material-hospital-route.json",
+    "content/materials/material-weekend-library.json",
+    "content/materials/material-expanded-vocabulary-lessons-1-9.json"
+  ],
+  "publishedDecks": [
+    "content/published/deck-hospital-route.json",
+    "content/published/deck-weekend-library-core.json",
+    "content/published/deck-expanded-vocabulary-lessons-1-9.json"
+  ],
+  "draftDecks": [
+    "content/drafts/draft-weekend-library-expansion.json"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "id": "material-weekend-library",
+  "title": "Cuối tuần ở thư viện",
+  "type": "text",
+  "originPath": "materials/weekend-library.txt",
+  "language": "zh-CN",
+  "importedAt": "2026-04-05T08:30:00.000Z",
+  "ocrMode": "manual",
+  "summary": "Bài đọc ngắn về việc vào thư viện, trả sách, tìm chỗ ngồi và ôn lại từ mới.",
+  "tags": ["thư viện", "cuối tuần", "HSK2"],
+  "linkedDeckIds": ["deck-weekend-library-core"],
+  "sections": [
+    {
+      "id": "library-section-1",
+      "heading": "Vào thư viện",
+      "textZh": "周末上午，我去图书馆还书，也想借一本新的小说。门口的管理员告诉我：“三楼还有空位，你可以先上去找座位。”",
+      "textVi": "Sáng cuối tuần, tôi đến thư viện trả sách, đồng thời muốn mượn một cuốn tiểu thuyết mới. Người quản lý ở cửa nói với tôi: “Tầng ba vẫn còn chỗ trống, bạn có thể lên đó tìm chỗ ngồi trước.”",
+      "focusCardIds": [
+        "card-tushuguan",
+        "card-huanshu",
+        "card-jie",
+        "card-xiaoshuo",
+        "card-zuowei"
+      ],
+      "segments": [
+        { "text": "周末上午，我去" },
+        { "text": "图书馆", "cardId": "card-tushuguan" },
+        { "text": "还书", "cardId": "card-huanshu" },
+        { "text": "，也想" },
+        { "text": "借", "cardId": "card-jie" },
+        { "text": "一本新的" },
+        { "text": "小说", "cardId": "card-xiaoshuo" },
+        { "text": "。门口的管理员告诉我：“三楼还有空位，你可以先上去找" },
+        { "text": "座位", "cardId": "card-zuowei" },
+        { "text": "。”" }
+      ]
+    },
+    {
+      "id": "library-section-2",
+      "heading": "Ngồi xuống và học",
+      "textZh": "找到座位以后，我打开笔记本，先复习昨天的生词，再写今天的学习计划。",
+      "textVi": "Sau khi tìm được chỗ ngồi, tôi mở máy tính xách tay, trước tiên ôn lại từ mới hôm qua rồi viết kế hoạch học hôm nay.",
+      "focusCardIds": [
+        "card-zuowei",
+        "card-fuxi"
+      ],
+      "segments": [
+        { "text": "找到" },
+        { "text": "座位", "cardId": "card-zuowei" },
+        { "text": "以后，我打开笔记本，先" },
+        { "text": "复习", "cardId": "card-fuxi" },
+        { "text": "昨天的生词，再写今天的学习计划。" }
+      ]
+    }
+  ]
+}
