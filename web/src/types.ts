@@ -8,6 +8,8 @@ export type FocusState = 'normal' | 'trouble'
 export type MotionPreference = 'full' | 'reduced'
 export type ReviewMixMode = 'random' | 'by_lesson' | 'by_phonetic'
 export type PhoneticMode = 'initial' | 'final'
+export type ReviewPracticeMode = 'flashcard' | 'type_answer'
+export type PromptField = 'hanzi' | 'pinyin' | 'meaningVi'
 
 export interface MaterialSegment {
   text: string
@@ -18,6 +20,7 @@ export interface MaterialSection {
   id: string
   heading: string
   textZh: string
+  textPinyin?: string
   textVi: string
   focusCardIds: string[]
   segments?: MaterialSegment[]
@@ -44,11 +47,10 @@ export interface PublishedCard {
   pinyin: string
   meaningVi: string
   exampleZh: string
+  examplePinyin?: string
   exampleVi: string
   audioText: string
   tags: string[]
-  imageUrl?: string
-  imageAttribution?: string
 }
 
 export interface PublishedDeck {
@@ -69,6 +71,7 @@ export interface DraftCard {
   pinyin: string
   meaningVi: string
   exampleZh: string
+  examplePinyin?: string
   exampleVi: string
   sourceSnippet: string
   tags: string[]
@@ -134,21 +137,29 @@ export interface ReviewSessionContext {
 
 export interface ReviewSessionState {
   initialCardIds: string[]
-  sessionQueue: string[]
-  relearnQueue: ReviewSessionQueueItem[]
+  practiceMode: ReviewPracticeMode
+  startCardId: string | null
+  remainingBatchCardIds: string[]
+  activeBatchCardIds: string[]
+  currentRoundCardIds: string[]
+  retryCardIds: string[]
   checkpointCardIds: string[]
-  pendingAgainCardIds: string[]
   reviewedCardIds: string[]
   completedCardIds: string[]
   troubleCardIds: string[]
-  sessionAgainCounts: Record<string, number>
+  promptFieldByCardId: Record<string, PromptField>
   combo: number
   bestCombo: number
   answeredCount: number
   motionPreference: MotionPreference
   mixMode: ReviewMixMode
   phoneticMode: PhoneticMode
-  focusDrillEnabled: boolean
-  drillQueue: string[]
-  drillStreakByCardId: Record<string, number>
+  batchIndex: number
+  roundIndex: number
+}
+
+export interface ReviewNavigationOptions {
+  deckId?: string
+  startCardId?: string
+  mode?: ReviewPracticeMode
 }

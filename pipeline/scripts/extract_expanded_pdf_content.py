@@ -315,7 +315,7 @@ def main() -> None:
         "pinyin": entry.pinyin,
         "meaningVi": entry.meaning_vi,
         "exampleZh": f"课文常见词：{entry.hanzi}。",
-        "exampleVi": f"Tu '{entry.hanzi}' nghia la: {entry.meaning_vi}.",
+        "exampleVi": f"Từ '{entry.hanzi}' nghĩa là: {entry.meaning_vi}.",
         "audioText": entry.hanzi,
         "tags": ["expanded", entry.lesson_code],
       },

@@ -21,6 +21,7 @@ from .models import (
     PublishedCard,
     PublishedDeck,
 )
+from .pinyin_utils import build_example_pinyin, text_to_pinyin
 
 SENTENCE_SPLIT = re.compile(r"(?<=[。！？!?])\s*")
 CHINESE_TOKEN = re.compile(r"[\u4e00-\u9fff]{1,8}")
@@ -324,6 +325,11 @@ def ingest_material(
                 pinyin=str(candidate["pinyin"]),
                 meaningVi=str(enrichment["meaning_vi"]),
                 exampleZh=str(candidate["example_zh"]),
+                examplePinyin=build_example_pinyin(
+                    str(candidate["example_zh"]),
+                    hanzi,
+                    str(candidate["pinyin"]),
+                ),
                 exampleVi=str(enrichment["example_vi"]),
                 sourceSnippet=str(candidate["example_zh"]),
                 tags=tags,
@@ -343,6 +349,7 @@ def ingest_material(
                 id=f"{material_id}-section-{index}",
                 heading=f"Đoạn {index}",
                 textZh=sentence,
+                textPinyin=text_to_pinyin(sentence),
                 textVi=translated_sections[index - 1],
                 focusCardIds=focus_card_ids[:8],
                 segments=annotate_sentence(sentence, card_ids),
@@ -395,6 +402,14 @@ def _published_card_from_payload(payload: dict, deck_id: str) -> PublishedCard:
         pinyin=str(payload.get("pinyin", "")),
         meaningVi=str(payload.get("meaningVi", "")),
         exampleZh=str(payload.get("exampleZh", "")),
+        examplePinyin=str(
+            payload.get("examplePinyin")
+            or build_example_pinyin(
+                str(payload.get("exampleZh", "")),
+                str(payload["hanzi"]),
+                str(payload.get("pinyin", "")),
+            )
+        ),
         exampleVi=str(payload.get("exampleVi", "")),
         audioText=str(payload.get("audioText", payload["hanzi"])),
         tags=list(payload.get("tags", [])),
@@ -442,6 +457,10 @@ def export_published_deck(
             pinyin=card["pinyin"],
             meaningVi=card["meaningVi"],
             exampleZh=card["exampleZh"],
+            examplePinyin=str(
+                card.get("examplePinyin")
+                or build_example_pinyin(card["exampleZh"], card["hanzi"], card["pinyin"])
+            ),
             exampleVi=card["exampleVi"],
             audioText=card["hanzi"],
             tags=card.get("tags", []),
@@ -507,7 +526,7 @@ def export_published_deck(
             material_payload["linkedDeckIds"] = [*linked_decks, deck_id]
             write_json(material_path, material_payload)
 
-    csv_rows = ["hanzi,pinyin,meaningVi,exampleZh,exampleVi,tags"]
+    csv_rows = ["hanzi,pinyin,meaningVi,exampleZh,examplePinyin,exampleVi,tags"]
 
     for card in published.cards:
         csv_rows.append(
@@ -517,6 +536,7 @@ def export_published_deck(
                     _escape_csv(card.pinyin),
                     _escape_csv(card.meaningVi),
                     _escape_csv(card.exampleZh),
+                    _escape_csv(card.examplePinyin),
                     _escape_csv(card.exampleVi),
                     _escape_csv(" ".join(card.tags)),
                 ]

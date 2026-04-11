@@ -23,7 +23,8 @@
       "tags": [
         "địa điểm",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yīyuàn guà hào。"
     },
     {
       "id": "card-guahao",
@@ -31,13 +32,14 @@
       "hanzi": "挂号",
       "pinyin": "guàhào",
       "meaningVi": "đăng ký khám",
-      "exampleZh": "她先去医院挂号。",
-      "exampleVi": "Cô ấy trước tiên đi đăng ký khám ở bệnh viện.",
+      "exampleZh": "今天早上，林雨去医院挂号。",
+      "exampleVi": "Sáng nay Lâm Vũ đến bệnh viện đăng ký khám.",
       "audioText": "挂号",
       "tags": [
         "y tế",
         "thủ tục"
-      ]
+      ],
+      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yī yuàn guàhào。"
     },
     {
       "id": "card-fuwutai",
@@ -45,13 +47,14 @@
       "hanzi": "服务台",
       "pinyin": "fúwùtái",
       "meaningVi": "quầy dịch vụ",
-      "exampleZh": "她先在服务台问路。",
-      "exampleVi": "Cô ấy hỏi đường ở quầy dịch vụ trước.",
+      "exampleZh": "她先在服务台问：“请问内科在哪里？”",
+      "exampleVi": "Cô hỏi ở quầy dịch vụ: “Cho hỏi khoa nội ở đâu ạ?”",
       "audioText": "服务台",
       "tags": [
         "địa điểm",
         "toà nhà"
-      ]
+      ],
+      "examplePinyin": "tā xiān zài fúwùtái wèn： “qǐng wèn nèi kē zài nǎ lǐ？”"
     },
     {
       "id": "card-neike",
@@ -59,13 +62,14 @@
       "hanzi": "内科",
       "pinyin": "nèikē",
       "meaningVi": "khoa nội",
-      "exampleZh": "请问内科在哪里？",
-      "exampleVi": "Cho hỏi khoa nội ở đâu ạ?",
+      "exampleZh": "她先在服务台问：“请问内科在哪里？”",
+      "exampleVi": "Cô hỏi ở quầy dịch vụ: “Cho hỏi khoa nội ở đâu ạ?”",
       "audioText": "内科",
       "tags": [
         "y tế",
         "khoa phòng"
-      ]
+      ],
+      "examplePinyin": "tā xiān zài fú wù tái wèn： “qǐng wèn nèikē zài nǎ lǐ？”"
     },
     {
       "id": "card-hushi",
@@ -73,13 +77,14 @@
       "hanzi": "护士",
       "pinyin": "hùshi",
       "meaningVi": "y tá",
-      "exampleZh": "护士说：“一直往前走。”",
-      "exampleVi": "Y tá nói: “Cứ đi thẳng về phía trước.”",
+      "exampleZh": "护士说：“一直往前走，在二楼左边。”",
+      "exampleVi": "Y tá trả lời: “Cứ đi thẳng về phía trước, ở bên trái tầng hai.”",
       "audioText": "护士",
       "tags": [
         "nghề nghiệp",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "hùshi shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒ biān。”"
     },
     {
       "id": "card-yizhiwangqianzou",
@@ -87,13 +92,14 @@
       "hanzi": "一直往前走",
       "pinyin": "yìzhí wǎng qián zǒu",
       "meaningVi": "cứ đi thẳng về phía trước",
-      "exampleZh": "一直往前走，在二楼左边。",
-      "exampleVi": "Cứ đi thẳng về phía trước, ở bên trái tầng hai.",
+      "exampleZh": "护士说：“一直往前走，在二楼左边。”",
+      "exampleVi": "Y tá trả lời: “Cứ đi thẳng về phía trước, ở bên trái tầng hai.”",
       "audioText": "一直往前走",
       "tags": [
         "chỉ đường",
         "động từ"
-      ]
+      ],
+      "examplePinyin": "hù shì shuō： “yìzhí wǎng qián zǒu， zài èr lóu zuǒ biān。”"
     },
     {
       "id": "card-erlou",
@@ -101,13 +107,14 @@
       "hanzi": "二楼",
       "pinyin": "èrlóu",
       "meaningVi": "tầng hai",
-      "exampleZh": "内科在二楼左边。",
-      "exampleVi": "Khoa nội ở bên trái tầng hai.",
+      "exampleZh": "护士说：“一直往前走，在二楼左边。”",
+      "exampleVi": "Y tá trả lời: “Cứ đi thẳng về phía trước, ở bên trái tầng hai.”",
       "audioText": "二楼",
       "tags": [
         "toà nhà",
         "chỉ đường"
-      ]
+      ],
+      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èrlóu zuǒ biān。”"
     },
     {
       "id": "card-zuobian",
@@ -115,12 +122,13 @@
       "hanzi": "左边",
       "pinyin": "zuǒbiān",
       "meaningVi": "bên trái",
-      "exampleZh": "在二楼左边。",
-      "exampleVi": "Ở bên trái tầng hai.",
+      "exampleZh": "护士说：“一直往前走，在二楼左边。”",
+      "exampleVi": "Y tá trả lời: “Cứ đi thẳng về phía trước, ở bên trái tầng hai.”",
       "audioText": "左边",
       "tags": [
         "chỉ đường"
-      ]
+      ],
+      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒbiān。”"
     },
     {
       "id": "card-kesou",
@@ -128,13 +136,14 @@
       "hanzi": "咳嗽",
       "pinyin": "késou",
       "meaningVi": "ho",
-      "exampleZh": "你咳嗽多久了？",
-      "exampleVi": "Bạn ho bao lâu rồi?",
+      "exampleZh": "医生问她：“你咳嗽多久了？”",
+      "exampleVi": "Bác sĩ hỏi cô ấy: “Bạn ho bao lâu rồi?”",
       "audioText": "咳嗽",
       "tags": [
         "triệu chứng",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "yī shēng wèn tā： “nǐ késou duō jiǔ le？”"
     },
     {
       "id": "card-fashao",
@@ -142,13 +151,14 @@
       "hanzi": "发烧",
       "pinyin": "fāshāo",
       "meaningVi": "sốt",
-      "exampleZh": "她还有一点发烧。",
-      "exampleVi": "Cô ấy còn hơi sốt.",
+      "exampleZh": "林雨说：“两天了，还有一点发烧。”",
+      "exampleVi": "Lâm Vũ nói: “Hai ngày rồi, còn hơi sốt nữa.”",
       "audioText": "发烧",
       "tags": [
         "triệu chứng",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "lín yǔ shuō： “liǎng tiān le， hái yǒu yì diǎn fāshāo。”"
     },
     {
       "id": "card-duoheshui",
@@ -156,13 +166,14 @@
       "hanzi": "多喝水",
       "pinyin": "duō hē shuǐ",
       "meaningVi": "uống nhiều nước",
-      "exampleZh": "医生建议她多喝水。",
-      "exampleVi": "Bác sĩ khuyên cô ấy uống nhiều nước.",
+      "exampleZh": "医生建议她多喝水，按时吃药。",
+      "exampleVi": "Bác sĩ khuyên cô uống nhiều nước và uống thuốc đúng giờ.",
       "audioText": "多喝水",
       "tags": [
         "lời khuyên",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， àn shí chī yào。"
     },
     {
       "id": "card-anshichiyao",
@@ -170,13 +181,14 @@
       "hanzi": "按时吃药",
       "pinyin": "ànshí chī yào",
       "meaningVi": "uống thuốc đúng giờ",
-      "exampleZh": "医生建议她按时吃药。",
-      "exampleVi": "Bác sĩ khuyên cô ấy uống thuốc đúng giờ.",
+      "exampleZh": "医生建议她多喝水，按时吃药。",
+      "exampleVi": "Bác sĩ khuyên cô uống nhiều nước và uống thuốc đúng giờ.",
       "audioText": "按时吃药",
       "tags": [
         "lời khuyên",
         "y tế"
-      ]
+      ],
+      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， ànshí chī yào。"
     }
   ]
 }

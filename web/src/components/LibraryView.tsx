@@ -13,7 +13,7 @@
  * - web/src/components/DraftsView.tsx
  */
 import { useDeferredValue, useState } from 'react'
-import type { MaterialSource, PublishedDeck } from '../types'
+import type { MaterialSource, PublishedDeck, ReviewNavigationOptions } from '../types'
 
 interface LibraryViewProps {
   materials: MaterialSource[]
@@ -22,7 +22,7 @@ interface LibraryViewProps {
   selectedMaterialId: string
   onSelectDeck: (deckId: string) => void
   onSelectMaterial: (materialId: string) => void
-  onOpenReview: (deckId: string) => void
+  onOpenReview: (options?: ReviewNavigationOptions) => void
   onOpenReader: (options?: { materialId?: string; cardId?: string }) => void
 }
 
@@ -144,7 +144,7 @@ export const LibraryView = ({
               <button
                 type="button"
                 className="primary-button"
-                onClick={() => onOpenReview(selectedDeck.id)}
+                onClick={() => onOpenReview({ deckId: selectedDeck.id })}
               >
                 Review deck này
               </button>
