@@ -1,4 +1,11 @@
-import type { DraftDeck, MaterialSource, PublishedCard, PublishedDeck, StudyRecordMap } from '../types'
+import type {
+  DraftDeck,
+  MaterialSource,
+  PublishedCard,
+  PublishedDeck,
+  ReviewNavigationOptions,
+  StudyRecordMap,
+} from '../types'
 import { formatRelativeDue, isTroubleRecord } from '../lib/srs'
 
 interface DashboardViewProps {
@@ -7,7 +14,7 @@ interface DashboardViewProps {
   draftDecks: DraftDeck[]
   dueCards: PublishedCard[]
   records: StudyRecordMap
-  onOpenReview: (deckId?: string) => void
+  onOpenReview: (options?: ReviewNavigationOptions) => void
   onOpenReader: (options?: { materialId?: string; cardId?: string }) => void
 }
 
@@ -134,7 +141,7 @@ export const DashboardView = ({
                 key={card.id}
                 type="button"
                 className="list-row"
-                onClick={() => onOpenReview(card.deckId)}
+                onClick={() => onOpenReview({ deckId: card.deckId, startCardId: card.id })}
               >
                 <div>
                   <strong>{card.hanzi}</strong>
@@ -164,7 +171,7 @@ export const DashboardView = ({
                 key={card.id}
                 type="button"
                 className="list-row"
-                onClick={() => onOpenReview(card.deckId)}
+                onClick={() => onOpenReview({ deckId: card.deckId, startCardId: card.id })}
               >
                 <div>
                   <strong>{card.hanzi}</strong>
@@ -217,7 +224,7 @@ export const DashboardView = ({
                 key={deck.id}
                 type="button"
                 className="deck-tile"
-                onClick={() => onOpenReview(deck.id)}
+                onClick={() => onOpenReview({ deckId: deck.id })}
               >
                 <span className="eyebrow">{deck.level}</span>
                 <strong>{deck.title}</strong>

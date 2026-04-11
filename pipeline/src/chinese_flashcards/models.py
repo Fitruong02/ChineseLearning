@@ -21,12 +21,15 @@ class MaterialSection:
     id: str
     heading: str
     textZh: str
+    textPinyin: str | None
     textVi: str
     focusCardIds: list[str]
     segments: list[MaterialSegment] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         payload = asdict(self)
+        if payload["textPinyin"] is None:
+            payload.pop("textPinyin")
         payload["segments"] = [segment.to_dict() for segment in self.segments]
         return payload
 
@@ -59,6 +62,7 @@ class DraftCard:
     pinyin: str
     meaningVi: str
     exampleZh: str
+    examplePinyin: str
     exampleVi: str
     sourceSnippet: str
     tags: list[str]
@@ -97,6 +101,7 @@ class PublishedCard:
     pinyin: str
     meaningVi: str
     exampleZh: str
+    examplePinyin: str
     exampleVi: str
     audioText: str
     tags: list[str]

@@ -4,6 +4,7 @@ export interface DraftCardOverride {
   status?: DraftStatus
   meaningVi?: string
   exampleZh?: string
+  examplePinyin?: string
   exampleVi?: string
   mergedInto?: string | null
 }
@@ -22,6 +23,7 @@ export const applyDraftOverrides = (
     ...card,
     meaningVi: overrides[card.id]?.meaningVi ?? card.meaningVi,
     exampleZh: overrides[card.id]?.exampleZh ?? card.exampleZh,
+    examplePinyin: overrides[card.id]?.examplePinyin ?? card.examplePinyin,
     exampleVi: overrides[card.id]?.exampleVi ?? card.exampleVi,
     status: overrides[card.id]?.status ?? card.status,
     mergedInto:
@@ -50,7 +52,7 @@ export const buildPublishedDeckFromDraft = (
 
   const deckId = deck.id.replace(/^draft-/, 'deck-')
 
-  const cards: PublishedCard[] = [...grouped.entries()]
+  const cards = [...grouped.entries()]
     .map(([ownerId, group]) => {
       const preferred =
         group.find((card) => card.id === ownerId && card.status === 'approved') ??
@@ -69,6 +71,7 @@ export const buildPublishedDeckFromDraft = (
         pinyin: preferred.pinyin,
         meaningVi: preferred.meaningVi,
         exampleZh: preferred.exampleZh,
+        ...(preferred.examplePinyin ? { examplePinyin: preferred.examplePinyin } : {}),
         exampleVi: preferred.exampleVi,
         audioText: preferred.hanzi,
         tags,
@@ -95,6 +98,7 @@ export const buildAnkiCsv = (cards: PublishedCard[]) => {
     'pinyin',
     'meaningVi',
     'exampleZh',
+    'examplePinyin',
     'exampleVi',
     'tags',
   ].join(',')
@@ -104,6 +108,7 @@ export const buildAnkiCsv = (cards: PublishedCard[]) => {
       csvEscape(card.pinyin),
       csvEscape(card.meaningVi),
       csvEscape(card.exampleZh),
+      csvEscape(card.examplePinyin ?? ''),
       csvEscape(card.exampleVi),
       csvEscape(card.tags.join(' ')),
     ].join(','),

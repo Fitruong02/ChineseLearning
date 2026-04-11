@@ -17,13 +17,14 @@
       "hanzi": "图书馆",
       "pinyin": "túshūguǎn",
       "meaningVi": "thư viện",
-      "exampleZh": "周末上午，我去图书馆还书。",
-      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách.",
+      "exampleZh": "周末上午，我去图书馆还书，也想借一本新的小说。",
+      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách, đồng thời muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "图书馆",
       "tags": [
         "địa điểm",
         "học tập"
-      ]
+      ],
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù túshūguǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
     },
     {
       "id": "card-huanshu",
@@ -31,13 +32,14 @@
       "hanzi": "还书",
       "pinyin": "huán shū",
       "meaningVi": "trả sách",
-      "exampleZh": "我去图书馆还书。",
-      "exampleVi": "Tôi đến thư viện trả sách.",
+      "exampleZh": "周末上午，我去图书馆还书，也想借一本新的小说。",
+      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách, đồng thời muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "还书",
       "tags": [
         "động từ",
         "thư viện"
-      ]
+      ],
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
     },
     {
       "id": "card-jie",
@@ -45,13 +47,14 @@
       "hanzi": "借",
       "pinyin": "jiè",
       "meaningVi": "mượn",
-      "exampleZh": "我想借一本新的小说。",
-      "exampleVi": "Tôi muốn mượn một cuốn tiểu thuyết mới.",
+      "exampleZh": "周末上午，我去图书馆还书，也想借一本新的小说。",
+      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách, đồng thời muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "借",
       "tags": [
         "động từ",
         "thư viện"
-      ]
+      ],
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
     },
     {
       "id": "card-xiaoshuo",
@@ -59,13 +62,14 @@
       "hanzi": "小说",
       "pinyin": "xiǎoshuō",
       "meaningVi": "tiểu thuyết",
-      "exampleZh": "我想借一本新的小说。",
-      "exampleVi": "Tôi muốn mượn một cuốn tiểu thuyết mới.",
+      "exampleZh": "周末上午，我去图书馆还书，也想借一本新的小说。",
+      "exampleVi": "Sáng cuối tuần, tôi đến thư viện trả sách, đồng thời muốn mượn một cuốn tiểu thuyết mới.",
       "audioText": "小说",
       "tags": [
         "danh từ",
         "đọc sách"
-      ]
+      ],
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎoshuō。"
     },
     {
       "id": "card-zuowei",
@@ -73,13 +77,14 @@
       "hanzi": "座位",
       "pinyin": "zuòwèi",
       "meaningVi": "chỗ ngồi",
-      "exampleZh": "你可以先上去找座位。",
-      "exampleVi": "Bạn có thể lên đó tìm chỗ ngồi trước.",
+      "exampleZh": "门口的管理员告诉我：“三楼还有空位，你可以先上去找座位。”",
+      "exampleVi": "Người quản lý ở cửa nói với tôi: “Tầng ba vẫn còn chỗ trống, bạn có thể lên đó tìm chỗ ngồi trước.”",
       "audioText": "座位",
       "tags": [
         "thư viện",
         "địa điểm"
-      ]
+      ],
+      "examplePinyin": "mén kǒu de guǎn lǐ yuán gào sù wǒ： “sān lóu hái yǒu kòng wèi， nǐ kě yǐ xiān shàng qù zhǎo zuòwèi。”"
     },
     {
       "id": "card-fuxi",
@@ -87,13 +92,14 @@
       "hanzi": "复习",
       "pinyin": "fùxí",
       "meaningVi": "ôn lại",
-      "exampleZh": "我先复习昨天的生词。",
-      "exampleVi": "Tôi ôn lại các từ mới của hôm qua trước.",
+      "exampleZh": "找到座位以后，我打开笔记本，先复习昨天的生词，再写今天的学习计划。",
+      "exampleVi": "Sau khi tìm được chỗ ngồi, tôi mở máy tính xách tay, trước tiên ôn lại từ mới hôm qua rồi viết kế hoạch học hôm nay.",
       "audioText": "复习",
       "tags": [
         "học tập",
         "động từ"
-      ]
+      ],
+      "examplePinyin": "zhǎo dào zuò wèi yǐ hòu， wǒ dǎ kāi bǐ jì běn， xiān fùxí zuó tiān de shēng cí， zài xiě jīn tiān de xué xí jì huà。"
     }
   ]
 }

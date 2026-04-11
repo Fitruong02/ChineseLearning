@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from .backfill_examples import backfill_published_examples
 from .pipeline import export_published_deck, ingest_material
 
 
@@ -69,6 +70,17 @@ def build_export_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def build_backfill_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description="Backfill example sentences and example pinyin for published decks.")
+    parser.add_argument(
+        "--content-root",
+        type=Path,
+        default=Path("web/public/content"),
+        help="Output directory containing materials/, published/ and manifest.json",
+    )
+    return parser
+
+
 def ingest_main() -> None:
     args = build_ingest_parser().parse_args()
     result = ingest_material(
@@ -96,3 +108,16 @@ def export_main() -> None:
 
     print(f"Published deck JSON: {published_path}")
     print(f"Published deck CSV: {csv_path}")
+
+
+def backfill_examples_main() -> None:
+    args = build_backfill_parser().parse_args()
+    updated_paths = backfill_published_examples(args.content_root.resolve())
+
+    if not updated_paths:
+        print("No published decks needed backfill.")
+        return
+
+    print("Updated published decks:")
+    for path in updated_paths:
+        print(f"- {path}")

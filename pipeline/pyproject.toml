@@ -14,12 +14,13 @@ dependencies = [
   "pillow>=11.0.0",
   "pymupdf>=1.24.0",
   "paddleocr>=2.8.0",
-  "requests>=2.31.0"
+  "pypinyin>=0.54.0"
 ]
 
 [project.scripts]
 ingest-material = "chinese_flashcards.cli:ingest_main"
 export-published = "chinese_flashcards.cli:export_main"
+backfill-published-examples = "chinese_flashcards.cli:backfill_examples_main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/chinese_flashcards"]

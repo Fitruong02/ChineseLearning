@@ -9,7 +9,7 @@ import { useContentLibrary } from './hooks/useContentLibrary'
 import { useSpeech } from './hooks/useSpeech'
 import { useStudyRecords } from './hooks/useStudyRecords'
 import { isCardDue } from './lib/srs'
-import type { TabId } from './types'
+import type { ReviewNavigationOptions, ReviewPracticeMode, TabId } from './types'
 
 type ThemeMode = 'light' | 'dark'
 
@@ -65,7 +65,8 @@ function App() {
   const [selectedMaterialId, setSelectedMaterialId] = useState('')
   const [selectedDraftDeckId, setSelectedDraftDeckId] = useState('')
   const [highlightedCardId, setHighlightedCardId] = useState<string | null>(null)
-  const [immersiveReviewMode, setImmersiveReviewMode] = useState(false)
+  const [reviewStartCardId, setReviewStartCardId] = useState<string | null>(null)
+  const [requestedReviewMode, setRequestedReviewMode] = useState<ReviewPracticeMode>('flashcard')
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
     const saved = window.localStorage.getItem('hanzi-theme-mode')
     if (saved === 'dark' || saved === 'light') return saved
@@ -95,7 +96,6 @@ function App() {
   )
 
   const meta = TAB_META[activeTab]
-  const isImmersiveReview = activeTab === 'review' && immersiveReviewMode
   const materialCount = library?.materials.length ?? 0
   const deckCount = library?.publishedDecks.length ?? 0
 
@@ -105,7 +105,18 @@ function App() {
   }
 
   const toggleTheme = () => setThemeMode((v) => v === 'light' ? 'dark' : 'light')
-  const openReview = (deckId?: string) => { setSelectedDeckId(deckId ?? 'all'); navigate('review') }
+  const openReview = (options?: ReviewNavigationOptions) => {
+    setSelectedDeckId(options?.deckId ?? 'all')
+    setReviewStartCardId(options?.startCardId ?? null)
+    if (options?.mode) {
+      setRequestedReviewMode(options.mode)
+    }
+    navigate('review')
+  }
+  const selectReviewDeck = (deckId: string) => {
+    setSelectedDeckId(deckId)
+    setReviewStartCardId(null)
+  }
   const changeVoiceMode = (mode: 'auto' | 'male' | 'female') => {
     setVoiceMode(mode)
     setSelectedVoiceUri('')
@@ -175,8 +186,9 @@ function App() {
         records={records}
         studyReady={studyReady}
         selectedDeckId={selectedDeckId}
+        startCardId={reviewStartCardId}
+        requestedPracticeMode={requestedReviewMode}
         sessionResetVersion={sessionResetVersion}
-        immersiveMode={isImmersiveReview}
         hasChineseVoice={hasChineseVoice}
         hasMaleChineseVoice={hasMaleChineseVoice}
         hasFemaleChineseVoice={hasFemaleChineseVoice}
@@ -185,14 +197,13 @@ function App() {
         selectedVoiceUri={selectedVoiceUri}
         voiceOptions={voiceOptions}
         onChangeSelectedVoiceUri={setSelectedVoiceUri}
-        onSelectDeck={setSelectedDeckId}
+        onSelectDeck={selectReviewDeck}
         onReview={reviewCard}
         onSpeak={speak}
         onOpenReader={openReader}
         onResetSession={resetCurrentSession}
         onResetDeckProgress={resetDeckProgress}
         onResetAllProgress={resetAllProgress}
-        onToggleImmersive={() => setImmersiveReviewMode((v) => !v)}
       />
     )
 
@@ -229,52 +240,48 @@ function App() {
   }
 
   return (
-    <div className={`app-shell ${isImmersiveReview ? 'app-shell--immersive' : ''}`}>
-      {!isImmersiveReview && (
-        <NavigationRail
-          activeTab={activeTab}
-          dueCount={dueCards.length}
-          draftCount={pendingDraftCount}
-          audioReady={hasChineseVoice}
-          onSelect={navigate}
-        />
-      )}
+    <div className="app-shell">
+      <NavigationRail
+        activeTab={activeTab}
+        dueCount={dueCards.length}
+        draftCount={pendingDraftCount}
+        audioReady={hasChineseVoice}
+        onSelect={navigate}
+      />
 
       <main className="main-stage">
-        {!isImmersiveReview && (
-          <header className="workspace-header">
-            <div className="workspace-header__copy">
-              <p className="eyebrow">Hanzi Lens</p>
-              <h2>{meta.title}</h2>
-            </div>
-            <div className="workspace-meta">
-              <div className="workspace-stats">
-                <div className="workspace-stat">
-                  <span>Tài liệu</span>
-                  <strong>{materialCount}</strong>
-                </div>
-                <div className="stat-divider" />
-                <div className="workspace-stat">
-                  <span>Deck</span>
-                  <strong>{deckCount}</strong>
-                </div>
-                <div className="stat-divider" />
-                <div className="workspace-stat accent">
-                  <span>Đến hạn</span>
-                  <strong>{dueCards.length}</strong>
-                </div>
-                <div className="stat-divider" />
-                <div className="workspace-stat">
-                  <span>Draft</span>
-                  <strong>{pendingDraftCount}</strong>
-                </div>
+        <header className="workspace-header">
+          <div className="workspace-header__copy">
+            <p className="eyebrow">Hanzi Lens</p>
+            <h2>{meta.title}</h2>
+          </div>
+          <div className="workspace-meta">
+            <div className="workspace-stats">
+              <div className="workspace-stat">
+                <span>Tài liệu</span>
+                <strong>{materialCount}</strong>
               </div>
-              <button type="button" className="ghost-button compact-button" onClick={toggleTheme}>
-                {themeMode === 'dark' ? '☀ Light' : '☾ Dark'}
-              </button>
+              <div className="stat-divider" />
+              <div className="workspace-stat">
+                <span>Deck</span>
+                <strong>{deckCount}</strong>
+              </div>
+              <div className="stat-divider" />
+              <div className="workspace-stat accent">
+                <span>Đến hạn</span>
+                <strong>{dueCards.length}</strong>
+              </div>
+              <div className="stat-divider" />
+              <div className="workspace-stat">
+                <span>Draft</span>
+                <strong>{pendingDraftCount}</strong>
+              </div>
             </div>
-          </header>
-        )}
+            <button type="button" className="ghost-button compact-button" onClick={toggleTheme}>
+              {themeMode === 'dark' ? '☀ Light' : '☾ Dark'}
+            </button>
+          </div>
+        </header>
 
         {status === 'loading' && (
           <div className="panel loading-panel">

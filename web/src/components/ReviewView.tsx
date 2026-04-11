@@ -1,18 +1,25 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import {
-  isCardDue,
-  isTroubleRecord,
-  reviewTone,
-} from '../lib/srs'
-import { isImageLikelyHelpful } from '../lib/imageFilter'
+  BATCH_SIZE,
+  applyBatchAction,
+  buildInitialQueue,
+  createReviewSession,
+  getPromptFields,
+  normalizeHanzi,
+  normalizeMeaning,
+  normalizePinyin,
+} from '../lib/reviewSession'
+import { reviewTone } from '../lib/srs'
 import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
 import type {
   MotionPreference,
   PhoneticMode,
+  PromptField,
   PublishedCard,
   PublishedDeck,
-  ReviewMixMode,
   ReviewEase,
+  ReviewMixMode,
+  ReviewPracticeMode,
   ReviewSessionState,
   StudyRecordMap,
 } from '../types'
@@ -22,8 +29,9 @@ interface ReviewViewProps {
   records: StudyRecordMap
   studyReady: boolean
   selectedDeckId: string
+  startCardId: string | null
+  requestedPracticeMode: ReviewPracticeMode
   sessionResetVersion: number
-  immersiveMode: boolean
   hasChineseVoice: boolean
   hasMaleChineseVoice: boolean
   hasFemaleChineseVoice: boolean
@@ -39,7 +47,6 @@ interface ReviewViewProps {
   onResetSession: () => void
   onResetDeckProgress: (cardIds: string[]) => Promise<void>
   onResetAllProgress: () => Promise<void>
-  onToggleImmersive: () => void
 }
 
 const reviewActions: Array<{
@@ -48,19 +55,29 @@ const reviewActions: Array<{
   hint: string
   note: string
 }> = [
-  { ease: 'again', label: 'Chưa nhớ', hint: '1', note: 'Quay lại trong phiên' },
-  { ease: 'hard',  label: 'Hơi nhớ',  hint: '2', note: 'Checkpoint cuối phiên' },
-  { ease: 'good',  label: 'Nhớ được', hint: '3', note: 'Đúng nhịp SRS' },
+  { ease: 'again', label: 'Chưa nhớ', hint: '1', note: 'Qua vòng sau của batch' },
+  { ease: 'hard', label: 'Hơi nhớ', hint: '2', note: 'Checkpoint cuối batch' },
+  { ease: 'good', label: 'Nhớ được', hint: '3', note: 'Hoàn thành trong batch' },
 ]
 
 type SoundCue = 'flip' | ReviewEase
 type ResetAction = 'deck' | 'all' | null
+type BatchAction = ReviewEase | 'skip'
+type TypeAnswerResolution = 'correct' | 'again'
 
-const AGAIN_RELEARN_AFTER_CARDS = 3
-const AGAIN_RELEARN_AFTER_MS = 90_000
-const TROUBLE_SESSION_THRESHOLD = 2
+interface ResolvedCardState {
+  card: PublishedCard
+  promptField: PromptField
+  resolution: TypeAnswerResolution
+}
+
 const MILESTONE_STEP = 5
-const DRILL_TARGET_STREAK = 2
+
+const EMPTY_INPUTS = {
+  hanzi: '',
+  pinyin: '',
+  meaningVi: '',
+}
 
 const isEditableTarget = (target: EventTarget | null) =>
   target instanceof HTMLElement &&
@@ -68,12 +85,6 @@ const isEditableTarget = (target: EventTarget | null) =>
     target.tagName === 'INPUT' ||
     target.tagName === 'TEXTAREA' ||
     target.tagName === 'SELECT')
-
-const includeUnique = (items: string[], value: string) =>
-  items.includes(value) ? items : [...items, value]
-
-const removeValue = (items: string[], value: string) =>
-  items.filter((item) => item !== value)
 
 const getDefaultMotionPreference = (): MotionPreference => {
   if (
@@ -86,192 +97,48 @@ const getDefaultMotionPreference = (): MotionPreference => {
   return 'full'
 }
 
-const createEmptySession = (motionPreference: MotionPreference): ReviewSessionState => ({
-  initialCardIds: [],
-  sessionQueue: [],
-  relearnQueue: [],
-  checkpointCardIds: [],
-  pendingAgainCardIds: [],
-  reviewedCardIds: [],
-  completedCardIds: [],
-  troubleCardIds: [],
-  sessionAgainCounts: {},
-  combo: 0,
-  bestCombo: 0,
-  answeredCount: 0,
-  motionPreference,
-  mixMode: 'random',
-  phoneticMode: 'initial',
-  focusDrillEnabled: false,
-  drillQueue: [],
-  drillStreakByCardId: {},
-})
+const fieldLabel = (field: PromptField) => {
+  if (field === 'hanzi') return 'Tiếng Trung'
+  if (field === 'pinyin') return 'Pinyin'
+  return 'Nghĩa'
+}
 
-const sortCardsForSession = (cards: PublishedCard[], records: StudyRecordMap) =>
-  [...cards].sort((l, r) => {
-    const lr = records[l.id], rr = records[r.id]
-    if (!lr && rr) return -1
-    if (lr && !rr) return 1
-    const d = (lr?.dueAt ?? '').localeCompare(rr?.dueAt ?? '')
-    if (d !== 0) return d
-    return l.hanzi.localeCompare(r.hanzi)
+const getCardFieldValue = (card: PublishedCard, field: PromptField) => {
+  if (field === 'hanzi') return card.hanzi
+  if (field === 'pinyin') return card.pinyin
+  return card.meaningVi
+}
+
+const sortCardsForPicker = (cards: PublishedCard[], records: StudyRecordMap) =>
+  [...cards].sort((left, right) => {
+    const leftDue = records[left.id]?.dueAt ?? ''
+    const rightDue = records[right.id]?.dueAt ?? ''
+    const dueCompare = leftDue.localeCompare(rightDue)
+    if (dueCompare !== 0) return dueCompare
+    return left.hanzi.localeCompare(right.hanzi)
   })
 
-const shuffleArray = <T,>(items: T[]) => {
-  const output = [...items]
-  for (let index = output.length - 1; index > 0; index -= 1) {
-    const swapIndex = Math.floor(Math.random() * (index + 1))
-    ;[output[index], output[swapIndex]] = [output[swapIndex], output[index]]
-  }
-  return output
-}
-
-const normalizePinyin = (value: string) =>
-  value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .trim()
-
-const PINYIN_INITIALS = [
-  'zh', 'ch', 'sh',
-  'b', 'p', 'm', 'f', 'd', 't', 'n', 'l', 'g', 'k', 'h',
-  'j', 'q', 'x', 'r', 'z', 'c', 's', 'y', 'w',
-]
-
-const splitPinyinSyllables = (rawPinyin: string) =>
-  normalizePinyin(rawPinyin)
-    .replace(/[^a-z\s]/g, ' ')
-    .split(/\s+/)
-    .filter(Boolean)
-
-const splitInitialFinal = (syllable: string) => {
-  const matchedInitial = PINYIN_INITIALS.find((initial) => syllable.startsWith(initial))
-  if (matchedInitial) {
-    const final = syllable.slice(matchedInitial.length) || 'empty'
-    return { initial: matchedInitial, final }
-  }
-  return { initial: 'zero', final: syllable || 'other' }
-}
-
-const getPinyinInitialFinal = (rawPinyin: string) => {
-  const syllables = splitPinyinSyllables(rawPinyin)
-  if (syllables.length === 0) {
-    return { initial: 'other', final: 'other', initialPattern: 'other', finalPattern: 'other' }
-  }
-  const parts = syllables.map(splitInitialFinal)
-  return {
-    initial: parts[0].initial,
-    final: parts[0].final,
-    initialPattern: parts.map((part) => part.initial).join('-'),
-    finalPattern: parts.map((part) => part.final).join('-'),
-  }
-}
-
-const getLessonKey = (card: PublishedCard) =>
-  card.tags.find((tag) => /^第.+课$/.test(tag)) ?? card.deckId
-
-const buildInitialQueue = (
-  cards: PublishedCard[],
+const createEmptySession = (
+  motionPreference: MotionPreference,
+  practiceMode: ReviewPracticeMode,
   records: StudyRecordMap,
-  mixMode: ReviewMixMode,
-  phoneticMode: PhoneticMode,
-  interleaveDecks: boolean,
-  deckOrder: string[],
-) => {
-  const dueCards = sortCardsForSession(
-    cards.filter((card) => isCardDue(records[card.id])),
+): ReviewSessionState =>
+  createReviewSession([], {
+    motionPreference,
+    mixMode: 'random',
+    phoneticMode: 'initial',
+    practiceMode,
     records,
-  )
-  if (mixMode === 'random') {
-    return shuffleArray(dueCards).map((card) => card.id)
-  }
-  if (mixMode === 'by_lesson') {
-    const groups = new Map<string, PublishedCard[]>()
-    dueCards.forEach((card) => {
-      const key = getLessonKey(card)
-      const current = groups.get(key) ?? []
-      current.push(card)
-      groups.set(key, current)
-    })
-    const groupedQueue = [...groups.keys()]
-      .sort((left, right) => left.localeCompare(right))
-      .flatMap((key) =>
-        (groups.get(key) ?? [])
-          .sort((left, right) => left.hanzi.localeCompare(right.hanzi))
-          .map((card) => card.id),
-      )
-    return groupedQueue
-  }
-  if (mixMode === 'by_phonetic') {
-    const groups = new Map<string, PublishedCard[]>()
-    dueCards.forEach((card) => {
-      const { initialPattern, finalPattern } = getPinyinInitialFinal(card.pinyin)
-      const key = phoneticMode === 'initial' ? initialPattern : finalPattern
-      const current = groups.get(key) ?? []
-      current.push(card)
-      groups.set(key, current)
-    })
-    return [...groups.keys()]
-      .sort((left, right) => left.localeCompare(right))
-      .flatMap((key) =>
-        (groups.get(key) ?? [])
-          .sort((left, right) => left.hanzi.localeCompare(right.hanzi))
-          .map((card) => card.id),
-      )
-  }
-  if (!interleaveDecks) return dueCards.map((card) => card.id)
-  const grouped = new Map<string, PublishedCard[]>()
-  dueCards.forEach((card) => {
-    const g = grouped.get(card.deckId) ?? []
-    g.push(card)
-    grouped.set(card.deckId, g)
   })
-  const queue: string[] = []
-  while (true) {
-    let picked = false
-    deckOrder.forEach((deckId) => {
-      const g = grouped.get(deckId)
-      if (!g?.length) return
-      const next = g.shift()
-      if (!next) return
-      queue.push(next.id)
-      picked = true
-    })
-    if (!picked) break
-  }
-  return queue
-}
-
-const buildCheckpointQueue = (checkpointCardIds: string[], troubleCardIds: string[]) => {
-  const troubleSet = new Set(troubleCardIds)
-  const trouble = checkpointCardIds.filter((id) => troubleSet.has(id))
-  const stable = checkpointCardIds.filter((id) => !troubleSet.has(id))
-  const queue: string[] = []
-  while (trouble.length > 0 || stable.length > 0) {
-    if (trouble.length > 0) queue.push(trouble.shift() as string)
-    if (stable.length > 0) queue.push(stable.shift() as string)
-  }
-  return queue
-}
-
-const shouldPromptRecall = (lapseCount: number, sessionAgainCount: number, isTrouble: boolean) =>
-  isTrouble || lapseCount >= 2 || sessionAgainCount > 0
-
-const getRecallPrompt = (cardId: string, lapseCount: number, sessionAgainCount: number) => {
-  const signal = cardId.length + lapseCount + sessionAgainCount
-  return signal % 2 === 0
-    ? 'Tự nhớ nghĩa tiếng Việt trước khi lật.'
-    : 'Tự nhớ pinyin trước khi lật.'
-}
 
 export const ReviewView = ({
   publishedDecks,
   records,
   studyReady,
   selectedDeckId,
+  startCardId,
+  requestedPracticeMode,
   sessionResetVersion,
-  immersiveMode,
   hasChineseVoice,
   hasMaleChineseVoice,
   hasFemaleChineseVoice,
@@ -287,29 +154,27 @@ export const ReviewView = ({
   onResetSession,
   onResetDeckProgress,
   onResetAllProgress,
-  onToggleImmersive,
 }: ReviewViewProps) => {
   const deckOptions = useMemo(
     () => [
       { id: 'all', label: 'Tất cả deck' },
-      ...publishedDecks.map((d) => ({ id: d.id, label: d.title })),
+      ...publishedDecks.map((deck) => ({ id: deck.id, label: deck.title })),
     ],
     [publishedDecks],
   )
-
-  const deckOrder = useMemo(() => publishedDecks.map((d) => d.id), [publishedDecks])
-  const deckById = useMemo(() => new Map(publishedDecks.map((d) => [d.id, d])), [publishedDecks])
-
-  const activeCards = useMemo(() => {
-    if (selectedDeckId === 'all') return publishedDecks.flatMap((d) => d.cards)
-    return publishedDecks.find((d) => d.id === selectedDeckId)?.cards ?? []
-  }, [publishedDecks, selectedDeckId])
-
-  const cardsById = useMemo(() => new Map(activeCards.map((c) => [c.id, c])), [activeCards])
+  const deckOrder = useMemo(() => publishedDecks.map((deck) => deck.id), [publishedDecks])
+  const deckById = useMemo(() => new Map(publishedDecks.map((deck) => [deck.id, deck])), [publishedDecks])
 
   const [revealed, setRevealed] = useState(false)
   const [soundEnabled, setSoundEnabled] = useState(true)
   const [motionPreference, setMotionPreference] = useState<MotionPreference>(getDefaultMotionPreference)
+  const [practiceMode, setPracticeMode] = useState<ReviewPracticeMode>(() => {
+    const saved = window.localStorage.getItem('review-practice-mode')
+    if (saved === 'flashcard' || saved === 'type_answer') {
+      return saved
+    }
+    return requestedPracticeMode
+  })
   const [mixMode, setMixMode] = useState<ReviewMixMode>(() => {
     const saved = window.localStorage.getItem('review-mix-mode')
     if (saved === 'random' || saved === 'by_lesson' || saved === 'by_phonetic') {
@@ -322,276 +187,272 @@ export const ReviewView = ({
     if (saved === 'initial' || saved === 'final') return saved
     return 'initial'
   })
-  const [focusDrillEnabled, setFocusDrillEnabled] = useState<boolean>(() => {
-    const saved = window.localStorage.getItem('review-focus-drill')
-    return saved === 'true'
-  })
-  const [showCardImages, setShowCardImages] = useState<boolean>(() => {
-    const saved = window.localStorage.getItem('review-show-card-images')
-    return saved === 'true'
-  })
   const [stageFeedback, setStageFeedback] = useState<ReviewEase | null>(null)
   const [activeMilestone, setActiveMilestone] = useState<number | null>(null)
   const [activeReset, setActiveReset] = useState<ResetAction>(null)
+  const [sessionStartCardId, setSessionStartCardId] = useState<string | null>(startCardId)
+  const [startCardPickerValue, setStartCardPickerValue] = useState(startCardId ?? '')
+  const [startCardSearch, setStartCardSearch] = useState('')
   const [sessionState, setSessionState] = useState<ReviewSessionState>(() =>
-    createEmptySession(getDefaultMotionPreference()),
+    createEmptySession(getDefaultMotionPreference(), requestedPracticeMode, records),
   )
+  const [answerInputs, setAnswerInputs] = useState(EMPTY_INPUTS)
+  const [typeAnswerMessage, setTypeAnswerMessage] = useState<string | null>(null)
+  const [showHint, setShowHint] = useState(false)
+  const [resolvedCardState, setResolvedCardState] = useState<ResolvedCardState | null>(null)
 
   const audioContextRef = useRef<AudioContext | null>(null)
   const recordsRef = useRef(records)
   const motionPreferenceRef = useRef(motionPreference)
 
-  useEffect(() => { recordsRef.current = records }, [records])
-  useEffect(() => { motionPreferenceRef.current = motionPreference }, [motionPreference])
-  useEffect(() => { window.localStorage.setItem('review-mix-mode', mixMode) }, [mixMode])
-  useEffect(() => { window.localStorage.setItem('review-phonetic-mode', phoneticMode) }, [phoneticMode])
-  useEffect(() => { window.localStorage.setItem('review-focus-drill', focusDrillEnabled ? 'true' : 'false') }, [focusDrillEnabled])
-  useEffect(() => { window.localStorage.setItem('review-show-card-images', showCardImages ? 'true' : 'false') }, [showCardImages])
+  useEffect(() => {
+    recordsRef.current = records
+  }, [records])
+
+  useEffect(() => {
+    motionPreferenceRef.current = motionPreference
+  }, [motionPreference])
+
+  useEffect(() => {
+    setPracticeMode(requestedPracticeMode)
+  }, [requestedPracticeMode])
+
+  useEffect(() => {
+    setSessionStartCardId(startCardId)
+    setStartCardPickerValue(startCardId ?? '')
+  }, [startCardId])
+
+  useEffect(() => {
+    window.localStorage.setItem('review-practice-mode', practiceMode)
+  }, [practiceMode])
+
+  useEffect(() => {
+    window.localStorage.setItem('review-mix-mode', mixMode)
+  }, [mixMode])
+
+  useEffect(() => {
+    window.localStorage.setItem('review-phonetic-mode', phoneticMode)
+  }, [phoneticMode])
+
+  const activeCards = useMemo(() => {
+    if (selectedDeckId === 'all') return publishedDecks.flatMap((deck) => deck.cards)
+    return publishedDecks.find((deck) => deck.id === selectedDeckId)?.cards ?? []
+  }, [publishedDecks, selectedDeckId])
+
+  const cardsById = useMemo(() => new Map(activeCards.map((card) => [card.id, card])), [activeCards])
+  const selectedDeck = selectedDeckId === 'all'
+    ? undefined
+    : publishedDecks.find((deck) => deck.id === selectedDeckId)
+
+  const startableCards = useMemo(
+    () => sortCardsForPicker(activeCards, records).filter((card) => !records[card.id] || new Date(records[card.id].dueAt).getTime() <= Date.now()),
+    [activeCards, records],
+  )
+
+  const filteredStartCards = useMemo(() => {
+    const normalizedQuery = startCardSearch.trim().toLowerCase()
+    if (!normalizedQuery) {
+      return startableCards
+    }
+
+    return startableCards.filter((card) =>
+      [card.hanzi, card.pinyin, card.meaningVi, card.tags.join(' ')]
+        .join(' ')
+        .toLowerCase()
+        .includes(normalizedQuery),
+    )
+  }, [startCardSearch, startableCards])
 
   useEffect(() => {
     if (!studyReady) {
-      setSessionState(createEmptySession(motionPreferenceRef.current))
+      setSessionState(createEmptySession(motionPreferenceRef.current, practiceMode, recordsRef.current))
       setRevealed(false)
       return
     }
-    const activeRecords = recordsRef.current
-    const mp = motionPreferenceRef.current
+
     const initialQueue = buildInitialQueue(
       activeCards,
-      activeRecords,
+      recordsRef.current,
       mixMode,
       phoneticMode,
       selectedDeckId === 'all',
       deckOrder,
+      sessionStartCardId,
     )
-    setSessionState({
-      initialCardIds: initialQueue,
-      sessionQueue: initialQueue,
-      relearnQueue: [],
-      checkpointCardIds: [],
-      pendingAgainCardIds: [],
-      reviewedCardIds: [],
-      completedCardIds: [],
-      troubleCardIds: initialQueue.filter((id) => isTroubleRecord(activeRecords[id])),
-      sessionAgainCounts: {},
-      combo: 0,
-      bestCombo: 0,
-      answeredCount: 0,
-      motionPreference: mp,
+
+    setSessionState(createReviewSession(initialQueue, {
+      motionPreference: motionPreferenceRef.current,
       mixMode,
       phoneticMode,
-      focusDrillEnabled,
-      drillQueue: [],
-      drillStreakByCardId: {},
-    })
+      practiceMode,
+      startCardId: sessionStartCardId,
+      records: recordsRef.current,
+    }))
+    setResolvedCardState(null)
+    setAnswerInputs(EMPTY_INPUTS)
+    setTypeAnswerMessage(null)
+    setShowHint(false)
     setRevealed(false)
     setStageFeedback(null)
     setActiveMilestone(null)
-  }, [activeCards, deckOrder, focusDrillEnabled, mixMode, phoneticMode, selectedDeckId, sessionResetVersion, studyReady])
+  }, [
+    activeCards,
+    deckOrder,
+    mixMode,
+    phoneticMode,
+    practiceMode,
+    selectedDeckId,
+    sessionResetVersion,
+    sessionStartCardId,
+    studyReady,
+  ])
 
   useEffect(() => {
-    setSessionState((c) => ({ ...c, motionPreference }))
-  }, [motionPreference])
+    setSessionState((current) => ({ ...current, motionPreference, practiceMode }))
+  }, [motionPreference, practiceMode])
 
   useEffect(() => {
     if (!stageFeedback) return
-    const id = window.setTimeout(() => setStageFeedback(null), 260)
-    return () => window.clearTimeout(id)
+    const timeoutId = window.setTimeout(() => setStageFeedback(null), 280)
+    return () => window.clearTimeout(timeoutId)
   }, [stageFeedback])
 
   useEffect(() => {
     if (activeMilestone === null) return
-    const id = window.setTimeout(() => setActiveMilestone(null), 1600)
-    return () => window.clearTimeout(id)
+    const timeoutId = window.setTimeout(() => setActiveMilestone(null), 1600)
+    return () => window.clearTimeout(timeoutId)
   }, [activeMilestone])
 
   const playFeedback = useCallback((cue: SoundCue) => {
     if (!soundEnabled || typeof window === 'undefined') return
-    const BAC = window.AudioContext ?? (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
-    if (!BAC) return
-    const ctx = audioContextRef.current ?? new BAC()
-    audioContextRef.current = ctx
-    if (ctx.state === 'suspended') void ctx.resume()
-    const now = ctx.currentTime
-    const gain = ctx.createGain()
-    gain.connect(ctx.destination)
-    gain.gain.setValueAtTime(0.0001, now)
-    const osc = ctx.createOscillator()
-    osc.connect(gain)
-    const tones: Record<SoundCue, { f: number; d: number; c: number }> = {
-      flip:  { f: 540, d: 0.07, c: 0.065 },
-      again: { f: 230, d: 0.12, c: 0.09  },
-      hard:  { f: 320, d: 0.10, c: 0.08  },
-      good:  { f: 510, d: 0.12, c: 0.10  },
-      easy:  { f: 690, d: 0.14, c: 0.12  },
+
+    const BaseAudioContext =
+      window.AudioContext ??
+      (window as Window & { webkitAudioContext?: typeof AudioContext }).webkitAudioContext
+    if (!BaseAudioContext) return
+
+    const context = audioContextRef.current ?? new BaseAudioContext()
+    audioContextRef.current = context
+    if (context.state === 'suspended') {
+      void context.resume()
     }
-    const t = tones[cue]
+
+    const now = context.currentTime
+    const gain = context.createGain()
+    gain.connect(context.destination)
+    gain.gain.setValueAtTime(0.0001, now)
+
+    const oscillator = context.createOscillator()
+    oscillator.connect(gain)
+
+    const tones: Record<SoundCue, { frequency: number; duration: number; cutoff: number }> = {
+      flip: { frequency: 540, duration: 0.07, cutoff: 0.065 },
+      again: { frequency: 230, duration: 0.12, cutoff: 0.09 },
+      hard: { frequency: 320, duration: 0.1, cutoff: 0.08 },
+      good: { frequency: 510, duration: 0.12, cutoff: 0.1 },
+      easy: { frequency: 690, duration: 0.14, cutoff: 0.12 },
+    }
+
+    const tone = tones[cue]
     gain.gain.exponentialRampToValueAtTime(0.12, now + 0.01)
-    gain.gain.exponentialRampToValueAtTime(0.0001, now + t.c)
-    osc.frequency.setValueAtTime(t.f, now)
-    osc.type = cue === 'again' ? 'sawtooth' : 'sine'
-    osc.start(now)
-    osc.stop(now + t.d)
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + tone.cutoff)
+    oscillator.frequency.setValueAtTime(tone.frequency, now)
+    oscillator.type = cue === 'again' ? 'sawtooth' : 'sine'
+    oscillator.start(now)
+    oscillator.stop(now + tone.duration)
   }, [soundEnabled])
 
   const queueCards = useMemo(
-    () => sessionState.sessionQueue.map((id) => cardsById.get(id)).filter((c): c is PublishedCard => Boolean(c)),
-    [cardsById, sessionState.sessionQueue],
+    () =>
+      sessionState.currentRoundCardIds
+        .map((cardId) => cardsById.get(cardId))
+        .filter((card): card is PublishedCard => Boolean(card)),
+    [cardsById, sessionState.currentRoundCardIds],
   )
 
-  const currentCard = queueCards[0]
-  const selectedDeck = selectedDeckId === 'all' ? undefined : publishedDecks.find((d) => d.id === selectedDeckId)
+  const queuedCard = queueCards[0]
+  const currentCard = resolvedCardState?.card ?? queuedCard
   const currentDeck = currentCard ? deckById.get(currentCard.deckId) : selectedDeck
+  const currentPromptField = currentCard
+    ? sessionState.promptFieldByCardId[currentCard.id] ?? 'meaningVi'
+    : 'meaningVi'
+  const answerFields = getPromptFields(currentPromptField)
+
+  const totalBatchCount = Math.ceil(sessionState.initialCardIds.length / BATCH_SIZE)
   const initialTotal = sessionState.initialCardIds.length
   const completedCount = sessionState.completedCardIds.length
-  const remainingCount = queueCards.length
+  const pendingCount = useMemo(
+    () =>
+      new Set([
+        ...sessionState.currentRoundCardIds,
+        ...sessionState.retryCardIds,
+        ...sessionState.checkpointCardIds,
+        ...sessionState.remainingBatchCardIds,
+      ]).size,
+    [
+      sessionState.checkpointCardIds,
+      sessionState.currentRoundCardIds,
+      sessionState.remainingBatchCardIds,
+      sessionState.retryCardIds,
+    ],
+  )
   const progressPercent = initialTotal > 0 ? Math.round((completedCount / initialTotal) * 100) : 0
-
   const sessionComplete =
     studyReady &&
-    initialTotal > 0 &&
-    sessionState.sessionQueue.length === 0 &&
-    sessionState.relearnQueue.length === 0 &&
-    sessionState.pendingAgainCardIds.length === 0 &&
-    sessionState.checkpointCardIds.length === 0
-
-  const currentRecord = currentCard ? records[currentCard.id] : undefined
-  const currentAgainCount = currentCard ? (sessionState.sessionAgainCounts[currentCard.id] ?? 0) : 0
-  const needsRecallPrompt = Boolean(currentCard) &&
-    shouldPromptRecall(currentRecord?.lapseCount ?? 0, currentAgainCount, isTroubleRecord(currentRecord))
-  const recallPrompt = currentCard
-    ? getRecallPrompt(currentCard.id, currentRecord?.lapseCount ?? 0, currentAgainCount)
-    : ''
-
-  const queueMeta = useMemo(() => ({
-    pendingAgain: new Set(sessionState.pendingAgainCardIds),
-    trouble: new Set(sessionState.troubleCardIds),
-    drill: new Set(sessionState.drillQueue),
-  }), [sessionState.drillQueue, sessionState.pendingAgainCardIds, sessionState.troubleCardIds])
+    sessionState.currentRoundCardIds.length === 0 &&
+    sessionState.retryCardIds.length === 0 &&
+    sessionState.checkpointCardIds.length === 0 &&
+    sessionState.remainingBatchCardIds.length === 0 &&
+    !resolvedCardState
 
   const troubleCards = useMemo(
-    () => sessionState.troubleCardIds.map((id) => cardsById.get(id)).filter((c): c is PublishedCard => Boolean(c)),
+    () =>
+      sessionState.troubleCardIds
+        .map((cardId) => cardsById.get(cardId))
+        .filter((card): card is PublishedCard => Boolean(card)),
     [cardsById, sessionState.troubleCardIds],
   )
 
-  const recoveredCount = sessionState.reviewedCardIds.filter(
-    (id) => (sessionState.sessionAgainCounts[id] ?? 0) > 0 && !sessionState.pendingAgainCardIds.includes(id),
-  ).length
+  useEffect(() => {
+    if (resolvedCardState) {
+      return
+    }
+    setAnswerInputs(EMPTY_INPUTS)
+    setTypeAnswerMessage(null)
+    setShowHint(false)
+  }, [queuedCard?.id, practiceMode, resolvedCardState])
 
-  const reviewInSession = useCallback((ease: ReviewEase) => {
-    if (!currentCard) return
-    const occurredAt = new Date().toISOString()
-    const nowTs = Date.now()
-    onReview(currentCard.id, ease, { occurredAt })
-    playFeedback(ease)
-    setRevealed(false)
-    setStageFeedback(ease)
+  const commitSessionAction = useCallback((cardId: string, action: BatchAction) => {
+    if (action !== 'skip') {
+      const occurredAt = new Date().toISOString()
+      onReview(cardId, action, { occurredAt })
+      playFeedback(action)
+      setStageFeedback(action)
+    }
 
-    setSessionState((cur) => {
-      if (!cur.sessionQueue.includes(currentCard.id)) return cur
-      const curAgain = cur.sessionAgainCounts[currentCard.id] ?? 0
-      const wasCheckpoint = cur.checkpointCardIds.includes(currentCard.id)
-      const wasPending = cur.pendingAgainCardIds.includes(currentCard.id)
-      const wasNew = !records[currentCard.id]
-
-      let nextQueue = cur.sessionQueue.filter((id) => id !== currentCard.id)
-      let nextRelearn = cur.relearnQueue.filter((i) => i.cardId !== currentCard.id)
-      let nextCheckpoint = cur.checkpointCardIds.filter((id) => id !== currentCard.id)
-      let nextPending = [...cur.pendingAgainCardIds]
-      let nextCompleted = removeValue(cur.completedCardIds, currentCard.id)
-      let nextTrouble = [...cur.troubleCardIds]
-      let nextDrillQueue = [...cur.drillQueue]
-      const nextDrillStreakByCardId = { ...cur.drillStreakByCardId }
-      const nextReviewed = includeUnique(cur.reviewedCardIds, currentCard.id)
-      const nextAgainCounts = { ...cur.sessionAgainCounts }
-      const nextAnswered = cur.answeredCount + 1
-      const nextCombo = ease === 'again' ? 0 : cur.combo + 1
-
-      if (ease === 'again') {
-        nextAgainCounts[currentCard.id] = curAgain + 1
-        nextPending = includeUnique(nextPending, currentCard.id)
-        nextDrillQueue = includeUnique(nextDrillQueue, currentCard.id)
-        nextDrillStreakByCardId[currentCard.id] = 0
-        nextRelearn.push({
-          cardId: currentCard.id,
-          availableAfterReviews: cur.answeredCount + 1 + AGAIN_RELEARN_AFTER_CARDS,
-          availableAt: nowTs + AGAIN_RELEARN_AFTER_MS,
-          reason: 'again',
-        })
-      } else {
-        nextPending = removeValue(nextPending, currentCard.id)
-        if (nextDrillQueue.includes(currentCard.id)) {
-          const streak = (nextDrillStreakByCardId[currentCard.id] ?? 0) + 1
-          if (streak >= DRILL_TARGET_STREAK) {
-            nextDrillQueue = removeValue(nextDrillQueue, currentCard.id)
-            delete nextDrillStreakByCardId[currentCard.id]
-          } else {
-            nextDrillStreakByCardId[currentCard.id] = streak
-          }
-        }
-        const needsCheckpoint = ease === 'hard' && !wasCheckpoint && (wasNew || wasPending || curAgain > 0)
-        if (needsCheckpoint) {
-          nextCheckpoint = includeUnique(nextCheckpoint, currentCard.id)
-        } else {
-          nextCompleted = includeUnique(nextCompleted, currentCard.id)
-        }
+    setSessionState((current) => {
+      const next = applyBatchAction(current, cardId, action, recordsRef.current)
+      if (next.combo > 0 && next.combo % MILESTONE_STEP === 0 && next.combo !== current.combo) {
+        setActiveMilestone(next.combo)
       }
-
-      if (isTroubleRecord(records[currentCard.id]) || (nextAgainCounts[currentCard.id] ?? 0) >= TROUBLE_SESSION_THRESHOLD) {
-        nextTrouble = includeUnique(nextTrouble, currentCard.id)
-      }
-
-      const readyRelearn = nextRelearn
-        .filter((i) => i.availableAfterReviews <= nextAnswered || i.availableAt <= nowTs)
-        .map((i) => i.cardId)
-      nextRelearn = nextRelearn.filter((i) => !(i.availableAfterReviews <= nextAnswered || i.availableAt <= nowTs))
-      readyRelearn.forEach((id) => { if (!nextQueue.includes(id)) nextQueue.unshift(id) })
-
-      if (nextQueue.length === 0 && nextPending.length > 0) {
-        const forced = nextRelearn.map((i) => i.cardId)
-        nextRelearn = []
-        nextQueue = [...forced.filter((id) => !nextQueue.includes(id)), ...nextQueue]
-      }
-
-      if (nextQueue.length === 0 && nextPending.length === 0 && nextCheckpoint.length > 0) {
-        nextQueue = buildCheckpointQueue(nextCheckpoint, nextTrouble)
-      }
-
-      if (cur.focusDrillEnabled && nextDrillQueue.length > 0) {
-        nextDrillQueue.forEach((drillCardId) => {
-          if (!nextQueue.includes(drillCardId)) {
-            nextQueue.unshift(drillCardId)
-          }
-        })
-      }
-
-      const nextBest = Math.max(cur.bestCombo, nextCombo)
-      if (nextCombo > 0 && nextCombo % MILESTONE_STEP === 0 && nextCombo !== cur.combo) {
-        setActiveMilestone(nextCombo)
-      }
-
-      return {
-        ...cur,
-        sessionQueue: nextQueue,
-        relearnQueue: nextRelearn,
-        checkpointCardIds: nextCheckpoint,
-        pendingAgainCardIds: nextPending,
-        reviewedCardIds: nextReviewed,
-        completedCardIds: nextCompleted,
-        troubleCardIds: nextTrouble,
-        sessionAgainCounts: nextAgainCounts,
-        combo: nextCombo,
-        bestCombo: nextBest,
-        answeredCount: nextAnswered,
-        drillQueue: nextDrillQueue,
-        drillStreakByCardId: nextDrillStreakByCardId,
-      }
+      return next
     })
-  }, [currentCard, onReview, playFeedback, records])
+    setRevealed(false)
+  }, [onReview, playFeedback])
+
+  const handleFlashcardAction = useCallback((ease: ReviewEase) => {
+    if (!queuedCard) {
+      return
+    }
+    commitSessionAction(queuedCard.id, ease)
+  }, [commitSessionAction, queuedCard])
 
   const handleRestartSession = useCallback(() => {
+    setResolvedCardState(null)
+    setAnswerInputs(EMPTY_INPUTS)
+    setTypeAnswerMessage(null)
+    setShowHint(false)
     setRevealed(false)
-    setStageFeedback(null)
     setActiveMilestone(null)
     onResetSession()
   }, [onResetSession])
@@ -602,9 +463,14 @@ export const ReviewView = ({
     if (!window.confirm('Xác nhận lần hai: deck sẽ quay về trạng thái chưa học.')) return
     setActiveReset('deck')
     try {
-      await onResetDeckProgress(selectedDeck.cards.map((c) => c.id))
+      await onResetDeckProgress(selectedDeck.cards.map((card) => card.id))
       setRevealed(false)
-    } finally { setActiveReset(null) }
+      setResolvedCardState(null)
+      setSessionStartCardId(null)
+      setStartCardPickerValue('')
+    } finally {
+      setActiveReset(null)
+    }
   }, [activeReset, onResetDeckProgress, selectedDeck])
 
   const handleResetAll = useCallback(async () => {
@@ -615,64 +481,215 @@ export const ReviewView = ({
     try {
       await onResetAllProgress()
       setRevealed(false)
-    } finally { setActiveReset(null) }
+      setResolvedCardState(null)
+      setSessionStartCardId(null)
+      setStartCardPickerValue('')
+    } finally {
+      setActiveReset(null)
+    }
   }, [activeReset, onResetAllProgress])
 
   const flipCard = useCallback(() => {
-    if (!currentCard) return
+    if (!queuedCard || practiceMode !== 'flashcard') return
     playFeedback('flip')
-    setRevealed((v) => !v)
-  }, [currentCard, playFeedback])
+    setRevealed((current) => !current)
+  }, [playFeedback, practiceMode, queuedCard])
+
+  const handlePracticeModeChange = (nextMode: ReviewPracticeMode) => {
+    setPracticeMode(nextMode)
+    setResolvedCardState(null)
+  }
+
+  const handleApplyStartCard = () => {
+    const nextCardId = startCardPickerValue || null
+    setResolvedCardState(null)
+    setSessionStartCardId(nextCardId)
+    onResetSession()
+  }
+
+  const handleTypeAnswerInputChange = (field: PromptField, value: string) => {
+    setAnswerInputs((current) => ({
+      ...current,
+      [field]: value,
+    }))
+    setTypeAnswerMessage(null)
+  }
+
+  const resolveTypeAnswer = useCallback((resolution: TypeAnswerResolution) => {
+    if (!queuedCard) {
+      return
+    }
+
+    commitSessionAction(queuedCard.id, resolution === 'correct' ? 'good' : 'again')
+    setResolvedCardState({
+      card: queuedCard,
+      promptField: currentPromptField,
+      resolution,
+    })
+    setShowHint((current) => current || resolution === 'again')
+    setTypeAnswerMessage(
+      resolution === 'correct'
+        ? 'Đúng rồi. Nhịp này đã được chốt và từ kế tiếp đang chờ bạn.'
+        : 'Từ này đã được đánh dấu quay lại vòng sau của batch.',
+    )
+  }, [commitSessionAction, currentPromptField, queuedCard])
+
+  const handleCheckTypeAnswer = () => {
+    if (!queuedCard) {
+      return
+    }
+
+    const expectedMatches = answerFields.every((field) => {
+      const actualValue = answerInputs[field]
+      const expectedValue = getCardFieldValue(queuedCard, field)
+      if (field === 'hanzi') {
+        return normalizeHanzi(actualValue) === normalizeHanzi(expectedValue)
+      }
+      if (field === 'pinyin') {
+        return normalizePinyin(actualValue) === normalizePinyin(expectedValue)
+      }
+      return normalizeMeaning(actualValue) === normalizeMeaning(expectedValue)
+    })
+
+    if (expectedMatches) {
+      resolveTypeAnswer('correct')
+      return
+    }
+
+    setTypeAnswerMessage('Chưa khớp hết cả hai phần. Bạn có thể sửa tiếp, xem gợi ý hoặc chọn Không nhớ.')
+  }
+
+  const handleTypeAnswerSkip = useCallback(() => {
+    if (!queuedCard) {
+      return
+    }
+    commitSessionAction(queuedCard.id, 'skip')
+    setTypeAnswerMessage(null)
+    setShowHint(false)
+    setAnswerInputs(EMPTY_INPUTS)
+  }, [commitSessionAction, queuedCard])
+
+  const handleAdvanceResolvedCard = useCallback(() => {
+    setResolvedCardState(null)
+    setTypeAnswerMessage(null)
+    setShowHint(false)
+    setAnswerInputs(EMPTY_INPUTS)
+  }, [])
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!currentCard || isEditableTarget(e.target)) return
-      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); return }
-      if (e.shiftKey && (e.key === 'R' || e.key === 'r')) { e.preventDefault(); handleRestartSession(); return }
-      if ((e.key === 'a' || e.key === 'A') && currentCard.audioText) {
-        e.preventDefault(); onSpeak(currentCard.audioText); return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (!currentCard || isEditableTarget(event.target)) return
+
+      if ((event.key === 'a' || event.key === 'A') && currentCard.audioText) {
+        event.preventDefault()
+        onSpeak(currentCard.audioText)
+        return
       }
-      if (e.key === '1') { e.preventDefault(); reviewInSession('again') }
-      else if (e.key === '2') { e.preventDefault(); reviewInSession('hard') }
-      else if (e.key === '3') { e.preventDefault(); reviewInSession('good') }
-      else if (e.key === '4') { e.preventDefault(); reviewInSession('easy') }
+
+      if (event.shiftKey && (event.key === 'R' || event.key === 'r')) {
+        event.preventDefault()
+        handleRestartSession()
+        return
+      }
+
+      if (practiceMode === 'flashcard') {
+        if (event.key === ' ' || event.key === 'Enter') {
+          event.preventDefault()
+          flipCard()
+          return
+        }
+        if (event.key === '1') {
+          event.preventDefault()
+          handleFlashcardAction('again')
+        } else if (event.key === '2') {
+          event.preventDefault()
+          handleFlashcardAction('hard')
+        } else if (event.key === '3') {
+          event.preventDefault()
+          handleFlashcardAction('good')
+        }
+        return
+      }
+
+      if (resolvedCardState && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault()
+        handleAdvanceResolvedCard()
+        return
+      }
+
+      if (event.key === '1') {
+        event.preventDefault()
+        resolveTypeAnswer('again')
+      } else if (event.key === '2') {
+        event.preventDefault()
+        handleTypeAnswerSkip()
+      } else if (event.key === 'h' || event.key === 'H') {
+        event.preventDefault()
+        setShowHint((current) => !current)
+      }
     }
+
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentCard, flipCard, handleRestartSession, onSpeak, reviewInSession])
+  }, [
+    currentCard,
+    flipCard,
+    handleAdvanceResolvedCard,
+    handleFlashcardAction,
+    handleRestartSession,
+    handleTypeAnswerSkip,
+    onSpeak,
+    practiceMode,
+    resolvedCardState,
+    resolveTypeAnswer,
+  ])
 
   return (
-    <section className={`view ${immersiveMode ? 'review-focus-mode' : ''}`}>
-      {immersiveMode && (
-        <button
-          type="button"
-          className="focus-exit-button"
-          onClick={onToggleImmersive}
-        >
-          Thoát focus
-        </button>
-      )}
-      {/* Header */}
-      <div className={`review-header ${immersiveMode ? 'panel' : 'panel'}`}>
+    <section className="view">
+      <div className="review-header panel">
         <div className="review-header__lead">
-          <p className="eyebrow">Review — SRS live</p>
-          <h2>Lật thẻ, chấm điểm, đẩy nhịp.</h2>
+          <p className="eyebrow">Review — Batch mode</p>
+          <h2>Ôn theo block 10 từ, xong vòng mới quay lại chỗ hẫng.</h2>
         </div>
+
         <div className="review-header-controls">
           <label className="filter-field" style={{ minWidth: '13rem' }}>
             <span>Deck đang ôn</span>
-            <select value={selectedDeckId} onChange={(e) => { setRevealed(false); onSelectDeck(e.target.value) }}>
-              {deckOptions.map((o) => (
-                <option key={o.id} value={o.id}>{o.label}</option>
+            <select
+              value={selectedDeckId}
+              onChange={(event) => {
+                setResolvedCardState(null)
+                setSessionStartCardId(null)
+                setStartCardPickerValue('')
+                setStartCardSearch('')
+                setRevealed(false)
+                onSelectDeck(event.target.value)
+              }}
+            >
+              {deckOptions.map((option) => (
+                <option key={option.id} value={option.id}>{option.label}</option>
               ))}
             </select>
           </label>
+
+          <label className="filter-field" style={{ minWidth: '12rem' }}>
+            <span>Hình thức học</span>
+            <select
+              value={practiceMode}
+              onChange={(event) => handlePracticeModeChange(event.target.value as ReviewPracticeMode)}
+            >
+              <option value="flashcard">Flashcard</option>
+              <option value="type_answer">Điền đáp án</option>
+            </select>
+          </label>
+
           <label className="filter-field" style={{ minWidth: '12rem' }}>
             <span>Kiểu trộn</span>
             <select
               value={mixMode}
               onChange={(event) => {
                 setRevealed(false)
+                setResolvedCardState(null)
                 setMixMode(event.target.value as ReviewMixMode)
               }}
             >
@@ -681,6 +698,7 @@ export const ReviewView = ({
               <option value="by_phonetic">Theo âm</option>
             </select>
           </label>
+
           {mixMode === 'by_phonetic' && (
             <label className="filter-field" style={{ minWidth: '11rem' }}>
               <span>Nhóm âm</span>
@@ -696,12 +714,10 @@ export const ReviewView = ({
         </div>
       </div>
 
-      <div className={`review-grid ${immersiveMode ? 'is-immersive' : ''}`}>
-        {/* Main stage */}
+      <div className="review-grid">
         <article
           className={`panel review-stage ${stageFeedback ? `stage-feedback stage-feedback--${stageFeedback}` : ''}`}
         >
-          {/* Progress */}
           <div className="review-progress">
             <div className="progress-meta">
               <span className="eyebrow">Tiến độ phiên</span>
@@ -712,68 +728,48 @@ export const ReviewView = ({
             </div>
             <div className="session-chips">
               <span className="tag-pill subdued">
-                Còn {remainingCount}/{initialTotal} thẻ
+                Batch {sessionState.batchIndex || 0}/{totalBatchCount || 0}
               </span>
               <span className="tag-pill subdued">
-                Đã hoàn thành {completedCount}
+                Vòng {sessionState.roundIndex || 0}
               </span>
-              {sessionState.pendingAgainCardIds.length > 0 && (
-                <span className="tag-pill warn">
-                  {sessionState.pendingAgainCardIds.length} cần hỏi lại
-                </span>
-              )}
+              <span className="tag-pill subdued">
+                Còn {pendingCount}/{initialTotal} từ
+              </span>
+              <span className="tag-pill warn">
+                Retry {sessionState.retryCardIds.length}
+              </span>
+              <span className="tag-pill subdued">
+                Checkpoint {sessionState.checkpointCardIds.length}
+              </span>
               {sessionState.combo > 0 && (
-                <span className="tag-pill">
-                  Combo {sessionState.combo}
-                </span>
-              )}
-              {focusDrillEnabled && (
-                <span className="tag-pill danger">
-                  Drill {sessionState.drillQueue.length}
-                </span>
+                <span className="tag-pill">Combo {sessionState.combo}</span>
               )}
               {activeMilestone !== null && (
-                <span className="tag-pill milestone-pill">
-                  🎯 Mốc {activeMilestone} liên tiếp
-                </span>
+                <span className="tag-pill milestone-pill">Mốc {activeMilestone} liên tiếp</span>
               )}
             </div>
           </div>
 
-          {/* Loading */}
           {!studyReady && (
             <div className="empty-state">
               <h3>Đang nạp IndexedDB…</h3>
-              <p>Chờ tiến độ học được tải trước khi dựng queue.</p>
+              <p>Chờ tiến độ học được tải trước khi dựng batch review.</p>
             </div>
           )}
 
-          {/* Active card */}
-          {studyReady && currentCard && (
+          {studyReady && currentCard && practiceMode === 'flashcard' && (
             <>
               <div className="review-status">
                 <span className="tag-pill subdued">{currentDeck?.title ?? 'Deck tổng'}</span>
-                {queueMeta.trouble.has(currentCard.id) && (
+                {sessionState.startCardId === currentCard.id && (
+                  <span className="tag-pill">Từ bắt đầu</span>
+                )}
+                {sessionState.troubleCardIds.includes(currentCard.id) && (
                   <span className="tag-pill danger">Trouble card</span>
-                )}
-                {queueMeta.pendingAgain.has(currentCard.id) && (
-                  <span className="tag-pill warn">Quay lại trong phiên</span>
-                )}
-                {queueMeta.drill.has(currentCard.id) && (
-                  <span className="tag-pill danger">Drill</span>
                 )}
               </div>
 
-              {/* Recall banner */}
-              {needsRecallPrompt && !revealed && (
-                <div className="recall-banner">
-                  <span className="eyebrow">Recall prompt</span>
-                  <strong>{recallPrompt}</strong>
-                  <p>Thẻ này từng khó. Tự nhớ trước rồi mới lật để tránh ảo tưởng thuộc.</p>
-                </div>
-              )}
-
-              {/* Flashcard */}
               <button
                 key={currentCard.id}
                 type="button"
@@ -786,18 +782,13 @@ export const ReviewView = ({
                 <span className="flip-hint-chip">{revealed ? 'Space úp lại' : 'Space lật'}</span>
 
                 <span className="flashcard-scene" aria-hidden="true">
-                  {/* Front */}
                   <span className="flashcard-face flashcard-face--front">
-                    <span className="flashcard-status-line">
-                      {/* status chips shown in review-status above */}
-                    </span>
                     <h3>{currentCard.hanzi}</h3>
                     <p className="flashcard-instruction">
-                      {needsRecallPrompt ? 'Tự nhớ trước, rồi chạm để kiểm tra.' : 'Chạm vào thẻ để lật đáp án.'}
+                      Chạm vào thẻ để lật đáp án, rồi chấm lại trong nhịp batch hiện tại.
                     </p>
                   </span>
 
-                  {/* Back */}
                   <span className="flashcard-face flashcard-face--back">
                     <span className="answer-sheet">
                       <h3>{currentCard.hanzi}</h3>
@@ -806,18 +797,13 @@ export const ReviewView = ({
                         <strong>{currentCard.pinyin}</strong>
                       </span>
                       <span className="answer-meaning">{currentCard.meaningVi}</span>
-                      {(currentCard.exampleZh || currentCard.exampleVi) && (
+                      {(currentCard.exampleZh || currentCard.examplePinyin || currentCard.exampleVi) && (
                         <span className="answer-example-block">
                           {currentCard.exampleZh && <span className="zh">{currentCard.exampleZh}</span>}
-                          {currentCard.exampleVi && <span className="vi">{currentCard.exampleVi}</span>}
-                        </span>
-                      )}
-                      {showCardImages && isImageLikelyHelpful(currentCard) && (
-                        <span className="answer-image-block">
-                          <img src={currentCard.imageUrl} alt={currentCard.hanzi} loading="lazy" />
-                          {currentCard.imageAttribution && (
-                            <span className="image-attribution">{currentCard.imageAttribution}</span>
+                          {currentCard.examplePinyin && (
+                            <span className="vi answer-example-pinyin">{currentCard.examplePinyin}</span>
                           )}
+                          {currentCard.exampleVi && <span className="vi">{currentCard.exampleVi}</span>}
                         </span>
                       )}
                     </span>
@@ -825,14 +811,13 @@ export const ReviewView = ({
                 </span>
               </button>
 
-              {/* Score buttons & actions */}
               <div className="review-actions-grid">
                 {reviewActions.map((action) => (
                   <button
                     key={action.ease}
                     type="button"
                     className={`score-button ${reviewTone(action.ease)}`}
-                    onClick={() => reviewInSession(action.ease)}
+                    onClick={() => handleFlashcardAction(action.ease)}
                     aria-label={`${action.label}: ${action.note}`}
                   >
                     <span className="score-label">{action.label}</span>
@@ -860,28 +845,116 @@ export const ReviewView = ({
                   </button>
                 )}
                 <span className="review-shortcut-tip">
-                  {revealed
-                    ? 'Đã lật: 1–3 chấm trực tiếp hoặc Space úp lại.'
-                    : 'Mặt trước: vẫn có thể chấm 1–3 trực tiếp hoặc Space để lật.'}
+                  Batch này chỉ quay lại sau khi hết vòng, không nhảy lại ngay như trước.
                 </span>
               </div>
             </>
           )}
 
-          {/* Empty queue */}
+          {studyReady && currentCard && practiceMode === 'type_answer' && (
+            <>
+              <div className="review-status">
+                <span className="tag-pill subdued">{currentDeck?.title ?? 'Deck tổng'}</span>
+                <span className="tag-pill subdued">Clue: {fieldLabel(currentPromptField)}</span>
+                {resolvedCardState?.resolution === 'again' && (
+                  <span className="tag-pill warn">Sẽ quay lại vòng sau</span>
+                )}
+              </div>
+
+              <div className={`panel type-answer-stage ${resolvedCardState ? 'is-resolved' : ''}`}>
+                <div className="type-answer-clue">
+                  <span className="answer-label">Dữ kiện cho sẵn</span>
+                  <strong>{fieldLabel(currentPromptField)}</strong>
+                  <p>{getCardFieldValue(currentCard, currentPromptField)}</p>
+                </div>
+
+                <div className="type-answer-grid">
+                  {answerFields.map((field) => (
+                    <label key={field} className="type-answer-field">
+                      <span>{fieldLabel(field)}</span>
+                      <input
+                        type="text"
+                        value={
+                          resolvedCardState
+                            ? getCardFieldValue(currentCard, field)
+                            : answerInputs[field]
+                        }
+                        onChange={(event) => handleTypeAnswerInputChange(field, event.target.value)}
+                        disabled={Boolean(resolvedCardState)}
+                        placeholder={`Điền ${fieldLabel(field).toLowerCase()}`}
+                      />
+                    </label>
+                  ))}
+                </div>
+
+                {typeAnswerMessage && (
+                  <p className={`type-answer-message ${resolvedCardState?.resolution === 'correct' ? 'is-success' : ''}`}>
+                    {typeAnswerMessage}
+                  </p>
+                )}
+
+                {showHint && (currentCard.exampleZh || currentCard.examplePinyin || currentCard.exampleVi) && (
+                  <div className="type-answer-hint">
+                    <span className="answer-label">Gợi ý theo ngữ cảnh</span>
+                    {currentCard.exampleZh && <strong>{currentCard.exampleZh}</strong>}
+                    {currentCard.examplePinyin && <p>{currentCard.examplePinyin}</p>}
+                    {currentCard.exampleVi && <small>{currentCard.exampleVi}</small>}
+                  </div>
+                )}
+
+                {resolvedCardState ? (
+                  <div className="answer-actions">
+                    <button
+                      type="button"
+                      className="primary-button"
+                      onClick={handleAdvanceResolvedCard}
+                    >
+                      Sang từ kế tiếp
+                    </button>
+                    <button
+                      type="button"
+                      className="ghost-button utility-button compact-button"
+                      onClick={() => onSpeak(currentCard.audioText)}
+                    >
+                      Phát âm
+                    </button>
+                  </div>
+                ) : (
+                  <div className="type-answer-actions">
+                    <button type="button" className="primary-button" onClick={handleCheckTypeAnswer}>
+                      Kiểm tra đáp án
+                    </button>
+                    <button
+                      type="button"
+                      className={`ghost-button compact-button ${showHint ? 'is-active' : ''}`}
+                      onClick={() => setShowHint((current) => !current)}
+                    >
+                      {showHint ? 'Ẩn gợi ý' : 'Gợi ý (H)'}
+                    </button>
+                    <button type="button" className="ghost-button compact-button" onClick={() => resolveTypeAnswer('again')}>
+                      Không nhớ (1)
+                    </button>
+                    <button type="button" className="ghost-button compact-button" onClick={handleTypeAnswerSkip}>
+                      Bỏ qua (2)
+                    </button>
+                  </div>
+                )}
+              </div>
+            </>
+          )}
+
           {studyReady && !currentCard && !sessionComplete && (
             <div className="empty-state">
-              <h3>Queue trống.</h3>
-              <p>Không còn thẻ đến hạn. Chuyển deck khác hoặc mở Reader để đọc lại tài liệu gốc.</p>
+              <h3>Batch đã trống.</h3>
+              <p>Không còn từ đến hạn trong session hiện tại. Chuyển deck khác hoặc mở Reader để đọc lại ngữ cảnh.</p>
             </div>
           )}
 
-          {/* Session complete */}
           {sessionComplete && (
             <div className="session-summary">
               <div>
                 <p className="eyebrow">Session complete</p>
-                <h3>Phiên này đã khép lại — nghỉ ngắn hoặc chuyển sang Reader.</h3>
+                <h3>Batch hiện tại đã khép lại. Bạn có thể nghỉ ngắn hoặc chuyển sang Reader.</h3>
               </div>
 
               <div className="session-summary__stats">
@@ -894,8 +967,8 @@ export const ReviewView = ({
                   <strong>{sessionState.bestCombo}</strong>
                 </div>
                 <div className="mini-stat">
-                  <span>Thẻ cứu lại</span>
-                  <strong>{recoveredCount}</strong>
+                  <span>Batch đã chạy</span>
+                  <strong>{sessionState.batchIndex}</strong>
                 </div>
                 <div className="mini-stat">
                   <span>Trouble cards</span>
@@ -929,9 +1002,7 @@ export const ReviewView = ({
           )}
         </article>
 
-        {/* Sidebar */}
         <div className="review-side">
-          {/* Study controls */}
           <article className="panel review-controls">
             <div className="section-heading">
               <div>
@@ -944,39 +1015,19 @@ export const ReviewView = ({
               <button
                 type="button"
                 className={`sound-toggle ${soundEnabled ? 'is-enabled' : ''}`}
-                onClick={() => setSoundEnabled((v) => !v)}
+                onClick={() => setSoundEnabled((current) => !current)}
               >
                 {soundEnabled ? '♪ Âm: Bật' : '♪ Âm: Tắt'}
               </button>
               <button
                 type="button"
                 className={`sound-toggle ${motionPreference === 'full' ? 'is-enabled' : ''}`}
-                onClick={() => setMotionPreference((v) => v === 'full' ? 'reduced' : 'full')}
+                onClick={() => setMotionPreference((current) => current === 'full' ? 'reduced' : 'full')}
               >
                 {motionPreference === 'full' ? '↻ Motion: Đầy đủ' : '↻ Motion: Giảm'}
               </button>
-              <button
-                type="button"
-                className={`sound-toggle ${focusDrillEnabled ? 'is-enabled' : ''}`}
-                onClick={() => setFocusDrillEnabled((value) => !value)}
-              >
-                {focusDrillEnabled ? '◉ Drill: Bật' : '◉ Drill: Tắt'}
-              </button>
-              <button
-                type="button"
-                className={`sound-toggle ${immersiveMode ? 'is-enabled' : ''}`}
-                onClick={onToggleImmersive}
-              >
-                {immersiveMode ? '▣ Focus: Bật' : '▣ Focus: Tắt'}
-              </button>
-              <button
-                type="button"
-                className={`sound-toggle ${showCardImages ? 'is-enabled' : ''}`}
-                onClick={() => setShowCardImages((value) => !value)}
-              >
-                {showCardImages ? '🖼 Ảnh: Bật' : '🖼 Ảnh: Tắt'}
-              </button>
             </div>
+
             <label className="filter-field">
               <span>Giọng đọc tiếng Trung</span>
               <select
@@ -995,6 +1046,7 @@ export const ReviewView = ({
             {voiceMode === 'female' && !hasFemaleChineseVoice && (
               <p className="review-shortcut-tip">Thiết bị chưa có giọng nữ tiếng Trung, đang fallback sang giọng khả dụng.</p>
             )}
+
             <label className="filter-field">
               <span>Giọng cụ thể</span>
               <select
@@ -1011,11 +1063,45 @@ export const ReviewView = ({
               </select>
             </label>
 
+            <label className="filter-field">
+              <span>Tìm từ để bắt đầu trước</span>
+              <input
+                type="search"
+                value={startCardSearch}
+                onChange={(event) => setStartCardSearch(event.target.value)}
+                placeholder="Hanzi / pinyin / nghĩa"
+              />
+            </label>
+
+            <label className="filter-field">
+              <span>Từ ưu tiên</span>
+              <select
+                value={startCardPickerValue}
+                onChange={(event) => setStartCardPickerValue(event.target.value)}
+              >
+                <option value="">Không khóa từ đầu phiên</option>
+                {filteredStartCards.slice(0, 60).map((card) => (
+                  <option key={card.id} value={card.id}>
+                    {card.hanzi} · {card.pinyin} · {card.meaningVi}
+                  </option>
+                ))}
+              </select>
+            </label>
+
+            <button type="button" className="ghost-button" onClick={handleApplyStartCard}>
+              Áp dụng từ bắt đầu
+            </button>
+
             <div className="review-controls__actions">
               <button type="button" className="ghost-button" onClick={handleRestartSession} disabled={!studyReady}>
                 Restart phiên
               </button>
-              <button type="button" className="ghost-button" onClick={handleResetDeck} disabled={!selectedDeck || activeReset !== null}>
+              <button
+                type="button"
+                className="ghost-button"
+                onClick={handleResetDeck}
+                disabled={!selectedDeck || activeReset !== null}
+              >
                 {activeReset === 'deck' ? 'Đang reset…' : 'Reset deck'}
               </button>
               <button
@@ -1030,31 +1116,25 @@ export const ReviewView = ({
             </div>
 
             {!selectedDeck && (
-              <p className="review-shortcut-tip">
-                Chọn deck cụ thể để dùng "Reset deck".
-              </p>
+              <p className="review-shortcut-tip">Chọn deck cụ thể để dùng “Reset deck”.</p>
             )}
 
             <div className="session-summary__stats">
               <div className="mini-stat">
-                <span>Pending again</span>
-                <strong>{sessionState.pendingAgainCardIds.length}</strong>
+                <span>Batch hiện tại</span>
+                <strong>{sessionState.batchIndex || 0}</strong>
+              </div>
+              <div className="mini-stat">
+                <span>Retry</span>
+                <strong>{sessionState.retryCardIds.length}</strong>
               </div>
               <div className="mini-stat">
                 <span>Checkpoint</span>
                 <strong>{sessionState.checkpointCardIds.length}</strong>
               </div>
               <div className="mini-stat">
-                <span>Trouble</span>
-                <strong>{troubleCards.length}</strong>
-              </div>
-              <div className="mini-stat">
                 <span>Best combo</span>
                 <strong>{sessionState.bestCombo}</strong>
-              </div>
-              <div className="mini-stat">
-                <span>Drill queue</span>
-                <strong>{sessionState.drillQueue.length}</strong>
               </div>
             </div>
           </article>

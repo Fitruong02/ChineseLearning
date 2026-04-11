@@ -14,8 +14,12 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
-import { isImageLikelyHelpful } from '../lib/imageFilter'
-import type { MaterialSource, PublishedCard, StudyRecordMap } from '../types'
+import type {
+  MaterialSource,
+  PublishedCard,
+  ReviewNavigationOptions,
+  StudyRecordMap,
+} from '../types'
 
 interface ReaderViewProps {
   materials: MaterialSource[]
@@ -33,7 +37,7 @@ interface ReaderViewProps {
   onHighlightCard: (cardId: string | null) => void
   onChangeVoiceMode: (mode: VoiceGenderMode) => void
   onChangeSelectedVoiceUri: (voiceUri: string) => void
-  onOpenReview: (deckId?: string) => void
+  onOpenReview: (options?: ReviewNavigationOptions) => void
   onSpeak: (text: string) => void
 }
 
@@ -67,8 +71,12 @@ export const ReaderView = ({
   const [isShadowing, setIsShadowing] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')
   const [cardSearchQuery, setCardSearchQuery] = useState('')
-  const [showContextImages, setShowContextImages] = useState<boolean>(() => {
-    const saved = window.localStorage.getItem('reader-show-context-images')
+  const [showSectionPinyin, setShowSectionPinyin] = useState<boolean>(() => {
+    const saved = window.localStorage.getItem('reader-show-section-pinyin')
+    return saved === 'true'
+  })
+  const [showSectionMeaning, setShowSectionMeaning] = useState<boolean>(() => {
+    const saved = window.localStorage.getItem('reader-show-section-meaning')
     return saved === 'true'
   })
   const [shadowingWaitSeconds, setShadowingWaitSeconds] = useState<number>(() => {
@@ -298,8 +306,11 @@ export const ReaderView = ({
     window.localStorage.setItem('reader-auto-follow', autoFollowReading ? 'true' : 'false')
   }, [autoFollowReading])
   useEffect(() => {
-    window.localStorage.setItem('reader-show-context-images', showContextImages ? 'true' : 'false')
-  }, [showContextImages])
+    window.localStorage.setItem('reader-show-section-pinyin', showSectionPinyin ? 'true' : 'false')
+  }, [showSectionPinyin])
+  useEffect(() => {
+    window.localStorage.setItem('reader-show-section-meaning', showSectionMeaning ? 'true' : 'false')
+  }, [showSectionMeaning])
 
   useEffect(() => {
     if (!autoFollowReading || !activeReadingSectionId) {
@@ -393,6 +404,20 @@ export const ReaderView = ({
           {voiceMode === 'female' && !hasFemaleChineseVoice && (
             <p className="review-shortcut-tip">Thiết bị chưa có giọng nữ tiếng Trung, đang fallback sang giọng khả dụng.</p>
           )}
+          <button
+            type="button"
+            className={`ghost-button compact-button ${showSectionPinyin ? 'is-active' : ''}`}
+            onClick={() => setShowSectionPinyin((value) => !value)}
+          >
+            {showSectionPinyin ? 'Phiên âm: Hiện' : 'Phiên âm: Ẩn'}
+          </button>
+          <button
+            type="button"
+            className={`ghost-button compact-button ${showSectionMeaning ? 'is-active' : ''}`}
+            onClick={() => setShowSectionMeaning((value) => !value)}
+          >
+            {showSectionMeaning ? 'Nghĩa: Hiện' : 'Nghĩa: Ẩn'}
+          </button>
         </div>
       </div>
 
@@ -503,7 +528,12 @@ export const ReaderView = ({
                         )
                       })}
                     </div>
-                    <p className="reader-translation">{section.textVi}</p>
+                    {showSectionPinyin && section.textPinyin && (
+                      <p className="reader-pinyin">{section.textPinyin}</p>
+                    )}
+                    {showSectionMeaning && (
+                      <p className="reader-translation">{section.textVi}</p>
+                    )}
 
                       <div className="reading-practice">
                       <div className="reading-practice__header">
@@ -607,7 +637,12 @@ export const ReaderView = ({
                 <button
                   type="button"
                   className="secondary-button compact-button"
-                  onClick={() => onOpenReview(selectedCard.deckId)}
+                  onClick={() =>
+                    onOpenReview({
+                      deckId: selectedCard.deckId,
+                      startCardId: selectedCard.id,
+                    })
+                  }
                 >
                   Review deck
                 </button>
@@ -617,13 +652,6 @@ export const ReaderView = ({
                   onClick={() => onSpeak(selectedCard.audioText)}
                 >
                   Nghe từ này
-                </button>
-                <button
-                  type="button"
-                  className={`ghost-button compact-button ${showContextImages ? 'is-active' : ''}`}
-                  onClick={() => setShowContextImages((value) => !value)}
-                >
-                  {showContextImages ? 'Ảnh: Bật' : 'Ảnh: Tắt'}
                 </button>
               </div>
             )}
@@ -649,7 +677,7 @@ export const ReaderView = ({
                 >
                   <div>
                     <strong>{card.hanzi}</strong>
-                    <p style={{ marginTop: '0.05rem' }}>{card.pinyin}</p>
+                    {showSectionPinyin && <p style={{ marginTop: '0.05rem' }}>{card.pinyin}</p>}
                   </div>
                 </button>
               ))}
@@ -658,26 +686,29 @@ export const ReaderView = ({
 
           {selectedCard ? (
             <div className="card-context">
-              <div className="answer-grid">
-                <div>
-                  <span className="answer-label">Pinyin</span>
-                  <strong>{selectedCard.pinyin}</strong>
-                </div>
-                <div>
-                  <span className="answer-label">Nghĩa</span>
-                  <strong>{selectedCard.meaningVi}</strong>
-                </div>
-              </div>
-              <p className="answer-example">{selectedCard.exampleZh}</p>
-              <p className="answer-translation">{selectedCard.exampleVi}</p>
-              {showContextImages && isImageLikelyHelpful(selectedCard) && (
-                <div className="answer-image-block">
-                  <img src={selectedCard.imageUrl} alt={selectedCard.hanzi} loading="lazy" />
-                  {selectedCard.imageAttribution && (
-                    <span className="image-attribution">{selectedCard.imageAttribution}</span>
+              {(showSectionPinyin || showSectionMeaning) && (
+                <div className="answer-grid">
+                  {showSectionPinyin && (
+                    <div>
+                      <span className="answer-label">Pinyin</span>
+                      <strong>{selectedCard.pinyin}</strong>
+                    </div>
+                  )}
+                  {showSectionMeaning && (
+                    <div>
+                      <span className="answer-label">Nghĩa</span>
+                      <strong>{selectedCard.meaningVi}</strong>
+                    </div>
                   )}
                 </div>
               )}
+              <p className="answer-example">{selectedCard.exampleZh}</p>
+              {showSectionPinyin && selectedCard.examplePinyin && (
+                <p className="answer-translation" style={{ color: 'var(--jade)', borderLeftColor: 'var(--jade-border)' }}>
+                  {selectedCard.examplePinyin}
+                </p>
+              )}
+              {showSectionMeaning && <p className="answer-translation">{selectedCard.exampleVi}</p>}
               <div className="info-strip">
                 <span>{selectedCard.tags.join(' · ')}</span>
               </div>
