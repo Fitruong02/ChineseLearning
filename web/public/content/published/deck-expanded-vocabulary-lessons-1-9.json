@@ -334,7 +334,7 @@
       "pinyin": "yìn",
       "meaningVi": "In ấn",
       "exampleZh": "你可以通知自己的朋友上网浏览，也可以把自己博客的网址印在名片上。",
-      "exampleVi": "Khi bạn tạo blog của riêng mình, tất nhiên bạn muốn người khác xem và chia sẻ niềm vui với mình.",
+      "exampleVi": "Bạn có thể thông báo cho bạn bè duyệt Internet hoặc bạn có thể in URL của blog trên danh thiếp của mình.",
       "audioText": "印",
       "tags": [
         "expanded",
@@ -349,7 +349,7 @@
       "pinyin": "xīyǐn",
       "meaningVi": "Thu hút; hấp dẫn",
       "exampleZh": "此外，你必须经常给你的博客增加新的内容，选择大家都关心的话题，要让你的博客内容吸引别人。",
-      "exampleVi": "Bạn có thể thông báo cho bạn bè duyệt Internet hoặc bạn có thể in URL của blog trên danh thiếp của mình.",
+      "exampleVi": "Ngoài ra, bạn phải thường xuyên thêm nội dung mới vào blog của mình, chọn chủ đề mà mọi người quan tâm và làm cho nội dung blog của bạn hấp dẫn người khác.",
       "audioText": "吸引",
       "tags": [
         "expanded",
@@ -364,7 +364,7 @@
       "pinyin": "huàtí",
       "meaningVi": "Chủ đề",
       "exampleZh": "此外，你必须经常给你的博客增加新的内容，选择大家都关心的话题，要让你的博客内容吸引别人。",
-      "exampleVi": "Bạn có thể thông báo cho bạn bè duyệt Internet hoặc bạn có thể in URL của blog trên danh thiếp của mình.",
+      "exampleVi": "Ngoài ra, bạn phải thường xuyên thêm nội dung mới vào blog của mình, chọn chủ đề mà mọi người quan tâm và làm cho nội dung blog của bạn hấp dẫn người khác.",
       "audioText": "话题",
       "tags": [
         "expanded",
@@ -379,7 +379,7 @@
       "pinyin": "wéifǎn",
       "meaningVi": "Vi phạm",
       "exampleZh": "不过，违反法律的内容可千万不要登在你的博客里呀！",
-      "exampleVi": "Ngoài ra, bạn phải thường xuyên thêm nội dung mới vào blog của mình, chọn chủ đề mà mọi người quan tâm và làm cho nội dung blog của bạn hấp dẫn người khác.",
+      "exampleVi": "Tuy nhiên, nội dung vi phạm pháp luật không được đăng trên blog của bạn!",
       "audioText": "违反",
       "tags": [
         "expanded",
@@ -694,7 +694,7 @@
       "pinyin": "huàyǔ",
       "meaningVi": "Lời nói, ngôn từ",
       "exampleZh": "如果说出「您家父」这样的话语，就会让人摸不着头脑了。",
-      "exampleVi": "v.",
+      "exampleVi": "Những người không hiểu nghĩa các từ trên thường nói “con trai của bạn” hoặc “bố tôi” thay vì “bố tôi”, và những đại từ nhân xưng thêm vào phía trước là thừa.",
       "audioText": "话语",
       "tags": [
         "expanded",
@@ -739,7 +739,7 @@
       "pinyin": "duōyú",
       "meaningVi": "Dư thừa, không cần thiết",
       "exampleZh": "不理解以上词语的含义的人，常常说出「您令郎」、「我家父」之「我父亲」的意思，前面所加的人称代词就是多余的了。",
-      "exampleVi": "Kính thưa), \"Bệ hạ (được gọi là mẹ của bên kia)\", \"Anh trai (được gọi là anh trai của bên kia)\", \"Thưa ngài (được gọi là con trai của bên kia)\", \"Lingai (được gọi là con gái của bên kia)\", v.",
+      "exampleVi": "Những người không hiểu nghĩa các từ trên thường nói “con trai của bạn” hoặc “bố tôi” thay vì “bố tôi”, và những đại từ nhân xưng thêm vào phía trước là thừa.",
       "audioText": "多余",
       "tags": [
         "expanded",
@@ -874,7 +874,7 @@
       "pinyin": "zījīn",
       "meaningVi": "Quỹ; vốn",
       "exampleZh": "听说「宅急送」的主人在开始创业的时候，只有30万元资金和3辆车。",
-      "exampleVi": "Trung Quốc lớn như vậy, bạn cần thành lập bao nhiêu cửa hàng?",
+      "exampleVi": "000 nhân dân tệ vốn và ba chiếc ô tô khi bắt đầu kinh doanh.",
       "audioText": "资金",
       "tags": [
         "expanded",
@@ -889,7 +889,7 @@
       "pinyin": "shēngcún",
       "meaningVi": "Sinh tồn; tồn tại",
       "exampleZh": "那时，为了生存，公司除了违禁品，什么货物都送，甚至包括需要热吃的烤鸭。",
-      "exampleVi": "Ai biết hai năm trở về Trung Quốc lại được gọi là “giao hàng tận nhà”?",
+      "exampleVi": "Khi đó, để tồn tại, công ty vận chuyển đủ loại hàng hóa trừ hàng lậu, thậm chí cả vịt quay cần ăn nóng.",
       "audioText": "生存",
       "tags": [
         "expanded",
@@ -904,7 +904,7 @@
       "pinyin": "wéijìnpǐn",
       "meaningVi": "Hàng cấm",
       "exampleZh": "那时，为了生存，公司除了违禁品，什么货物都送，甚至包括需要热吃的烤鸭。",
-      "exampleVi": "Ai biết hai năm trở về Trung Quốc lại được gọi là “giao hàng tận nhà”?",
+      "exampleVi": "Trung Quốc lớn như vậy, bạn cần thành lập bao nhiêu cửa hàng?",
       "audioText": "违禁品",
       "tags": [
         "expanded",
@@ -919,7 +919,7 @@
       "pinyin": "bāokuò",
       "meaningVi": "Bao gồm",
       "exampleZh": "那时，为了生存，公司除了违禁品，什么货物都送，甚至包括需要热吃的烤鸭。",
-      "exampleVi": "Ai biết hai năm trở về Trung Quốc lại được gọi là “giao hàng tận nhà”?",
+      "exampleVi": "Trung Quốc lớn như vậy, bạn cần thành lập bao nhiêu cửa hàng?",
       "audioText": "包括",
       "tags": [
         "expanded",
@@ -949,7 +949,7 @@
       "pinyin": "kǎoyā",
       "meaningVi": "Vịt quay",
       "exampleZh": "那时，为了生存，公司除了违禁品，什么货物都送，甚至包括需要热吃的烤鸭。",
-      "exampleVi": "Ai biết hai năm trở về Trung Quốc lại được gọi là “giao hàng tận nhà”?",
+      "exampleVi": "Khi đó, để tồn tại, công ty vận chuyển đủ loại hàng hóa trừ hàng lậu, thậm chí cả vịt quay cần ăn nóng.",
       "audioText": "烤鸭",
       "tags": [
         "expanded",
@@ -964,7 +964,7 @@
       "pinyin": "zhígōng",
       "meaningVi": "Công nhân; nhân viên",
       "exampleZh": "经过十几年的努力，「宅急送」已经拥有几千辆车，上万名职工，服务网点覆盖全国2000多个地区的城镇，在中「宅急送」的特点一是快，能在约定的时间内把货物及时送到，二是能够以比较低的成本实现「快」，三是遍布各地的网点使人感到方便利。",
-      "exampleVi": "Tôi nghe nói chủ sở hữu của \"Giao hàng tận nhà\" chỉ có 300.",
+      "exampleVi": "Sau hơn mười năm nỗ lực, “Giao hàng tận nhà” hiện có hàng nghìn phương tiện, hàng chục nghìn nhân viên và cửa hàng dịch vụ phủ sóng hơn 2.",
       "audioText": "职工",
       "tags": [
         "expanded",
@@ -979,7 +979,7 @@
       "pinyin": "fùgài",
       "meaningVi": "Phủ; che phủ",
       "exampleZh": "经过十几年的努力，「宅急送」已经拥有几千辆车，上万名职工，服务网点覆盖全国2000多个地区的城镇，在中「宅急送」的特点一是快，能在约定的时间内把货物及时送到，二是能够以比较低的成本实现「快」，三是遍布各地的网点使人感到方便利。",
-      "exampleVi": "Tôi nghe nói chủ sở hữu của \"Giao hàng tận nhà\" chỉ có 300.",
+      "exampleVi": "Sau hơn mười năm nỗ lực, “Giao hàng tận nhà” hiện có hàng nghìn phương tiện, hàng chục nghìn nhân viên và cửa hàng dịch vụ phủ sóng hơn 2.",
       "audioText": "覆盖",
       "tags": [
         "expanded",
@@ -1009,7 +1009,7 @@
       "pinyin": "chéngzhèn",
       "meaningVi": "Thành phố và thị trấn",
       "exampleZh": "经过十几年的努力，「宅急送」已经拥有几千辆车，上万名职工，服务网点覆盖全国2000多个地区的城镇，在中「宅急送」的特点一是快，能在约定的时间内把货物及时送到，二是能够以比较低的成本实现「快」，三是遍布各地的网点使人感到方便利。",
-      "exampleVi": "Tôi nghe nói chủ sở hữu của \"Giao hàng tận nhà\" chỉ có 300.",
+      "exampleVi": "000 thành phố, thị trấn trên cả nước.",
       "audioText": "城镇",
       "tags": [
         "expanded",
@@ -1054,7 +1054,7 @@
       "pinyin": "chéngběn",
       "meaningVi": "Chi phí",
       "exampleZh": "经过十几年的努力，「宅急送」已经拥有几千辆车，上万名职工，服务网点覆盖全国2000多个地区的城镇，在中「宅急送」的特点一是快，能在约定的时间内把货物及时送到，二是能够以比较低的成本实现「快」，三是遍布各地的网点使人感到方便利。",
-      "exampleVi": "Tôi nghe nói chủ sở hữu của \"Giao hàng tận nhà\" chỉ có 300.",
+      "exampleVi": "Thứ hai, nó có thể đạt được “nhanh” với chi phí tương đối thấp.",
       "audioText": "成本",
       "tags": [
         "expanded",
@@ -1459,7 +1459,7 @@
       "pinyin": "zhuīqiú",
       "meaningVi": "Theo đuổi",
       "exampleZh": "下班去健身房，已经成为很多白领追求的时尚。",
-      "exampleVi": "Thể hình đã trở thành một ngành rất độc đáo.",
+      "exampleVi": "Đi tập gym sau giờ làm đã trở thành mốt được nhiều công nhân cổ trắng theo đuổi.",
       "audioText": "追求",
       "tags": [
         "expanded",
@@ -1534,7 +1534,7 @@
       "pinyin": "bùdàng",
       "meaningVi": "Không thích hợp",
       "exampleZh": "水、电和天然气给我们的生活带来方便，可如果使用、管理不当，也会给人们的生活带来危险。",
-      "exampleVi": "Nước, điện và khí đốt tự nhiên mang lại sự tiện lợi cho cuộc sống của chúng ta nhưng nếu sử dụng và quản lý không đúng cách cũng có thể gây nguy hiểm cho tính mạng con người.",
+      "exampleVi": "Trong cuộc sống thành thị, thật khó để tưởng tượng con người có thể tồn tại như thế nào nếu không có nước, điện và khí đốt tự nhiên.",
       "audioText": "不当",
       "tags": [
         "expanded",
@@ -1549,7 +1549,7 @@
       "pinyin": "yīncǐ",
       "meaningVi": "Vì vậy",
       "exampleZh": "因此，我们提醒小区住户注意以下几点：",
-      "exampleVi": "Vì vậy, chúng tôi nhắc nhở người dân trong cộng đồng chú ý những điểm sau: Vui lòng báo cáo trung tâm quản lý cộng đồng và thuê chuyên gia cài đặt, thay đổi.",
+      "exampleVi": "Trong cuộc sống thành thị, thật khó để tưởng tượng con người có thể tồn tại như thế nào nếu không có nước, điện và khí đốt tự nhiên. Nước, điện và khí đốt tự nhiên mang lại sự tiện lợi cho cuộc sống của chúng ta nhưng nếu sử dụng và quản lý không đúng cách cũng có thể gây nguy hiểm cho tính mạng con người.",
       "audioText": "因此",
       "tags": [
         "expanded",
@@ -1564,7 +1564,7 @@
       "pinyin": "zhùhù",
       "meaningVi": "Hộ gia đình",
       "exampleZh": "因此，我们提醒小区住户注意以下几点：",
-      "exampleVi": "Vì vậy, chúng tôi nhắc nhở người dân trong cộng đồng chú ý những điểm sau: Vui lòng báo cáo trung tâm quản lý cộng đồng và thuê chuyên gia cài đặt, thay đổi.",
+      "exampleVi": "Trong cuộc sống thành thị, thật khó để tưởng tượng con người có thể tồn tại như thế nào nếu không có nước, điện và khí đốt tự nhiên. Nước, điện và khí đốt tự nhiên mang lại sự tiện lợi cho cuộc sống của chúng ta nhưng nếu sử dụng và quản lý không đúng cách cũng có thể gây nguy hiểm cho tính mạng con người.",
       "audioText": "住户",
       "tags": [
         "expanded",
@@ -1579,7 +1579,7 @@
       "pinyin": "yǐxià",
       "meaningVi": "Dưới đây",
       "exampleZh": "因此，我们提醒小区住户注意以下几点：",
-      "exampleVi": "Vì vậy, chúng tôi nhắc nhở người dân trong cộng đồng chú ý những điểm sau: Vui lòng báo cáo trung tâm quản lý cộng đồng và thuê chuyên gia cài đặt, thay đổi.",
+      "exampleVi": "Trong cuộc sống thành thị, thật khó để tưởng tượng con người có thể tồn tại như thế nào nếu không có nước, điện và khí đốt tự nhiên. Nước, điện và khí đốt tự nhiên mang lại sự tiện lợi cho cuộc sống của chúng ta nhưng nếu sử dụng và quản lý không đúng cách cũng có thể gây nguy hiểm cho tính mạng con người.",
       "audioText": "以下",
       "tags": [
         "expanded",
@@ -2029,7 +2029,7 @@
       "pinyin": "yúyuè",
       "meaningVi": "Vui vẻ; hạnh phúc",
       "exampleZh": "酒之所以被称为一种文化产物，和它给人们带来的精神愉悦是分不开的。",
-      "exampleVi": "Chữ “rượu” trong tiếng Trung Quốc xuất hiện trong các bản khắc trên xương tiên tri.",
+      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
       "audioText": "愉悦",
       "tags": [
         "expanded",
@@ -2044,7 +2044,7 @@
       "pinyin": "zhì",
       "meaningVi": "Đến; cho đến khi",
       "exampleZh": "那时，为了生存，公司除了违禁品，什么货物都送，甚至包括需要热吃的烤鸭。",
-      "exampleVi": "Ai biết hai năm trở về Trung Quốc lại được gọi là “giao hàng tận nhà”?",
+      "exampleVi": "000 nhân dân tệ vốn và ba chiếc ô tô khi bắt đầu kinh doanh.",
       "audioText": "至",
       "tags": [
         "expanded",
@@ -2059,7 +2059,7 @@
       "pinyin": "wénrén",
       "meaningVi": "Người có học thức",
       "exampleZh": "从古至今，多少文人墨客的生活都和酒有着不解之缘。",
-      "exampleVi": "Rượu là sản phẩm văn hóa Nó không chỉ là một thức uống trên bàn ăn tối.",
+      "exampleVi": "Rượu có thể tạo thêm không khí trên bàn ăn, có thể chữa bệnh và duy trì sức khỏe, có thể dùng làm quà tặng cho người khác, và nói một cách thẳng thắn, rượu còn có thể khiến con người quên đi lo lắng và khích lệ tinh thần.",
       "audioText": "文人",
       "tags": [
         "expanded",
@@ -2074,7 +2074,7 @@
       "pinyin": "mòkè",
       "meaningVi": "Văn nhân; người viết văn",
       "exampleZh": "从古至今，多少文人墨客的生活都和酒有着不解之缘。",
-      "exampleVi": "Rượu là sản phẩm văn hóa Nó không chỉ là một thức uống trên bàn ăn tối.",
+      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
       "audioText": "墨客",
       "tags": [
         "expanded",
@@ -2089,7 +2089,7 @@
       "pinyin": "bù jiě zhī yuán",
       "meaningVi": "Mối duyên không thể tách rời",
       "exampleZh": "从古至今，多少文人墨客的生活都和酒有着不解之缘。",
-      "exampleVi": "Rượu là sản phẩm văn hóa Nó không chỉ là một thức uống trên bàn ăn tối.",
+      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
       "audioText": "不解之缘",
       "tags": [
         "expanded",
@@ -2104,7 +2104,7 @@
       "pinyin": "zuòpǐn",
       "meaningVi": "Tác phẩm",
       "exampleZh": "他们留给后人的作品，很多是酒后创作的。",
-      "exampleVi": "Nó cũng đóng nhiều vai trò trong cuộc sống của con người, một số vai trò mà ngay cả những người sản xuất bia cũng chưa từng nghĩ tới.",
+      "exampleVi": "Nhiều tác phẩm họ để lại cho thế hệ tương lai được tạo ra trong lúc say rượu.",
       "audioText": "作品",
       "tags": [
         "expanded",
@@ -2119,7 +2119,7 @@
       "pinyin": "chuàngzuò",
       "meaningVi": "Sáng tác",
       "exampleZh": "他们留给后人的作品，很多是酒后创作的。",
-      "exampleVi": "Nó cũng đóng nhiều vai trò trong cuộc sống của con người, một số vai trò mà ngay cả những người sản xuất bia cũng chưa từng nghĩ tới.",
+      "exampleVi": "Nhiều tác phẩm họ để lại cho thế hệ tương lai được tạo ra trong lúc say rượu.",
       "audioText": "创作",
       "tags": [
         "expanded",
@@ -2149,7 +2149,7 @@
       "pinyin": "běnshēn",
       "meaningVi": "Bản thân",
       "exampleZh": "而饮酒本身，也往往成为创作我们可以说，自从有了酒，人们的生活就变得丰富多彩了。",
-      "exampleVi": "Rượu có thể tạo thêm không khí trên bàn ăn, có thể chữa bệnh và duy trì sức khỏe, có thể dùng làm quà tặng cho người khác, và nói một cách thẳng thắn, rượu còn có thể khiến con người quên đi lo lắng và khích lệ tinh thần.",
+      "exampleVi": "Chữ “rượu” trong tiếng Trung Quốc xuất hiện trong các bản khắc trên xương tiên tri.",
       "audioText": "本身",
       "tags": [
         "expanded",
@@ -2179,7 +2179,7 @@
       "pinyin": "fēngfù duōcǎi",
       "meaningVi": "Phong phú đa dạng",
       "exampleZh": "而饮酒本身，也往往成为创作我们可以说，自从有了酒，人们的生活就变得丰富多彩了。",
-      "exampleVi": "Rượu có thể tạo thêm không khí trên bàn ăn, có thể chữa bệnh và duy trì sức khỏe, có thể dùng làm quà tặng cho người khác, và nói một cách thẳng thắn, rượu còn có thể khiến con người quên đi lo lắng và khích lệ tinh thần.",
+      "exampleVi": "Có thể nói, kể từ khi rượu ra đời, cuộc sống của con người trở nên đa dạng hơn.",
       "audioText": "丰富多彩",
       "tags": [
         "expanded",
@@ -2194,7 +2194,7 @@
       "pinyin": "wénmíng",
       "meaningVi": "Văn minh",
       "exampleZh": "在中国几千年的文明史中，无论是在饮食烹饪、养生保健方面还是在文学艺术创作方面，酒都起到了重要的作用。",
-      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
+      "exampleVi": "Trong lịch sử văn minh Trung Quốc hàng ngàn năm, rượu vang đã đóng một vai trò quan trọng trong ẩm thực, nấu ăn, chăm sóc sức khỏe và sáng tạo văn học nghệ thuật.",
       "audioText": "文明",
       "tags": [
         "expanded",
@@ -2209,7 +2209,7 @@
       "pinyin": "pēngrèn",
       "meaningVi": "Nấu ăn",
       "exampleZh": "在中国几千年的文明史中，无论是在饮食烹饪、养生保健方面还是在文学艺术创作方面，酒都起到了重要的作用。",
-      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
+      "exampleVi": "Trong lịch sử văn minh Trung Quốc hàng ngàn năm, rượu vang đã đóng một vai trò quan trọng trong ẩm thực, nấu ăn, chăm sóc sức khỏe và sáng tạo văn học nghệ thuật.",
       "audioText": "烹饪",
       "tags": [
         "expanded",
@@ -2224,7 +2224,7 @@
       "pinyin": "bǎojiàn",
       "meaningVi": "Bảo vệ sức khỏe",
       "exampleZh": "在中国几千年的文明史中，无论是在饮食烹饪、养生保健方面还是在文学艺术创作方面，酒都起到了重要的作用。",
-      "exampleVi": "Sở dĩ rượu vang được gọi là sản phẩm văn hóa không thể tách rời niềm vui tinh thần mà nó mang lại cho con người.",
+      "exampleVi": "Rượu có thể tạo thêm không khí trên bàn ăn, có thể chữa bệnh và duy trì sức khỏe, có thể dùng làm quà tặng cho người khác, và nói một cách thẳng thắn, rượu còn có thể khiến con người quên đi lo lắng và khích lệ tinh thần.",
       "audioText": "保健",
       "tags": [
         "expanded",
@@ -2539,7 +2539,7 @@
       "pinyin": "zǐxì",
       "meaningVi": "Cẩn thận",
       "exampleZh": "拿药的时候要仔细核对药的名称和数量。",
-      "exampleVi": "Bác sĩ sẽ cho bạn biết chi tiết loại thuốc nào được kê cho bạn, tác dụng chữa bệnh của nó đối với bệnh của bạn và những lưu ý bạn nên thực hiện khi dùng thuốc.",
+      "exampleVi": "Hãy cẩn thận, uống nhầm thuốc không phải chuyện đùa đâu.",
       "audioText": "仔细",
       "tags": [
         "expanded",
@@ -2554,7 +2554,7 @@
       "pinyin": "héduì",
       "meaningVi": "Kiểm tra đối chiếu",
       "exampleZh": "拿药的时候要仔细核对药的名称和数量。",
-      "exampleVi": "Bác sĩ sẽ cho bạn biết chi tiết loại thuốc nào được kê cho bạn, tác dụng chữa bệnh của nó đối với bệnh của bạn và những lưu ý bạn nên thực hiện khi dùng thuốc.",
+      "exampleVi": "Khi lấy thuốc cần kiểm tra kỹ tên và số lượng thuốc.",
       "audioText": "核对",
       "tags": [
         "expanded",
@@ -2569,7 +2569,7 @@
       "pinyin": "míngchēng",
       "meaningVi": "Tên gọi",
       "exampleZh": "拿药的时候要仔细核对药的名称和数量。",
-      "exampleVi": "Bác sĩ sẽ cho bạn biết chi tiết loại thuốc nào được kê cho bạn, tác dụng chữa bệnh của nó đối với bệnh của bạn và những lưu ý bạn nên thực hiện khi dùng thuốc.",
+      "exampleVi": "Khi lấy thuốc cần kiểm tra kỹ tên và số lượng thuốc.",
       "audioText": "名称",
       "tags": [
         "expanded",
@@ -2584,7 +2584,7 @@
       "pinyin": "xiǎoxīn",
       "meaningVi": "Cẩn thận",
       "exampleZh": "千万要小心，吃错了药可不是闹着玩儿的。",
-      "exampleVi": "Khi nhận được đơn thuốc của bác sĩ, trước tiên bạn phải đến phòng thanh toán để ghi giá và thanh toán phí.",
+      "exampleVi": "Hãy cẩn thận, uống nhầm thuốc không phải chuyện đùa đâu.",
       "audioText": "小心",
       "tags": [
         "expanded",
@@ -2929,7 +2929,7 @@
       "pinyin": "dáchéng",
       "meaningVi": "Đạt được",
       "exampleZh": "另外，上海已有部分医院与国外一些知名保险公司合作，达成相互认可协议。",
-      "exampleVi": "Đồng thời, nó cũng cung cấp các dịch vụ cứu hộ khẩn cấp ở nước ngoài bao gồm vận chuyển y tế khẩn cấp, hỗ trợ pháp lý và các dự án khác.",
+      "exampleVi": "Ngoài ra, một số bệnh viện ở Thượng Hải đã hợp tác với một số công ty bảo hiểm nước ngoài nổi tiếng và đạt được thỏa thuận công nhận lẫn nhau.",
       "audioText": "达成",
       "tags": [
         "expanded",
@@ -2944,7 +2944,7 @@
       "pinyin": "rènkě",
       "meaningVi": "Công nhận, thừa nhận",
       "exampleZh": "另外，上海已有部分医院与国外一些知名保险公司合作，达成相互认可协议。",
-      "exampleVi": "Đồng thời, nó cũng cung cấp các dịch vụ cứu hộ khẩn cấp ở nước ngoài bao gồm vận chuyển y tế khẩn cấp, hỗ trợ pháp lý và các dự án khác.",
+      "exampleVi": "Ngoài ra, một số bệnh viện ở Thượng Hải đã hợp tác với một số công ty bảo hiểm nước ngoài nổi tiếng và đạt được thỏa thuận công nhận lẫn nhau.",
       "audioText": "认可",
       "tags": [
         "expanded",
@@ -2959,7 +2959,7 @@
       "pinyin": "xiéyì",
       "meaningVi": "Hiệp định, thỏa thuận",
       "exampleZh": "另外，上海已有部分医院与国外一些知名保险公司合作，达成相互认可协议。",
-      "exampleVi": "Đồng thời, nó cũng cung cấp các dịch vụ cứu hộ khẩn cấp ở nước ngoài bao gồm vận chuyển y tế khẩn cấp, hỗ trợ pháp lý và các dự án khác.",
+      "exampleVi": "Ngoài ra, một số bệnh viện ở Thượng Hải đã hợp tác với một số công ty bảo hiểm nước ngoài nổi tiếng và đạt được thỏa thuận công nhận lẫn nhau.",
       "audioText": "协议",
       "tags": [
         "expanded",
@@ -2974,7 +2974,7 @@
       "pinyin": "jiù yī",
       "meaningVi": "Khám chữa bệnh, điều trị",
       "exampleZh": "外籍人员即使在国外买的保险，其保险公司只要被这些医院认可，也可以直接在上海就医，医疗费由相关保险公司支付。",
-      "exampleVi": "Ngoài ra, một số bệnh viện ở Thượng Hải đã hợp tác với một số công ty bảo hiểm nước ngoài nổi tiếng và đạt được thỏa thuận công nhận lẫn nhau.",
+      "exampleVi": "Ngay cả khi người nước ngoài mua bảo hiểm ở nước ngoài, chỉ cần công ty bảo hiểm của họ được các bệnh viện này công nhận, họ có thể trực tiếp đến Thượng Hải điều trị y tế và chi phí y tế sẽ do các công ty bảo hiểm liên quan chi trả.",
       "audioText": "就医",
       "tags": [
         "expanded",
@@ -3229,7 +3229,7 @@
       "pinyin": "shèxiàngjī",
       "meaningVi": "Máy quay phim",
       "exampleZh": "像手机、摄像机、照相机以及电池、充电器、洗漱用具、餐巾纸、卫生纸等等。",
-      "exampleVi": "Ví dụ như đi Hải Nam bạn sẽ cần mang theo một số quần áo mỏng hơn, nhưng nếu đi vùng Đông Bắc thì cần mang theo quần áo dày hơn.",
+      "exampleVi": "Chẳng hạn như điện thoại di động, máy quay phim, máy ảnh, pin, bộ sạc, đồ vệ sinh cá nhân, khăn ăn, giấy vệ sinh, v.",
       "audioText": "摄像机",
       "tags": [
         "expanded",
@@ -3259,7 +3259,7 @@
       "pinyin": "cānjīnzhǐ",
       "meaningVi": "Khăn giấy",
       "exampleZh": "像手机、摄像机、照相机以及电池、充电器、洗漱用具、餐巾纸、卫生纸等等。",
-      "exampleVi": "Ví dụ như đi Hải Nam bạn sẽ cần mang theo một số quần áo mỏng hơn, nhưng nếu đi vùng Đông Bắc thì cần mang theo quần áo dày hơn.",
+      "exampleVi": "Chẳng hạn như điện thoại di động, máy quay phim, máy ảnh, pin, bộ sạc, đồ vệ sinh cá nhân, khăn ăn, giấy vệ sinh, v.",
       "audioText": "餐巾纸",
       "tags": [
         "expanded",
@@ -3274,7 +3274,7 @@
       "pinyin": "wèishēngzhǐ",
       "meaningVi": "Giấy vệ sinh",
       "exampleZh": "像手机、摄像机、照相机以及电池、充电器、洗漱用具、餐巾纸、卫生纸等等。",
-      "exampleVi": "Ví dụ như đi Hải Nam bạn sẽ cần mang theo một số quần áo mỏng hơn, nhưng nếu đi vùng Đông Bắc thì cần mang theo quần áo dày hơn.",
+      "exampleVi": "Chẳng hạn như điện thoại di động, máy quay phim, máy ảnh, pin, bộ sạc, đồ vệ sinh cá nhân, khăn ăn, giấy vệ sinh, v.",
       "audioText": "卫生纸",
       "tags": [
         "expanded",
@@ -3289,7 +3289,7 @@
       "pinyin": "dǎfā",
       "meaningVi": "Giết thời gian",
       "exampleZh": "为了打发坐火车、汽车的时间，也可以带上棋牌等娱最后，也是最重要的：准备足够的钱，有备无患。",
-      "exampleVi": "Ngoài ra, khi đi du lịch, cảm lạnh, tiêu chảy, bầm tím, muỗi đốt là điều không thể tránh khỏi.",
+      "exampleVi": "Để giết thời gian trên tàu hỏa hoặc xe buýt, bạn cũng có thể mang theo cờ vua, bài bạc và các trò giải trí khác.",
       "audioText": "打发",
       "tags": [
         "expanded",
@@ -3304,7 +3304,7 @@
       "pinyin": "qí",
       "meaningVi": "Cờ (như cờ vua, cờ tướng)",
       "exampleZh": "为了打发坐火车、汽车的时间，也可以带上棋牌等娱最后，也是最重要的：准备足够的钱，有备无患。",
-      "exampleVi": "Ngoài ra, khi đi du lịch, cảm lạnh, tiêu chảy, bầm tím, muỗi đốt là điều không thể tránh khỏi.",
+      "exampleVi": "Để giết thời gian trên tàu hỏa hoặc xe buýt, bạn cũng có thể mang theo cờ vua, bài bạc và các trò giải trí khác.",
       "audioText": "棋",
       "tags": [
         "expanded",
@@ -3319,7 +3319,7 @@
       "pinyin": "pái",
       "meaningVi": "Bài (như bài tú lơ khơ)",
       "exampleZh": "为了打发坐火车、汽车的时间，也可以带上棋牌等娱最后，也是最重要的：准备足够的钱，有备无患。",
-      "exampleVi": "Ngoài ra, khi đi du lịch, cảm lạnh, tiêu chảy, bầm tím, muỗi đốt là điều không thể tránh khỏi.",
+      "exampleVi": "Ví dụ như đi Hải Nam bạn sẽ cần mang theo một số quần áo mỏng hơn, nhưng nếu đi vùng Đông Bắc thì cần mang theo quần áo dày hơn.",
       "audioText": "牌",
       "tags": [
         "expanded",
@@ -3349,7 +3349,7 @@
       "pinyin": "yǒu bèi wú huàn",
       "meaningVi": "Chuẩn bị trước không lo hậu họa",
       "exampleZh": "为了打发坐火车、汽车的时间，也可以带上棋牌等娱最后，也是最重要的：准备足够的钱，有备无患。",
-      "exampleVi": "Ngoài ra, khi đi du lịch, cảm lạnh, tiêu chảy, bầm tím, muỗi đốt là điều không thể tránh khỏi.",
+      "exampleVi": "Cuối cùng và quan trọng nhất: chuẩn bị đủ tiền để chuẩn bị.",
       "audioText": "有备无患",
       "tags": [
         "expanded",
@@ -3364,7 +3364,7 @@
       "pinyin": "súhuà",
       "meaningVi": "Tục ngữ, câu nói thông dụng",
       "exampleZh": "俗话说，「穷家富路」，意思是旅游时常常会发生一些意想不到的事情，所以要多带些钱。",
-      "exampleVi": "Mang theo một số loại thuốc thông dụng để kê đơn thuốc phù hợp.",
+      "exampleVi": "Tục ngữ có câu “người nghèo làm giàu trên đường”, có nghĩa là khi đi du lịch thường xảy ra những điều bất ngờ nên bạn nên mang theo nhiều tiền hơn.",
       "audioText": "俗话",
       "tags": [
         "expanded",
@@ -3379,7 +3379,7 @@
       "pinyin": "qióng jiā fù lù",
       "meaningVi": "Ở nhà tiết kiệm, đi đường thì tiêu xài thoải mái",
       "exampleZh": "俗话说，「穷家富路」，意思是旅游时常常会发生一些意想不到的事情，所以要多带些钱。",
-      "exampleVi": "Mang theo một số loại thuốc thông dụng để kê đơn thuốc phù hợp.",
+      "exampleVi": "Ví dụ như đi Hải Nam bạn sẽ cần mang theo một số quần áo mỏng hơn, nhưng nếu đi vùng Đông Bắc thì cần mang theo quần áo dày hơn.",
       "audioText": "穷家富路",
       "tags": [
         "expanded",
