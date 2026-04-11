@@ -4,7 +4,7 @@
   "type": "text",
   "originPath": "C:/Users/fitru/Desktop/ChineseLearning/oÔn dịch viết 1.docx",
   "language": "zh-CN",
-  "importedAt": "2026-04-11T09:01:05.714Z",
+  "importedAt": "2026-04-11T10:36:02.616Z",
   "ocrMode": "manual",
   "summary": "Bài đọc nhập từ DOCX với cấu trúc tiếng Trung, pinyin và nghĩa tiếng Việt theo tuần.",
   "tags": [
@@ -377,7 +377,7 @@
         "card-e5c7b9defe",
         "card-8a8f34dc16",
         "card-505578d5f4",
-        "card-d8535d4506"
+        "card-9e829761ed"
       ],
       "segments": [
         {
@@ -465,7 +465,7 @@
         },
         {
           "text": "我在跟他们议价，这两天会回复我们。",
-          "cardId": "card-d8535d4506"
+          "cardId": "card-9e829761ed"
         }
       ]
     },
@@ -688,6 +688,58 @@
         {
           "text": "传统春节是越南最重要的节日。传统春节期间，越南人民举行多项传统风俗活动，祈求新年平安、幸运、安康、兴旺。这个时候，远离家乡的亲人也回家团聚，探亲访友，派红包和举行祈求仪式。春节包粽子是越南民族的传统习俗，从古代流传到现在。每年春节，家家户户都包粽子过年，并摆上祖先祭台。",
           "cardId": "card-68ab4afa4c"
+        }
+      ]
+    },
+    {
+      "id": "section-7dcec89e32",
+      "heading": "Tuần 8",
+      "textZh": "1. 西安：西安市，古称长安、镐京，世界历史名城，是中华文明和中华民族重要发祥地之一，丝绸之路的起点，与世界著名的罗马、雅典、开罗等古城齐名。\n2. 洛阳：洛阳市，古称神都、洛邑、洛京，世界文化名城。洛阳居天下之中，因地处洛水之阳而得名，是华夏文明的发祥地之一。历史上先后有 13 个王朝在此建都，被称为世界四大圣城之一，道学发源于此、儒学兴盛于此、佛学首传于此。\n3. 南京：南京市，古称金陵、建康，国家历史文化名城，中华文明的重要发祥地，长期是中国南方的政治、经济、文化中心，自古以来就是一座崇文重教的城市，有“天下文枢”“东南第一学”之称。\n4. 北京：北京市，古称燕京、北平，中国历史文化名城和古都之一，荟萃了自元、明、清以来的中华文化优秀成果和优良传统，拥有众多名胜古迹和人文景观，是全球拥有世界文化遗产数量最多的城市。",
+      "textPinyin": "1. xī'ān: Xī'ān shì, gǔchēng cháng'ān, gǎo jīng, shìjiè lìshǐ míngchéng, shì zhōnghuá wénmíng hé zhōnghuá mínzú zhòngyào fāxiángdì zhī yī, sīchóu zhī lù de qǐdiǎn, yǔ shìjiè zhùmíng de luómǎ, yǎdiǎn, kāiluó děng gǔchéng qímíng.\n2. Luòyáng: Luòyáng shì, gǔchēng shén dōu, luò yì, luò jīng, shìjiè wénhuà míngchéng. Luòyáng jū tiānxià zhī zhōng, yīn dì chù luò shuǐ zhī yáng ér dé míng, shì huáxià wénmíng de fǎ xiáng dì zhī yī. Lìshǐ shàng xiānhòu yǒu 13 gè wángcháo zài cǐ jiàn dū, bèi chēng wèi shìjiè sì dà shèng chéng zhī yī, dàoxué fāyuán yú cǐ, rúxué xīngshèng yú cǐ, fóxué shǒu chuán yú cǐ.\n3. Nánjīng: Nánjīng shì, gǔchēng jīnlíng, jiàn kāng, guójiā lìshǐ wénhuà míngchéng, zhōnghuá wénmíng de zhòngyào fā xiáng dì, chángqí shì zhōngguó nánfāng de zhèngzhì, jīngjì, wénhuà zhōngxīn, zìgǔ yǐlái jiùshì yīzuò chóngwén zhòng jiào de chéng shì, yǒu “tiānxià wén shū”“dōngnán dì yī xué” zhī chēng.\n4. Běijīng: Běijīng shì, gǔchēng yàn jīng, běipíng, zhōngguó lìshǐ wénhuà míngchéng hé gǔdū zhī yī, huìcuìle zì yuán, míng, qīng yǐlái de zhōnghuá wénhuà yōuxiù chéngguǒ hé yōuliáng chuántǒng, yǒngyǒu zhòngduō míngshèng gǔjì hé rénwén jǐngguān, shì quánqiú yǒngyǒu shìjiè wénhuà yíchǎn shùliàng zuìduō de chéngshì.",
+      "textVi": "1. Tây An: Tây An, thời xưa được gọi là Trường An và Haojing, là một thành phố lịch sử nổi tiếng thế giới. Đây là một trong những nơi sinh ra quan trọng của nền văn minh Trung Quốc và dân tộc Trung Quốc. Đây là điểm khởi đầu của Con đường tơ lụa và nổi tiếng ngang hàng với các thành phố cổ nổi tiếng thế giới như Rome, Athens và Cairo.\n2. Lạc Dương: Thành phố Lạc Dương, thời xưa gọi là Shendu, Luoyi và Luojing, là một thành phố văn hóa nổi tiếng thế giới. Lạc Dương được xếp vào hàng tốt nhất thế giới. Nó được đặt tên vì nó nằm ở sông Dương Tử của sông Luoshui. Đây là một trong những nơi sản sinh ra nền văn minh Trung Quốc. Trong lịch sử, 13 triều đại đã đóng đô ở đây và nơi đây được mệnh danh là một trong 4 thành phố linh thiêng trên thế giới. Đạo giáo bắt nguồn từ đây, Nho giáo phát triển mạnh mẽ ở đây và Phật giáo lần đầu tiên được truyền bá ở đây.\n3. Nam Kinh: Nam Kinh, trước đây gọi là Jinling và Jiankang trong thời cổ đại, là một thành phố lịch sử và văn hóa quốc gia và là nơi ra đời quan trọng của nền văn minh Trung Quốc. Nơi đây từ lâu đã là trung tâm chính trị, kinh tế và văn hóa của miền nam Trung Quốc. Đây là thành phố coi trọng văn hóa và giáo dục từ xa xưa. Nó được mệnh danh là “Con tàu văn học thế giới” và “Con đường nghiên cứu số 1 Đông Nam Bộ”.\n4. Bắc Kinh: Bắc Kinh, thời xưa gọi là Diên Kinh và Bắc Kinh, là một trong những thành phố lịch sử, văn hóa và cố đô nổi tiếng của Trung Quốc. Nơi đây hội tụ những thành tựu nổi bật và truyền thống tốt đẹp của văn hóa Trung Hoa từ thời nhà Nguyên, nhà Minh và nhà Thanh. Nơi đây có nhiều di tích lịch sử và cảnh quan văn hóa. Đây là thành phố có số lượng di sản văn hóa thế giới lớn nhất thế giới.",
+      "focusCardIds": [
+        "card-8b2c9e11e5",
+        "card-c306989fbe",
+        "card-23df13ba3a",
+        "card-56fee557d1"
+      ],
+      "segments": [
+        {
+          "text": "1. "
+        },
+        {
+          "text": "西安：西安市，古称长安、镐京，世界历史名城，是中华文明和中华民族重要发祥地之一，丝绸之路的起点，与世界著名的罗马、雅典、开罗等古城齐名。",
+          "cardId": "card-8b2c9e11e5"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "2. "
+        },
+        {
+          "text": "洛阳：洛阳市，古称神都、洛邑、洛京，世界文化名城。洛阳居天下之中，因地处洛水之阳而得名，是华夏文明的发祥地之一。历史上先后有 13 个王朝在此建都，被称为世界四大圣城之一，道学发源于此、儒学兴盛于此、佛学首传于此。",
+          "cardId": "card-c306989fbe"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "3. "
+        },
+        {
+          "text": "南京：南京市，古称金陵、建康，国家历史文化名城，中华文明的重要发祥地，长期是中国南方的政治、经济、文化中心，自古以来就是一座崇文重教的城市，有“天下文枢”“东南第一学”之称。",
+          "cardId": "card-23df13ba3a"
+        },
+        {
+          "text": "\n"
+        },
+        {
+          "text": "4. "
+        },
+        {
+          "text": "北京：北京市，古称燕京、北平，中国历史文化名城和古都之一，荟萃了自元、明、清以来的中华文化优秀成果和优良传统，拥有众多名胜古迹和人文景观，是全球拥有世界文化遗产数量最多的城市。",
+          "cardId": "card-56fee557d1"
         }
       ]
     }

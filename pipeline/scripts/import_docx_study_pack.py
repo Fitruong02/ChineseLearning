@@ -7,7 +7,10 @@ import re
 import unicodedata
 import zipfile
 from datetime import datetime, timezone
+from functools import lru_cache
 from pathlib import Path
+from urllib.parse import quote
+from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
 
 
@@ -31,6 +34,7 @@ VI_HINT_WORDS = (
 )
 LATIN_TEXT_RE = re.compile(r"[A-Za-zÀ-ỹ]")
 CJK_TEXT_RE = re.compile(r"[\u4e00-\u9fff]")
+TRANSLATE_ENDPOINT = "https://translate.googleapis.com/translate_a/single?client=gtx&dt=t"
 
 
 def now_iso() -> str:
@@ -51,6 +55,65 @@ def slugify(text: str) -> str:
 def stable_id(prefix: str, text: str) -> str:
     digest = hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
     return f"{prefix}-{digest}"
+
+
+@lru_cache(maxsize=None)
+def translate_text(text: str, source_language: str, target_language: str) -> str:
+    if not text.strip():
+        return ""
+
+    request = Request(
+        f"{TRANSLATE_ENDPOINT}&sl={quote(source_language)}&tl={quote(target_language)}&q={quote(text)}",
+        headers={"User-Agent": "Mozilla/5.0"},
+    )
+
+    with urlopen(request, timeout=20) as response:
+        payload = json.loads(response.read().decode("utf-8"))
+
+    translated = "".join(
+        part[0] for part in payload[0] if isinstance(part, list) and part and part[0]
+    )
+    return translated.strip()
+
+
+def translate_zh_to_vi(text: str) -> str:
+    return translate_text(text, "zh-CN", "vi")
+
+
+def render_text_pinyin(text: str) -> str:
+    if not text:
+        return ""
+
+    try:
+        from pypinyin import Style, pinyin
+    except ModuleNotFoundError:
+        return ""
+
+    pieces: list[str] = []
+    for chunk in pinyin(
+        text,
+        style=Style.TONE,
+        heteronym=False,
+        neutral_tone_with_five=False,
+        errors=lambda value: list(value),
+    ):
+        token = chunk[0]
+        if not token:
+            continue
+        if token.isspace():
+            if pieces and pieces[-1] != " ":
+                pieces.append(" ")
+            continue
+        if re.fullmatch(r"[\u4e00-\u9fff]", token):
+            if pieces and pieces[-1] != " ":
+                pieces.append(" ")
+            pieces.append(token)
+            continue
+        if pieces and pieces[-1] == " ":
+            pieces.pop()
+        pieces.append(token)
+
+    return re.sub(r"\s+", " ", "".join(pieces)).strip()
 
 
 def read_docx_paragraphs(path: Path) -> list[str]:
@@ -186,15 +249,14 @@ def build_payloads(source_path: Path) -> tuple[dict, dict]:
 
     cards: list[dict] = []
     sections: list[dict] = []
+    seen_card_ids_by_hanzi: dict[str, str] = {}
 
     for heading, items in week_groups:
         zh_items = select_items_for_type(items, "zh")
         pinyin_items = select_items_for_type(items, "pinyin")
         vi_items = select_items_for_type(items, "vi")
 
-        pair_count = min(len(zh_items), len(pinyin_items), len(vi_items))
-        if pair_count == 0:
-            continue
+        pair_count = max(len(zh_items), len(pinyin_items), len(vi_items))
 
         section_segments: list[dict] = []
         section_zh_lines: list[str] = []
@@ -203,34 +265,51 @@ def build_payloads(source_path: Path) -> tuple[dict, dict]:
         section_focus_ids: list[str] = []
 
         for index in range(pair_count):
-            zh_text = zh_items[index]
-            pinyin_text = pinyin_items[index]
-            vi_text = vi_items[index]
-            card_id = stable_id("card", f"{heading}-{index + 1}-{zh_text}")
+            zh_text = zh_items[index].strip() if index < len(zh_items) else ""
+            if not zh_text:
+                continue
 
-            cards.append(
-                {
-                    "id": card_id,
-                    "deckId": deck_id,
-                    "hanzi": zh_text,
-                    "pinyin": pinyin_text,
-                    "meaningVi": vi_text,
-                    "exampleZh": zh_text,
-                    "examplePinyin": pinyin_text,
-                    "exampleVi": vi_text,
-                    "audioText": zh_text,
-                    "tags": ["docx", heading],
-                }
-            )
+            pinyin_text = pinyin_items[index].strip() if index < len(pinyin_items) else ""
+            if not pinyin_text:
+                pinyin_text = render_text_pinyin(zh_text)
+
+            vi_text = vi_items[index].strip() if index < len(vi_items) else ""
+            if not vi_text:
+                vi_text = translate_zh_to_vi(zh_text)
+
+            existing_card_id = seen_card_ids_by_hanzi.get(zh_text)
+            card_id = existing_card_id or stable_id("card", f"{heading}-{index + 1}-{zh_text}")
+
+            if not existing_card_id:
+                seen_card_ids_by_hanzi[zh_text] = card_id
+                cards.append(
+                    {
+                        "id": card_id,
+                        "deckId": deck_id,
+                        "hanzi": zh_text,
+                        "pinyin": pinyin_text,
+                        "meaningVi": vi_text,
+                        "exampleZh": zh_text,
+                        "examplePinyin": pinyin_text,
+                        "exampleVi": vi_text,
+                        "audioText": zh_text,
+                        "tags": ["docx", heading],
+                    }
+                )
 
             display_index = f"{index + 1}. "
             section_segments.append({"text": display_index})
             section_segments.append({"text": zh_text, "cardId": card_id})
             section_segments.append({"text": "\n"})
             section_zh_lines.append(f"{display_index}{zh_text}")
-            section_pinyin_lines.append(f"{display_index}{pinyin_text}")
-            section_vi_lines.append(f"{display_index}{vi_text}")
+            if pinyin_text:
+                section_pinyin_lines.append(f"{display_index}{pinyin_text}")
+            if vi_text:
+                section_vi_lines.append(f"{display_index}{vi_text}")
             section_focus_ids.append(card_id)
+
+        if not section_zh_lines:
+            continue
 
         sections.append(
             {

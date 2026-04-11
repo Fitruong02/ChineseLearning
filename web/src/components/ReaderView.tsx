@@ -97,7 +97,10 @@ export const ReaderView = ({
   const selectedMaterial =
     materials.find((material) => material.id === selectedMaterialId) ?? materials[0]
   const focusCardIds = useMemo(
-    () => selectedMaterial?.sections.flatMap((section) => section.focusCardIds) ?? [],
+    () => {
+      const ids = selectedMaterial?.sections.flatMap((section) => section.focusCardIds) ?? []
+      return ids.filter((cardId, index) => ids.indexOf(cardId) === index)
+    },
     [selectedMaterial],
   )
   const highlightedCard = highlightedCardId
@@ -132,6 +135,10 @@ export const ReaderView = ({
         .includes(normalizedCardQuery),
     )
   }, [contextCards, normalizedCardQuery])
+  const visibleContextCards = useMemo(
+    () => filteredContextCards.filter((card) => card.id !== selectedCard?.id),
+    [filteredContextCards, selectedCard?.id],
+  )
   const normalizedQuery = searchQuery.trim().toLowerCase()
   const filteredMaterials = useMemo(() => {
     if (!normalizedQuery) {
@@ -413,20 +420,6 @@ export const ReaderView = ({
           {voiceMode === 'female' && !hasFemaleChineseVoice && (
             <p className="review-shortcut-tip">Thiết bị chưa có giọng nữ tiếng Trung, đang fallback sang giọng khả dụng.</p>
           )}
-          <button
-            type="button"
-            className={`ghost-button compact-button ${showSectionPinyin ? 'is-active' : ''}`}
-            onClick={() => setShowSectionPinyin((value) => !value)}
-          >
-            {showSectionPinyin ? 'Phiên âm: Hiện' : 'Phiên âm: Ẩn'}
-          </button>
-          <button
-            type="button"
-            className={`ghost-button compact-button ${showSectionMeaning ? 'is-active' : ''}`}
-            onClick={() => setShowSectionMeaning((value) => !value)}
-          >
-            {showSectionMeaning ? 'Nghĩa: Hiện' : 'Nghĩa: Ẩn'}
-          </button>
         </div>
       </div>
 
@@ -674,22 +667,47 @@ export const ReaderView = ({
               placeholder="Hanzi / pinyin / nghĩa"
             />
           </label>
-          {filteredContextCards.length > 0 && (
-            <div className="stack-list" style={{ marginBottom: '0.9rem', maxHeight: '13.5rem', overflowY: 'auto' }}>
-              {filteredContextCards.slice(0, 12).map((card) => (
+          <div className="reader-context-toolbar">
+            <button
+              type="button"
+              className={`ghost-button compact-button ${showSectionPinyin ? 'is-active' : ''}`}
+              onClick={() => setShowSectionPinyin((value) => !value)}
+            >
+              {showSectionPinyin ? 'Ẩn phiên âm' : 'Hiện phiên âm'}
+            </button>
+            <button
+              type="button"
+              className={`ghost-button compact-button ${showSectionMeaning ? 'is-active' : ''}`}
+              onClick={() => setShowSectionMeaning((value) => !value)}
+            >
+              {showSectionMeaning ? 'Ẩn nghĩa' : 'Hiện nghĩa'}
+            </button>
+          </div>
+          {visibleContextCards.length > 0 && (
+            <div className="stack-list reader-context-list">
+              {visibleContextCards.slice(0, 12).map((card) => (
                 <button
                   key={card.id}
                   type="button"
                   className={`list-row ${selectedCard?.id === card.id ? 'is-selected' : ''}`}
                   onClick={() => onHighlightCard(card.id)}
-                  style={{ padding: '0.55rem 0.75rem' }}
+                  style={{ padding: '0.55rem 0.75rem', alignItems: 'flex-start' }}
                 >
                   <div>
                     <strong>{card.hanzi}</strong>
                     {showSectionPinyin && <p style={{ marginTop: '0.05rem' }}>{card.pinyin}</p>}
+                    {!showSectionPinyin && showSectionMeaning && (
+                      <p style={{ marginTop: '0.05rem' }}>{card.meaningVi}</p>
+                    )}
                   </div>
+                  <span>{card.tags.find((tag) => tag.startsWith('Tuần')) ?? 'docx'}</span>
                 </button>
               ))}
+            </div>
+          )}
+          {normalizedCardQuery && visibleContextCards.length === 0 && (
+            <div className="empty-state subtle" style={{ marginBottom: '0.9rem' }}>
+              Không còn mục nào khác khớp với từ khóa này trong bài đọc.
             </div>
           )}
 
