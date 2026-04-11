@@ -5,6 +5,7 @@ interface NavigationRailProps {
   dueCount: number
   draftCount: number
   audioReady: boolean
+  lastUpdatedLabel: string
   onSelect: (tab: TabId) => void
 }
 
@@ -26,6 +27,7 @@ export const NavigationRail = ({
   dueCount,
   draftCount,
   audioReady,
+  lastUpdatedLabel,
   onSelect,
 }: NavigationRailProps) => (
   <aside className="navigation-rail">
@@ -88,6 +90,12 @@ export const NavigationRail = ({
         <span>Audio</span>
         <strong style={{ fontSize: '0.82rem', fontFamily: 'inherit' }}>
           {audioReady ? '✓ zh voice' : '✗ unavail'}
+        </strong>
+      </div>
+      <div className="rail-stat">
+        <span>Cập nhật</span>
+        <strong style={{ fontSize: '0.8rem', fontFamily: 'inherit', lineHeight: 1.35 }}>
+          {lastUpdatedLabel}
         </strong>
       </div>
     </div>

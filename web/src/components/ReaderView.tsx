@@ -15,6 +15,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
 import { getCardExampleDisplayState } from '../lib/cardExample'
+import { getCardKind, getCardKindLabel, getPartOfSpeech, getPartOfSpeechLabel } from '../lib/cardMetadata'
 import type {
   MaterialSource,
   PublishedCard,
@@ -108,6 +109,10 @@ export const ReaderView = ({
     : undefined
   const fallbackCard = focusCardIds[0] ? cardsById.get(focusCardIds[0]) : undefined
   const selectedCard = highlightedCard ?? fallbackCard
+  const selectedCardId = selectedCard?.id ?? null
+  const selectedCardKind = selectedCard ? getCardKind(selectedCard) : null
+  const selectedCardPartOfSpeech = selectedCard ? getPartOfSpeech(selectedCard) : null
+  const selectedCardPartOfSpeechLabel = getPartOfSpeechLabel(selectedCardPartOfSpeech)
   const selectedCardExampleState = selectedCard
     ? getCardExampleDisplayState(selectedCard)
     : {
@@ -135,10 +140,7 @@ export const ReaderView = ({
         .includes(normalizedCardQuery),
     )
   }, [contextCards, normalizedCardQuery])
-  const visibleContextCards = useMemo(
-    () => filteredContextCards.filter((card) => card.id !== selectedCard?.id),
-    [filteredContextCards, selectedCard?.id],
-  )
+  const visibleContextCards = filteredContextCards.filter((card) => card.id !== selectedCardId)
   const normalizedQuery = searchQuery.trim().toLowerCase()
   const filteredMaterials = useMemo(() => {
     if (!normalizedQuery) {
@@ -743,6 +745,8 @@ export const ReaderView = ({
                 <p className="answer-translation">{selectedCard.exampleVi}</p>
               )}
               <div className="info-strip">
+                {selectedCardKind && <span>{getCardKindLabel(selectedCardKind)}</span>}
+                {selectedCardPartOfSpeechLabel && <span>{selectedCardPartOfSpeechLabel}</span>}
                 <span>{selectedCard.tags.join(' · ')}</span>
               </div>
               <span className="tag-pill subdued">

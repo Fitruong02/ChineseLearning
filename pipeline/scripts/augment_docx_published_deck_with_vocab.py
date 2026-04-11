@@ -18,6 +18,7 @@ PIPELINE_SRC = PROJECT_ROOT / "pipeline" / "src"
 if str(PIPELINE_SRC) not in sys.path:
     sys.path.insert(0, str(PIPELINE_SRC))
 
+from chinese_flashcards.card_metadata import infer_card_kind, infer_part_of_speech
 from chinese_flashcards.dictionary import CedictEntry, load_cedict
 from import_docx_study_pack import (
     WEEK_RE,
@@ -447,6 +448,8 @@ def augment_published_deck(source_path: Path, content_root: Path) -> Path:
             continue
 
         term_pinyin = extract_contextual_pinyin(row["zh"], term)
+        card_kind = infer_card_kind(term, term_pinyin, ["docx", row["heading"], "vocab-auto"])
+        part_of_speech = infer_part_of_speech(term, card_kind)
         ordered_vocab.append(
             {
                 "id": stable_id("vocab", term),
@@ -463,6 +466,8 @@ def augment_published_deck(source_path: Path, content_root: Path) -> Path:
                 "exampleVi": row["vi"] or translate_zh_to_vi(row["zh"]),
                 "audioText": term,
                 "tags": ["docx", row["heading"], "vocab-auto"],
+                "cardKind": card_kind,
+                **({"partOfSpeech": part_of_speech} if part_of_speech else {}),
             }
         )
 

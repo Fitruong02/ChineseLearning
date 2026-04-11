@@ -105,9 +105,16 @@ class PublishedCard:
     exampleVi: str
     audioText: str
     tags: list[str]
+    cardKind: str | None = None
+    partOfSpeech: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
-        return asdict(self)
+        payload = asdict(self)
+        if payload["cardKind"] is None:
+            payload.pop("cardKind")
+        if payload["partOfSpeech"] is None:
+            payload.pop("partOfSpeech")
+        return payload
 
 
 @dataclass(slots=True)

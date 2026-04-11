@@ -25,7 +25,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-d4b81d46ac",
@@ -40,7 +41,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-c8c62bcc55",
@@ -55,7 +57,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-ce2a064e18",
@@ -70,7 +73,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-9e829761ed",
@@ -85,7 +89,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-60f4bb906e",
@@ -100,7 +105,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-3258691504",
@@ -115,7 +121,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-091e8559f2",
@@ -130,7 +137,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e4aad854fc",
@@ -145,7 +153,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-714624bb2e",
@@ -160,7 +169,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-c3c88d34ff",
@@ -175,7 +185,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-3f400a26fe",
@@ -190,7 +201,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-2e3a6e1dd4",
@@ -205,7 +217,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-570e5943e8",
@@ -220,7 +233,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-8602126169",
@@ -235,7 +249,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-9a980c87c8",
@@ -250,7 +265,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-0457fda079",
@@ -265,7 +281,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e828278eb4",
@@ -280,7 +297,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-5a78d6e099",
@@ -295,7 +313,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-c6a4ceb9aa",
@@ -310,7 +329,8 @@
       "tags": [
         "docx",
         "Tuần 1"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-8a0af651fd",
@@ -325,7 +345,9 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "unknown"
     },
     {
       "id": "card-886ad6de60",
@@ -340,7 +362,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e96ec7e79e",
@@ -355,7 +378,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-5776b8e206",
@@ -370,7 +394,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-34df7c4ad7",
@@ -385,7 +410,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-5e5ed1bac0",
@@ -400,7 +426,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-5626c9c0d8",
@@ -415,7 +442,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-d6a32397f4",
@@ -430,7 +458,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-1b84c12baa",
@@ -445,7 +474,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-6738a4f192",
@@ -460,7 +490,8 @@
       "tags": [
         "docx",
         "Tuần 2"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-35531b7cd2",
@@ -475,7 +506,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e731f85b2d",
@@ -490,7 +522,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-b13ee39d7c",
@@ -505,7 +538,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-185825c022",
@@ -520,7 +554,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-7395142631",
@@ -535,7 +570,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e5c7b9defe",
@@ -550,7 +586,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-8a8f34dc16",
@@ -565,7 +602,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-505578d5f4",
@@ -580,7 +618,8 @@
       "tags": [
         "docx",
         "Tuần 4"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-0d2d27139f",
@@ -595,7 +634,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-f9bbad8f64",
@@ -610,7 +650,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-dbfeb6b7b9",
@@ -625,7 +666,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-edbe162638",
@@ -640,7 +682,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-68cc72b772",
@@ -655,7 +698,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-70b000871f",
@@ -670,7 +714,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-6446717592",
@@ -685,7 +730,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-3dbd84123e",
@@ -700,7 +746,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-585ff7359a",
@@ -715,7 +762,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-a09bf0a23e",
@@ -730,7 +778,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-05934744e1",
@@ -745,7 +794,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-e2ad3da507",
@@ -760,7 +810,8 @@
       "tags": [
         "docx",
         "Tuần 5"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-286d69fe92",
@@ -775,7 +826,8 @@
       "tags": [
         "docx",
         "Tuần 6"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-90084e407b",
@@ -790,7 +842,8 @@
       "tags": [
         "docx",
         "Tuần 6"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-a0fc2fe19a",
@@ -805,7 +858,9 @@
       "tags": [
         "docx",
         "Tuần 6"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "unknown"
     },
     {
       "id": "card-cee6fc8d04",
@@ -820,7 +875,8 @@
       "tags": [
         "docx",
         "Tuần 6"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-d012386f9b",
@@ -835,7 +891,9 @@
       "tags": [
         "docx",
         "Tuần 7"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "unknown"
     },
     {
       "id": "card-68ab4afa4c",
@@ -850,7 +908,8 @@
       "tags": [
         "docx",
         "Tuần 7"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-8b2c9e11e5",
@@ -865,7 +924,8 @@
       "tags": [
         "docx",
         "Tuần 8"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-c306989fbe",
@@ -880,7 +940,8 @@
       "tags": [
         "docx",
         "Tuần 8"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-23df13ba3a",
@@ -895,7 +956,8 @@
       "tags": [
         "docx",
         "Tuần 8"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "card-56fee557d1",
@@ -910,7 +972,8 @@
       "tags": [
         "docx",
         "Tuần 8"
-      ]
+      ],
+      "cardKind": "sentence"
     },
     {
       "id": "vocab-cb4633ff90",
@@ -926,7 +989,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a8b8715b58",
@@ -942,7 +1007,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-640b213a84",
@@ -958,7 +1025,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-8e90a3df92",
@@ -974,7 +1043,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c558cfdee8",
@@ -990,7 +1061,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-f5b9d25415",
@@ -1006,7 +1079,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-6454319777",
@@ -1022,7 +1097,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6c09b4e917",
@@ -1038,7 +1115,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ef59bf58fa",
@@ -1054,7 +1133,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-352432b9f7",
@@ -1070,7 +1151,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ab6dda478a",
@@ -1086,7 +1169,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6f7942bd85",
@@ -1102,7 +1187,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d803d64e45",
@@ -1118,7 +1205,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-efa7b0d4bb",
@@ -1134,7 +1223,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-1600c085c4",
@@ -1150,7 +1241,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-f8755214c8",
@@ -1166,7 +1259,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-75a5e1bc51",
@@ -1182,7 +1277,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-ffcf7896f5",
@@ -1198,7 +1295,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-097eaef1c9",
@@ -1214,7 +1313,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-5162df5222",
@@ -1230,7 +1331,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ffc7850925",
@@ -1246,7 +1349,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-83a8111a91",
@@ -1262,7 +1367,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-9736d40d13",
@@ -1278,7 +1385,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6cc98552a9",
@@ -1294,7 +1403,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a31b90e91d",
@@ -1310,7 +1421,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e4d1f069e6",
@@ -1326,7 +1439,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-8b294c5f66",
@@ -1342,7 +1457,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-048ed230a1",
@@ -1358,7 +1475,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-aa3c511ff2",
@@ -1374,7 +1493,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-769cc2f707",
@@ -1390,7 +1511,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-38fc015551",
@@ -1406,7 +1529,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-13d4f703a8",
@@ -1422,7 +1547,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3ac5adffdc",
@@ -1438,7 +1565,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-803416c60e",
@@ -1454,7 +1583,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3bb209a5e6",
@@ -1470,7 +1601,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-8db3cbae03",
@@ -1486,7 +1619,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-c28d53d7a6",
@@ -1502,7 +1637,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-71b6771bc7",
@@ -1518,7 +1655,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-7cc8d6a508",
@@ -1534,7 +1673,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-8b03490a3b",
@@ -1550,7 +1691,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-41d5e0b8c4",
@@ -1566,7 +1709,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-46a3edb5d0",
@@ -1582,7 +1727,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-3a34b62acc",
@@ -1598,7 +1745,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-e06d230fc5",
@@ -1614,7 +1763,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-a8eae12cd7",
@@ -1630,7 +1781,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-71d6df4130",
@@ -1646,7 +1799,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-6a2503ab16",
@@ -1662,7 +1817,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-4c4da0877f",
@@ -1678,7 +1835,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c24701bf5f",
@@ -1694,7 +1853,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bf7c7bedbc",
@@ -1710,7 +1871,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2415d7b5a6",
@@ -1726,7 +1889,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-71e138a59f",
@@ -1742,7 +1907,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-163626a3d8",
@@ -1758,7 +1925,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-0ab394d07d",
@@ -1774,7 +1943,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-fcd6d35489",
@@ -1790,7 +1961,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-8e07590ef7",
@@ -1806,7 +1979,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-6f970438ae",
@@ -1822,7 +1997,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-91061a56c0",
@@ -1838,7 +2015,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-f6bd95650e",
@@ -1854,7 +2033,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-93e6f95fdf",
@@ -1870,7 +2051,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0c7e782e85",
@@ -1886,7 +2069,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-cf8cae201b",
@@ -1902,7 +2087,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bbf68a5465",
@@ -1918,7 +2105,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-adfadb319f",
@@ -1934,7 +2123,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-4b8163f527",
@@ -1950,7 +2141,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-3ca928cd40",
@@ -1966,7 +2159,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-5d80806d7f",
@@ -1982,7 +2177,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-9ed627bcf6",
@@ -1998,7 +2195,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6e313b2952",
@@ -2014,7 +2213,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-059bee4782",
@@ -2030,7 +2231,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-2a68c68c4e",
@@ -2046,7 +2249,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-76fdf5e82d",
@@ -2062,7 +2267,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-0832ca78dc",
@@ -2078,7 +2285,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-33e9651895",
@@ -2094,7 +2303,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-163aec9194",
@@ -2110,7 +2321,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b499a229db",
@@ -2126,7 +2339,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-1b698a3bfe",
@@ -2142,7 +2357,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-22336e6b89",
@@ -2158,7 +2375,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-cc5180c8d5",
@@ -2174,7 +2393,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b5d62ab38b",
@@ -2190,7 +2411,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-9294c931e1",
@@ -2206,7 +2429,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-7964d18185",
@@ -2222,7 +2447,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-27c77a7e74",
@@ -2238,7 +2465,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ad3b4aa10e",
@@ -2254,7 +2483,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-9834f85de5",
@@ -2270,7 +2501,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-70ea6ee229",
@@ -2286,7 +2519,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0692f2b7e8",
@@ -2302,7 +2537,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c5be809a53",
@@ -2318,7 +2555,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b354b83869",
@@ -2334,7 +2573,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-443b26616a",
@@ -2350,7 +2591,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-fed3a45a57",
@@ -2366,7 +2609,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-b8a81b7a9c",
@@ -2382,7 +2627,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-195f416710",
@@ -2398,7 +2645,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-0ac4cf1d25",
@@ -2414,7 +2663,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-54513cd333",
@@ -2430,7 +2681,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-daf4f2dc0e",
@@ -2446,7 +2699,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-be1cc8dd04",
@@ -2462,7 +2717,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-5dc7d7ba71",
@@ -2478,7 +2735,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b66a4a1bde",
@@ -2494,7 +2753,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-7a50e4e8af",
@@ -2510,7 +2771,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6a6f1adb6f",
@@ -2526,7 +2789,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-14d722bad9",
@@ -2542,7 +2807,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-12b965039f",
@@ -2558,7 +2825,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-602ba54527",
@@ -2574,7 +2843,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bfe4c57f10",
@@ -2590,7 +2861,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-610e5cc6a3",
@@ -2606,7 +2879,9 @@
         "docx",
         "Tuần 1",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-d8906a0890",
@@ -2622,7 +2897,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-797c582598",
@@ -2638,7 +2915,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-ef0f954875",
@@ -2654,7 +2933,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b247c3e678",
@@ -2670,7 +2951,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-cac98f46da",
@@ -2686,7 +2969,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-e8b0a3af30",
@@ -2702,7 +2987,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-7f1fc6bde8",
@@ -2718,7 +3005,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-58449534af",
@@ -2734,7 +3023,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d4f64b1444",
@@ -2750,7 +3041,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-1bd1cb4966",
@@ -2766,7 +3059,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-e523b6ab39",
@@ -2782,7 +3077,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-7b6da88905",
@@ -2798,7 +3095,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-2f8136431b",
@@ -2814,7 +3113,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-133792ee41",
@@ -2830,7 +3131,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0b235a0c18",
@@ -2846,7 +3149,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-9c4a6f3f4b",
@@ -2862,7 +3167,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-efa828d4dc",
@@ -2878,7 +3185,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-785b2a1ddc",
@@ -2894,7 +3203,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-dfd6b7aab1",
@@ -2910,7 +3221,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-fcbd093292",
@@ -2926,7 +3239,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-50f624b3f4",
@@ -2942,7 +3257,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e50a04512a",
@@ -2958,7 +3275,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0bf6936da7",
@@ -2974,7 +3293,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-70e09a9ecd",
@@ -2990,7 +3311,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2c15bfc0a2",
@@ -3006,7 +3329,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-842cce9148",
@@ -3022,7 +3347,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-21ff2332d2",
@@ -3038,7 +3365,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b381a68b70",
@@ -3054,7 +3383,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6b7d3975c9",
@@ -3070,7 +3401,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c84103c8a8",
@@ -3086,7 +3419,9 @@
         "docx",
         "Tuần 2",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-7c72f54bf8",
@@ -3102,7 +3437,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-5be321f307",
@@ -3118,7 +3455,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-f23a9fcb62",
@@ -3134,7 +3473,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-65ae8b8844",
@@ -3150,7 +3491,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-f0ba5133ca",
@@ -3166,7 +3509,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a335081153",
@@ -3182,7 +3527,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-1c47a87a5c",
@@ -3198,7 +3545,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-151ddd4f1f",
@@ -3214,7 +3563,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d13e81f646",
@@ -3230,7 +3581,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-1691fc6466",
@@ -3246,7 +3599,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b3fc76a78b",
@@ -3262,7 +3617,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-c09719afb1",
@@ -3278,7 +3635,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e99a5b8e72",
@@ -3294,7 +3653,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-101806f57c",
@@ -3310,7 +3671,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-967a13f088",
@@ -3326,7 +3689,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-cc9c0b8ca1",
@@ -3342,7 +3707,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-7d3b2b0ebc",
@@ -3358,7 +3725,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ab9ff81dac",
@@ -3374,7 +3743,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2dc2a01ed2",
@@ -3390,7 +3761,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-c4bed30f02",
@@ -3406,7 +3779,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-de3a317f7b",
@@ -3422,7 +3797,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-cefbce236e",
@@ -3438,7 +3815,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-2152d915e9",
@@ -3454,7 +3833,9 @@
         "docx",
         "Tuần 4",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-76484b3b88",
@@ -3470,7 +3851,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-052ea0e87e",
@@ -3486,7 +3869,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-42bea5612f",
@@ -3502,7 +3887,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-e85fb8c951",
@@ -3518,7 +3905,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-2fb49eec39",
@@ -3534,7 +3923,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-025cbbc2bb",
@@ -3550,7 +3941,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a05d48d779",
@@ -3566,7 +3959,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-48e9e53252",
@@ -3582,7 +3977,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bf197d50d3",
@@ -3598,7 +3995,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-9b375610f7",
@@ -3614,7 +4013,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-dd9fc2c0a1",
@@ -3630,7 +4031,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b76783d38c",
@@ -3646,7 +4049,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-4c974ea89d",
@@ -3662,7 +4067,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-b247b7200f",
@@ -3678,7 +4085,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "idiom"
     },
     {
       "id": "vocab-966960cafc",
@@ -3694,7 +4103,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-28aa475a79",
@@ -3710,7 +4121,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-5996c71fae",
@@ -3726,7 +4139,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-557911d76d",
@@ -3742,7 +4157,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-95bc94f684",
@@ -3758,7 +4175,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-97fa1f7e92",
@@ -3774,7 +4193,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-14dff4805b",
@@ -3790,7 +4211,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-8e1145478a",
@@ -3806,7 +4229,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-8cfc7ef1c3",
@@ -3822,7 +4247,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-0cfa09d980",
@@ -3838,7 +4265,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-77ae7e92be",
@@ -3854,7 +4283,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-d6f295a6ea",
@@ -3870,7 +4301,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-47feb0f12e",
@@ -3886,7 +4319,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-940e0b06d0",
@@ -3902,7 +4337,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2b6ed9985d",
@@ -3918,7 +4355,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-b7f4670752",
@@ -3934,7 +4373,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-a347663c6b",
@@ -3950,7 +4391,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-f9980e7c45",
@@ -3966,7 +4409,9 @@
         "docx",
         "Tuần 5",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-6e84578e47",
@@ -3982,7 +4427,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-72f1cf759c",
@@ -3998,7 +4445,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-4525be7636",
@@ -4014,7 +4463,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e895e44af9",
@@ -4030,7 +4481,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-402a606abc",
@@ -4046,7 +4499,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0a1f64a4b3",
@@ -4062,7 +4517,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-dd4303421c",
@@ -4078,7 +4535,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a0c3ad05ac",
@@ -4094,7 +4553,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-99f59ca01b",
@@ -4110,7 +4571,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b13d33a528",
@@ -4126,7 +4589,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-1a5356243c",
@@ -4142,7 +4607,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-17fc93c9cd",
@@ -4158,7 +4625,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2ea9f755e1",
@@ -4174,7 +4643,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-468e24b50f",
@@ -4190,7 +4661,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-cd8183a9bb",
@@ -4206,7 +4679,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-4fea859859",
@@ -4222,7 +4697,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-836dd21136",
@@ -4238,7 +4715,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a3540e824b",
@@ -4254,7 +4733,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-5f8fc29b1e",
@@ -4270,7 +4751,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-8b04b6bd0f",
@@ -4286,7 +4769,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bbc1f3af04",
@@ -4302,7 +4787,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c17bb5de3f",
@@ -4318,7 +4805,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-260d177c7b",
@@ -4334,7 +4823,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-fda7539bde",
@@ -4350,7 +4841,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-bfb2d254b4",
@@ -4366,7 +4859,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-27df72658d",
@@ -4382,7 +4877,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-933f3f8095",
@@ -4398,7 +4895,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ed0eea8f20",
@@ -4414,7 +4913,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0f646e6273",
@@ -4430,7 +4931,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-af90809619",
@@ -4446,7 +4949,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-83bc0f80cf",
@@ -4462,7 +4967,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-96361e2bdb",
@@ -4478,7 +4985,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3d35e38c55",
@@ -4494,7 +5003,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-269ff516bd",
@@ -4510,7 +5021,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-7cf40bbd23",
@@ -4526,7 +5039,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-97fd065e99",
@@ -4542,7 +5057,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-e558166aa3",
@@ -4558,7 +5075,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e0c163e623",
@@ -4574,7 +5093,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-97fedf6251",
@@ -4590,7 +5111,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-8eafe03b67",
@@ -4606,7 +5129,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-19db76e5c3",
@@ -4622,7 +5147,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-5d44dafb80",
@@ -4638,7 +5165,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-973b94c4b7",
@@ -4654,7 +5183,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-1a1f6dff78",
@@ -4670,7 +5201,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-f0c6302ffa",
@@ -4686,7 +5219,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-51991a5d11",
@@ -4702,7 +5237,9 @@
         "docx",
         "Tuần 6",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-863dbaf31e",
@@ -4718,7 +5255,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e02495c7de",
@@ -4734,7 +5273,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e99a9dfee1",
@@ -4750,7 +5291,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-a084ed266d",
@@ -4766,7 +5309,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b2548636f0",
@@ -4782,7 +5327,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-87f17ec1e0",
@@ -4798,7 +5345,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-b4ebb992e9",
@@ -4814,7 +5363,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-b824742329",
@@ -4830,7 +5381,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-2bb1bb56ac",
@@ -4846,7 +5399,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-520e547456",
@@ -4862,7 +5417,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-62ccde3bf2",
@@ -4878,7 +5435,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-d7ca9746be",
@@ -4894,7 +5453,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-cb3eca098f",
@@ -4910,7 +5471,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a56342e7f2",
@@ -4926,7 +5489,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-edca91200d",
@@ -4942,7 +5507,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-47d403038c",
@@ -4958,7 +5525,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-df9c775dca",
@@ -4974,7 +5543,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-be459e0eca",
@@ -4990,7 +5561,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-1de21cb9e1",
@@ -5006,7 +5579,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-fea93eb5a6",
@@ -5022,7 +5597,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-5e8b2a369c",
@@ -5038,7 +5615,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a7785616a2",
@@ -5054,7 +5633,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-5387b44c0c",
@@ -5070,7 +5651,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-bba8287eba",
@@ -5086,7 +5669,9 @@
         "docx",
         "Tuần 7",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-f782fce2e4",
@@ -5102,7 +5687,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-63661b8187",
@@ -5118,7 +5705,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d15bae2e15",
@@ -5134,7 +5723,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-7a4e818129",
@@ -5150,7 +5741,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-dfeaf8057e",
@@ -5166,7 +5759,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-cf1656101e",
@@ -5182,7 +5777,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-be78b20585",
@@ -5198,7 +5795,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-8fcfe6b0cc",
@@ -5214,7 +5813,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-63f37e7826",
@@ -5230,7 +5831,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-968d651c8a",
@@ -5246,7 +5849,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-13b761b568",
@@ -5262,7 +5867,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3df136e556",
@@ -5278,7 +5885,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-e188ebcab6",
@@ -5294,7 +5903,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-780e777780",
@@ -5310,7 +5921,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-89fb820626",
@@ -5326,7 +5939,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-48d97e5ab0",
@@ -5342,7 +5957,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-00c19a4bd3",
@@ -5358,7 +5975,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-995b99688b",
@@ -5374,7 +5993,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-006e371f88",
@@ -5390,7 +6011,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "adjective"
     },
     {
       "id": "vocab-e28deea22e",
@@ -5406,7 +6029,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-fed52362b9",
@@ -5422,7 +6047,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-a4e112a537",
@@ -5438,7 +6065,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c8502ed01e",
@@ -5454,7 +6083,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-c0629d18c7",
@@ -5470,7 +6101,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-86a5324778",
@@ -5486,7 +6119,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3546edd358",
@@ -5502,7 +6137,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e46993bd81",
@@ -5518,7 +6155,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-2aee634671",
@@ -5534,7 +6173,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-ecd446b096",
@@ -5550,7 +6191,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-114cd11849",
@@ -5566,7 +6209,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-240905717f",
@@ -5582,7 +6227,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-7e9c74e169",
@@ -5598,7 +6245,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-70675e35b7",
@@ -5614,7 +6263,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-794179e5e0",
@@ -5630,7 +6281,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e858506b22",
@@ -5646,7 +6299,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-65d1857dd0",
@@ -5662,7 +6317,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-2ccf355680",
@@ -5678,7 +6335,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-56d902ad9f",
@@ -5694,7 +6353,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-81c6251384",
@@ -5710,7 +6371,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0c99255d72",
@@ -5726,7 +6389,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b2f479d6f4",
@@ -5742,7 +6407,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-af2e9d252d",
@@ -5758,7 +6425,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6b3771c8bf",
@@ -5774,7 +6443,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d879c54ee1",
@@ -5790,7 +6461,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-745c0fb47b",
@@ -5806,7 +6479,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-cd0bf6887d",
@@ -5822,7 +6497,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-6e82f8a420",
@@ -5838,7 +6515,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-e8f9160a72",
@@ -5854,7 +6533,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-22fadc8bd2",
@@ -5870,7 +6551,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "vocab-726a3d2546",
@@ -5886,7 +6569,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-3d464701ca",
@@ -5902,7 +6587,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-590157b8d4",
@@ -5918,7 +6605,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-009abd2970",
@@ -5934,7 +6623,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-99e430d01f",
@@ -5950,7 +6641,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-685e151824",
@@ -5966,7 +6659,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-15ef4634d5",
@@ -5982,7 +6677,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-50d0dced91",
@@ -5998,7 +6695,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-112b34b1cf",
@@ -6014,7 +6713,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-146ae157d0",
@@ -6030,7 +6731,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-91995ba84e",
@@ -6046,7 +6749,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-0b248ac381",
@@ -6062,7 +6767,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-9aafa8230e",
@@ -6078,7 +6785,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-d0f289bc94",
@@ -6094,7 +6803,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-0121f11690",
@@ -6110,7 +6821,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "vocab-d27aa323be",
@@ -6126,7 +6839,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b5a08353a0",
@@ -6142,7 +6857,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-f0ab8954dd",
@@ -6158,7 +6875,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-5cda866e1d",
@@ -6174,7 +6893,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-b9ae893190",
@@ -6190,7 +6911,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "vocab-4c5dfceda4",
@@ -6206,7 +6929,9 @@
         "docx",
         "Tuần 8",
         "vocab-auto"
-      ]
+      ],
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     }
   ]
 }

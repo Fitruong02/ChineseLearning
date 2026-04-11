@@ -10,6 +10,8 @@ export type ReviewMixMode = 'random' | 'by_lesson' | 'by_phonetic'
 export type PhoneticMode = 'initial' | 'final'
 export type ReviewPracticeMode = 'flashcard' | 'type_answer'
 export type PromptField = 'hanzi' | 'pinyin' | 'meaningVi'
+export type CardKind = 'term' | 'sentence'
+export type PartOfSpeech = 'noun' | 'verb' | 'adjective' | 'adverb' | 'idiom' | 'phrase' | 'unknown'
 
 export interface MaterialSegment {
   text: string
@@ -51,6 +53,8 @@ export interface PublishedCard {
   exampleVi: string
   audioText: string
   tags: string[]
+  cardKind?: CardKind
+  partOfSpeech?: PartOfSpeech
 }
 
 export interface PublishedDeck {
@@ -77,6 +81,8 @@ export interface DraftCard {
   tags: string[]
   confidence: number
   status: DraftStatus
+  cardKind?: CardKind
+  partOfSpeech?: PartOfSpeech
 }
 
 export interface DraftDeck {

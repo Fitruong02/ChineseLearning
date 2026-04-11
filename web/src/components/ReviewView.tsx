@@ -1,6 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getCardExampleDisplayState } from '../lib/cardExample'
 import {
+  dedupeReviewCards,
+  getCardKind,
+  getCardKindLabel,
+  getPartOfSpeech,
+  getPartOfSpeechLabel,
+  isReviewEligibleCard,
+} from '../lib/cardMetadata'
+import {
   BATCH_SIZE,
   applyBatchAction,
   buildInitialQueue,
@@ -483,15 +491,25 @@ export const ReviewView = ({
     if (selectedDeckId === 'all') return publishedDecks.flatMap((deck) => deck.cards)
     return publishedDecks.find((deck) => deck.id === selectedDeckId)?.cards ?? []
   }, [publishedDecks, selectedDeckId])
+  const eligibleActiveCards = useMemo(
+    () => dedupeReviewCards(activeCards.filter((card) => isReviewEligibleCard(card))),
+    [activeCards],
+  )
 
-  const cardsById = useMemo(() => new Map(activeCards.map((card) => [card.id, card])), [activeCards])
+  const cardsById = useMemo(
+    () => new Map(eligibleActiveCards.map((card) => [card.id, card])),
+    [eligibleActiveCards],
+  )
   const selectedDeck = selectedDeckId === 'all'
     ? undefined
     : publishedDecks.find((deck) => deck.id === selectedDeckId)
 
   const startableCards = useMemo(
-    () => sortCardsForPicker(activeCards, records).filter((card) => !records[card.id] || new Date(records[card.id].dueAt).getTime() <= Date.now()),
-    [activeCards, records],
+    () =>
+      sortCardsForPicker(eligibleActiveCards, records).filter(
+        (card) => !records[card.id] || new Date(records[card.id].dueAt).getTime() <= Date.now(),
+      ),
+    [eligibleActiveCards, records],
   )
 
   const filteredStartCards = useMemo(() => {
@@ -516,7 +534,7 @@ export const ReviewView = ({
     }
 
     const initialQueue = buildInitialQueue(
-      activeCards,
+      eligibleActiveCards,
       recordsRef.current,
       mixMode,
       phoneticMode,
@@ -541,8 +559,8 @@ export const ReviewView = ({
     setStageFeedback(null)
     setActiveMilestone(null)
   }, [
-    activeCards,
     deckOrder,
+    eligibleActiveCards,
     mixMode,
     phoneticMode,
     practiceMode,
@@ -618,6 +636,9 @@ export const ReviewView = ({
   const queuedCard = queueCards[0]
   const currentCard = resolvedCardState?.card ?? queuedCard
   const currentDeck = currentCard ? deckById.get(currentCard.deckId) : selectedDeck
+  const currentPartOfSpeech = currentCard ? getPartOfSpeech(currentCard) : null
+  const currentPartOfSpeechLabel = getPartOfSpeechLabel(currentPartOfSpeech)
+  const currentCardKindLabel = currentCard ? getCardKindLabel(getCardKind(currentCard)) : null
   const currentPromptField = currentCard
     ? sessionState.promptFieldByCardId[currentCard.id] ?? 'meaningVi'
     : 'meaningVi'
@@ -1007,6 +1028,7 @@ export const ReviewView = ({
               <span className="tag-pill subdued">
                 Còn {pendingCount}/{initialTotal} từ
               </span>
+              <span className="tag-pill subdued">Chỉ ôn từ / cụm từ</span>
               <span className="tag-pill warn">
                 Retry {sessionState.retryCardIds.length}
               </span>
@@ -1033,6 +1055,12 @@ export const ReviewView = ({
             <>
               <div className="review-status">
                 <span className="tag-pill subdued">{currentDeck?.title ?? 'Deck tổng'}</span>
+                {currentCardKindLabel && (
+                  <span className="tag-pill subdued">{currentCardKindLabel}</span>
+                )}
+                {currentPartOfSpeechLabel && (
+                  <span className="tag-pill subdued">{currentPartOfSpeechLabel}</span>
+                )}
                 {sessionState.startCardId === currentCard.id && (
                   <span className="tag-pill">Từ bắt đầu</span>
                 )}
@@ -1130,6 +1158,12 @@ export const ReviewView = ({
             <>
               <div className="review-status">
                 <span className="tag-pill subdued">{currentDeck?.title ?? 'Deck tổng'}</span>
+                {currentCardKindLabel && (
+                  <span className="tag-pill subdued">{currentCardKindLabel}</span>
+                )}
+                {currentPartOfSpeechLabel && (
+                  <span className="tag-pill subdued">{currentPartOfSpeechLabel}</span>
+                )}
                 <span className="tag-pill subdued">Clue: {fieldLabel(currentPromptField)}</span>
                 {resolvedCardState?.resolution === 'again' && (
                   <span className="tag-pill warn">Sẽ quay lại vòng sau</span>
@@ -1262,7 +1296,16 @@ export const ReviewView = ({
             </div>
           )}
 
-          {sessionComplete && (
+          {sessionComplete && eligibleActiveCards.length === 0 && (
+            <div className="empty-state">
+              <h3>Deck này chưa có thẻ phù hợp để ôn.</h3>
+              <p>
+                Review hiện chỉ lấy từ hoặc cụm từ ngắn. Những câu dài và đoạn văn vẫn nên học ở Reader để bám ngữ cảnh.
+              </p>
+            </div>
+          )}
+
+          {sessionComplete && eligibleActiveCards.length > 0 && (
             <div className="session-summary">
               <div>
                 <p className="eyebrow">Session complete</p>
@@ -1430,6 +1473,9 @@ export const ReviewView = ({
             {!selectedDeck && (
               <p className="review-shortcut-tip">Chọn deck cụ thể để dùng “Reset deck”.</p>
             )}
+            <p className="review-shortcut-tip">
+              Nhãn danh từ, động từ, tính từ... đang dùng phân loại bán tự động để hỗ trợ lọc ôn tập. Nếu gặp vài mục chưa chuẩn tuyệt đối thì vẫn ưu tiên bám theo ví dụ và Reader.
+            </p>
 
             <div className="session-summary__stats">
               <div className="mini-stat">

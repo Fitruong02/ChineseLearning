@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 import unicodedata
 import zipfile
 from datetime import datetime, timezone
@@ -12,6 +13,13 @@ from pathlib import Path
 from urllib.parse import quote
 from urllib.request import Request, urlopen
 from xml.etree import ElementTree as ET
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+PIPELINE_SRC = PROJECT_ROOT / "pipeline" / "src"
+if str(PIPELINE_SRC) not in sys.path:
+    sys.path.insert(0, str(PIPELINE_SRC))
+
+from chinese_flashcards.card_metadata import infer_card_kind, infer_part_of_speech
 
 
 W_NS = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
@@ -281,21 +289,25 @@ def build_payloads(source_path: Path) -> tuple[dict, dict]:
             card_id = existing_card_id or stable_id("card", f"{heading}-{index + 1}-{zh_text}")
 
             if not existing_card_id:
+                card_kind = infer_card_kind(zh_text, pinyin_text, ["docx", heading])
+                part_of_speech = infer_part_of_speech(zh_text, card_kind)
                 seen_card_ids_by_hanzi[zh_text] = card_id
-                cards.append(
-                    {
-                        "id": card_id,
-                        "deckId": deck_id,
-                        "hanzi": zh_text,
-                        "pinyin": pinyin_text,
-                        "meaningVi": vi_text,
-                        "exampleZh": zh_text,
-                        "examplePinyin": pinyin_text,
-                        "exampleVi": vi_text,
-                        "audioText": zh_text,
-                        "tags": ["docx", heading],
-                    }
-                )
+                card_payload = {
+                    "id": card_id,
+                    "deckId": deck_id,
+                    "hanzi": zh_text,
+                    "pinyin": pinyin_text,
+                    "meaningVi": vi_text,
+                    "exampleZh": zh_text,
+                    "examplePinyin": pinyin_text,
+                    "exampleVi": vi_text,
+                    "audioText": zh_text,
+                    "tags": ["docx", heading],
+                    "cardKind": card_kind,
+                }
+                if part_of_speech:
+                    card_payload["partOfSpeech"] = part_of_speech
+                cards.append(card_payload)
 
             display_index = f"{index + 1}. "
             section_segments.append({"text": display_index})

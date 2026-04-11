@@ -24,7 +24,9 @@
         "địa điểm",
         "y tế"
       ],
-      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yīyuàn guà hào。"
+      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yīyuàn guà hào。",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-guahao",
@@ -39,7 +41,9 @@
         "y tế",
         "thủ tục"
       ],
-      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yī yuàn guàhào。"
+      "examplePinyin": "jīn tiān zǎo shàng， lín yǔ qù yī yuàn guàhào。",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-fuwutai",
@@ -54,7 +58,9 @@
         "địa điểm",
         "toà nhà"
       ],
-      "examplePinyin": "tā xiān zài fúwùtái wèn： “qǐng wèn nèi kē zài nǎ lǐ？”"
+      "examplePinyin": "tā xiān zài fúwùtái wèn： “qǐng wèn nèi kē zài nǎ lǐ？”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-neike",
@@ -69,7 +75,9 @@
         "y tế",
         "khoa phòng"
       ],
-      "examplePinyin": "tā xiān zài fú wù tái wèn： “qǐng wèn nèikē zài nǎ lǐ？”"
+      "examplePinyin": "tā xiān zài fú wù tái wèn： “qǐng wèn nèikē zài nǎ lǐ？”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-hushi",
@@ -84,7 +92,9 @@
         "nghề nghiệp",
         "y tế"
       ],
-      "examplePinyin": "hùshi shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒ biān。”"
+      "examplePinyin": "hùshi shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒ biān。”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-yizhiwangqianzou",
@@ -99,7 +109,9 @@
         "chỉ đường",
         "động từ"
       ],
-      "examplePinyin": "hù shì shuō： “yìzhí wǎng qián zǒu， zài èr lóu zuǒ biān。”"
+      "examplePinyin": "hù shì shuō： “yìzhí wǎng qián zǒu， zài èr lóu zuǒ biān。”",
+      "cardKind": "term",
+      "partOfSpeech": "unknown"
     },
     {
       "id": "card-erlou",
@@ -114,7 +126,9 @@
         "toà nhà",
         "chỉ đường"
       ],
-      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èrlóu zuǒ biān。”"
+      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èrlóu zuǒ biān。”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-zuobian",
@@ -128,7 +142,9 @@
       "tags": [
         "chỉ đường"
       ],
-      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒbiān。”"
+      "examplePinyin": "hù shì shuō： “yì zhí wǎng qián zǒu， zài èr lóu zuǒbiān。”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-kesou",
@@ -143,7 +159,9 @@
         "triệu chứng",
         "y tế"
       ],
-      "examplePinyin": "yī shēng wèn tā： “nǐ késou duō jiǔ le？”"
+      "examplePinyin": "yī shēng wèn tā： “nǐ késou duō jiǔ le？”",
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "card-fashao",
@@ -158,7 +176,9 @@
         "triệu chứng",
         "y tế"
       ],
-      "examplePinyin": "lín yǔ shuō： “liǎng tiān le， hái yǒu yì diǎn fāshāo。”"
+      "examplePinyin": "lín yǔ shuō： “liǎng tiān le， hái yǒu yì diǎn fāshāo。”",
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "card-duoheshui",
@@ -173,7 +193,9 @@
         "lời khuyên",
         "y tế"
       ],
-      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， àn shí chī yào。"
+      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， àn shí chī yào。",
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "card-anshichiyao",
@@ -188,7 +210,9 @@
         "lời khuyên",
         "y tế"
       ],
-      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， ànshí chī yào。"
+      "examplePinyin": "yī shēng jiàn yì tā duō hē shuǐ， ànshí chī yào。",
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     }
   ]
 }

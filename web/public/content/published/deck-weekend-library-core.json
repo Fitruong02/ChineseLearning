@@ -24,7 +24,9 @@
         "địa điểm",
         "học tập"
       ],
-      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù túshūguǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù túshūguǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-huanshu",
@@ -39,7 +41,9 @@
         "động từ",
         "thư viện"
       ],
-      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。",
+      "cardKind": "term",
+      "partOfSpeech": "phrase"
     },
     {
       "id": "card-jie",
@@ -54,7 +58,9 @@
         "động từ",
         "thư viện"
       ],
-      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。"
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎo shuō。",
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     },
     {
       "id": "card-xiaoshuo",
@@ -69,7 +75,9 @@
         "danh từ",
         "đọc sách"
       ],
-      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎoshuō。"
+      "examplePinyin": "zhōu mò shàng wǔ， wǒ qù tú shū guǎn huán shū， yě xiǎng jiè yī běn xīn de xiǎoshuō。",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-zuowei",
@@ -84,7 +92,9 @@
         "thư viện",
         "địa điểm"
       ],
-      "examplePinyin": "mén kǒu de guǎn lǐ yuán gào sù wǒ： “sān lóu hái yǒu kòng wèi， nǐ kě yǐ xiān shàng qù zhǎo zuòwèi。”"
+      "examplePinyin": "mén kǒu de guǎn lǐ yuán gào sù wǒ： “sān lóu hái yǒu kòng wèi， nǐ kě yǐ xiān shàng qù zhǎo zuòwèi。”",
+      "cardKind": "term",
+      "partOfSpeech": "noun"
     },
     {
       "id": "card-fuxi",
@@ -99,7 +109,9 @@
         "học tập",
         "động từ"
       ],
-      "examplePinyin": "zhǎo dào zuò wèi yǐ hòu， wǒ dǎ kāi bǐ jì běn， xiān fùxí zuó tiān de shēng cí， zài xiě jīn tiān de xué xí jì huà。"
+      "examplePinyin": "zhǎo dào zuò wèi yǐ hòu， wǒ dǎ kāi bǐ jì běn， xiān fùxí zuó tiān de shēng cí， zài xiě jīn tiān de xué xí jì huà。",
+      "cardKind": "term",
+      "partOfSpeech": "verb"
     }
   ]
 }

@@ -1,4 +1,5 @@
 import { isCardDue, isTroubleRecord } from './srs'
+import { dedupeReviewCards, isReviewEligibleCard } from './cardMetadata'
 import type {
   MotionPreference,
   PhoneticMode,
@@ -119,9 +120,11 @@ export const buildInitialQueue = (
   deckOrder: string[],
   startCardId?: string | null,
 ) => {
-  const dueCards = sortCardsForSession(
-    cards.filter((card) => isCardDue(records[card.id])),
-    records,
+  const dueCards = dedupeReviewCards(
+    sortCardsForSession(
+      cards.filter((card) => isReviewEligibleCard(card) && isCardDue(records[card.id])),
+      records,
+    ),
   )
 
   let queue: string[]

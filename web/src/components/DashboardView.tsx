@@ -6,6 +6,7 @@ import type {
   ReviewNavigationOptions,
   StudyRecordMap,
 } from '../types'
+import { dedupeReviewCards, getPartOfSpeech, getPartOfSpeechLabel, isReviewEligibleCard } from '../lib/cardMetadata'
 import { formatRelativeDue, isTroubleRecord } from '../lib/srs'
 
 interface DashboardViewProps {
@@ -37,10 +38,11 @@ export const DashboardView = ({
   ).length
 
   const deckById = new Map(publishedDecks.map((d) => [d.id, d]))
-  const troubleCards = publishedDecks
-    .flatMap((d) => d.cards)
-    .filter((c) => isTroubleRecord(records[c.id]))
-    .slice(0, 5)
+  const troubleCards = dedupeReviewCards(
+    publishedDecks
+      .flatMap((d) => d.cards)
+      .filter((card) => isReviewEligibleCard(card) && isTroubleRecord(records[card.id])),
+  ).slice(0, 5)
 
   const totalCards = publishedDecks.reduce((n, d) => n + d.cards.length, 0)
   const pendingDrafts = draftDecks.reduce(
@@ -145,7 +147,12 @@ export const DashboardView = ({
               >
                 <div>
                   <strong>{card.hanzi}</strong>
-                  <p>{deckById.get(card.deckId)?.title ?? 'Deck'} · {card.tags.slice(0, 2).join(' · ')}</p>
+                  <p>
+                    {deckById.get(card.deckId)?.title ?? 'Deck'}
+                    {getPartOfSpeechLabel(getPartOfSpeech(card))
+                      ? ` · ${getPartOfSpeechLabel(getPartOfSpeech(card))}`
+                      : ''}
+                  </p>
                 </div>
                 <span>{formatRelativeDue(records[card.id])}</span>
               </button>
@@ -175,7 +182,12 @@ export const DashboardView = ({
               >
                 <div>
                   <strong>{card.hanzi}</strong>
-                  <p>{deckById.get(card.deckId)?.title ?? 'Deck'}</p>
+                  <p>
+                    {deckById.get(card.deckId)?.title ?? 'Deck'}
+                    {getPartOfSpeechLabel(getPartOfSpeech(card))
+                      ? ` · ${getPartOfSpeechLabel(getPartOfSpeech(card))}`
+                      : ''}
+                  </p>
                 </div>
                 <span>{records[card.id]?.lapseCount ?? 0} lapse</span>
               </button>

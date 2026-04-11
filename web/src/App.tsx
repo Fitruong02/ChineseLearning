@@ -6,6 +6,7 @@ import { NavigationRail } from './components/NavigationRail'
 import { ReaderView } from './components/ReaderView'
 import { ReviewView } from './components/ReviewView'
 import { useContentLibrary } from './hooks/useContentLibrary'
+import { dedupeReviewCards, isReviewEligibleCard } from './lib/cardMetadata'
 import { useSpeech } from './hooks/useSpeech'
 import { useStudyRecords } from './hooks/useStudyRecords'
 import { isCardDue } from './lib/srs'
@@ -40,6 +41,23 @@ const parseHashTab = (hash: string): TabId => {
   const n = hash.replace('#', '')
   if (n === 'dashboard' || n === 'library' || n === 'review' || n === 'reader' || n === 'drafts') return n
   return 'dashboard'
+}
+
+const formatBuildTimestamp = (isoText: string) => {
+  const parsed = new Date(isoText)
+  if (Number.isNaN(parsed.getTime())) {
+    return isoText
+  }
+
+  return new Intl.DateTimeFormat('vi-VN', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+  }).format(parsed)
 }
 
 function App() {
@@ -87,8 +105,15 @@ function App() {
   const allCards = useMemo(() => library?.publishedDecks.flatMap((d) => d.cards) ?? [], [library])
   const cardsById = useMemo(() => new Map(allCards.map((c) => [c.id, c])), [allCards])
   const dueCards = useMemo(
-    () => studyReady ? allCards.filter((c) => isCardDue(records[c.id])) : [],
+    () =>
+      studyReady
+        ? dedupeReviewCards(allCards.filter((card) => isReviewEligibleCard(card) && isCardDue(records[card.id])))
+        : [],
     [allCards, records, studyReady],
+  )
+  const lastUpdatedLabel = useMemo(
+    () => `${formatBuildTimestamp(__BUILD_TIME__)} · ${__BUILD_COMMIT__}`,
+    [],
   )
   const pendingDraftCount = useMemo(
     () => library?.draftDecks.reduce((n, d) => n + d.cards.filter((c) => c.status !== 'rejected').length, 0) ?? 0,
@@ -246,6 +271,7 @@ function App() {
         dueCount={dueCards.length}
         draftCount={pendingDraftCount}
         audioReady={hasChineseVoice}
+        lastUpdatedLabel={lastUpdatedLabel}
         onSelect={navigate}
       />
 
