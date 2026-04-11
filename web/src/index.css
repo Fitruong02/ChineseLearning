@@ -1093,6 +1093,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   line-height: 1.65;
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
+  white-space: pre-wrap;
 }
 
 .reader-pinyin {
@@ -1139,6 +1140,20 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   position: sticky;
   top: 1rem;
   align-self: start;
+}
+
+.reader-context-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.9rem;
+}
+
+.reader-context-list {
+  margin-bottom: 0.9rem;
+  max-height: 13.5rem;
+  overflow-y: auto;
+  padding-right: 0.15rem;
 }
 
 .reading-practice {
@@ -1272,6 +1287,7 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   line-height: 1.65;
   padding: 0.5rem 0.75rem;
   border-left: 2px solid var(--jade-border);
+  white-space: pre-wrap;
 }
 
 /* ─── Review ════════════════════════════════════════════ */

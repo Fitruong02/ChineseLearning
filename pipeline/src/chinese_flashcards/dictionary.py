@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import gzip
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -83,9 +84,12 @@ def resolve_cedict_path(explicit_path: Path | None = None) -> Path:
 
     project_root = Path(__file__).resolve().parents[3]
     full_path = project_root / "pipeline" / "resources" / "cedict_ts.u8"
+    compressed_full_path = project_root / "pipeline" / "resources" / "cedict_ts.u8.gz"
 
     if full_path.exists():
         return full_path
+    if compressed_full_path.exists():
+        return compressed_full_path
 
     return project_root / "pipeline" / "resources" / "mini_cedict.u8"
 
@@ -94,7 +98,13 @@ def load_cedict(explicit_path: Path | None = None) -> dict[str, CedictEntry]:
     dictionary_path = resolve_cedict_path(explicit_path)
     entries: dict[str, CedictEntry] = {}
 
-    for raw_line in dictionary_path.read_text(encoding="utf-8").splitlines():
+    if dictionary_path.suffix == ".gz":
+        with gzip.open(dictionary_path, "rt", encoding="utf-8") as handle:
+            lines = handle.read().splitlines()
+    else:
+        lines = dictionary_path.read_text(encoding="utf-8").splitlines()
+
+    for raw_line in lines:
         line = raw_line.strip()
 
         if not line or line.startswith("#"):
