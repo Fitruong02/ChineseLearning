@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { getCardExampleDisplayState } from '../lib/cardExample'
 import {
   BATCH_SIZE,
   applyBatchAction,
@@ -64,6 +65,17 @@ type SoundCue = 'flip' | ReviewEase
 type ResetAction = 'deck' | 'all' | null
 type BatchAction = ReviewEase | 'skip'
 type TypeAnswerResolution = 'correct' | 'again'
+type TypeAnswerFieldStatus = 'correct' | 'partial' | 'missing' | 'incorrect'
+
+interface TypeAnswerFieldFeedback {
+  field: PromptField
+  status: TypeAnswerFieldStatus
+  summary: string
+  detail: string
+  expectedValue: string
+}
+
+type TypeAnswerFeedbackMap = Partial<Record<PromptField, TypeAnswerFieldFeedback>>
 
 interface ResolvedCardState {
   card: PublishedCard
@@ -77,6 +89,13 @@ const EMPTY_INPUTS = {
   hanzi: '',
   pinyin: '',
   meaningVi: '',
+}
+
+const TYPE_ANSWER_STATUS_LABEL: Record<TypeAnswerFieldStatus, string> = {
+  correct: 'Đúng',
+  partial: 'Gần đúng',
+  missing: 'Thiếu',
+  incorrect: 'Sai',
 }
 
 const isEditableTarget = (target: EventTarget | null) =>
@@ -107,6 +126,231 @@ const getCardFieldValue = (card: PublishedCard, field: PromptField) => {
   if (field === 'hanzi') return card.hanzi
   if (field === 'pinyin') return card.pinyin
   return card.meaningVi
+}
+
+const diffUnits = (actualUnits: string[], expectedUnits: string[]) => {
+  let prefix = 0
+  while (
+    prefix < actualUnits.length &&
+    prefix < expectedUnits.length &&
+    actualUnits[prefix] === expectedUnits[prefix]
+  ) {
+    prefix += 1
+  }
+
+  let suffix = 0
+  while (
+    suffix < actualUnits.length - prefix &&
+    suffix < expectedUnits.length - prefix &&
+    actualUnits[actualUnits.length - 1 - suffix] ===
+      expectedUnits[expectedUnits.length - 1 - suffix]
+  ) {
+    suffix += 1
+  }
+
+  return {
+    prefix,
+    suffix,
+    actualDiff: actualUnits.slice(prefix, actualUnits.length - suffix),
+    expectedDiff: expectedUnits.slice(prefix, expectedUnits.length - suffix),
+  }
+}
+
+const formatDiffChunk = (field: PromptField, units: string[]) =>
+  `“${field === 'hanzi' ? units.join('') : units.join(' ')}”`
+
+const buildHanziFeedback = (
+  field: PromptField,
+  actualValue: string,
+  expectedValue: string,
+): TypeAnswerFieldFeedback => {
+  const normalizedActual = normalizeHanzi(actualValue)
+  const normalizedExpected = normalizeHanzi(expectedValue)
+
+  if (!normalizedActual) {
+    return {
+      field,
+      status: 'missing',
+      summary: 'Chưa nhập tiếng Trung.',
+      detail: 'Ô này đang trống, nên hệ thống chưa thể chấm được.',
+      expectedValue,
+    }
+  }
+
+  if (normalizedActual === normalizedExpected) {
+    return {
+      field,
+      status: 'correct',
+      summary: 'Khớp hoàn toàn với đáp án.',
+      detail: 'Tiếng Trung đã đúng toàn bộ.',
+      expectedValue,
+    }
+  }
+
+  const { prefix, suffix, actualDiff, expectedDiff } = diffUnits(
+    Array.from(normalizedActual),
+    Array.from(normalizedExpected),
+  )
+
+  let detail = `Đáp án đúng là “${expectedValue}”.`
+  if (actualDiff.length === 0 && expectedDiff.length > 0) {
+    detail = `Bạn còn thiếu đoạn ${formatDiffChunk(field, expectedDiff)}.`
+  } else if (actualDiff.length > 0 && expectedDiff.length === 0) {
+    detail = `Bạn đang dư đoạn ${formatDiffChunk(field, actualDiff)}.`
+  } else if (actualDiff.length > 0 && expectedDiff.length > 0) {
+    detail = `Đoạn ${formatDiffChunk(field, actualDiff)} chưa đúng, đáp án cần là ${formatDiffChunk(field, expectedDiff)}.`
+  }
+
+  return {
+    field,
+    status: prefix > 0 || suffix > 0 ? 'partial' : 'incorrect',
+    summary:
+      prefix > 0 || suffix > 0
+        ? 'Đúng một phần, nhưng vẫn còn đoạn sai.'
+        : 'Chưa khớp với đáp án.',
+    detail,
+    expectedValue,
+  }
+}
+
+const buildTokenFeedback = (
+  field: PromptField,
+  actualValue: string,
+  expectedValue: string,
+): TypeAnswerFieldFeedback => {
+  const normalize =
+    field === 'pinyin'
+      ? normalizePinyin
+      : normalizeMeaning
+  const normalizedActual = normalize(actualValue)
+  const normalizedExpected = normalize(expectedValue)
+  const unitLabel = field === 'pinyin' ? 'âm tiết' : 'từ khóa'
+
+  if (!normalizedActual) {
+    return {
+      field,
+      status: 'missing',
+      summary: `Chưa nhập ${fieldLabel(field).toLowerCase()}.`,
+      detail: 'Ô này đang trống, nên hệ thống chưa thể chấm được.',
+      expectedValue,
+    }
+  }
+
+  if (normalizedActual === normalizedExpected) {
+    return {
+      field,
+      status: 'correct',
+      summary:
+        field === 'pinyin'
+          ? 'Pinyin đã khớp sau khi chuẩn hóa dấu thanh và khoảng trắng.'
+          : 'Nghĩa đã khớp với đáp án hiện tại.',
+      detail:
+        field === 'pinyin'
+          ? 'Pinyin đúng, kể cả khi bạn nhập không dấu hoặc khác khoảng trắng.'
+          : 'Phần nghĩa đã đúng.',
+      expectedValue,
+    }
+  }
+
+  const actualUnits = normalizedActual.split(' ').filter(Boolean)
+  const expectedUnits = normalizedExpected.split(' ').filter(Boolean)
+  const { prefix, suffix, actualDiff, expectedDiff } = diffUnits(actualUnits, expectedUnits)
+  const matchedCount = prefix + suffix
+
+  let detail = `Đáp án đúng là “${expectedValue}”.`
+  if (actualDiff.length === 0 && expectedDiff.length > 0) {
+    detail = `Bạn đã đúng ${matchedCount}/${expectedUnits.length} ${unitLabel}, nhưng còn thiếu ${formatDiffChunk(field, expectedDiff)}.`
+  } else if (actualDiff.length > 0 && expectedDiff.length === 0) {
+    detail = `Bạn đang dư ${formatDiffChunk(field, actualDiff)} nên chưa khớp.`
+  } else if (actualDiff.length > 0 && expectedDiff.length > 0) {
+    detail =
+      matchedCount > 0
+        ? `Bạn đã đúng ${matchedCount}/${expectedUnits.length} ${unitLabel}. Phần ${formatDiffChunk(field, actualDiff)} cần sửa thành ${formatDiffChunk(field, expectedDiff)}.`
+        : `Chưa khớp. Phần bạn nhập ${formatDiffChunk(field, actualDiff)} khác với đáp án ${formatDiffChunk(field, expectedDiff)}.`
+  }
+
+  return {
+    field,
+    status: matchedCount > 0 ? 'partial' : 'incorrect',
+    summary:
+      matchedCount > 0
+        ? `Đã đúng ${matchedCount}/${expectedUnits.length} ${unitLabel}.`
+        : `Chưa có ${unitLabel} nào khớp.`,
+    detail,
+    expectedValue,
+  }
+}
+
+const evaluateTypeAnswerField = (
+  field: PromptField,
+  actualValue: string,
+  expectedValue: string,
+): TypeAnswerFieldFeedback =>
+  field === 'hanzi'
+    ? buildHanziFeedback(field, actualValue, expectedValue)
+    : buildTokenFeedback(field, actualValue, expectedValue)
+
+const evaluateTypeAnswerAttempt = (
+  card: PublishedCard,
+  inputs: typeof EMPTY_INPUTS,
+  fields: PromptField[],
+) => {
+  const feedbackByField = fields.reduce<TypeAnswerFeedbackMap>((accumulator, field) => {
+    accumulator[field] = evaluateTypeAnswerField(
+      field,
+      inputs[field],
+      getCardFieldValue(card, field),
+    )
+    return accumulator
+  }, {})
+
+  return {
+    feedbackByField,
+    allCorrect: fields.every((field) => feedbackByField[field]?.status === 'correct'),
+  }
+}
+
+const buildTypeAnswerFailureMessage = (
+  feedbackByField: TypeAnswerFeedbackMap,
+  fields: PromptField[],
+) => {
+  const correctFields = fields
+    .filter((field) => feedbackByField[field]?.status === 'correct')
+    .map((field) => fieldLabel(field))
+  const pendingFields = fields
+    .filter((field) => feedbackByField[field]?.status !== 'correct')
+    .map((field) => fieldLabel(field))
+
+  return [
+    correctFields.length > 0 ? `${correctFields.join(', ')} đã đúng.` : null,
+    pendingFields.length > 0 ? `${pendingFields.join(', ')} cần sửa theo gợi ý bên dưới.` : null,
+    'Bạn có thể chỉnh tiếp, bật gợi ý hoặc chọn Không nhớ.',
+  ]
+    .filter(Boolean)
+    .join(' ')
+}
+
+const getHintQuality = (card: PublishedCard) => {
+  const normalizedExamplePinyin = card.examplePinyin ? normalizePinyin(card.examplePinyin) : ''
+  const normalizedCardPinyin = normalizePinyin(card.pinyin)
+  const containsHanzi = card.exampleZh.includes(card.hanzi)
+  const containsPinyin =
+    !card.examplePinyin || normalizedExamplePinyin.includes(normalizedCardPinyin)
+  const isFallbackExample =
+    card.exampleZh.startsWith('课文常见词：') ||
+    card.exampleVi.startsWith("Từ '")
+
+  if (containsHanzi && containsPinyin && !isFallbackExample) {
+    return {
+      tone: 'ok',
+      text: 'Gợi ý này đang bám trực tiếp vào từ/câu của thẻ hiện tại.',
+    }
+  }
+
+  return {
+    tone: 'warn',
+    text: 'Gợi ý này đang dùng fallback, nên đối chiếu thêm với Reader nếu thấy chưa khớp.',
+  }
 }
 
 const sortCardsForPicker = (cards: PublishedCard[], records: StudyRecordMap) =>
@@ -197,6 +441,7 @@ export const ReviewView = ({
     createEmptySession(getDefaultMotionPreference(), requestedPracticeMode, records),
   )
   const [answerInputs, setAnswerInputs] = useState(EMPTY_INPUTS)
+  const [typeAnswerFeedback, setTypeAnswerFeedback] = useState<TypeAnswerFeedbackMap>({})
   const [typeAnswerMessage, setTypeAnswerMessage] = useState<string | null>(null)
   const [showHint, setShowHint] = useState(false)
   const [resolvedCardState, setResolvedCardState] = useState<ResolvedCardState | null>(null)
@@ -377,6 +622,15 @@ export const ReviewView = ({
     ? sessionState.promptFieldByCardId[currentCard.id] ?? 'meaningVi'
     : 'meaningVi'
   const answerFields = getPromptFields(currentPromptField)
+  const hintQuality = currentCard ? getHintQuality(currentCard) : null
+  const exampleDisplayState = currentCard
+    ? getCardExampleDisplayState(currentCard)
+    : {
+        hasDistinctExample: false,
+        showExampleZh: false,
+        showExamplePinyin: false,
+        showExampleVi: false,
+      }
 
   const totalBatchCount = Math.ceil(sessionState.initialCardIds.length / BATCH_SIZE)
   const initialTotal = sessionState.initialCardIds.length
@@ -418,6 +672,7 @@ export const ReviewView = ({
       return
     }
     setAnswerInputs(EMPTY_INPUTS)
+    setTypeAnswerFeedback({})
     setTypeAnswerMessage(null)
     setShowHint(false)
   }, [queuedCard?.id, practiceMode, resolvedCardState])
@@ -512,10 +767,19 @@ export const ReviewView = ({
       ...current,
       [field]: value,
     }))
+    setTypeAnswerFeedback((current) => {
+      const next = { ...current }
+      delete next[field]
+      return next
+    })
     setTypeAnswerMessage(null)
   }
 
-  const resolveTypeAnswer = useCallback((resolution: TypeAnswerResolution) => {
+  const resolveTypeAnswer = useCallback((
+    resolution: TypeAnswerResolution,
+    feedbackByField: TypeAnswerFeedbackMap,
+    message: string,
+  ) => {
     if (!queuedCard) {
       return
     }
@@ -526,12 +790,9 @@ export const ReviewView = ({
       promptField: currentPromptField,
       resolution,
     })
+    setTypeAnswerFeedback(feedbackByField)
     setShowHint((current) => current || resolution === 'again')
-    setTypeAnswerMessage(
-      resolution === 'correct'
-        ? 'Đúng rồi. Nhịp này đã được chốt và từ kế tiếp đang chờ bạn.'
-        : 'Từ này đã được đánh dấu quay lại vòng sau của batch.',
-    )
+    setTypeAnswerMessage(message)
   }, [commitSessionAction, currentPromptField, queuedCard])
 
   const handleCheckTypeAnswer = () => {
@@ -539,31 +800,40 @@ export const ReviewView = ({
       return
     }
 
-    const expectedMatches = answerFields.every((field) => {
-      const actualValue = answerInputs[field]
-      const expectedValue = getCardFieldValue(queuedCard, field)
-      if (field === 'hanzi') {
-        return normalizeHanzi(actualValue) === normalizeHanzi(expectedValue)
-      }
-      if (field === 'pinyin') {
-        return normalizePinyin(actualValue) === normalizePinyin(expectedValue)
-      }
-      return normalizeMeaning(actualValue) === normalizeMeaning(expectedValue)
-    })
+    const evaluation = evaluateTypeAnswerAttempt(queuedCard, answerInputs, answerFields)
+    setTypeAnswerFeedback(evaluation.feedbackByField)
 
-    if (expectedMatches) {
-      resolveTypeAnswer('correct')
+    if (evaluation.allCorrect) {
+      resolveTypeAnswer(
+        'correct',
+        evaluation.feedbackByField,
+        'Đúng cả hai phần. Nhịp này đã được chốt và từ kế tiếp đang chờ bạn.',
+      )
       return
     }
 
-    setTypeAnswerMessage('Chưa khớp hết cả hai phần. Bạn có thể sửa tiếp, xem gợi ý hoặc chọn Không nhớ.')
+    setTypeAnswerMessage(buildTypeAnswerFailureMessage(evaluation.feedbackByField, answerFields))
   }
+
+  const handleTypeAnswerAgain = useCallback(() => {
+    if (!queuedCard) {
+      return
+    }
+
+    const evaluation = evaluateTypeAnswerAttempt(queuedCard, answerInputs, answerFields)
+    resolveTypeAnswer(
+      'again',
+      evaluation.feedbackByField,
+      'Đã mở đáp án đúng và đưa từ này về vòng sau của batch để bạn gặp lại sau.',
+    )
+  }, [answerFields, answerInputs, queuedCard, resolveTypeAnswer])
 
   const handleTypeAnswerSkip = useCallback(() => {
     if (!queuedCard) {
       return
     }
     commitSessionAction(queuedCard.id, 'skip')
+    setTypeAnswerFeedback({})
     setTypeAnswerMessage(null)
     setShowHint(false)
     setAnswerInputs(EMPTY_INPUTS)
@@ -571,6 +841,7 @@ export const ReviewView = ({
 
   const handleAdvanceResolvedCard = useCallback(() => {
     setResolvedCardState(null)
+    setTypeAnswerFeedback({})
     setTypeAnswerMessage(null)
     setShowHint(false)
     setAnswerInputs(EMPTY_INPUTS)
@@ -619,7 +890,7 @@ export const ReviewView = ({
 
       if (event.key === '1') {
         event.preventDefault()
-        resolveTypeAnswer('again')
+        handleTypeAnswerAgain()
       } else if (event.key === '2') {
         event.preventDefault()
         handleTypeAnswerSkip()
@@ -637,11 +908,11 @@ export const ReviewView = ({
     handleAdvanceResolvedCard,
     handleFlashcardAction,
     handleRestartSession,
+    handleTypeAnswerAgain,
     handleTypeAnswerSkip,
     onSpeak,
     practiceMode,
     resolvedCardState,
-    resolveTypeAnswer,
   ])
 
   return (
@@ -797,13 +1068,17 @@ export const ReviewView = ({
                         <strong>{currentCard.pinyin}</strong>
                       </span>
                       <span className="answer-meaning">{currentCard.meaningVi}</span>
-                      {(currentCard.exampleZh || currentCard.examplePinyin || currentCard.exampleVi) && (
+                      {exampleDisplayState.hasDistinctExample && (
                         <span className="answer-example-block">
-                          {currentCard.exampleZh && <span className="zh">{currentCard.exampleZh}</span>}
-                          {currentCard.examplePinyin && (
+                          {exampleDisplayState.showExampleZh && (
+                            <span className="zh">{currentCard.exampleZh}</span>
+                          )}
+                          {exampleDisplayState.showExamplePinyin && currentCard.examplePinyin && (
                             <span className="vi answer-example-pinyin">{currentCard.examplePinyin}</span>
                           )}
-                          {currentCard.exampleVi && <span className="vi">{currentCard.exampleVi}</span>}
+                          {exampleDisplayState.showExampleVi && (
+                            <span className="vi">{currentCard.exampleVi}</span>
+                          )}
                         </span>
                       )}
                     </span>
@@ -870,7 +1145,12 @@ export const ReviewView = ({
 
                 <div className="type-answer-grid">
                   {answerFields.map((field) => (
-                    <label key={field} className="type-answer-field">
+                    <label
+                      key={field}
+                      className={`type-answer-field ${
+                        typeAnswerFeedback[field] ? `is-${typeAnswerFeedback[field]?.status}` : ''
+                      }`}
+                    >
                       <span>{fieldLabel(field)}</span>
                       <input
                         type="text"
@@ -887,18 +1167,50 @@ export const ReviewView = ({
                   ))}
                 </div>
 
+                {answerFields.some((field) => typeAnswerFeedback[field]) && (
+                  <div className="type-answer-feedback-grid">
+                    {answerFields.map((field) => {
+                      const feedback = typeAnswerFeedback[field]
+                      if (!feedback) {
+                        return null
+                      }
+
+                      return (
+                        <article
+                          key={`${field}-feedback`}
+                          className={`type-answer-feedback type-answer-feedback--${feedback.status}`}
+                        >
+                          <div className="type-answer-feedback__head">
+                            <span>{fieldLabel(field)}</span>
+                            <strong>{TYPE_ANSWER_STATUS_LABEL[feedback.status]}</strong>
+                          </div>
+                          <p>{feedback.summary}</p>
+                          <small>{feedback.detail}</small>
+                        </article>
+                      )
+                    })}
+                  </div>
+                )}
+
                 {typeAnswerMessage && (
                   <p className={`type-answer-message ${resolvedCardState?.resolution === 'correct' ? 'is-success' : ''}`}>
                     {typeAnswerMessage}
                   </p>
                 )}
 
-                {showHint && (currentCard.exampleZh || currentCard.examplePinyin || currentCard.exampleVi) && (
+                {showHint && exampleDisplayState.hasDistinctExample && (
                   <div className="type-answer-hint">
                     <span className="answer-label">Gợi ý theo ngữ cảnh</span>
-                    {currentCard.exampleZh && <strong>{currentCard.exampleZh}</strong>}
-                    {currentCard.examplePinyin && <p>{currentCard.examplePinyin}</p>}
-                    {currentCard.exampleVi && <small>{currentCard.exampleVi}</small>}
+                    {hintQuality && (
+                      <span className={`tag-pill ${hintQuality.tone === 'warn' ? 'warn' : 'subdued'}`}>
+                        {hintQuality.text}
+                      </span>
+                    )}
+                    {exampleDisplayState.showExampleZh && <strong>{currentCard.exampleZh}</strong>}
+                    {exampleDisplayState.showExamplePinyin && currentCard.examplePinyin && (
+                      <p>{currentCard.examplePinyin}</p>
+                    )}
+                    {exampleDisplayState.showExampleVi && <small>{currentCard.exampleVi}</small>}
                   </div>
                 )}
 
@@ -931,7 +1243,7 @@ export const ReviewView = ({
                     >
                       {showHint ? 'Ẩn gợi ý' : 'Gợi ý (H)'}
                     </button>
-                    <button type="button" className="ghost-button compact-button" onClick={() => resolveTypeAnswer('again')}>
+                    <button type="button" className="ghost-button compact-button" onClick={handleTypeAnswerAgain}>
                       Không nhớ (1)
                     </button>
                     <button type="button" className="ghost-button compact-button" onClick={handleTypeAnswerSkip}>

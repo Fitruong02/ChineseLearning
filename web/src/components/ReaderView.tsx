@@ -14,6 +14,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { ChineseVoiceOption, VoiceGenderMode } from '../hooks/useSpeech'
+import { getCardExampleDisplayState } from '../lib/cardExample'
 import type {
   MaterialSource,
   PublishedCard,
@@ -104,6 +105,14 @@ export const ReaderView = ({
     : undefined
   const fallbackCard = focusCardIds[0] ? cardsById.get(focusCardIds[0]) : undefined
   const selectedCard = highlightedCard ?? fallbackCard
+  const selectedCardExampleState = selectedCard
+    ? getCardExampleDisplayState(selectedCard)
+    : {
+        hasDistinctExample: false,
+        showExampleZh: false,
+        showExamplePinyin: false,
+        showExampleVi: false,
+      }
   const normalizedCardQuery = cardSearchQuery.trim().toLowerCase()
   const contextCards = useMemo(
     () =>
@@ -702,13 +711,19 @@ export const ReaderView = ({
                   )}
                 </div>
               )}
-              <p className="answer-example">{selectedCard.exampleZh}</p>
-              {showSectionPinyin && selectedCard.examplePinyin && (
+              {selectedCardExampleState.showExampleZh && (
+                <p className="answer-example">{selectedCard.exampleZh}</p>
+              )}
+              {showSectionPinyin &&
+                selectedCardExampleState.showExamplePinyin &&
+                selectedCard.examplePinyin && (
                 <p className="answer-translation" style={{ color: 'var(--jade)', borderLeftColor: 'var(--jade-border)' }}>
                   {selectedCard.examplePinyin}
                 </p>
               )}
-              {showSectionMeaning && <p className="answer-translation">{selectedCard.exampleVi}</p>}
+              {showSectionMeaning && selectedCardExampleState.showExampleVi && (
+                <p className="answer-translation">{selectedCard.exampleVi}</p>
+              )}
               <div className="info-strip">
                 <span>{selectedCard.tags.join(' · ')}</span>
               </div>
