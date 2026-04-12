@@ -10,6 +10,7 @@ import type {
   ReviewPracticeMode,
   ReviewSessionState,
   StudyRecordMap,
+  TypeAnswerInputField,
 } from '../types'
 
 export const BATCH_SIZE = 10
@@ -337,5 +338,5 @@ export const applyBatchAction = (
   })
 }
 
-export const getPromptFields = (promptField: PromptField) =>
-  (['hanzi', 'pinyin', 'meaningVi'] as PromptField[]).filter((field) => field !== promptField)
+export const getPromptFields = (promptField: PromptField): TypeAnswerInputField[] =>
+  (['hanzi', 'meaningVi'] as TypeAnswerInputField[]).filter((field) => field !== promptField)

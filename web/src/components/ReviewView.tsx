@@ -31,6 +31,7 @@ import type {
   ReviewPracticeMode,
   ReviewSessionState,
   StudyRecordMap,
+  TypeAnswerInputField,
 } from '../types'
 
 interface ReviewViewProps {
@@ -74,7 +75,6 @@ type ResetAction = 'deck' | 'all' | null
 type BatchAction = ReviewEase | 'skip'
 type TypeAnswerResolution = 'correct' | 'again'
 type TypeAnswerFieldStatus = 'correct' | 'partial' | 'missing' | 'incorrect'
-
 interface TypeAnswerFieldFeedback {
   field: PromptField
   status: TypeAnswerFieldStatus
@@ -93,9 +93,8 @@ interface ResolvedCardState {
 
 const MILESTONE_STEP = 5
 
-const EMPTY_INPUTS = {
+const EMPTY_INPUTS: Record<TypeAnswerInputField, string> = {
   hanzi: '',
-  pinyin: '',
   meaningVi: '',
 }
 
@@ -301,7 +300,7 @@ const evaluateTypeAnswerField = (
 const evaluateTypeAnswerAttempt = (
   card: PublishedCard,
   inputs: typeof EMPTY_INPUTS,
-  fields: PromptField[],
+  fields: TypeAnswerInputField[],
 ) => {
   const feedbackByField = fields.reduce<TypeAnswerFeedbackMap>((accumulator, field) => {
     accumulator[field] = evaluateTypeAnswerField(
@@ -320,7 +319,7 @@ const evaluateTypeAnswerAttempt = (
 
 const buildTypeAnswerFailureMessage = (
   feedbackByField: TypeAnswerFeedbackMap,
-  fields: PromptField[],
+  fields: TypeAnswerInputField[],
 ) => {
   const correctFields = fields
     .filter((field) => feedbackByField[field]?.status === 'correct')
@@ -336,6 +335,14 @@ const buildTypeAnswerFailureMessage = (
   ]
     .filter(Boolean)
     .join(' ')
+}
+
+const buildTypeAnswerSuccessMessage = (fields: TypeAnswerInputField[]) => {
+  if (fields.length === 1) {
+    return `${fieldLabel(fields[0])} đã đúng. Từ kế tiếp đang chờ bạn.`
+  }
+
+  return 'Hai phần cần điền đều đã đúng. Từ kế tiếp đang chờ bạn.'
 }
 
 const getHintQuality = (card: PublishedCard) => {
@@ -783,7 +790,7 @@ export const ReviewView = ({
     onResetSession()
   }
 
-  const handleTypeAnswerInputChange = (field: PromptField, value: string) => {
+  const handleTypeAnswerInputChange = (field: TypeAnswerInputField, value: string) => {
     setAnswerInputs((current) => ({
       ...current,
       [field]: value,
@@ -828,7 +835,7 @@ export const ReviewView = ({
       resolveTypeAnswer(
         'correct',
         evaluation.feedbackByField,
-        'Đúng cả hai phần. Nhịp này đã được chốt và từ kế tiếp đang chờ bạn.',
+        buildTypeAnswerSuccessMessage(answerFields),
       )
       return
     }
