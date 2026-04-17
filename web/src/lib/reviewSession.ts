@@ -16,6 +16,7 @@ import type {
 export const BATCH_SIZE = 10
 
 const PROMPT_ROTATION: PromptField[] = ['meaningVi', 'hanzi', 'pinyin']
+const OMIT_PINYIN_PROMPT_DECK_IDS = new Set(['deck-type-answer-reading-bonus'])
 
 const PINYIN_INITIALS = [
   'zh', 'ch', 'sh',
@@ -192,9 +193,18 @@ export const buildInitialQueue = (
   return prioritizeStartCard(queue, startCardId)
 }
 
-const buildPromptFieldByCardId = (cardIds: string[]) =>
+const buildPromptFieldByCardId = (
+  cardIds: string[],
+  cardsById: Record<string, PublishedCard> = {},
+) =>
   cardIds.reduce<Record<string, PromptField>>((accumulator, cardId, index) => {
-    accumulator[cardId] = PROMPT_ROTATION[index % PROMPT_ROTATION.length]
+    const card = cardsById[cardId]
+    const promptRotation =
+      card && OMIT_PINYIN_PROMPT_DECK_IDS.has(card.deckId)
+        ? (['meaningVi', 'hanzi'] as PromptField[])
+        : PROMPT_ROTATION
+
+    accumulator[cardId] = promptRotation[index % promptRotation.length]
     return accumulator
   }, {})
 
@@ -206,6 +216,7 @@ const createBatchSnapshot = (cardIds: string[]) => ({
 export const createReviewSession = (
   initialCardIds: string[],
   options: {
+    cardsById?: Record<string, PublishedCard>
     motionPreference: MotionPreference
     mixMode: ReviewMixMode
     phoneticMode: PhoneticMode
@@ -228,7 +239,7 @@ export const createReviewSession = (
     reviewedCardIds: [],
     completedCardIds: [],
     troubleCardIds: initialCardIds.filter((cardId) => isTroubleRecord(options.records[cardId])),
-    promptFieldByCardId: buildPromptFieldByCardId(initialCardIds),
+    promptFieldByCardId: buildPromptFieldByCardId(initialCardIds, options.cardsById),
     combo: 0,
     bestCombo: 0,
     answeredCount: 0,

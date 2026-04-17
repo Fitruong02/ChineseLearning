@@ -92,6 +92,7 @@ interface ResolvedCardState {
 }
 
 const MILESTONE_STEP = 5
+const EXACT_SENTENCE_DECK_IDS = new Set(['deck-type-answer-reading-bonus'])
 
 const EMPTY_INPUTS: Record<TypeAnswerInputField, string> = {
   hanzi: '',
@@ -165,6 +166,49 @@ const diffUnits = (actualUnits: string[], expectedUnits: string[]) => {
 
 const formatDiffChunk = (field: PromptField, units: string[]) =>
   `“${field === 'hanzi' ? units.join('') : units.join(' ')}”`
+
+const normalizeExactSentence = (value: string) =>
+  value
+    .normalize('NFC')
+    .trim()
+    .replace(/\s+/g, ' ')
+
+const buildExactSentenceFeedback = (
+  field: PromptField,
+  actualValue: string,
+  expectedValue: string,
+): TypeAnswerFieldFeedback => {
+  const normalizedActual = normalizeExactSentence(actualValue)
+  const normalizedExpected = normalizeExactSentence(expectedValue)
+
+  if (!normalizedActual) {
+    return {
+      field,
+      status: 'missing',
+      summary: `Chưa nhập ${fieldLabel(field).toLowerCase()}.`,
+      detail: 'Deck này đang chấm theo nguyên câu, nên ô này cần nhập đầy đủ cả câu.',
+      expectedValue,
+    }
+  }
+
+  if (normalizedActual === normalizedExpected) {
+    return {
+      field,
+      status: 'correct',
+      summary: 'Khớp nguyên câu với đáp án.',
+      detail: 'Câu trả lời đã đúng theo toàn bộ câu hiện tại.',
+      expectedValue,
+    }
+  }
+
+  return {
+    field,
+    status: 'incorrect',
+    summary: 'Chưa khớp nguyên câu.',
+    detail: `Deck này không chấm theo từng phần. Bạn cần nhập đúng trọn câu: “${expectedValue}”.`,
+    expectedValue,
+  }
+}
 
 const buildHanziFeedback = (
   field: PromptField,
@@ -289,13 +333,19 @@ const buildTokenFeedback = (
 }
 
 const evaluateTypeAnswerField = (
+  card: PublishedCard,
   field: PromptField,
   actualValue: string,
   expectedValue: string,
-): TypeAnswerFieldFeedback =>
-  field === 'hanzi'
+): TypeAnswerFieldFeedback => {
+  if (EXACT_SENTENCE_DECK_IDS.has(card.deckId)) {
+    return buildExactSentenceFeedback(field, actualValue, expectedValue)
+  }
+
+  return field === 'hanzi'
     ? buildHanziFeedback(field, actualValue, expectedValue)
     : buildTokenFeedback(field, actualValue, expectedValue)
+}
 
 const evaluateTypeAnswerAttempt = (
   card: PublishedCard,
@@ -304,6 +354,7 @@ const evaluateTypeAnswerAttempt = (
 ) => {
   const feedbackByField = fields.reduce<TypeAnswerFeedbackMap>((accumulator, field) => {
     accumulator[field] = evaluateTypeAnswerField(
+      card,
       field,
       inputs[field],
       getCardFieldValue(card, field),
@@ -507,6 +558,10 @@ export const ReviewView = ({
     () => new Map(eligibleActiveCards.map((card) => [card.id, card])),
     [eligibleActiveCards],
   )
+  const reviewCardsById = useMemo(
+    () => Object.fromEntries(eligibleActiveCards.map((card) => [card.id, card])),
+    [eligibleActiveCards],
+  )
   const selectedDeck = selectedDeckId === 'all'
     ? undefined
     : publishedDecks.find((deck) => deck.id === selectedDeckId)
@@ -551,6 +606,7 @@ export const ReviewView = ({
     )
 
     setSessionState(createReviewSession(initialQueue, {
+      cardsById: reviewCardsById,
       motionPreference: motionPreferenceRef.current,
       mixMode,
       phoneticMode,
@@ -571,6 +627,7 @@ export const ReviewView = ({
     mixMode,
     phoneticMode,
     practiceMode,
+    reviewCardsById,
     selectedDeckId,
     sessionResetVersion,
     sessionStartCardId,
@@ -650,6 +707,7 @@ export const ReviewView = ({
     ? sessionState.promptFieldByCardId[currentCard.id] ?? 'meaningVi'
     : 'meaningVi'
   const answerFields = getPromptFields(currentPromptField)
+  const isExactSentenceDeck = currentCard ? EXACT_SENTENCE_DECK_IDS.has(currentCard.deckId) : false
   const hintQuality = currentCard ? getHintQuality(currentCard) : null
   const exampleDisplayState = currentCard
     ? getCardExampleDisplayState(currentCard)
@@ -1187,7 +1245,7 @@ export const ReviewView = ({
                   <p>{getCardFieldValue(currentCard, currentPromptField)}</p>
                 </div>
 
-                <div className="type-answer-grid">
+                <div className={`type-answer-grid ${isExactSentenceDeck ? 'is-exact-sentence' : ''}`}>
                   {answerFields.map((field) => (
                     <label
                       key={field}
@@ -1196,17 +1254,31 @@ export const ReviewView = ({
                       }`}
                     >
                       <span>{fieldLabel(field)}</span>
-                      <input
-                        type="text"
-                        value={
-                          resolvedCardState
-                            ? getCardFieldValue(currentCard, field)
-                            : answerInputs[field]
-                        }
-                        onChange={(event) => handleTypeAnswerInputChange(field, event.target.value)}
-                        disabled={Boolean(resolvedCardState)}
-                        placeholder={`Điền ${fieldLabel(field).toLowerCase()}`}
-                      />
+                      {isExactSentenceDeck ? (
+                        <textarea
+                          rows={3}
+                          value={
+                            resolvedCardState
+                              ? getCardFieldValue(currentCard, field)
+                              : answerInputs[field]
+                          }
+                          onChange={(event) => handleTypeAnswerInputChange(field, event.target.value)}
+                          disabled={Boolean(resolvedCardState)}
+                          placeholder={`Điền ${fieldLabel(field).toLowerCase()} đầy đủ nguyên câu`}
+                        />
+                      ) : (
+                        <input
+                          type="text"
+                          value={
+                            resolvedCardState
+                              ? getCardFieldValue(currentCard, field)
+                              : answerInputs[field]
+                          }
+                          onChange={(event) => handleTypeAnswerInputChange(field, event.target.value)}
+                          disabled={Boolean(resolvedCardState)}
+                          placeholder={`Điền ${fieldLabel(field).toLowerCase()}`}
+                        />
+                      )}
                     </label>
                   ))}
                 </div>
@@ -1242,19 +1314,30 @@ export const ReviewView = ({
                   </p>
                 )}
 
-                {showHint && exampleDisplayState.hasDistinctExample && (
+                {showHint && (exampleDisplayState.hasDistinctExample || isExactSentenceDeck) && (
                   <div className="type-answer-hint">
-                    <span className="answer-label">Gợi ý theo ngữ cảnh</span>
-                    {hintQuality && (
+                    <span className="answer-label">
+                      {isExactSentenceDeck ? 'Gợi ý' : 'Gợi ý theo ngữ cảnh'}
+                    </span>
+                    {!isExactSentenceDeck && hintQuality && (
                       <span className={`tag-pill ${hintQuality.tone === 'warn' ? 'warn' : 'subdued'}`}>
                         {hintQuality.text}
                       </span>
                     )}
-                    {exampleDisplayState.showExampleZh && <strong>{currentCard.exampleZh}</strong>}
-                    {exampleDisplayState.showExamplePinyin && currentCard.examplePinyin && (
-                      <p>{currentCard.examplePinyin}</p>
+                    {isExactSentenceDeck ? (
+                      <>
+                        <strong>{currentCard.pinyin}</strong>
+                        <small>Deck này giữ nguyên câu và chấm theo đúng toàn bộ câu.</small>
+                      </>
+                    ) : (
+                      <>
+                        {exampleDisplayState.showExampleZh && <strong>{currentCard.exampleZh}</strong>}
+                        {exampleDisplayState.showExamplePinyin && currentCard.examplePinyin && (
+                          <p>{currentCard.examplePinyin}</p>
+                        )}
+                        {exampleDisplayState.showExampleVi && <small>{currentCard.exampleVi}</small>}
+                      </>
                     )}
-                    {exampleDisplayState.showExampleVi && <small>{currentCard.exampleVi}</small>}
                   </div>
                 )}
 

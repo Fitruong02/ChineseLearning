@@ -2,6 +2,7 @@ import type { CardKind, PartOfSpeech, PublishedCard } from '../types'
 
 const MAJOR_SENTENCE_PUNCTUATION = ['。', '！', '？', '!', '?', ';', '；', '\n']
 const MINOR_SENTENCE_HINTS = ['，', ',', '：', ':']
+const SENTENCE_REVIEW_DECK_IDS = new Set(['deck-type-answer-reading-bonus'])
 
 const PART_OF_SPEECH_LABELS: Record<PartOfSpeech, string> = {
   noun: 'Danh từ',
@@ -64,16 +65,22 @@ export const getCardKind = (card: Pick<PublishedCard, 'hanzi' | 'pinyin' | 'tags
   return 'term'
 }
 
-export const isReviewEligibleCard = (card: Pick<PublishedCard, 'hanzi' | 'pinyin' | 'tags' | 'cardKind'>) =>
-  getCardKind(card) === 'term'
+export const isReviewEligibleCard = (
+  card: Pick<PublishedCard, 'deckId' | 'hanzi' | 'pinyin' | 'tags' | 'cardKind'>,
+) => getCardKind(card) === 'term' || SENTENCE_REVIEW_DECK_IDS.has(card.deckId)
 
-export const dedupeReviewCards = <T extends Pick<PublishedCard, 'hanzi' | 'pinyin' | 'tags' | 'cardKind'>>(
+export const dedupeReviewCards = <
+  T extends Pick<PublishedCard, 'id' | 'deckId' | 'hanzi' | 'pinyin' | 'tags' | 'cardKind'>
+>(
   cards: T[],
 ) => {
   const seenKeys = new Set<string>()
 
   return cards.filter((card) => {
-    const key = normalizeHanzi(card.hanzi)
+    const key = SENTENCE_REVIEW_DECK_IDS.has(card.deckId)
+      ? `${card.deckId}:${card.id}`
+      : normalizeHanzi(card.hanzi)
+
     if (!key || seenKeys.has(key)) {
       return false
     }

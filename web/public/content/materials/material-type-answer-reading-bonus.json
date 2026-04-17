@@ -1,16 +1,16 @@
 {
   "id": "material-type-answer-reading-bonus",
-  "title": "B? sung ?i?n ??p ?n: c?u ??c th?m",
+  "title": "Khách hàng order trong đêm: bedao",
   "type": "text",
   "originPath": "manual-import",
   "language": "zh-CN",
   "importedAt": "2026-04-17T00:00:00.000Z",
   "ocrMode": "manual",
-  "summary": "B? c?u ??c th?m ?? luy?n ?i?n ??p ?n v? nghe l?i ph?n ti?ng Trung sau khi ho?n th?nh.",
+  "summary": "B? c?u ??c th?m gi? nguy?n v?n b?n g?c ?? luy?n ?i?n ??p ?n theo nguy?n c?u.",
   "tags": [
     "?i?n ??p ?n",
     "??c th?m",
-    "sentence practice"
+    "gi? nguy?n v?n b?n"
   ],
   "linkedDeckIds": [
     "deck-type-answer-reading-bonus"
@@ -18,54 +18,63 @@
   "sections": [
     {
       "id": "type-answer-reading-bonus-section-1",
-      "heading": "Nh?m c?u 1",
-      "textZh": "1. ??????????????????\n2. ??????????????????\n3. ??????MP3??????????????????\n4. ????????????????????????????\n5. ???????????????????????",
-      "textPinyin": "1. ??????????????????\n2. ??????????????????\n3. ?????? M P 3??????????????????\n4. ????????????????????????????\n5. ???????????????????????",
-      "textVi": "1. Khi l?y thu?c c?n ki?m tra c?n th?n t?n v? s? l??ng thu?c.\n2. T?i do d? nhi?u l?n, v?n ch?a th? ??a ra quy?t ??nh cu?i c?ng.\n3. Lo?i m?y ch?y b? n?y c? ch?c n?ng ph?t MP3, b?n c? th? v?a nghe nh?c v?a ch?y b?.\n4. Ngo?i vi?c ??n ph?ng t?p ?? r?n luy?n, r?t nhi?u c? g?i tr? tri th?c c?n xem n?i n?y nh? ch? gi?m c?n.\n5. To?n th? nh?n vi?n c?ng ty ch?ng ta c?n lu?n phi?n ??n trung t?m tr?i nghi?m ?? kh?m s?c kh?e.",
+      "heading": "Kh?i 1",
+      "textZh": "6. 拿药的时候要仔细核对药的名称和数量。\n7. 我犹豫再三，还是无法做出最后的决定。\n8. 这款跑步机有MP3播放功能，你可以一边听音乐一边跑步.。\n9. 除了到健身房健身，许多白领丽人还把这里看成是减肥的场所.。",
+      "textPinyin": "6. ná yào de shí hòu yào zǐ xì hé duì yào de míng chēng hé shù liàng。\n7. wǒ yóu yù zài sān， hái shì wú fǎ zuò chū zuì hòu de jué dìng。\n8. zhè kuǎn pǎo bù jī yǒu M P 3 bō fàng gōng néng， nǐ kě yǐ yī biān tīng yīn yuè yī biān pǎo bù.。\n9. chú le dào jiàn shēn fáng jiàn shēn， xǔ duō bái lǐng lì rén hái bǎ zhè lǐ kàn chéng shì jiǎn féi de chǎng suǒ.。",
+      "textVi": "6. Khi lấy thuốc cần kiểm tra cẩn thận tên và số lượng thuốc.\n7. Tôi do dự nhiều lần, vẫn là chưa có cách đưa ra quyết định cuối cùng.\n8. Loại máy chạy bộ này có chức năng phát MP3, bạn có thể vừa nghe nhạc vừa chạy bộ.\n9. Ngoài việc đến phòng tập tập luyện, rất nhiều cô gái trẻ tri thức còn xem nơi này như là chỗ giảm cân.",
       "focusCardIds": [
         "card-type-answer-reading-bonus-001",
         "card-type-answer-reading-bonus-002",
         "card-type-answer-reading-bonus-003",
-        "card-type-answer-reading-bonus-004",
-        "card-type-answer-reading-bonus-005"
+        "card-type-answer-reading-bonus-004"
       ]
     },
     {
       "id": "type-answer-reading-bonus-section-2",
-      "heading": "Nh?m c?u 2",
-      "textZh": "6. ?????????????????\n7. ?????????????????????????????\n8. ?????????????\n9. ??????????????????\n10. ????????????????",
-      "textPinyin": "6. ?????????????????\n7. ?????????????????????????????\n8. ?????????????\n9. ??????????????????\n10. ????????????????",
-      "textVi": "6. B?n ?i tr? kh?ng l?y ???c s?, v?y l? ?i m?t chuy?n v? ?ch r?i.\n7. V?n d? t?i ??nh c? nh?n ??n s?ng r?i m?i ?i b?nh vi?n, nh?ng b?y gi? c?m th?y kh?ng nh?n n?i n?a.\n8. U?ng nh?m thu?c tuy?t ??i kh?ng ph?i chuy?n ??a.\n9. M?a xu?n ? B?c Kinh r?t ng?n, ch?p m?t ?? sang m?a h?.\n10. D? d?y t?i ??t nhi?n ?au l?n, ?au t?ng c?n t?ng c?n.",
+      "heading": "Kh?i 2",
+      "textZh": "6. 我们公司的全体职工要轮流去体验中心做健康体检。\n7. 你去晚了挂不上号，你就白跑一趟了。\n8. 本来我想忍一忍，到天亮再去医院，可是我现在感觉忍不下去了。\n9. 吃错了药可不是闹着玩儿的。",
+      "textPinyin": "6. wǒ men gōng sī de quán tǐ zhí gōng yào lún liú qù tǐ yàn zhōng xīn zuò jiàn kāng tǐ jiǎn。\n7. nǐ qù wǎn le guà bù shàng hào， nǐ jiù bái pǎo yī tàng le。\n8. běn lái wǒ xiǎng rěn yī rěn， dào tiān liàng zài qù yī yuàn， kě shì wǒ xiàn zài gǎn jué rěn bù xià qù le。\n9. chī cuò le yào kě bú shì nào zhe wán ér de。",
+      "textVi": "6. Toàn thể nhân viên công ty chúng ta cần luân phiên đi trung tâm chăm són sức khỏe để khám sức khỏe.\n7. Bạn đi trễ không lấy được số, thì bạn đi 1 chuyến vô ích rồi\n8. Vốn dĩ tôi muốn nhịn thử, đến trời sang rồi đi bệnh viện,nhưng tôi hiện nay cảm thấy nhịn không nổi nữa rồi.\n9. Bạn uống sai thuốc chắc chắn không phải chuyện đùa.",
       "focusCardIds": [
+        "card-type-answer-reading-bonus-005",
         "card-type-answer-reading-bonus-006",
         "card-type-answer-reading-bonus-007",
-        "card-type-answer-reading-bonus-008",
-        "card-type-answer-reading-bonus-009",
-        "card-type-answer-reading-bonus-010"
+        "card-type-answer-reading-bonus-008"
       ]
     },
     {
       "id": "type-answer-reading-bonus-section-3",
-      "heading": "Nh?m c?u 3",
-      "textZh": "11. ??????????????????????\n12. ??????????????????????????????\n13. ?????????????????????\n14. ????????????\n15. ?????????????????????????",
-      "textPinyin": "11. ??????????????????????\n12. ??????????????????????????????\n13. ?????????????????????\n14. ????????????\n15. ?????????????????????????",
-      "textVi": "11. Ngay c? gi?o vi?n c?ng kh?ng bi?t ch? n?y, l?m h?c sinh th? c?ng kh?ng c?n n?i.\n12. Nh? l?i th?i s?ng ? Nh?t n?m ??, tr?n ???ng ph? ??y nh?ng xe giao h?ng ?Takkyubin?.\n13. Xin l?i th?y, ??a b? n?y kh?ng ch?m h?c, l?m th?y ph?i v?t v? r?i.\n14. Cu?i tu?n b?n s?p x?p th?i gian ?i xem phim ?i.\n15. May m? b?n n?i v?i t?i, n?u kh?ng b? l? m?t ho?t ??ng th? v? nh? v?y th? ti?c l?m!",
+      "heading": "Kh?i 3",
+      "textZh": "6. 北京的春天时间很短，转眼就是夏天了。\n7. 我的胃突然疼起来，一阵一阵地疼。\n8. 连老师都不认识这个字，做学生的就要不用说了。\n9. 回想当年在日本生活的时候，看到满大街跑着“宅急送”的送货车。",
+      "textPinyin": "6. běi jīng de chūn tiān shí jiān hěn duǎn， zhuǎn yǎn jiù shì xià tiān le。\n7. wǒ de wèi tū rán téng qǐ lái， yī zhèn yī zhèn dì téng。\n8. lián lǎo shī dōu bù rèn shí zhè ge zì， zuò xué shēng de jiù yào bú yòng shuō le。\n9. huí xiǎng dāng nián zài rì běn shēng huó de shí hòu， kàn dào mǎn dà jiē pǎo zhe “zhái jí sòng” de sòng huò chē。",
+      "textVi": "6. Thời gian mùa xuân của Bắc Kinh rất ngắn, trong chớp mắt đã là mùa hạ rồi.\n7. Dạ dày của tôi đột nhiên bị đau lên, đau từng cơn từng cơn.\n8. Ngay cả giáo viên cũng không biết chữ này, làm học sinh thì cũng không cần nói.\n9. Nhớ lại năm đó khi mà sống ở Nhật, nhìn thấy xe giao hàng tận nhà chạy đầy trên phố.",
       "focusCardIds": [
+        "card-type-answer-reading-bonus-009",
+        "card-type-answer-reading-bonus-010",
         "card-type-answer-reading-bonus-011",
-        "card-type-answer-reading-bonus-012",
-        "card-type-answer-reading-bonus-013",
-        "card-type-answer-reading-bonus-014",
-        "card-type-answer-reading-bonus-015"
+        "card-type-answer-reading-bonus-012"
       ]
     },
     {
       "id": "type-answer-reading-bonus-section-4",
-      "heading": "Nh?m c?u 4",
-      "textZh": "16. ?????????????????????????\n17. ?????????????????\n18. ?????????????????????????\n19. ???????????????\n20. ??????????????????????",
-      "textPinyin": "16. ?????????????????????????\n17. ?????????????????\n18. ?????????????????????????\n19. ???????????????\n20. ??????????????????????",
-      "textVi": "16. Vi?c n?ng cao tr?nh ?? ti?ng Trung c?a ch?ng ta kh?ng th? t?ch r?i s? gi?ng d?y nghi?m t?c c?a gi?o vi?n.\n17. Khi ?i du l?ch n?n mang nhi?u ti?n h?n m?t ch?t, ?? kh?i l?c h?t ti?n m? cu?ng l?n.\n18. C?ng v?i s? ph?t tri?n c?a kinh t? x? h?i, m?c s?ng c?a con ng??i ?? ???c n?ng cao r?t nhi?u.\n19. N?u b?n ?? nh?t ??nh mu?n ?i, th? t?i c?ng kh?ng c?n c?ch n?o kh?c.\n20. U?ng m?t s? lo?i thu?c gi?m c?n kh?ng nh?ng kh?ng ??t m?c ??ch m? c?n c? h?i cho s?c kh?e.",
+      "heading": "Kh?i 4",
+      "textZh": "6. 对不起老师，这孩子不好好学习，让您受累了。\n7. 周末你抽时间去看电影吧。\n8. 幸亏你告诉我，要不错过了这么有意思的活动多可惜呀！\n9. 我们的汉语水平的提高，和老师的认真教学是分不开的。",
+      "textPinyin": "6. duì bù qǐ lǎo shī， zhè hái zi bù hǎo hào xué xí， ràng nín shòu lěi le。\n7. zhōu mò nǐ chōu shí jiān qù kàn diàn yǐng ba。\n8. xìng kuī nǐ gào sù wǒ， yào bù cuò guò le zhè me yǒu yì si de huó dòng duō kě xī ya！\n9. wǒ men de hàn yǔ shuǐ píng de tí gāo， hé lǎo shī de rèn zhēn jiào xué shì fēn bù kāi de。",
+      "textVi": "6. Xin lỗi thầy, đứa bé này không học hành chăm chỉ, khiến cho thầy chịu khổ rồi.\n7. cuối tuần bạn sắp xếp thời gian đi xem phim đi.\n8. May mà bạn nói với tôi, nếu không bỏ lỡ một hoạt động thú vị như vậy!\n9. Việc nâng cao trình độ tiếng Trung của chúng ta không thể tách rời sự giảng dạy nghiêm túc của các giáo viên.",
       "focusCardIds": [
-        "card-type-answer-reading-bonus-016",
+        "card-type-answer-reading-bonus-013",
+        "card-type-answer-reading-bonus-014",
+        "card-type-answer-reading-bonus-015",
+        "card-type-answer-reading-bonus-016"
+      ]
+    },
+    {
+      "id": "type-answer-reading-bonus-section-5",
+      "heading": "Kh?i 5",
+      "textZh": "6. 北京的春天时间很短，转眼就是夏天了。\n7. 周末你抽时间去看电影吧。\n8. 连老师都不认识这个字，做学生的就要不用说了。\n9. 旅游时多带点儿钱 ，省得没钱时着急。",
+      "textPinyin": "6. běi jīng de chūn tiān shí jiān hěn duǎn， zhuǎn yǎn jiù shì xià tiān le。\n7. zhōu mò nǐ chōu shí jiān qù kàn diàn yǐng ba。\n8. lián lǎo shī dōu bù rèn shí zhè ge zì， zuò xué shēng de jiù yào bú yòng shuō le。\n9. lǚ yóu shí duō dài diǎn ér qián， shěng de méi qián shí zháo jí。",
+      "textVi": "6. thời gian mùa xuân của Bắc Kinh rất ngắn, trong chớp mắt đã là mùa hạ rồi.\n7. cuối tuần bạn sắp xếp thời gian đi xem phim đi.\n8. Ngay cả giáo viên cũng không biết chữ này, làm học sinh thì cũng không cần nói.\n9. Khi đi du lịch nên mang nhiều tiền chút, để khỏi lúc không có tiền mà lo lắng.",
+      "focusCardIds": [
         "card-type-answer-reading-bonus-017",
         "card-type-answer-reading-bonus-018",
         "card-type-answer-reading-bonus-019",
@@ -73,17 +82,67 @@
       ]
     },
     {
-      "id": "type-answer-reading-bonus-section-5",
-      "heading": "Nh?m c?u 5",
-      "textZh": "21. ????????????????????\n22. ??????????????????????????\n23. ????????2000????????\n24. ????????????????????????\n25. ????????????????????",
-      "textPinyin": "21. ????????????????????\n22. ??????????????????????????\n23. ???????? 2 0 0 0????????\n24. ????????????????????????\n25. ????????????????????",
-      "textVi": "21. T?i bi?t r? v? l?ch s? v? c?c lo?i bia nh? l?ng b?n tay.\n22. G?n ??y t?i tham gia m?t ?o?n du l?ch, ?i m?t v?ng T?n-M?-Th?i v? v?a m?i tr? v?.\n23. M?ng l??i ?i?m ph?c v? ph? kh?p c?c th?nh ph? v? th? tr?n c?a h?n 2.000 khu v?c tr?n c? n??c.\n24. T?i m?o mu?i h?i m?t ch?t, c? ph?i ch?ng t?i ch?m s?c b?n ch?a chu ??o n?n l?m b?n nh? nh? kh?ng.\n25. T?i ?? ngh? b?n mua nhi?u m?t ch?t trong m?t l?n, ?? kh?i ph?i mua ?i mua l?i phi?n ph?c.",
+      "id": "type-answer-reading-bonus-section-6",
+      "heading": "Kh?i 6",
+      "textZh": "6. 随着社会经济的发展，人们的生活水平有了很大的提高。\n7. 既然你一定要去，我也没有办法。\n8. 吃某些减肥药不仅不能达到目的，还会有害健康。\n9. 我对啤酒的历史、种类，可以说是了如指掌。",
+      "textPinyin": "6. suí zhe shè huì jīng jì de fā zhǎn， rén men de shēng huó shuǐ píng yǒu le hěn dà de tí gāo。\n7. jì rán nǐ yí dìng yào qù， wǒ yě méi yǒu bàn fǎ。\n8. chī mǒu xiē jiǎn féi yào bù jǐn bù néng dá dào mù dì， hái huì yǒu hài jiàn kāng。\n9. wǒ duì pí jiǔ de lì shǐ、 zhǒng lèi， kě yǐ shuō shì liǎo rú zhǐ zhǎng。",
+      "textVi": "6. Cùng với sự phát triển của kinh tế xã hội, mức sống của con người đã có nâng cao rất nhiều.\n7. Bạn nếu đã nhất định muốn đi, thì tôi cũng hết cách.\n8. Uống một số loại thuốc giảm cân không những không đạt được mục đích mà còn có hại cho sức khỏe.\n9. Tôi biết rõ về lịch sử và các loại bia như lòng bàn tay.",
       "focusCardIds": [
         "card-type-answer-reading-bonus-021",
         "card-type-answer-reading-bonus-022",
         "card-type-answer-reading-bonus-023",
-        "card-type-answer-reading-bonus-024",
-        "card-type-answer-reading-bonus-025"
+        "card-type-answer-reading-bonus-024"
+      ]
+    },
+    {
+      "id": "type-answer-reading-bonus-section-7",
+      "heading": "Kh?i 7",
+      "textZh": "6. 我的胃突然疼起来，一阵一阵地疼。\n7. 随着社会经济的发展，人们的生活水平有了很大的提高。\n8. 旅游时多带点儿钱 ，省得没钱时着急。\n9. 我最近参加了一个旅游团，到新马泰转了一圈儿，刚回来。",
+      "textPinyin": "6. wǒ de wèi tū rán téng qǐ lái， yī zhèn yī zhèn dì téng。\n7. suí zhe shè huì jīng jì de fā zhǎn， rén men de shēng huó shuǐ píng yǒu le hěn dà de tí gāo。\n8. lǚ yóu shí duō dài diǎn ér qián， shěng de méi qián shí zháo jí。\n9. wǒ zuì jìn cān jiā le yí gè lǚ yóu tuán， dào xīn mǎ tài zhuǎn le yī quān er， gāng huí lái。",
+      "textVi": "6. dạ dày của tôi đột nhiên bị đau lên, đau từng cơn từng cơn.\n7. Cùng với sự phát triển của kinh tế xã hội, mức sống của con người đã có nâng cao rất nhiều.\n8. Khi đi du lịch nên mang nhiều tiền chút, để khỏi lúc không có tiền mà lo lắng.\n9. Gần đây tôi đã tham gia một đoàn du lịch và đi vòng quanh singapo, maylayxia, thái lan và vừa trở lại.",
+      "focusCardIds": [
+        "card-type-answer-reading-bonus-025",
+        "card-type-answer-reading-bonus-026",
+        "card-type-answer-reading-bonus-027",
+        "card-type-answer-reading-bonus-028"
+      ]
+    },
+    {
+      "id": "type-answer-reading-bonus-section-8",
+      "heading": "Kh?i 8",
+      "textZh": "6. 我最近参加了一个旅游团，到新马泰转了一圈儿，刚回来。\n8. 服务网点覆盖全国2000多个地区的城镇。\n9. 这款跑步机有MP3播放功能，你可以一边听音乐一边跑步。",
+      "textPinyin": "6. wǒ zuì jìn cān jiā le yí gè lǚ yóu tuán， dào xīn mǎ tài zhuǎn le yī quān er， gāng huí lái。\n8. fú wù wǎng diǎn fù gài quán guó 2 0 0 0 duō gè dì qū de chéng zhèn。\n9. zhè kuǎn pǎo bù jī yǒu M P 3 bō fàng gōng néng， nǐ kě yǐ yī biān tīng yīn yuè yī biān pǎo bù。",
+      "textVi": "6. Gần đây tôi đã tham gia một đoàn du lịch và đi vòng quanh singapo, maylayxia, thái lan và vừa trở lại.\n8. Chi nhánh phục vụ bao phủ các thị trấn và thành phố tại hơn 2.000 vùng trên cả nước.\n9. Loại máy chạy bộ này có chức năng phát MP3, bạn có thể vừa nghe nhạc vừa chạy bộ?",
+      "focusCardIds": [
+        "card-type-answer-reading-bonus-029",
+        "card-type-answer-reading-bonus-030",
+        "card-type-answer-reading-bonus-031"
+      ]
+    },
+    {
+      "id": "type-answer-reading-bonus-section-9",
+      "heading": "Kh?i 9",
+      "textZh": "6. 北京的春天时间很短，转眼就是夏天了。\n7. 对不起老师，这孩子不好好学习，让您受累了。\n8. 拿药的时候要仔细核对药的名称和数量。\n9. 你去晚了挂不上号，你就白跑一趟了。",
+      "textPinyin": "6. běi jīng de chūn tiān shí jiān hěn duǎn， zhuǎn yǎn jiù shì xià tiān le。\n7. duì bù qǐ lǎo shī， zhè hái zi bù hǎo hào xué xí， ràng nín shòu lěi le。\n8. ná yào de shí hòu yào zǐ xì hé duì yào de míng chēng hé shù liàng。\n9. nǐ qù wǎn le guà bù shàng hào， nǐ jiù bái pǎo yī tàng le。",
+      "textVi": "6. thời gian mùa xuân của Bắc Kinh rất ngắn, trong chớp mắt đã là mùa hạ rồi.\n7. xin lỗi thầy, đứa bé này không học hành chăm chỉ, khiến cho thầy chịu khổ rồi.\n8. Khi lấy thuốc cần kiểm tra cẩn thận tên và số lượng thuốc.\n9. Bạn đi trễ không lấy được số, thì bạn đi 1 chuyến vô ích rồi.",
+      "focusCardIds": [
+        "card-type-answer-reading-bonus-032",
+        "card-type-answer-reading-bonus-033",
+        "card-type-answer-reading-bonus-034",
+        "card-type-answer-reading-bonus-035"
+      ]
+    },
+    {
+      "id": "type-answer-reading-bonus-section-10",
+      "heading": "Kh?i 10",
+      "textZh": "6. 我冒昧问一下，是不是我们对你照顾不周，让你想家。\n7. 我建议您一次多买点儿，省得一次次买麻烦。\n8. 旅游时多带点儿钱 ，省得没钱时着急。\n9. 我对啤酒的历史、种类，可以说是了如指掌。",
+      "textPinyin": "6. wǒ mào mèi wèn yī xià， shì bú shì wǒ men duì nǐ zhào gù bù zhōu， ràng nǐ xiǎng jiā。\n7. wǒ jiàn yì nín yī cì duō mǎi diǎn ér， shěng de yī cì cì mǎi má fán。\n8. lǚ yóu shí duō dài diǎn ér qián， shěng de méi qián shí zháo jí。\n9. wǒ duì pí jiǔ de lì shǐ、 zhǒng lèi， kě yǐ shuō shì liǎo rú zhǐ zhǎng。",
+      "textVi": "6. tôi mạo muội hỏi 1 chút, có phải chúng tôi chăm sóc bạn không chu đáo, khiến bạn nhớ nhà.\n7. tôi kiến nghị bạn 1 lần mua nhiều 1 chút, để khỏi mỗi lần mua phiền phức.\n8. Khi đi du lịch nên mang nhiều tiền chút, để khỏi lúc không có tiền mà lo lắng.\n9. Tôi biết rõ về lịch sử và các loại bia như lòng bàn tay.",
+      "focusCardIds": [
+        "card-type-answer-reading-bonus-036",
+        "card-type-answer-reading-bonus-037",
+        "card-type-answer-reading-bonus-038",
+        "card-type-answer-reading-bonus-039"
       ]
     }
   ]

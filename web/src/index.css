@@ -1673,23 +1673,31 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   gap: 0.8rem;
 }
 
+.type-answer-grid.is-exact-sentence {
+  grid-template-columns: 1fr;
+}
+
 .type-answer-field {
   display: grid;
   gap: 0.35rem;
 }
 
-.type-answer-field.is-correct input {
+.type-answer-field.is-correct input,
+.type-answer-field.is-correct textarea {
   border-color: var(--jade-border);
   box-shadow: 0 0 0 1px var(--jade-border) inset;
 }
 
-.type-answer-field.is-partial input {
+.type-answer-field.is-partial input,
+.type-answer-field.is-partial textarea {
   border-color: var(--amber-border);
   box-shadow: 0 0 0 1px var(--amber-border) inset;
 }
 
 .type-answer-field.is-missing input,
-.type-answer-field.is-incorrect input {
+.type-answer-field.is-incorrect input,
+.type-answer-field.is-missing textarea,
+.type-answer-field.is-incorrect textarea {
   border-color: var(--red-border);
   box-shadow: 0 0 0 1px var(--red-border) inset;
 }
@@ -1702,7 +1710,8 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   color: var(--text-3);
 }
 
-.type-answer-field input {
+.type-answer-field input,
+.type-answer-field textarea {
   width: 100%;
   min-height: 3rem;
   padding: 0.8rem 0.95rem;
@@ -1713,13 +1722,22 @@ h2, h3, h4 { margin: 0; line-height: 1.15; }
   font-size: 0.98rem;
 }
 
-.type-answer-field input:focus {
+.type-answer-field textarea {
+  min-height: 6.75rem;
+  resize: vertical;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.type-answer-field input:focus,
+.type-answer-field textarea:focus {
   outline: none;
   border-color: var(--jade-border);
   box-shadow: 0 0 0 3px rgba(34, 119, 107, 0.10);
 }
 
-.type-answer-field input:disabled {
+.type-answer-field input:disabled,
+.type-answer-field textarea:disabled {
   color: var(--text);
   background: color-mix(in srgb, var(--jade) 5%, var(--surface));
 }
