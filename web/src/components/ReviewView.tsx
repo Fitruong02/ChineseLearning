@@ -821,7 +821,10 @@ export const ReviewView = ({
     setTypeAnswerFeedback(feedbackByField)
     setShowHint((current) => current || resolution === 'again')
     setTypeAnswerMessage(message)
-  }, [commitSessionAction, currentPromptField, queuedCard])
+    if (soundEnabled && hasChineseVoice && queuedCard.audioText) {
+      onSpeak(queuedCard.audioText)
+    }
+  }, [commitSessionAction, currentPromptField, hasChineseVoice, onSpeak, queuedCard, soundEnabled])
 
   const handleCheckTypeAnswer = () => {
     if (!queuedCard) {

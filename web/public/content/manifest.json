@@ -5,12 +5,14 @@
     "content/materials/material-expanded-vocabulary-lessons-1-9.json",
     "content/materials/material-hospital-route.json",
     "content/materials/material-oon-dich-viet-1.json",
+    "content/materials/material-type-answer-reading-bonus.json",
     "content/materials/material-weekend-library.json"
   ],
   "publishedDecks": [
     "content/published/deck-expanded-vocabulary-lessons-1-9.json",
     "content/published/deck-hospital-route.json",
     "content/published/deck-oon-dich-viet-1.json",
+    "content/published/deck-type-answer-reading-bonus.json",
     "content/published/deck-weekend-library-core.json"
   ],
   "draftDecks": [
